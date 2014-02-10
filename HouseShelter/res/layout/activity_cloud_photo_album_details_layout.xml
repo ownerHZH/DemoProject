@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app" >
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_title_bar" >
+        <ImageView 
+            android:id="@+id/back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/back_iv"
+            android:contentDescription="@null" />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/title_cloud_photo_album"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_20" />
+    </RelativeLayout>
+
+    <ProgressBar 
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/cloud_pictures_pager"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true" >
+    </android.support.v4.view.ViewPager>
+    
+    <ImageView 
+        android:id="@+id/pre_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/arrow_left"
+        android:contentDescription="@null" />
+    
+    <ImageView 
+        android:id="@+id/after_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/arrow_right"
+        android:contentDescription="@null" />
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_black_bar" >
+        <ImageView 
+            android:id="@+id/share_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/share_iv"
+            android:contentDescription="@null" />
+        <ImageView 
+            android:id="@+id/delete_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/delete_iv"
+            android:contentDescription="@null" />
+        <View 
+            style="@style/horizontal_placeholder_style"/>
+        <TextView 
+            android:id="@+id/pic_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="2013-10-29"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_18" />
+    </LinearLayout>
+    
+
+</RelativeLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout 
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_title_bar" >
+        <ImageView 
+            android:id="@+id/back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/back_iv"
+            android:contentDescription="@null" />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/invade_warning"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_20" />
+        <ImageView 
+            android:id="@+id/phone_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/phone_white_iv"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+    
+    <ImageView
+        android:id="@+id/timer_shaft_iv"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-6dp"
+        android:layout_below="@id/title_bar_layout"
+        android:background="@drawable/bg_date_and_line"
+        android:contentDescription="@null" />
+    
+    <com.hiibox.houseshelter.view.PullToRefreshView
+        android:layout_below="@id/title_bar_layout"
+        android:id="@+id/pull_to_refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-6dp"
+        android:orientation="vertical" >
+        <ListView 
+	        android:id="@+id/invade_lv"
+	        style="@style/listview_style" />
+    </com.hiibox.houseshelter.view.PullToRefreshView>
+    
+    <ImageView 
+        android:id="@+id/buzzer_switch_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buzzer_on"
+        android:contentDescription="@null"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp" />
+    
+    <ProgressBar 
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

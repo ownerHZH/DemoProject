@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    android:orientation="horizontal" >
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/member1_tv"
+        style="@style/family_members_style"
+        android:drawableTop="@drawable/male_gray"
+        android:text="@string/father" />
+
+    <TextView
+        android:id="@+id/member2_tv"
+        style="@style/family_members_style"
+        android:drawableTop="@drawable/male_gray"
+        android:text="@string/mother" />
+
+    <TextView
+        android:id="@+id/member3_tv"
+        style="@style/family_members_style"
+        android:drawableTop="@drawable/male_gray"
+        android:text="@string/son" />
+
+    <TextView
+        android:id="@+id/member4_tv"
+        style="@style/family_members_style"
+        android:drawableTop="@drawable/male_gray"
+        android:text="@string/daughter" />
+
+    <TextView
+        android:id="@+id/member5_tv"
+        style="@style/family_members_style"
+        android:drawableTop="@drawable/male_gray"
+        android:text="@string/father" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+</LinearLayout>

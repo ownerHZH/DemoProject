@@ -1,0 +1,138 @@
+package com.hiibox.houseshelter.net;
+
+import java.io.IOException;
+
+
+public class TCPLoginClient extends TCPServiceClientV2 {
+
+    public TCPLoginClient(String h, int p) {
+        super(h, p, true);
+
+    }
+
+    public TCPLoginClient(String h, int p, boolean needlogin) {
+        super(h, p, needlogin);
+
+    }
+
+    /**
+     * 登录
+     * @param phone 电话（作为userid）
+     * @param password 密码
+     * @param listener 
+     * @throws IOException
+     */
+    public void login(String phone, String password, String imei, TCPServiceClientV2.CommandListener listener)
+            throws IOException {
+//        Frame login = createLoginFrame(user, pwd);
+        Frame f = new Frame();
+        f.platform = 4;
+        f.mainCmd = 0x01;
+        f.subCmd = 1;
+        f.strData = phone + "\t" + password + "\t" + imei;
+        this.sendToQueue(f, listener, 10);
+    }
+
+    /**
+     * 注册
+     * @param phone
+     * @param passwaord
+     * @param deviceCode 设备号
+     * @param authCode 设备密码（验证码）
+     * @param listener
+     * @throws IOException
+     */
+    public void regUser(String phone, String passwaord, String deviceCode, String authCode, String address, String nickname,
+            TCPServiceClientV2.CommandListener listener) throws IOException {
+        Frame f = new Frame();
+        f.platform = 4;
+        f.mainCmd = 0x01;
+        f.version = VERSION_1;
+        f.subCmd = 3;
+        f.strData = phone + "\t" + passwaord + "\t" + deviceCode + "\t" + authCode+"\t"+address+"\t"+nickname;
+        this.sendToQueue(f, listener);
+    }
+
+    /**
+     * 绑定用户
+     * 
+     * @param user
+     * @param pass
+     */
+    public void bindUser(String phone, String deviceCode, String authCode, String address, TCPServiceClientV2.CommandListener l) {
+        Frame f = new Frame();
+        f.platform = 0x04;
+        f.mainCmd = 0x01;
+        f.version = 0x01;
+        f.subCmd = 2;
+        f.strData = phone+"\t"+deviceCode+"\t"+authCode+"\t"+address;
+        this.sendToQueue(f, l);
+    }
+
+    // @Override
+//    public void run2() {
+//        if (listener != null) {
+//            listener.onClientStart();
+//        }
+//        Command cmd = null;
+//
+//        System.out.println("开始登录!");
+//        Command login = createLogin(user, pwd);
+//        try {
+//            sendToServer(login);
+//
+//            if (login != null) {
+//                Frame f = recvFrame(1);
+//                if (f != null) {
+//                    logined = 2;
+//                    System.out.println("读到登录回应:");
+//                    System.out.println(f.strData);
+//                    System.out.println(f.aryData.length);
+//                } else {
+//                    logined = -1;
+//                }
+//
+//                Frame f2 = recvFrame(1);
+//                if (f2 != null) {
+//                    System.out.println("读到登录回应2:");
+//                    System.out.println(f2.strData);
+//                }
+//
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            if (listener != null) {
+//                listener.onClientException(e);
+//            }
+//            running = false;
+//        }
+//
+//        if (-1 == logined) {
+//            if (listener != null) {
+//                listener.onLoginFail();
+//            }
+//            running = false;
+//        }
+//        if (listener != null) {
+//            listener.onClientStop();
+//        }
+//        connected = false;
+//        running = false;
+//        close();
+//    }
+
+    public Frame createLoginFrame(String user, String pwd) {
+        Frame f = new Frame();
+        f.platform = 4;
+        f.mainCmd = 0x01;
+        f.subCmd = 0x01;
+        f.strData = user + "\t" + pwd;
+        return f;
+    }
+
+    public Command createLogin(String user, String pwd) {
+        Frame f = createLoginFrame(user, pwd);
+        return new Command(f, null, 1);
+    }
+
+}

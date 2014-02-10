@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_80" >
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_blue_frame_with_radius" >
+        <RelativeLayout 
+            android:id="@+id/indoor_temperature_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_btn_yellow_with_radius" >
+            <TextView 
+	            android:id="@+id/indoor_temperature_tv"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+				android:layout_centerInParent="true"	            
+	            android:text="@string/indoor_temperature"
+	            android:textColor="@color/white"
+	            android:textSize="@dimen/font_size_20"/>
+            <ImageView 
+                android:id="@+id/close_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                android:src="@drawable/close_iv"
+                android:contentDescription="@null" />
+        </RelativeLayout>
+        <TextView 
+            android:layout_below="@id/indoor_temperature_layout"
+            android:id="@+id/temperature_trend_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/thirty_minutes_temperature_trend"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_15" />
+        <TextView 
+            android:layout_below="@id/indoor_temperature_layout"
+            android:id="@+id/current_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:text="2013年7月12日"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_15" />
+        <View 
+            android:layout_below="@id/temperature_trend_tv"
+            android:id="@+id/horizontal_seperate_line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="5dp"
+            android:background="@color/white" />
+        <LinearLayout
+            android:layout_below="@id/horizontal_seperate_line1"
+	        android:id="@+id/trend_content"
+	        android:layout_width="match_parent"
+	        android:layout_height="200dp"
+	        android:layout_margin="10dp"
+	        android:gravity="center"
+	        android:orientation="vertical"
+	        android:background="@drawable/bg_temperature" >
+	    </LinearLayout>
+	    <TextView 
+	        android:layout_below="@id/trend_content"
+	        android:id="@+id/start_time_tv"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="12:30"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_15" />
+	    <TextView 
+	        android:layout_below="@id/trend_content"
+	        android:id="@+id/end_time_tv"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:text="13:00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_15" />
+	    <View 
+            android:layout_below="@id/start_time_tv"
+            android:id="@+id/horizontal_seperate_line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="5dp"
+            android:background="@color/white" />
+	    <TextView 
+	        android:layout_below="@id/horizontal_seperate_line2"
+	        android:id="@+id/current_temperature_tv"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:text="13:00"
+            android:textColor="@color/btn_yellow"
+            android:textSize="@dimen/font_size_15" />
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@id/current_temperature_tv"
+	        android:layout_toLeftOf="@id/current_temperature_tv"
+	        android:text="@string/current_temperature"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_15" />
+	    <View 
+	        android:layout_below="@id/current_temperature_tv"
+	        android:layout_width="match_parent"
+	        android:layout_height="20dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

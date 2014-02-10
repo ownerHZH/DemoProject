@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <ImageView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:src="@drawable/register_iv"
+        android:contentDescription="@null" />
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" >
+	    <TableLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+	        <TableRow >
+	            <TextView 
+	                android:text="@string/phone_number1"
+	                android:textColor="@color/white"
+	                android:textSize="@dimen/font_size_18" />
+	            <EditText 
+	                android:id="@+id/phone_number_et"
+	                android:layout_width="0dp"
+	                android:layout_height="40dp"
+	                android:paddingRight="5dp"
+	                android:paddingLeft="5dp"
+	                android:layout_weight="1"
+	                android:inputType="phone"
+	                android:background="@drawable/bg_table_one_row"
+	                android:hint="@string/hint_input_phone_number"
+	                android:textColor="@color/self_center_font" />
+	        </TableRow>
+	        <TableRow android:layout_marginTop="10dp">
+	            <TextView 
+	                android:text="@string/nickname1"
+	                android:textColor="@color/white"
+	                android:textSize="@dimen/font_size_18" />
+	            <EditText 
+	                android:id="@+id/nickname_et"
+	                android:layout_width="0dp"
+	                android:layout_height="40dp"
+	                android:paddingLeft="5dp"
+	                android:layout_weight="1"
+	                android:inputType="text"
+	                android:background="@drawable/bg_table_one_row"
+	                android:hint="@string/hint_input_nickname"
+	                android:textColor="@color/self_center_font" />
+	        </TableRow>
+	        <TableRow android:layout_marginTop="10dp">
+	            <TextView 
+	                android:text="@string/password1"
+	                android:textColor="@color/white"
+	                android:textSize="@dimen/font_size_18" />
+	            <EditText 
+	                android:id="@+id/password_et"
+	                android:layout_width="0dp"
+	                android:layout_height="40dp"
+	                android:paddingLeft="5dp"
+	                android:layout_weight="1"
+	                android:inputType="textPassword"
+	                android:hint="@string/hint_input_password"
+	                android:background="@drawable/bg_table_one_row"
+	                android:textColor="@color/self_center_font" />
+	        </TableRow>
+	        <TableRow android:layout_marginTop="10dp">
+	            <TextView 
+	                android:text="@string/confirm_password"
+	                android:textColor="@color/white"
+	                android:textSize="@dimen/font_size_18" />
+	            <EditText 
+	                android:id="@+id/confirm_password_et"
+	                android:layout_width="0dp"
+	                android:layout_height="40dp"
+	                android:paddingLeft="5dp"
+	                android:layout_weight="1"
+	                android:inputType="textPassword"
+	                android:background="@drawable/bg_table_one_row"
+	                android:hint="@string/hint_input_password"
+	                android:textColor="@color/self_center_font" />
+	        </TableRow>
+	        <TableRow android:layout_marginTop="10dp">
+	            <TextView 
+	                android:text="@string/family_address"
+	                android:textColor="@color/white"
+	                android:textSize="@dimen/font_size_18" />
+	            <EditText 
+	                android:id="@+id/address_et"
+	                android:layout_width="0dp"
+	                android:layout_height="40dp"
+	                android:paddingLeft="5dp"
+	                android:layout_weight="1"
+	                android:inputType="text"
+	                android:background="@drawable/bg_table_one_row"
+	                android:hint="@string/hint_input_address"
+	                android:textColor="@color/self_center_font" />
+	        </TableRow>
+	        <TableRow >
+	            <TextView 
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:paddingTop="5dp"
+	                android:gravity="right"
+	                android:text="@string/hint_serious_fill_the_info"
+	                android:textColor="@color/self_center_font"
+	                android:textSize="@dimen/font_size_12" />
+	        </TableRow>
+	        <TableRow android:layout_marginTop="10dp">
+	            <TextView 
+	                android:text="@string/device_number_with_colon1"
+	                android:textColor="@color/white"
+	                android:textSize="@dimen/font_size_18" />
+	            <EditText 
+	                android:id="@+id/device_code_et"
+	                android:layout_width="match_parent"
+	                android:layout_weight="1"
+	                android:layout_height="40dp"
+	                android:paddingLeft="5dp"
+	                android:layout_marginRight="10dp"
+	                android:inputType="text"
+	                android:text="X4S9SN5R5WUT11CWU4P1"
+	                android:hint="@string/hint_input_device_code"
+	                android:background="@drawable/bg_table_one_row"
+	                android:textColor="@color/self_center_font" />
+	            <ImageView 
+	                android:id="@+id/two_dimension_code_iv"
+	                android:layout_width="40dp"
+	                android:layout_height="40dp"
+	                android:src="@drawable/two_dimension_code_icon"
+	                android:contentDescription="@null" />
+	        </TableRow>
+	        <TableRow 
+	            android:layout_marginTop="10dp">
+	            <TextView 
+	                android:text="@string/auth_code_with_colon1"
+	                android:textColor="@color/white"
+	                android:textSize="@dimen/font_size_18" />
+	            <EditText 
+	                android:id="@+id/auth_code_et"
+	                android:layout_width="0dp"
+	                android:layout_weight="1"
+	                android:layout_height="40dp"
+	                android:paddingLeft="5dp"
+	                android:inputType="text"
+	                android:text="66666666"
+	                android:hint="@string/hint_input_auth_code"
+	                android:background="@drawable/bg_table_one_row"
+	                android:textColor="@color/self_center_font" />
+	        </TableRow>
+	        <TableRow android:layout_marginTop="30dp" android:layout_marginBottom="20dp">
+	            <ImageView 
+		            android:id="@+id/cancel_register_iv"
+		            android:layout_width="0dp"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:src="@drawable/cancel_register_iv"
+		            android:contentDescription="@null" />
+		        <ImageView 
+		            android:id="@+id/commit_iv"
+		            android:layout_width="0dp"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:layout_marginLeft="5dp"
+		            android:src="@drawable/commit_iv"
+		            android:contentDescription="@null" />
+	        </TableRow>
+	    </TableLayout>
+    </ScrollView>
+
+</LinearLayout>

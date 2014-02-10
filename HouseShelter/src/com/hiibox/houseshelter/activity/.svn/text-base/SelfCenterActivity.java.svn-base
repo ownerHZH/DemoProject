@@ -1,0 +1,464 @@
+package com.hiibox.houseshelter.activity;
+
+import net.tsz.afinal.annotation.view.ViewInject;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.hiibox.houseshelter.BaseActivity;
+import com.hiibox.houseshelter.BaseApplication;
+import com.hiibox.houseshelter.R;
+import com.hiibox.houseshelter.core.ActivityManager;
+import com.hiibox.houseshelter.core.GlobalUtil;
+import com.hiibox.houseshelter.listener.HandlerCommandListener;
+import com.hiibox.houseshelter.net.Frame;
+import com.hiibox.houseshelter.net.SpliteUtil;
+import com.hiibox.houseshelter.service.PushMessageService;
+import com.hiibox.houseshelter.util.ImageOperation;
+import com.hiibox.houseshelter.util.LocationUtil;
+import com.hiibox.houseshelter.util.MessageUtil;
+import com.hiibox.houseshelter.util.PreferenceUtil;
+import com.hiibox.houseshelter.util.StringUtil;
+
+/**
+ * @Description 个人中心
+ * @Author wangjiang
+ * @Create Date 2013-10-26 下午4:36:32
+ * @Modified By 
+ * @Modified Date 
+ * @Modified Description 
+ */
+public class SelfCenterActivity extends BaseActivity {
+
+    @ViewInject(id = R.id.root_layout) LinearLayout rootLayout;
+    @ViewInject(id = R.id.back_iv, click = "onClick") ImageView backIV;
+    @ViewInject(id = R.id.modify_nickname_iv, click = "onClick") ImageView nicknameIV;
+    @ViewInject(id = R.id.modify_emergency_contacts_iv, click = "onClick") ImageView contactsIV;
+    @ViewInject(id = R.id.exit_account_iv, click = "onClick") ImageView exitIV;
+    @ViewInject(id = R.id.phone_tv) TextView phoneTV;
+//    @ViewInject(id = R.id.rank_tv) TextView levelTV;
+//    @ViewInject(id = R.id.credits_exchange_tv, click = "onClick") TextView creditsExchangeTV;
+    @ViewInject(id = R.id.nickname_et) EditText nicknameET;
+    @ViewInject(id = R.id.emergency_contacts_et) EditText contactsET;
+    @ViewInject(id = R.id.password_setting_tv, click = "onClick") TextView passwordSettingTV;
+    @ViewInject(id = R.id.new_or_maintain_address_tv, click = "onClick") TextView addressTV;
+    @ViewInject(id = R.id.maintain_rfid_card_tv, click = "onClick") TextView rfidCardTV;
+    @ViewInject(id = R.id.camera_setting_tv, click = "onClick") TextView cameraSettingTV;
+    @ViewInject(id = R.id.advice_feedback_tv, click = "onClick") TextView feedbackTV;
+    @ViewInject(id = R.id.about_tv, click = "onClick") TextView aboutTV;
+    @ViewInject(id = R.id.gesture_toggle_btn_layout, click = "onClick") LinearLayout alarmToggleLayout;
+    @ViewInject(id = R.id.gesture_toggle_btn_prompt_tv) TextView alarmToggleTV;
+    @ViewInject(id = R.id.gesture_toggle_btn_on_iv) ImageView alarmToggleOnIV;
+    @ViewInject(id = R.id.gesture_toggle_btn_off_iv) ImageView alarmToggleOffIV;
+    @ViewInject(id = R.id.home_toggle_btn_layout, click = "onClick") LinearLayout homeToggleLayout;
+    @ViewInject(id = R.id.home_toggle_btn_prompt_tv) TextView homeToggleTV;
+    @ViewInject(id = R.id.home_toggle_btn_on_iv) ImageView homeToggleOnIV;
+    @ViewInject(id = R.id.home_toggle_btn_off_iv) ImageView homeToggleOffIV;
+    @ViewInject(id = R.id.defence_toggle_btn_layout, click = "onClick") LinearLayout defenceToggleLayout;
+    @ViewInject(id = R.id.defence_toggle_btn_prompt_tv) TextView defenceToggleTV;
+    @ViewInject(id = R.id.defence_toggle_btn_on_iv) ImageView defenceToggleOnIV;
+    @ViewInject(id = R.id.defence_toggle_btn_off_iv) ImageView defenceToggleOffIV;
+    
+    private String nickname = null; // 昵称
+    private String contacts = null; // 紧急联系电话
+    private boolean modifyNickname = false; // 用于记录是否修改昵称
+    private boolean modifyContacts = false; // 用于记录是否修改紧急联系电话
+    private boolean alarmToggle = true;
+    private boolean homeToggle = true;
+    private boolean defenceToggle = true;
+    
+    @SuppressLint("HandlerLeak")
+	private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.what == 0) {
+                Frame[] frame = (Frame[]) msg.obj;
+                if (null == frame) {
+                	return;
+                }
+                if (null == frame[0] && null == frame[1]) {
+                	return;
+                }
+                int subCmd = frame[0].subCmd;
+                String ret = frame[1].strData;
+                switch (subCmd) {
+                    case 73: // 获取用户等级
+                    	if (SpliteUtil.getRuquestStatus(ret)) {
+                    		BaseApplication.userLevel = Integer.valueOf(SpliteUtil.getResult(ret));
+//                    		setUserLevel();
+                    	}
+                        Log.d("SelfCenterActivity", "[查询用户信息] 收到回应 :" + ret);
+                        break;
+                    case 77: // 获取用户信息
+                    	Log.d("SelfCenterActivity", "[查询用户信息] 收到回应 :" + ret);
+                    	if (ret.startsWith("1")) {
+                    	    return;
+                    	}
+                    	if (!ret.contains("\t")) {
+                    	    return;
+                    	}
+                    	String[] result = ret.split("\t");
+                    	if (result[0].equals("0")) {
+                    	    if (result.length == 2) {
+                    	        nicknameET.setText(result[1].trim());
+                    	        nickname = result[1].trim();
+                    	    } else if (result.length == 3) {
+                    	        nicknameET.setText(result[1].trim());
+                    	        contactsET.setText(result[2].trim());
+                    	        nickname = result[1].trim();
+                                contacts = result[2].trim();
+                                PreferenceUtil.getInstance(mContext).saveString("emergencyContact", contacts);
+//                                BaseApplication.emergencyContact = contacts;
+                    	    }
+                    	}
+                    	break;
+                    case 78: // 修改用户信息
+                        Log.d("SelfCenterActivity", "[修改用户信息] 收到回应 :" + ret);
+                        if (ret.equals("0")) {
+                            MessageUtil.alertMessage(mContext, R.string.modify_msg_successful);
+                            PreferenceUtil.getInstance(mContext).saveString("emergencyContact", contacts);
+                        } else {
+                            MessageUtil.alertMessage(mContext, R.string.modify_msg_failure);
+                        }
+                        break;
+                    case 79: // 查询紧急联系电话
+                        Log.d("SelfCenterActivity", "[查询紧急联系电话] 收到回应 :" + ret);
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                // 超时
+            }
+        }
+        
+    };
+    
+    private HandlerCommandListener commandListener = new HandlerCommandListener(handler);
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_self_center_layout);
+        
+        String phone = PreferenceUtil.getInstance(getApplicationContext()).getString("phone", null);
+        phoneTV.setText(phone);
+        
+        alarmToggle = PreferenceUtil.getInstance(mContext).getBoolean("alarmMessage", true);
+        homeToggle = PreferenceUtil.getInstance(mContext).getBoolean("goHomeMessage", true);
+        defenceToggle = PreferenceUtil.getInstance(mContext).getBoolean("defenceMessage", true);
+        if (!alarmToggle) {
+        	closeAlarmToggle();
+        }
+        if (!homeToggle) {
+        	closeHomeToggle();
+        }
+        if (!defenceToggle) {
+        	closeDefenceToggle();
+        }
+        
+        if (LocationUtil.checkNetWork(mContext).endsWith(GlobalUtil.NETWORK_NONE)) {
+        	MessageUtil.alertMessage(mContext, R.string.sys_network_error);
+        	startActivity(new Intent("android.settings.WIRELESS_SETTINGS"));
+        	return;
+        }
+//        setUserLevel();
+        sendRequest(77, null, null);
+//        sendRequest(79, null, null);
+    }
+
+	/*private void setUserLevel() {
+		switch (BaseApplication.userLevel) {
+			case 0:
+				break;
+			case 1:
+			case 2:
+			case 3:
+				levelTV.setText(getString(R.string.vip_unit)+BaseApplication.userLevel);
+				break;
+			default:
+				sendRequest(73, null, null);
+				break;
+		}
+	}*/
+    
+
+    /**
+     * 执行命令
+     * @param subCmd 子功能号
+     */
+	private void sendRequest(final int subCmd, String nickname, String emergencyTel) {
+		if (LocationUtil.checkNetWork(mContext).endsWith(GlobalUtil.NETWORK_NONE)) {
+        	MessageUtil.alertMessage(mContext, R.string.sys_network_error);
+        	startActivity(new Intent("android.settings.WIRELESS_SETTINGS"));
+        	return;
+        }
+		String phone = PreferenceUtil.getInstance(getApplicationContext()).getString("phone", null);
+		if (StringUtil.isEmpty(phone)) {
+			MessageUtil.alertMessage(mContext, R.string.please_login);
+			if (null != BaseApplication.mainClient) {
+            	BaseApplication.mainClient.stop();
+            	BaseApplication.mainClient = null;
+            }
+            if (null != BaseApplication.fileClient) {
+            	BaseApplication.fileClient.stop();
+                BaseApplication.fileClient = null;
+            }
+            stopService(new Intent(mContext, PushMessageService.class));
+			startActivity(new Intent(mContext, LoginActivity.class));
+			ActivityManager.getScreenManager().exitAllActivityExceptOne();
+			return;
+		}
+		if (null == BaseApplication.mainClient || !BaseApplication.mainClient.isConnected()) {
+    		BaseApplication.initTcpManager();
+            BaseApplication.mainClient = BaseApplication.tcpManager.getMainClient(phone, null, "1111111111111111", "66666666");
+    	}
+		switch (subCmd) {
+			case 73:
+				BaseApplication.mainClient.queryUserLevel(phone, commandListener);
+				break;
+			case 77: // 查询用户信息
+				BaseApplication.mainClient.queryUserInfo(phone, commandListener);
+				break;
+			case 78: // 修改用户信息
+				BaseApplication.mainClient.modifyUserInfo(phone, nickname, emergencyTel, commandListener);
+				break;
+			case 79: // 查询紧急联系电话
+				BaseApplication.mainClient.queryEmergencyTelephone(phone, commandListener);
+				break;
+			default:
+				break;
+		}
+	}
+    
+    public void onClick(View v) {
+        int vId = v.getId();
+        switch (vId) {
+            case R.id.back_iv:
+                ActivityManager.getScreenManager().exitActivity(mActivity);
+                return;
+            case R.id.modify_nickname_iv:
+                if (!modifyNickname) {
+                	nicknameET.setEnabled(true);
+                	nicknameET.requestFocus();
+                	nicknameET.setSelection(nicknameET.getText().toString().length());
+                	InputMethodManager imm = (InputMethodManager) nicknameET.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);  
+                	imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
+                    nicknameIV.setBackgroundResource(R.drawable.confirm_iv);
+                    modifyNickname = true;
+                } else {
+                	nicknameET.setEnabled(false);
+                    nicknameIV.setBackgroundResource(R.drawable.pencel);
+                    modifyNickname = false;
+                    String _nickname = nicknameET.getText().toString();
+                    String _contacts = contactsET.getText().toString();
+                    if (nickname.equals(_nickname)) {
+                    	return;
+                    }
+                    sendRequest(78, _nickname, _contacts);
+                }
+                break;
+            case R.id.modify_emergency_contacts_iv:
+                if (!modifyContacts) {
+                	contactsET.setEnabled(true);
+                	contactsET.requestFocus();
+                	contactsET.setSelection(contactsET.getText().toString().trim().length());
+                	InputMethodManager imm = (InputMethodManager) contactsET.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);  
+                	imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
+                    contactsIV.setBackgroundResource(R.drawable.confirm_iv);
+                    modifyContacts = true;
+                } else {
+                	contactsET.setEnabled(false);
+                    contactsIV.setBackgroundResource(R.drawable.pencel);
+                    modifyContacts = false;
+                    String _nickname = nicknameET.getText().toString();
+                    String _contacts = contactsET.getText().toString();
+                    if (contacts.equals(_contacts)) {
+                    	return;
+                    }
+                    contacts = _contacts;
+                    sendRequest(78, _nickname, _contacts);
+//                    try {
+//						sendRequest(78, URLEncoder.encode(_nickname, "UTF-8"), URLEncoder.encode(_contacts, "UTF-8"));
+//					} catch (UnsupportedEncodingException e) {
+//						e.printStackTrace();
+//					}
+                }
+                break;
+//            case R.id.credits_exchange_tv:
+//                startActivity(new Intent(this, CreditsExchangeActivity.class));
+//                break;
+            case R.id.password_setting_tv:
+                startActivity(new Intent(this, PasswordSettingActivity.class));
+                break;
+            case R.id.new_or_maintain_address_tv:
+                startActivity(new Intent(this, ManageAddressActivity.class));
+                break;
+            case R.id.maintain_rfid_card_tv:
+                startActivity(new Intent(this, ManageRFIDCardActivity.class));
+                break;
+            case R.id.camera_setting_tv:
+                startActivity(new Intent(this, CloudEyesSettingsActivity.class));
+                break;
+            case R.id.advice_feedback_tv:
+                startActivity(new Intent(this, AdviceFeedbackActivity.class));
+                break;
+            case R.id.about_tv:
+                startActivity(new Intent(mContext, AboutActivity.class));
+                break;
+            case R.id.gesture_toggle_btn_layout:
+                if (alarmToggle) { // 报警推送 开-->关
+                    alarmToggle = false;
+                    closeAlarmToggle();
+                } else { // 报警推送 关-->开
+                    alarmToggle = true;
+                    openAlarmToggle();
+                }
+                PreferenceUtil.getInstance(mContext).saveBoolean("alarmMessage", alarmToggle);
+                break;
+            case R.id.home_toggle_btn_layout:
+                if (homeToggle) {
+                    homeToggle = false;
+                    closeHomeToggle();
+                } else {
+                    homeToggle = true;
+                    openHomeToggle();
+                }
+                PreferenceUtil.getInstance(mContext).saveBoolean("goHomeMessage", homeToggle);
+                break;
+            case R.id.defence_toggle_btn_layout:
+                if (defenceToggle) {
+                    defenceToggle = false;
+                    closeDefenceToggle();
+                } else {
+                    defenceToggle = true; 
+                    openDefenceToggle();
+                }
+                PreferenceUtil.getInstance(mContext).saveBoolean("defenceMessage", defenceToggle);
+                break;
+            case R.id.exit_account_iv:
+            	BaseApplication.phone = null;
+                BaseApplication.password = null;
+                PreferenceUtil.getInstance(mContext).saveBoolean("exitApp", true);
+            	PreferenceUtil.getInstance(mContext).remove("phone");
+            	PreferenceUtil.getInstance(mContext).remove("password");
+            	PreferenceUtil.getInstance(mContext).remove("gestureToggle");
+            	PreferenceUtil.getInstance(mContext).remove("captureToggle");
+            	PreferenceUtil.getInstance(mContext).remove("gestureTracks");
+            	PreferenceUtil.getInstance(mContext).remove("buzzerSwitch");
+            	PreferenceUtil.getInstance(mContext).remove("alarmMessage");
+            	PreferenceUtil.getInstance(mContext).remove("goHomeMessage");
+            	PreferenceUtil.getInstance(mContext).remove("defenceMessage");
+            	PreferenceUtil.getInstance(mContext).remove("captureNumbers");
+            	PreferenceUtil.getInstance(mContext).remove("captureTime");
+            	
+            	if (null != BaseApplication.mainClient) {
+                	BaseApplication.mainClient.close();
+                	BaseApplication.mainClient = null;
+                }
+                if (null != BaseApplication.fileClient) {
+                	BaseApplication.fileClient.close();
+                    BaseApplication.fileClient = null;
+                }
+                stopService(new Intent(mContext, PushMessageService.class));
+                startActivity(new Intent(mActivity, LoginActivity.class));
+                ActivityManager.getScreenManager().exitAllActivityExceptOne();
+                break;
+            default:
+                break;
+        }
+    }
+
+	private void openDefenceToggle() {
+		defenceToggleOnIV.setVisibility(View.VISIBLE);
+		defenceToggleOffIV.setVisibility(View.INVISIBLE);
+		defenceToggleLayout.setBackgroundResource(R.drawable.bg_toggle_btn_on);
+		defenceToggleTV.setText(getString(R.string.turn_on));
+	}
+
+	private void closeDefenceToggle() {
+		defenceToggleOnIV.setVisibility(View.INVISIBLE);
+		defenceToggleOffIV.setVisibility(View.VISIBLE);
+		defenceToggleLayout.setBackgroundResource(R.drawable.bg_toggle_btn_off);
+		defenceToggleTV.setText(getString(R.string.turn_off));
+	}
+
+	private void openHomeToggle() {
+		homeToggleOnIV.setVisibility(View.VISIBLE);
+		homeToggleOffIV.setVisibility(View.INVISIBLE);
+		homeToggleLayout.setBackgroundResource(R.drawable.bg_toggle_btn_on);
+		homeToggleTV.setText(getString(R.string.turn_on));
+	}
+
+	private void closeHomeToggle() {
+		homeToggleOnIV.setVisibility(View.INVISIBLE);
+		homeToggleOffIV.setVisibility(View.VISIBLE);
+		homeToggleLayout.setBackgroundResource(R.drawable.bg_toggle_btn_off);
+		homeToggleTV.setText(getString(R.string.turn_off));
+	}
+
+	private void openAlarmToggle() {
+		alarmToggleOnIV.setVisibility(View.VISIBLE);
+		alarmToggleOffIV.setVisibility(View.INVISIBLE);
+		alarmToggleLayout.setBackgroundResource(R.drawable.bg_toggle_btn_on);
+		alarmToggleTV.setText(getString(R.string.turn_on));
+	}
+
+	private void closeAlarmToggle() {
+		alarmToggleOnIV.setVisibility(View.INVISIBLE);
+		alarmToggleOffIV.setVisibility(View.VISIBLE);
+		alarmToggleLayout.setBackgroundResource(R.drawable.bg_toggle_btn_off);
+		alarmToggleTV.setText(getString(R.string.turn_off));
+	}
+    
+	@Override
+    protected void onResume() {
+        super.onResume();
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        BitmapDrawable bitmapDrawable = new BitmapDrawable(
+            ImageOperation.readBitMap(mContext, R.drawable.bg_app));
+        rootLayout.setBackgroundDrawable(bitmapDrawable);
+    }
+    
+    @Override
+    protected void onStop() {
+        super.onStop();
+        rootLayout.setBackgroundDrawable(null);
+    }
+    
+//    @Override
+//	public boolean onKeyDown(int keyCode, KeyEvent event) {
+//		if (keyCode == KeyEvent.KEYCODE_BACK) {
+//			startActivity(new Intent(mContext, HomepageActivity.class));
+//			ActivityManager.getScreenManager().exitActivity(mActivity);
+//			return false;
+//		}
+//		return super.onKeyDown(keyCode, event);
+//	}
+    
+    @SuppressWarnings("unused")
+	private void hideSoftInput(EditText et) {
+        try {
+            Class<EditText> cls = EditText.class;
+            java.lang.reflect.Method setSoftInputShownOnFocus = cls.getMethod("setSoftInputShownOnFocus", boolean.class);
+            setSoftInputShownOnFocus.setAccessible(true);
+            setSoftInputShownOnFocus.invoke(et, false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/splash_id"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/splash_iv"
+        android:orientation="vertical" >
+        <android.support.v4.view.ViewPager 
+	        android:id="@+id/activity_poster_vp"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent" />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_advertisement_bar">
+        <TextView 
+            android:id="@+id/pull_up_to_enter_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="@string/pull_up_to_enter_tv"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:drawableLeft="@drawable/home_up"
+            android:drawablePadding="5dp" />
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <!-- <TextView 
+            android:id="@+id/look_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center_vertical"
+            android:text="@string/look_tv"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:drawableLeft="@drawable/look_iv"
+            android:drawablePadding="5dp" /> -->
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+        <LinearLayout 
+            android:id="@+id/phone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_table_one_row">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:text="@string/phone_number"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_18" />
+            <EditText 
+                android:id="@+id/phone_number_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="phone"
+                android:text=""
+                android:textSize="@dimen/font_size_18"
+                android:background="@null" />
+        </LinearLayout>
+        <LinearLayout 
+            android:id="@+id/password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_table_one_row">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:text="@string/password"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_18" />
+            <EditText 
+                android:id="@+id/password_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword"
+                android:text=""
+                android:textSize="@dimen/font_size_18"
+                android:background="@null" />
+        </LinearLayout>
+        <LinearLayout 
+            android:id="@+id/login_register_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+            <ImageView
+                android:id="@+id/login_iv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/login_btn"
+                android:contentDescription="@null" />
+            <ImageView
+                android:id="@+id/register_iv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/register_btn"
+                android:contentDescription="@null" />
+        </LinearLayout>
+        <TextView 
+            android:id="@+id/dial_to_find_password_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/dial_to_find_password"
+            android:textColor="@color/dial_to_find_password"
+            android:textSize="@dimen/font_size_16"
+            android:drawableLeft="@drawable/phone_orange_iv"
+            android:drawablePadding="5dp" />
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/network_setting_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/network_setting"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_16"
+        android:gravity="center"
+        android:drawableLeft="@drawable/settings_icon"
+        android:drawablePadding="5dp" />
+
+</RelativeLayout>

@@ -1,0 +1,83 @@
+package com.hiibox.houseshelter;
+
+import java.io.IOException;
+
+import android.app.Application;
+
+import com.hiibox.houseshelter.net.TCPFileClient;
+import com.hiibox.houseshelter.net.TCPMainClient;
+import com.hiibox.houseshelter.net.TCPManager;
+import com.hiibox.houseshelter.net.TCPMsgClient;
+import com.hiibox.houseshelter.net.TCPServiceClientV2.ClientListener;
+
+/**
+ * @Description 全局应用程序类：用于保存和调用全局应用配置及访问网络数据
+ * @Author wangjiang
+ * @Create Date 2013-10-17 上午10:13:33
+ * @Modified By
+ * @Modified Date
+ * @Modified Description
+ */
+public class BaseApplication extends Application {
+
+//    public static String imei = null; // 手机imei号码
+    public static boolean showedAds = false; // 是否已经加载广告页dialog
+    public static String phone = null; // 用户电话（userId）
+    public static String password = null; // 用户密码
+    public static int userLevel = -1; // 用户等级
+    public static TCPManager tcpManager = null;
+    public static TCPMainClient mainClient = null; // 家庭卫士服务器
+    public static TCPFileClient fileClient = null; // 文件服务器
+    public static TCPMsgClient msgClient = null; // 消息服务器
+    public static ClientListener listener = null;
+//    public static List<MembersInfoResult> membersList = null; // 家庭成员信息
+    public static String deviceCode = null; 
+//    public static String emergencyContact = null;
+    public static boolean isFirstTimeEntry = true;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+//        imei = LocationUtil.getDrivenToken(getApplicationContext());
+        tcpManager = new TCPManager();
+//        membersList = new ArrayList<MembersInfoResult>();
+        listener = new ClientListener() {
+
+            @Override
+            public void onClientStop() {
+                System.out.println("BaseApplication    Client Stop................");
+            }
+
+            @Override
+            public void onClientStart() {
+                System.out.println("BaseApplication    Client start................");
+            }
+
+            @Override
+            public void onClientClose() {
+                System.out.println("BaseApplication    Client Close................");
+            }
+
+            @Override
+            public void onClientException(IOException ex) {
+                ex.printStackTrace();
+                System.out.println("BaseApplication    onClientException................"+ex.toString());
+//                MessageUtil.alertMessage(getApplicationContext(), R.string.network_error);
+            }
+
+            @Override
+            public void onLoginFail() {
+                System.out.println("BaseApplication    Login Fail................");
+            }
+
+        };
+    }
+    
+    public static void initTcpManager() {
+        if (null != tcpManager) {
+            return;
+        }
+        tcpManager = new TCPManager();
+    }
+    
+}

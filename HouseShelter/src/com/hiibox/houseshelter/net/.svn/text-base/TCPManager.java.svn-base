@@ -1,0 +1,400 @@
+/*
+ * To change this template, choose Tools | Templates and open the template in the editor.
+ */
+package com.hiibox.houseshelter.net;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import android.annotation.SuppressLint;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+
+import com.hiibox.houseshelter.net.TCPServiceClientV2.CommandListener;
+
+/**
+ * @Description 服务器Manager
+ * @Author wangfc
+ * @Create Date 2013-11-15 下午2:01:06
+ * @Modified By
+ * @Modified Date
+ * @Modified Description
+ */
+public class TCPManager {
+
+    private final static String LOGIN_HOST = "61.186.245.252"; // 登陆服务器地址
+    private final static int LOGIN_PORT = 21000; // 登录服务器端口号
+    public final TCPLoginClient loginClient = new TCPLoginClient(LOGIN_HOST, LOGIN_PORT, false);
+
+    @SuppressLint("UseSparseArrays")
+    private HashMap<Integer, HostInfo> allHosts = new HashMap<Integer, HostInfo>();
+
+//    int loginStatus = 0; // 0 为登陆，1登陆中,2登陆成功，3登陆失败
+
+    /**
+     * 登录
+     * @param user 用户名
+     * @param pass 密码
+     * @return
+     * @throws IOException
+     */
+    public void login(String user, String pass, String imei, final Handler handler) throws IOException {
+        if (!loginClient.isConnected()) {
+            loginClient.connect(user, pass);
+        }
+        Log.d("============", "===========  loginClient.isConnected() = "+loginClient.isConnected());
+        loginClient.login(user, pass, imei, new TCPServiceClientV2.CommandListener() {
+			@Override
+            public int onReceive(Frame src, Frame f2) {
+//            	Log.i("TCPManager", "login()  onReceive()  src.mainCmd = "+src.mainCmd+" ; f2.mainCmd = "+f2.mainCmd);
+//            	Log.i("TCPManager", "login()  onReceive()  src.subCmd = "+src.subCmd+" ; f2.subCmd = "+f2.subCmd);
+            	Log.e("TCPManager", "[登录] onReceive()  f2.str = "+f2.strData);
+                if (f2 != null) {
+//                	if (SpliteUtil.getRuquestStatus(f2.strData)) {
+//                		handler.sendEmptyMessage(0); // login success
+//                	} else { // login failed
+//                		Message msg = new Message();
+//                		msg.what = 1;
+//                		msg.obj = SpliteUtil.getResult(f2.strData);
+//                		handler.sendMessage(msg);
+//                	}
+                	// receive server info
+                    Frame f;
+                    try {
+                        f = loginClient.recvFrame(20);
+                        if (f != null) {
+                            byte[] datas = f.aryData;
+                            if (null != datas) {
+                            	parserServerInfo(datas);
+                            }
+                            handler.sendEmptyMessage(2); // receive server info success
+                        } else {
+                        	Message msg = new Message();
+                    		msg.what = 1;
+                    		msg.obj = SpliteUtil.getResult(f2.strData);
+                    		handler.sendMessage(msg);
+//                            handler.sendEmptyMessage(3); // receive server info failed
+                        }
+                    } catch (IOException e) {
+                        handler.sendEmptyMessage(4); // 连接服务器异常
+                        e.printStackTrace();
+                    }
+                } else {
+                    handler.sendEmptyMessage(5); // 服务器无数据返回，连接失败
+                }
+                loginClient.stop();
+                return 0;
+            }
+
+            @Override
+            public void onTimeout(Frame src, Frame f) {
+                handler.sendEmptyMessage(6); // 超时
+                loginClient.stop();
+            }
+
+        });
+    }
+    
+    /**
+     * 登录
+     * @param user 用户名
+     * @param pass 密码
+     * @return
+     * @throws IOException
+     */
+    public void login1(String user, String pass, String imei, final Handler handler) throws IOException {
+        loginClient.connect();
+        if (!loginClient.isConnected()) {
+            loginClient.connect(user, pass);
+        }
+        Log.d("============", "===========  loginClient.isConnected() = "+loginClient.isConnected());
+        loginClient.login(user, pass, imei, new TCPServiceClientV2.CommandListener() {
+            @Override
+            public int onReceive(Frame src, Frame f2) {
+//            	Log.i("TCPManager", "login()  onReceive()  src.mainCmd = "+src.mainCmd+" ; f2.mainCmd = "+f2.mainCmd);
+//            	Log.i("TCPManager", "login()  onReceive()  src.subCmd = "+src.subCmd+" ; f2.subCmd = "+f2.subCmd);
+                Log.e("TCPManager", "[登录] onReceive()  f2.str = "+f2.strData);
+                if (f2 != null) {
+//                	if (SpliteUtil.getRuquestStatus(f2.strData)) {
+//                		handler.sendEmptyMessage(0); // login success
+//                	} else { // login failed
+//                		Message msg = new Message();
+//                		msg.what = 1;
+//                		msg.obj = SpliteUtil.getResult(f2.strData);
+//                		handler.sendMessage(msg);
+//                	}
+                    // receive server info
+                    Frame f;
+                    try {
+                        f = loginClient.recvFrame(20);
+                        if (f != null) {
+                            byte[] datas = f.aryData;
+                            if (null != datas) {
+                                parserServerInfo(datas);
+                            }
+                            handler.sendEmptyMessage(2); // receive server info success
+                        } else {
+                            Message msg = new Message();
+                            msg.what = 1;
+                            msg.obj = SpliteUtil.getResult(f2.strData);
+                            handler.sendMessage(msg);
+//                            handler.sendEmptyMessage(3); // receive server info failed
+                        }
+                    } catch (IOException e) {
+                        handler.sendEmptyMessage(4); // 连接服务器异常
+                        e.printStackTrace();
+                    }
+                } else {
+                    handler.sendEmptyMessage(5); // 服务器无数据返回，连接失败
+                }
+                loginClient.stop();
+                return 0;
+            }
+            
+            @Override
+            public void onTimeout(Frame src, Frame f) {
+                handler.sendEmptyMessage(6); // 超时
+                loginClient.stop();
+            }
+            
+        });
+    }
+    
+    /**
+     * 用户注册
+     * @param phone
+     * @param password
+     * @param deviceCode
+     * @param authCode
+     * @param handler
+     * @throws IOException
+     */
+    public void register(String phone, String password, String deviceCode, String authCode, String address, String nickname, final Handler handler) throws IOException {
+        loginClient.connect();
+        if (!loginClient.isConnected()) {
+            loginClient.connect();
+//        	handler.sendEmptyMessage(4); // 服务器连接失败
+//        	return;
+        }
+        loginClient.regUser(phone, password, deviceCode, authCode, address, nickname, new CommandListener() {
+            @Override
+            public void onTimeout(Frame src, Frame f) {
+                handler.sendEmptyMessage(3);
+                Log.e("TCPManager", "[用户注册] onTimeout()");
+            }
+            @Override
+            public int onReceive(Frame src, Frame f) {
+                if (null != f) {
+                    String status = f.strData;
+                    Log.e("TCPManager", "[用户注册] onReceive()  f.strData = "+status);
+                    byte[] b;
+                    try {
+                        b = status.getBytes("UTF-8");
+                        String s = new String(b);
+                        Log.i("TCPManager", "onReceive()  utf-8 s = "+s);
+                        if (status.equals("0")) {
+                            handler.sendEmptyMessage(0); // 注册成功
+                        } else {
+                            String[] str = status.split("\t");
+                            Message msg = new Message();
+                            msg.what = 1;
+                            msg.obj = str[1]; // 失败原因
+                            handler.sendMessage(msg); // 注册失败
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    handler.sendEmptyMessage(2); // 服务器无数据返回，连接失败
+                }
+                return 0;
+            }
+        });
+    }
+
+    /**
+     * 绑定终端
+     * @param phone
+     * @param deviceCode
+     * @param authCode
+     * @param address
+     * @param listener
+     */
+    public void bindTerminal(String phone, String deviceCode, String authCode, String address, CommandListener listener) {
+    	loginClient.connect();
+        if (!loginClient.isConnected()) {
+            loginClient.connect(phone);
+//        	return;
+        }
+        Log.i("TCPManager", "bindTerminal()  onReceive()  loginClient.connected = "+loginClient.connected);
+        loginClient.bindUser(phone, deviceCode, authCode, address, listener);
+    }
+    
+    /**
+     * 获取家庭卫士中心服务器
+     * 
+     * @param tcode 终端编号
+     * @param tpass 终端密码
+     * @return
+     */
+    public TCPMainClient getMainClient(String phone, String pass, String tcode, String tpass) {
+        HostInfo info = allHosts.get(6);
+        if (info == null) {
+            // 不知道服务器信息
+            return null;
+        }
+        try {
+            TCPMainClient mainClient = null;
+            InetAddress addr = java.net.Inet4Address.getByAddress(info.ip);
+            mainClient = new TCPMainClient(addr, info.port, tcode, tpass);
+            mainClient.connect(phone, pass);
+            return mainClient;
+        } catch (UnknownHostException ex) {
+            Log.i("TCPManager", "getMainClient()   UnknownHostException  ex = " + ex.toString());
+            return null;
+        }
+    }
+
+    /**
+     * 获取消息服务器
+     * @return
+     */
+//    public TCPMsgClient getMsgClient() {
+//        HostInfo info = allHosts.get(7);
+//        if (info == null) {
+//            // 不知道服务器信息
+//            return null;
+//        }
+//        try {
+//            TCPMsgClient msgClient = null;
+//            InetAddress addr = java.net.Inet4Address.getByAddress(info.ip);
+//            msgClient = new TCPMsgClient(addr, info.port);
+//            msgClient.connect();
+//            return msgClient;
+//        } catch (UnknownHostException ex) {
+//            return null;
+//        }
+//    }
+    
+    /**
+     * 获取消息服务器
+     * 
+     * @param user 用户电话
+     * @param psw 用户密码
+     * @param commandListener
+     * @return
+     */
+    public TCPMsgClient getMsgClient(String user, String psw, CommandListener commandListener) {
+    	HostInfo info = allHosts.get(7);
+    	if (info == null) {
+    		// 不知道服务器信息
+    		return null;
+    	}
+    	try {
+    		TCPMsgClient msgClient = null;
+    		InetAddress addr = java.net.Inet4Address.getByAddress(info.ip);
+    		msgClient = new TCPMsgClient(addr, info.port, commandListener);
+    		msgClient.connect(user, psw);
+    		return msgClient;
+    	} catch (UnknownHostException ex) {
+    		return null;
+    	}
+    }
+    
+    /**
+     * 获取文件服务器
+     * 
+     * @return
+     */
+    public TCPFileClient getFileClient(String phone) {
+        HostInfo info = allHosts.get(8);
+        if (info == null) {
+            // 不知道服务器信息
+            return null;
+        }
+        TCPFileClient fileClient = null;
+        try {
+            InetAddress addr = java.net.Inet4Address.getByAddress(info.ip);
+            fileClient = new TCPFileClient(addr, info.port);
+            fileClient.connect(phone);
+            return fileClient;
+        } catch (UnknownHostException ex) {
+            return null;
+        }
+    }
+
+    static void logln(String str) {
+        System.out.println(str);
+    }
+
+    static void log(String str) {
+        System.out.print(str);
+    }
+
+    static void output(ArrayList<byte[]> datas) {
+        System.out.println(datas.size());
+        for (byte[] b : datas) {
+            System.out.println(new String(b));
+        }
+        System.out.println("-----");
+    }
+
+    private void parserServerInfo(byte[] datas) {
+        ArrayList<byte[]> all = FrameTools.split(datas, '\t');
+        if (all.size() > 2) {
+            int tc = Integer.parseInt(FrameTools.decodeFrameData(all.get(0)));
+            ArrayList<byte[]> temp = null;
+            for (int i = 0; i < tc; i++) {
+                temp = FrameTools.split(all.get(i + 1), ':');
+                if (temp.size() == 3) {
+                    HostInfo info = new HostInfo();
+                    info.ip = new byte[4];// temp.get(0);
+                    int ivalue = FrameTools.parseInt(temp.get(0));
+                    info.ip[3] = (byte) (0xff & (ivalue >>> 24));
+                    info.ip[2] = (byte) (0xff & (ivalue >>> 16));
+                    info.ip[1] = (byte) (0xff & (ivalue >>> 8));
+                    info.ip[0] = (byte) (0xff & (ivalue));
+                    Log.i("====", "=== ip = " + info.ip + " ; len = " + info.ip.length+" ; temp.get(0) = "+temp.get(0));
+                    info.port = Integer.parseInt(FrameTools.decodeFrameData(temp.get(1)));
+                    info.platform = Integer.parseInt(FrameTools.decodeFrameData(temp.get(2)));
+                    allHosts.put(info.platform, info);
+                    Log.i("TCPManager", "parserServerInfo()  ip = " + info.ip + " ; port = "
+                            + info.port + " ; platform = " + info.platform);
+                } else {
+                    logln("地址信息格式不对" + FrameTools.decodeFrameData(all.get(i + 1)));
+                    FrameTools.hexoutput(all.get(i + 1));
+                    logln("");
+                }
+            }
+        }
+    }
+
+    public static class HostInfo {
+        public byte[] ip;
+        public int port;
+        public int platform;
+    }
+
+    /*
+     * public static void main(String[] args) {
+     * 
+     * TCPManager man = new TCPManager(); Frame f = man.login("55555555", "66666666");
+     * //System.out.println("xxxx"); if (f != null) {
+     * 
+     * if(f.strData.compareTo("0")==0) { System.out.println("登录成功"); } else {
+     * System.out.println("登录失败"+f.strData); } } else { System.out.println("登录失败!"); }
+     * man.loginClient.stop();
+     * 
+     * ArrayList<byte[]> datas = FrameTools.split("abc\tdef\txyz".getBytes(), '\t'); output(datas);
+     * 
+     * datas = FrameTools.split("a\tdef\tx".getBytes(), '\t'); output(datas);
+     * 
+     * datas = FrameTools.split("a\t\tdef\tx".getBytes(), '\t'); output(datas); datas =
+     * FrameTools.split("\t\ta\t\tdef\tx\t".getBytes(), '\t'); output(datas); }
+     */
+
+}

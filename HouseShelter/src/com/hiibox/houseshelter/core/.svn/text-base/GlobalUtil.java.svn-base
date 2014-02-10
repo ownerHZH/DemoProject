@@ -1,0 +1,30 @@
+package com.hiibox.houseshelter.core;
+
+import android.os.Environment;
+
+public class GlobalUtil {
+
+	// 网络类型 --没有网络
+	public static final String NETWORK_NONE = "NONE";
+
+	// 相机图片路径
+	public static final String CAMERA_PATH = Environment
+			.getExternalStorageDirectory() + "/DCIM/Camera";
+
+	// 附件路径
+	public static final String GLOBAL_PATH = Environment
+			.getExternalStorageDirectory() + "/HouseShelter";
+
+	// 附件图片路径
+	public static final String IMAGE_PATH = GLOBAL_PATH + "/images";
+
+	// 服务器地址
+	public static final int PORT = 80;
+	public static final String HOST = "app.cqjbhb.gov.cn/cqjbhbapp/";
+	public static final String REMOTE_HOST = "http://" + HOST;
+
+	// 屏幕尺寸
+	public static int mScreenWidth = 720;
+	public static int mScreenHeight = 1245;
+
+}

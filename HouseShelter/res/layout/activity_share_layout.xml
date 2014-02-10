@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/shape_white_frame_with_radius" >
+        <LinearLayout 
+            android:id="@+id/send_to_sina_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/sina_weibo"
+	            android:textColor="@color/dial_to_find_password"
+	            android:textSize="@dimen/font_size_20"
+	            android:drawableLeft="@drawable/sina_weibo_icon"
+	            android:drawablePadding="5dp" />
+        </LinearLayout>
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/horizontal_divider_iv"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp" />
+        <LinearLayout 
+            android:id="@+id/send_to_tencent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/tencent_weibo"
+	            android:textColor="@color/dial_to_find_password"
+	            android:textSize="@dimen/font_size_20"
+	            android:drawableLeft="@drawable/tencent_weibo_icon"
+	            android:drawablePadding="5dp" />
+        </LinearLayout>
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/horizontal_divider_iv"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp" />
+        <LinearLayout 
+            android:id="@+id/send_to_cycle_of_friends_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/cycle_of_friends"
+	            android:textColor="@color/dial_to_find_password"
+	            android:textSize="@dimen/font_size_20"
+	            android:drawableLeft="@drawable/cycle_of_friends_icon"
+	            android:drawablePadding="5dp" />
+        </LinearLayout>
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/horizontal_divider_iv"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp" />
+        <TextView 
+            android:id="@+id/cancel_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/dial_to_find_password"
+            android:textSize="@dimen/font_size_20" />
+    </LinearLayout>
+
+</RelativeLayout>

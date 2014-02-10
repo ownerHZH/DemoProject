@@ -1,0 +1,22 @@
+package com.hiibox.houseshelter.util;
+
+/**
+ * 授权回调类
+ * 
+ * @author ganhx
+ */
+public class WeiboListener {
+	/**
+	 * 发微博
+	 * 
+	 * @param isValid 是否授权
+	 */
+	public void init(boolean isValid) {
+	}
+
+	/**
+	 * 授权成功后
+	 */
+	public void onResult() {
+	}
+}

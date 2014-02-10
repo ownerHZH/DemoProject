@@ -1,0 +1,223 @@
+package com.hiibox.houseshelter.adapter;
+
+import java.util.List;
+
+import net.tsz.afinal.FinalBitmap;
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.hiibox.houseshelter.BaseApplication;
+import com.hiibox.houseshelter.R;
+import com.hiibox.houseshelter.net.Frame;
+import com.hiibox.houseshelter.net.MembersInfoResult;
+import com.hiibox.houseshelter.net.SpliteUtil;
+import com.hiibox.houseshelter.net.TCPServiceClientV2.CommandListener;
+import com.hiibox.houseshelter.util.MessageUtil;
+
+/**
+ * @Description rfid卡适配器
+ * @Author wangjiang
+ * @Create Date 2013-10-31 上午10:25:20
+ * @Modified By 
+ * @Modified Date 
+ * @Modified Description 
+ */
+public class RFIDCardAdapter extends BaseAdapter {
+
+    private Context context = null;
+    @SuppressWarnings("unused")
+    private FinalBitmap finalBitmap = null;
+    private List<MembersInfoResult> list = null;
+    private String deleteMemberStr = null;
+    private ProgressDialog loginDialog = null;
+    
+    public RFIDCardAdapter(Context context, FinalBitmap finalBitmap) {
+        super();
+        this.context = context;
+        this.finalBitmap = finalBitmap;
+        deleteMemberStr = context.getResources().getString(R.string.delete_member);
+        loginDialog = new ProgressDialog(context);
+        loginDialog.setCancelable(true);
+        loginDialog.setCanceledOnTouchOutside(false);
+        loginDialog.setMessage(context.getResources().getString(R.string.deleting_member));
+    }
+
+    public void setList(List<MembersInfoResult> list) {
+        this.list = list;
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public int getCount() {
+        return list.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return list.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(final int position, View convertView, ViewGroup parent) {
+    	MembersInfoResult map = (MembersInfoResult) getItem(position);
+        ViewHolder holder = new ViewHolder();
+        if (null == convertView) {
+            convertView = View.inflate(context, R.layout.lv_item_rfid_card_layout, null);
+        }
+        holder.nameTV = (TextView) convertView.findViewById(R.id.member_name_tv);
+        holder.codeTV = (TextView) convertView.findViewById(R.id.rfid_card_code_tv);
+        holder.portraitIV = (ImageView) convertView.findViewById(R.id.head_portrait_iv);
+        holder.deleteIV = (ImageView) convertView.findViewById(R.id.delete_iv);
+        
+        final String name = map.nickname;
+        final String cardNum = map.cardNum;
+        holder.nameTV.setText(name);
+        holder.codeTV.setText(cardNum);
+//        finalBitmap.display(holder.portraitIV, map.get("portraitUrl"));
+        
+        holder.deleteIV.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new AlertDialog.Builder(context)
+                .setMessage(deleteMemberStr + name)
+                .setPositiveButton(R.string.positive, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        sendOrder(cardNum, position);
+                    }
+                })
+                .setNegativeButton(R.string.negative, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create();
+                dialog.show();
+            }
+        });
+        
+        return convertView;
+    }
+    
+    /**
+	 * 发送请求到队列
+	 */
+    private void sendOrder(final String cardNum, final int position) {
+    	loginDialog.show();
+    	boolean isConnect = BaseApplication.mainClient.isConnected();
+    	Log.d("RFIDCardAdapter", "sendOrder()  connected = "+isConnect);
+    	if (BaseApplication.mainClient.isConnected()) { // 连接正常
+    		deleteMember(cardNum, position, handler);
+    	} else { // 连接已断开
+    		BaseApplication.initTcpManager();
+    		BaseApplication.mainClient = BaseApplication.tcpManager.getMainClient(BaseApplication.phone, BaseApplication.password, "1111111111111111", "66666666");
+    		BaseApplication.mainClient.userAuth(BaseApplication.phone, new CommandListener() {
+    			@Override
+    			public void onTimeout(Frame src, Frame f) {
+    				Log.e("RFIDCardAdapter", "sendOrder()  userAuth()  家庭卫士服务器连接超时。。。");
+//    				Looper.prepare();
+//    				MessageUtil.alertMessage(context, R.string.network_timeout);
+//    				Looper.loop();
+    				handler.sendEmptyMessage(-1);
+    			}
+    			
+    			@Override
+    			public int onReceive(Frame src, Frame f) {
+    				if (null != f && SpliteUtil.getRuquestStatus(f.strData)) {
+    					Log.e("RFIDCardAdapter", "sendOrder()  userAuth()  家庭卫士服务器连接成功。。。");
+    					deleteMember(cardNum, position, handler);
+    				} else {
+    					handler.sendEmptyMessage(2);
+    					Log.e("RFIDCardAdapter", "sendOrder()  userAuth()  家庭卫士服务器连接失败。。。");
+    				}
+    				return 0;
+    			}
+    		});
+    	}
+    }
+
+    
+    /**
+     * 删除该家庭成员
+     * @param phone
+     * @param cardNum RFID卡号码
+     */
+    private void deleteMember(String cardNum, final int position, final Handler handler) {
+    	BaseApplication.mainClient.unregCard(BaseApplication.phone, cardNum, new CommandListener() {
+			@Override
+			public void onTimeout(Frame src, Frame f) {
+				Log.e("AddRFIDCardAdapter", "[删除该家庭成员]    time out...");
+				loginDialog.dismiss();
+//				Looper.prepare();
+//				MessageUtil.alertMessage(context, R.string.network_timeout);
+//				Looper.loop();
+				handler.sendEmptyMessage(-1);
+			}
+			
+			@Override
+			public int onReceive(Frame src, Frame f) {
+				Log.e("AddRFIDCardAdapter", "[删除该家庭成员]    data = "+f.strData+" ; subCmd = "+f.subCmd);
+				loginDialog.dismiss();
+//				Looper.prepare();
+				if (f.strData.equals("0")) {
+					list.remove(position);
+					handler.sendEmptyMessage(0);
+//                    RFIDCardAdapter.this.notifyDataSetChanged();
+//					MessageUtil.alertMessage(context, context.getResources().getString(R.string.operate_success));
+				} else {
+//					MessageUtil.alertMessage(context, context.getResources().getString(R.string.operate_failed));
+					handler.sendEmptyMessage(1);
+				}
+//				Looper.loop();
+				Log.e("AddRFIDCardAdapter", "[删除该家庭成员]   onReceive()  before return data......");
+				return 0;
+			}
+		});
+    }
+    
+    class ViewHolder {
+        TextView nameTV;
+        TextView codeTV;
+        ImageView portraitIV;
+        ImageView deleteIV;
+    }
+    
+    @SuppressLint("HandlerLeak")
+    private Handler handler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			super.handleMessage(msg);
+			int what = msg.what;
+			if (what == 0) {
+				MessageUtil.alertMessage(context, context.getResources().getString(R.string.operate_success));
+				notifyDataSetChanged();
+			} else if (what == 1) {
+				MessageUtil.alertMessage(context, context.getResources().getString(R.string.operate_failed));
+			} else if (what == 2) {
+				MessageUtil.alertMessage(context, context.getResources().getString(R.string.network_not_response));
+			} else if (what == -1) {
+				MessageUtil.alertMessage(context, R.string.network_timeout);
+			}
+		}
+    };
+
+}

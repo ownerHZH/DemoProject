@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/behind_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="50dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_sliding_menu"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/cloud_eyes_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/cloud_eyes"
+            android:textColor="@color/sliding_menu_tv"
+            android:textSize="@dimen/font_size_20" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:src="@drawable/sliding_menu_seperate_line" />
+        <TextView
+            android:id="@+id/imprinting_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/imprinting"
+            android:textColor="@color/sliding_menu_tv"
+            android:textSize="@dimen/font_size_20" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:src="@drawable/sliding_menu_seperate_line" />
+        <TextView
+            android:id="@+id/cloud_photo_album_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/cloud_photo_album"
+            android:textColor="@color/sliding_menu_tv"
+            android:textSize="@dimen/font_size_20" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:src="@drawable/sliding_menu_seperate_line" />
+        <TextView
+            android:id="@+id/smart_app_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/smart_app"
+            android:textColor="@color/sliding_menu_tv"
+            android:textSize="@dimen/font_size_20" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:src="@drawable/sliding_menu_seperate_line" />
+        <TextView
+            android:id="@+id/self_center_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/self_center"
+            android:textColor="@color/sliding_menu_tv"
+            android:textSize="@dimen/font_size_20" />
+    </LinearLayout>
+    
+    <com.hiibox.houseshelter.view.MyLinearLayout 
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    </com.hiibox.houseshelter.view.MyLinearLayout>
+    
+    <!-- <LinearLayout 
+        android:id="@+id/front_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="60dp"
+	        android:background="@drawable/bg_title_bar" >
+	        <ImageView 
+	            android:id="@+id/menu_iv"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:padding="10dp"
+	            android:src="@drawable/back_iv"
+	            android:contentDescription="@null" />
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerInParent="true"
+	            android:text="@string/cloud_eyes"
+	            android:textColor="@color/white"
+	            android:textSize="@dimen/font_size_20" />
+	    </RelativeLayout>
+	    <com.hiibox.houseshelter.view.MyLinearLayout 
+	        android:id="@+id/content_layout"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="vertical">
+	    </com.hiibox.houseshelter.view.MyLinearLayout>
+    </LinearLayout> -->
+
+</RelativeLayout>

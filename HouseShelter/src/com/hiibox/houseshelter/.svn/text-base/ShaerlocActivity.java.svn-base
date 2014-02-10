@@ -1,0 +1,56 @@
+package com.hiibox.houseshelter;
+
+import net.tsz.afinal.FinalActivity;
+import net.tsz.afinal.FinalBitmap;
+import net.tsz.afinal.FinalHttp;
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Window;
+
+import com.hiibox.houseshelter.core.ActivityManager;
+import com.hiibox.houseshelter.core.GlobalUtil;
+
+/**
+ * 基础类 继承自afinal框架的FinalActivity 通过注解方式绑定UI和事件
+ * 
+ * @Description
+ * @Author wangjiang
+ * @Create Date 2013-9-24 上午11:03:28
+ * @Modified By
+ * @Modified Date
+ * @Modified Description
+ */
+public class BaseActivity extends FinalActivity {
+
+    /**
+     * 图片下载,目前仅支持imageview,如有其它控件需要下载附件，可通过finalhttp.download实现
+     */
+    public static FinalBitmap finalBitmap = null;
+    public static FinalHttp finalHttp = null;
+    public Context mContext = null;
+    public Activity mActivity = null;
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d("BaseActivity", this.getClass().getName()+"  create.......");
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mActivity = this;
+        mContext = mActivity.getApplicationContext();
+        ActivityManager.getScreenManager().addActivity(mActivity);
+        finalBitmap = FinalBitmap.create(mContext, GlobalUtil.IMAGE_PATH);
+        finalBitmap.configLoadfailImage(R.drawable.default_load_error_picture);
+        finalBitmap.configLoadingImage(R.drawable.default_loading_picture);
+        finalHttp = new FinalHttp();
+    }
+    
+    @Override
+    protected void onDestroy() {
+    	super.onDestroy();
+    	Log.d("BaseActivity", this.getClass().getName()+"  destroy.......");
+    }
+
+
+}

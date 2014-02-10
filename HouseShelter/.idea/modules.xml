@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HouseShelter.iml" filepath="$PROJECT_DIR$/HouseShelter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../afinal_master_v05/afinal_master_v05.iml" filepath="$PROJECT_DIR$/../afinal_master_v05/afinal_master_v05.iml" />
+    </modules>
+  </component>
+</project>
+

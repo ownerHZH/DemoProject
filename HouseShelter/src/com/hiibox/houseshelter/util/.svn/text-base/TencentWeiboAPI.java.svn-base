@@ -1,0 +1,186 @@
+package com.hiibox.houseshelter.util;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+
+import net.tsz.afinal.FinalHttp;
+import net.tsz.afinal.http.AjaxCallBack;
+import net.tsz.afinal.http.AjaxParams;
+
+/**
+ * 腾讯微博API，可以根据自己的需要添加API
+ * 
+ * @author ganhx
+ * 
+ */
+public class TencentWeiboAPI {
+
+	/**
+	 * 访问微博服务接口的地址
+	 */
+//	public static final String API_SERVER = "https://open.t.qq.com/api";
+	public static final String API_SERVER = "https://graph.qq.com";
+
+	/**
+	 * post请求方式
+	 */
+	public static final String HTTPMETHOD_POST = "POST";
+
+	/**
+	 * get请求方式
+	 */
+	public static final String HTTPMETHOD_GET = "GET";
+
+	private TencentTO tencentTO;
+	private FinalHttp finalHttp ;
+	/**
+	 * 构造函数
+	 */
+	public TencentWeiboAPI(TencentTO tencentTO) {
+		this.tencentTO = tencentTO;
+		finalHttp = new FinalHttp();
+	}
+
+	/**
+	 * 执行请求
+	 * 
+	 * @param url
+	 * @param params
+	 * @param httpMethod
+	 * @param listener
+	 */
+	private void request(final String url, final AjaxParams params,
+			final String httpMethod, AjaxCallBack<String> callBack) {
+		params.put(ShareUtil.TX_API_APP_KEY, tencentTO.getAppkey());
+		params.put(ShareUtil.TX_API_ACCESS_TOKEN, tencentTO.getAccessToken());
+		params.put(ShareUtil.TX_API_OPEN_ID, tencentTO.getOpenId());
+		//params.add(ShareUtil.TX_API_CLIENT_IP, tencentTO.getClientIp());
+		//params.add(ShareUtil.TX_API_OAUTH_VERSION, "2.a");
+		//params.add(ShareUtil.TX_API_SCOPE, "all");
+		params.put(ShareUtil.TX_API_FORMAT, "json"); // 返回数据的格式（json或xml）
+		LogUtil.log("", ShareUtil.TX_API_OPEN_ID + "=" + tencentTO.getOpenId());
+		//AsyncWeiboRunner.request(url, params, httpMethod, listener);
+		if(httpMethod.equals(HTTPMETHOD_GET)){
+			finalHttp.get(url,params, callBack);
+		}else{
+			finalHttp.post(url, params, callBack);
+		}
+	}
+
+	/**
+	 * 发表一条微博信息（纯文本）到腾讯微博平台上。
+	 * @param content 微博内容（若在此处@好友，需正确填写好友的微博账号，而非昵称），不超过140字
+	 * @param longitude 经度，为实数，如113.421234（最多支持10位有效数字，可以填空）不是必填
+	 * @param latitude 纬度，为实数，如22.354231（最多支持10位有效数字，可以填空） 不是必填
+	 * @param syncflag 微博同步到空间分享标记（可选，0-同步，1-不同步，默认为0），目前仅支持oauth1.0鉴权方式 不是必填
+	 * @param compatibleflag 容错标志，支持按位操作，默认为0。 0x20-微博内容长度超过140字则报错 0-以上错误做容错处理，即发表普通微博不是必填
+	 * @param listener 回调函数
+	 */
+	public void addWeibo(String content, String longitude, String latitude,
+			int syncflag, int compatibleflag, AjaxCallBack<String> listener) {
+		AjaxParams params = new AjaxParams();
+		params.put(ShareUtil.TX_API_CONTENT, content);
+		params.put(ShareUtil.TX_API_LONGITUDE, longitude);
+		params.put(ShareUtil.TX_API_LATITUDE, latitude);
+		params.put(ShareUtil.TX_API_SYNCFLAG, ""+syncflag);
+		params.put(ShareUtil.TX_API_COMPATIBLEFLAG, ""+compatibleflag);
+		request(API_SERVER + "/t/add_t", params, HTTPMETHOD_POST, listener);
+	}
+
+	/**
+	 * 发送一条带图片的微博(本地图片)
+	 * 
+	 * @param content
+	 *            微博内容（若在此处@好友，需正确填写好友的微博账号，而非昵称），不超过140字
+	 * @param picPath
+	 *            图片本地地址
+	 * @param longitude
+	 *            经度，为实数，如113.421234（最多支持10位有效数字，可以填空）不是必填
+	 * @param latitude
+	 *            纬度，为实数，如22.354231（最多支持10位有效数字，可以填空） 不是必填
+	 * @param syncflag
+	 *            微博同步到空间分享标记（可选，0-同步，1-不同步，默认为0），目前仅支持oauth1.0鉴权方式 不是必填
+	 * @param compatibleflag
+	 *            容错标志，支持按位操作，默认为0。 0x20-微博内容长度超过140字则报错 0-以上错误做容错处理，即发表普通微博
+	 *            不是必填
+	 * @param listener
+	 *            回调函数
+	 */
+	public void addPicWeibo(String content, String picPath, String longitude, String latitude,
+			int syncflag, int compatibleflag, AjaxCallBack<String> listener) {
+		AjaxParams params = new AjaxParams();
+		params.put(ShareUtil.TX_API_CONTENT, content);
+		params.put(ShareUtil.TX_API_LONGITUDE, longitude);
+		params.put(ShareUtil.TX_API_LATITUDE, latitude);
+		params.put(ShareUtil.TX_API_SYNCFLAG, ""+syncflag);
+		params.put(ShareUtil.TX_API_COMPATIBLEFLAG, ""+compatibleflag);
+		try {
+			params.put(ShareUtil.TX_API_PIC, getLoaclFile(picPath));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		request(API_SERVER + "/t/add_pic_t", params, HTTPMETHOD_POST, listener);
+	}
+	
+	/**
+	 * 发送一条带网络图片的微博消息
+	 * 
+	 * @param content
+	 *            微博内容（若在此处@好友，需正确填写好友的微博账号，而非昵称），不超过140字
+	 * @param picUrl
+	 *            图片的URL地址
+	 * @param longitude
+	 *            经度，为实数，如113.421234（最多支持10位有效数字，可以填空）不是必填
+	 * @param latitude
+	 *            纬度，为实数，如22.354231（最多支持10位有效数字，可以填空） 不是必填
+	 * @param syncflag
+	 *            微博同步到空间分享标记（可选，0-同步，1-不同步，默认为0），目前仅支持oauth1.0鉴权方式 不是必填
+	 * @param compatibleflag
+	 *            容错标志，支持按位操作，默认为0。 0x20-微博内容长度超过140字则报错 0-以上错误做容错处理，即发表普通微博
+	 *            不是必填
+	 * @param listener
+	 *            回调函数
+	 */
+	/*public void addPicUrl(String content, String picUrl, String longitude, String latitude,
+	                     int syncflag, int compatibleflag, AjaxCallBack<String> listener) {
+	    AjaxParams params = new AjaxParams();
+	    params.put(ShareUtil.TX_API_CONTENT, content);
+	    params.put(ShareUtil.TX_API_PIC_URL, picUrl);
+	    params.put(ShareUtil.TX_API_LONGITUDE, longitude);
+	    params.put(ShareUtil.TX_API_LATITUDE, latitude);
+	    params.put(ShareUtil.TX_API_SYNCFLAG, ""+syncflag);
+	    params.put(ShareUtil.TX_API_COMPATIBLEFLAG, ""+compatibleflag);
+	    request(API_SERVER + "/t/add_pic_url_t", params, HTTPMETHOD_POST, listener);
+	}*/
+
+	/**
+	 * OAuth授权之后，获取授权用户的信息
+	 * 
+	 * @param listener
+	 */
+	public void getUserInfo(AjaxCallBack<String> listener) {
+		AjaxParams params = new AjaxParams();
+		request(API_SERVER + "/user/get_user_info", params, HTTPMETHOD_GET, listener);
+	}
+	
+	public void upLoadPic(String content, String picUrl,
+			 AjaxCallBack<String> listener) {
+		AjaxParams params = new AjaxParams();
+		params.put("photodesc", content);
+		try {
+			params.put("picture", getLoaclFile(picUrl));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		request(API_SERVER + "/photo/upload_pic", params, HTTPMETHOD_POST, listener);
+		
+	}
+	public  File getLoaclFile(String path){
+		File file = new File(path);
+		if(file.exists()){
+			return file;
+		}
+		return null;
+	}
+
+}

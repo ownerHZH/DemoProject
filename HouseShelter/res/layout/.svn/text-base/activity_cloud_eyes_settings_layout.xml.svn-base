@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_title_bar" >
+        <ImageView
+            android:id="@+id/back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:padding="10dp"
+            android:src="@drawable/back_iv" />
+        <TextView
+            android:id="@+id/confirm_modification_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp"
+            android:text="@string/cloud_eyes_setting"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_20" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_table_two_rows"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/safe_gesture"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_18" />
+            <LinearLayout
+                android:id="@+id/gesture_toggle_btn_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_toggle_btn_on"
+                android:orientation="horizontal" >
+                <ImageView
+                    android:id="@+id/gesture_toggle_btn_on_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/date_node_iv"
+                    android:visibility="invisible"
+                    android:contentDescription="@null" />
+                <ImageView
+                    android:id="@+id/gesture_toggle_btn_off_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/date_node_iv"
+                    android:contentDescription="@null" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/gesture_toggle_btn_prompt_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/gesture_toggle_btn_layout"
+                android:text="@string/turn_off"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_18" />
+        </RelativeLayout>
+        
+        <TextView
+            android:id="@+id/safe_gesture_setting_tv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="left|center_vertical"
+            android:text="@string/set_safe_gesture"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_18"
+            android:drawableRight="@drawable/arrow_samll_right" />
+    </LinearLayout>
+    
+    <TableLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@drawable/shape_white_frame" >
+        <TableRow android:layout_marginTop="15dp">
+            <TextView 
+                android:gravity="right"
+                android:text="@string/video_quality"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_18" />
+            <EditText 
+                android:id="@+id/video_quality_drop_down_box_et"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="10dp"
+                android:layout_weight="1"
+                android:hint="@string/video_quality_rank"
+                android:layout_marginLeft="10dp"
+                android:focusable="false"
+                android:background="@drawable/bg_table_one_row"
+                android:drawableRight="@drawable/arrow_bottom" />
+        </TableRow>
+        <TableRow android:layout_marginTop="15dp">
+            <TextView 
+                android:gravity="right"
+                android:layout_gravity="center_vertical"
+                android:text="@string/times_capture"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_18" />
+            <RelativeLayout 
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp">
+                <LinearLayout
+	                android:id="@+id/capture_toggle_btn_layout"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentRight="true"
+	                android:layout_centerVertical="true"
+	                android:background="@drawable/bg_toggle_btn_on"
+	                android:orientation="horizontal" >
+	                <ImageView
+	                    android:id="@+id/capture_toggle_btn_on_iv"
+	                    android:layout_width="0dp"
+	                    android:layout_height="match_parent"
+	                    android:layout_weight="1"
+	                    android:visibility="invisible"
+	                    android:background="@drawable/date_node_iv"
+	                    android:contentDescription="@null" />
+	                <ImageView
+	                    android:id="@+id/capture_toggle_btn_off_iv"
+	                    android:layout_width="0dp"
+	                    android:layout_height="match_parent"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/date_node_iv"
+	                    android:contentDescription="@null" />
+	            </LinearLayout>
+	            <TextView
+	                android:id="@+id/capture_toggle_btn_prompt_tv"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_centerVertical="true"
+	                android:layout_marginRight="10dp"
+	                android:layout_toLeftOf="@id/capture_toggle_btn_layout"
+	                android:text="@string/turn_off"
+	                android:textColor="@color/white"
+	                android:textSize="@dimen/font_size_18" />
+            </RelativeLayout>
+        </TableRow>
+        <TableRow android:layout_marginTop="15dp">
+            <TextView 
+                android:gravity="right"
+                android:text="@string/capture_numbers"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_18" />
+            <EditText 
+                android:id="@+id/capture_drop_down_box_et"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="10dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:focusable="false"
+                android:hint="@string/capture_two_picture"
+                android:textColor="@color/self_center_font"
+                android:background="@drawable/bg_table_one_row"
+                android:drawableRight="@drawable/arrow_bottom" />
+        </TableRow>
+        <TableRow android:layout_marginTop="15dp">
+            <TextView 
+                android:text="@string/timing_set_time"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_18" />
+            <EditText 
+                android:id="@+id/timing_drop_down_box_et"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="10dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:focusable="false"
+                android:hint="@string/spaceholder"
+                android:textColor="@color/self_center_font"
+                android:background="@drawable/bg_table_one_row" />
+        </TableRow>
+        <ImageView 
+            android:id="@+id/clear_cache_iv"
+            android:src="@drawable/clear_cache_iv"
+            android:contentDescription="@null"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp" />
+	</TableLayout>
+
+</LinearLayout>

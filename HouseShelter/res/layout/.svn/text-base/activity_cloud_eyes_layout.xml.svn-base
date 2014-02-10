@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/monitor_bg"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/turn_off_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@null"
+        android:src="@drawable/selector_turn_off" />
+
+    <RelativeLayout
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true" >
+        <com.tutk.IOTC.Monitor
+            android:id="@+android:id/monitor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent" />
+        <ProgressBar 
+		    android:id="@+id/progress_bar"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/function_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/cloud_photo_album_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="@null"
+            android:src="@drawable/cloud_photo_album_icon" />
+
+        <View style="@style/horizontal_placeholder_style" />
+
+        <ImageView
+            android:id="@+id/screenshot_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@null"
+            android:src="@drawable/screenshot_gray_icon" />
+        <ImageView
+            android:id="@+id/voice_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@null"
+            android:background="@drawable/voice_off_icon" />
+        <ImageView
+            android:id="@+id/mute_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@null"
+            android:background="@drawable/mute_on_icon" />
+        <ImageView
+            android:id="@+id/orientation_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@null"
+            android:src="@drawable/orientation_gray_icon" />
+
+        <View style="@style/horizontal_placeholder_style" />
+
+        <ImageView
+            android:id="@+id/settings_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@null"
+            android:src="@drawable/settings_gray_icon" />
+    </LinearLayout>
+
+</RelativeLayout>

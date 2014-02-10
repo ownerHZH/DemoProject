@@ -1,0 +1,39 @@
+package com.hiibox.houseshelter.net;
+
+//import android.util.Log;
+
+public class TCPPing implements Runnable {
+	FrameTools ft;
+	public TCPPing(FrameTools ft) {
+		new Thread(this).start();
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		while (ft.Thread_Ping) {
+			try {
+				Thread.sleep(100);
+
+				ft.Thread_PingTime += 1;
+
+				if (ft.Thread_PingTime == (600)) {
+					ft.Thread_PingTime = 0;
+
+					Frame f = new Frame();
+					f.platform = 4;
+					f.mainCmd = FrameTools.Frame_MainCmd_Ping;
+
+					//ft.toSendTcpData(f);
+					
+					//Log.i("TCPPing", "��������......");
+				}
+
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

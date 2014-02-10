@@ -1,0 +1,28 @@
+�иа�ȫ��ʿAndroid�ֻ�
+
+保存在SharePreference里面参数的含义：
+1：gestureToggle 手势开关
+2：captureToggle 抓拍开关
+3：gestureTracks 手势轨迹
+4：buzzerSwitch  蜂鸣器开关
+5：alarmMessage   报警推送
+6：goHomeMessage    归家提醒
+7：defenceMessage 布防撤防提醒
+8：captureNumbers 抓拍张数
+9：captureTime    定时抓拍时间
+10：deviceCode
+11：authCode
+
+#define                ERR_OK                    '0'        // 无错误
+#define                ERR_NORMAL                '1'        // 常规错误
+#define                ERR_BUFFER_FALSE          '2'        // 申请缓冲失败
+#define                ERR_NOT_MAIN_FUN          '3'        // 无此主功能号
+#define                ERR_NOT_SUB_FUN           '4'        // 无此子功能号
+#define                ERR_DISABLE_LOGIN         '5'        // 禁止登录
+#define                ERR_RECORD_NOT_EXIST      '6'        // 数据记录不存在
+#define                ERR_DATA_FORMAT           '7'        // 数据格式错误
+#define                ERR_USER_NOT_EXIST        '8'        // 用户不存在
+#define                ERR_DEVICE_NOT_EXIST      '9'        // 设备不存在
+#define                ERR_NOT_ME                'A'        // 不是家庭卫士服务器的协议
+#define                ERR_INVALIDATE_PLATFORM   'B'        // 错误的客户端或终端
+#define                ERR_DEVICE_OLD_CRC        'C'        // 老的CRC码错

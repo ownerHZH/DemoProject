@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_title_bar" >
+        <ImageView 
+            android:id="@+id/back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/back_iv"
+            android:contentDescription="@null" />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/title_smart_app"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_20" />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/advertisement_layout"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="-5dp" >
+        <android.support.v4.view.ViewPager
+            android:id="@+id/advertisement_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <LinearLayout 
+            android:id="@+id/dot_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:baselineAligned="false" >
+        <RelativeLayout 
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/bg_download_app" >
+            <ImageView 
+                android:id="@+id/remote_control_icon_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_launcher"
+                android:contentDescription="@null" />
+            <TextView 
+                android:id="@+id/remote_control_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/remote_control_icon_iv"
+                android:layout_marginTop="20dp"
+                android:text="@string/remote_control"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_14" />
+            <Button 
+                android:id="@+id/remote_control_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/remote_control_icon_iv"
+                android:layout_alignBottom="@id/remote_control_icon_iv"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/download"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_14"
+                android:background="@drawable/shape_download_bg_yellow" />
+        </RelativeLayout>
+        <RelativeLayout 
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/bg_download_app" >
+            <ImageView 
+                android:id="@+id/service_center_icon_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_launcher"
+                android:contentDescription="@null" />
+            <TextView 
+                android:id="@+id/service_center_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/service_center_icon_iv"
+                android:layout_marginTop="20dp"
+                android:text="@string/community_area"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_14" />
+            <Button 
+                android:id="@+id/service_center_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/service_center_icon_iv"
+                android:layout_alignBottom="@id/service_center_icon_iv"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/download"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_14"
+                android:background="@drawable/shape_download_bg_yellow" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:baselineAligned="false" >
+        <RelativeLayout 
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/bg_download_app" >
+            <ImageView 
+                android:id="@+id/business_service_icon_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_launcher"
+                android:contentDescription="@null" />
+            <TextView 
+                android:id="@+id/business_service_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/business_service_icon_iv"
+                android:layout_marginTop="20dp"
+                android:text="@string/business_service"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_14" />
+            <Button 
+                android:id="@+id/business_service_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/business_service_icon_iv"
+                android:layout_alignBottom="@id/business_service_icon_iv"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/download"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_14"
+                android:background="@drawable/shape_download_bg_yellow" />
+        </RelativeLayout>
+        <RelativeLayout 
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/bg_download_app" >
+            <ImageView 
+                android:id="@+id/sunshine_government_affairs_icon_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_launcher"
+                android:contentDescription="@null" />
+            <TextView 
+                android:id="@+id/sunshine_government_affairs_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/sunshine_government_affairs_icon_iv"
+                android:layout_marginTop="20dp"
+                android:text="@string/sunshine_government_affairs"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_14" />
+            <Button 
+                android:id="@+id/sunshine_government_affairs_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/sunshine_government_affairs_icon_iv"
+                android:layout_alignBottom="@id/sunshine_government_affairs_icon_iv"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/download"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_14"
+                android:background="@drawable/shape_download_bg_yellow" />
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <View style="@style/vertical_placeholder_style"/>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="dexedLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/Zxing-41d1fc74f348f22617b9dce6225ace68.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/afinal_master_v05-7d9d5d161c78db12fd0454c21e78e6d9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/android-support-v4-731bff024e19b3a96dea07d09d57b58c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/SinaWeiboSDK-e92a168d8edddffd439d20d84b72bb82.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/Tencent_open_sdk-5aa94382d76e323babd75c93e4fcb026.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/Tencent_weixin_sdk-d9c31a804a1c62d4f2c383986eff434d.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/annotations-9417431d011d792ad653cb5d478b81fc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/iotcamera-868f8e6f8e27ade76770eef6f21e7933.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

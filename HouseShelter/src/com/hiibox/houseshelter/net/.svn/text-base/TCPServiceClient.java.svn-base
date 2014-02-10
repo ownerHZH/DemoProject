@@ -1,0 +1,206 @@
+package com.hiibox.houseshelter.net;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.SocketChannel;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class TCPServiceClient implements Runnable {
+	public static interface FrameReceiveListener {
+		public void onReceive(Frame f) ;
+	}
+	public static class QueueRecevier implements FrameReceiveListener {
+		public ArrayList<FrameReceiveListener> listeners = new ArrayList<FrameReceiveListener>();
+		public void onReceive(Frame f) {
+			for (FrameReceiveListener recv : listeners) {
+				recv.onReceive(f);
+			}
+		}
+	}
+	/**
+	 * 发送队列
+	 * */
+	public Queue<byte[]> queueSend = new LinkedList<byte[]>(); 
+	
+	/**
+	 * 接收队列
+	 * */
+	public Queue<byte[]> queueReceive = new LinkedList<byte[]>(); 
+	
+	
+	QueueRecevier receivers = new QueueRecevier();
+	String host;
+	int port;
+	boolean connected = false;
+	boolean running = true;
+	Selector selector=null;	
+	Thread thread = null;
+	TCPSend sender = null;
+	TCPReceive receiver = null;
+	private SocketChannel socketChannel;
+	
+	public TCPServiceClient(String h,int p) {
+		host = h;
+		port = p;
+	}
+	public boolean isConnected() {
+		return connected;
+	}
+	public synchronized void addFrameReceiveListener(FrameReceiveListener l) {
+		receivers.listeners.add(l);
+	}
+	public synchronized void removeFrameReceiveListener(FrameReceiveListener l) {
+		receivers.listeners.remove(l);
+	}
+	public synchronized void clearSendQueue() {
+		this.queueSend.clear();
+	}
+	boolean connectInner() {
+		
+		try {
+			selector = Selector.open();
+			socketChannel = SocketChannel.open(new InetSocketAddress(
+					host, port));
+			socketChannel.configureBlocking(false);
+
+			// 打开并注册选择器到信道
+			socketChannel.register(selector, SelectionKey.OP_READ);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		sender = new TCPSend(host,port,selector,this.queueSend);
+		receiver = new TCPReceive(selector, this.queueReceive);
+		running = true;
+		thread = new Thread(this);
+		
+		thread.start();
+		/*
+		TCPSend ts=new TCPSend("61.186.245.251", 21010, s1, FrameTools.Queue_Send,FrameTools.Queue_Receive);
+		
+		Thread t1=new Thread(ts);
+		
+		t1.start();
+		
+		testSendData test=new testSendData();
+		
+		testGetData testg=new testGetData();
+		*/
+		return true;
+	}
+	public boolean connect() {
+		if (isConnected()) {
+			return true;
+		}
+		connected = connectInner();
+		if (!isConnected()) {
+			return false;
+		}
+		return true;
+	}
+	
+	public void run() 
+	{
+		int status = 0;
+		while (running) {
+			status = send();
+			if ( status == -1) {
+				stop();
+			}
+			recv();
+			byte[] resultByte=null;
+			while(this.queueReceive.size()>0){
+				
+				
+				resultByte=queueReceive.poll();
+				//TODO:这里如何生成Frame
+				Frame f=new Frame(resultByte);
+				this.receivers.onReceive(f);
+				/*
+				Log.i("TCPClient", "接收数据...");
+				Log.i("TCPClient", "接收数据...平台代码"+Integer.toString(f.Platform));
+				Log.i("TCPClient", "接收数据...版本号"+Integer.toString(f.Version));
+				Log.i("TCPClient", "接收数据...主功能命令字"+Byte.toString(f.MainCmd));
+				Log.i("TCPClient", "接收数据...子功能命令字"+Integer.toString(f.SubCmd));
+				Log.i("TCPClient", "接收数据...数据"+f.strData);
+				*/ 
+			}
+		}
+		connected = false;
+		close();
+	}
+	public void close() {
+		try {
+			this.socketChannel.close();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+	}
+	public void stop() {
+		running =false;
+	}
+	public boolean isRunning() {
+		return running;
+	}
+	public synchronized void send(Frame f) {
+		byte[] buff = FrameTools.getFrameBuffData(f);
+		this.queueSend.offer(buff);
+	}
+	public void recv() {
+		try {
+			while (selector!=null && selector.select() > 0) {
+				for (SelectionKey sk : selector.selectedKeys()) {
+					// 如果该SelectionKey对应的Channel中有可读的数据
+			          if (sk.isReadable()) {
+			            // 使用NIO读取Channel中的数据
+			            SocketChannel sc = (SocketChannel) sk.channel();
+			            ByteBuffer buffer = ByteBuffer.allocate(1024);
+			            sc.read(buffer);
+			            buffer.flip();
+			            
+			            // 为下一次读取作准备
+			            sk.interestOps(SelectionKey.OP_READ);
+			            
+			            byte[] resultByte = new byte[buffer.limit()];            
+			            
+			            buffer.get(resultByte);
+			            
+			            this.queueReceive.offer(resultByte);
+			        }
+		          // 删除正在处理的SelectionKey
+		          selector.selectedKeys().remove(sk);
+				}
+			 }
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public synchronized int send() {
+		if (this.queueSend.size() > 0) {
+			byte[] sendByte = null;
+
+			sendByte = queueSend.poll();
+
+			ByteBuffer writeBuffer = ByteBuffer.wrap(sendByte);
+
+			try {
+				socketChannel.write(writeBuffer);
+
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+				return -1;
+			}
+			return 1;
+		}
+		return 0;
+	}
+}

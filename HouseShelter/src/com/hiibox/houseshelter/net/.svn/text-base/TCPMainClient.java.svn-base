@@ -1,0 +1,819 @@
+package com.hiibox.houseshelter.net;
+
+import java.net.InetAddress;
+import java.util.ArrayList;
+
+import android.util.Log;
+// import static com.hiibox.houseshelter.net.TCPServiceClientV2.PLATFORM_APP;
+// import static com.hiibox.houseshelter.net.TCPServiceClientV2.VERSION_1;
+
+/**
+ * @Description 家庭卫士服务器
+ * @Author wangfc
+ * @Create Date 2013-11-14 下午8:48:25
+ * @Modified By 
+ * @Modified Date 
+ * @Modified Description 
+ */
+public class TCPMainClient extends TCPServiceClientV2 {
+    
+    public final static int MAIN_CMD = 0x0e;
+    String terminal = null;
+    String tpwd = null;
+
+    /**
+     * 连接卫士服务器
+     * @param h 服务器
+     * @param p 端口
+     * @param t 终端号
+     * @param tpass 终端密码
+     */
+    public TCPMainClient(String h, int p, String t, String tpass) {
+        super(h, p, true);
+        terminal = t;
+        tpwd = tpass;
+    }
+
+    public TCPMainClient(InetAddress h, int p, String t, String tpass) {
+        super(h, p, true);
+        terminal = t;
+        tpwd = tpass;
+    }
+    
+    @Override
+    public Frame createLoginFrame(String user, String psw) {
+    	Frame f = new Frame();
+        f.platform = 4;
+        f.mainCmd = 0x0e;
+        f.subCmd = 21;
+        f.strData = user;
+        return f;
+    }
+    
+    public void userAuth(String phone, CommandListener listener) {
+    	Frame f = createLoginFrame1(phone);
+    	Log.d("TCPMainClient", "userAuth()  data = "+f.strData);
+    	this.sendToQueue(f, listener, 10);
+    }
+    
+    public Frame createLoginFrame1(String user) {
+        Frame f = new Frame();
+        f.platform = 4;
+        f.mainCmd = 0x0E;
+        f.subCmd = 21;
+        f.strData = user;
+        return f;
+    }
+
+    /**
+     * 布防
+     * @param phone 用户ID
+     */
+    public void startDefine(String phone, String time, CommandListener l) {
+        Frame f = createFrame();
+//        f.SubCmd = 0x01;
+        f.subCmd = 1;
+        f.strData = phone + "\t" + time;
+        Log.e("TCPMainClient", "[布防] : "+f.platform+" ; "+f.version+" ; "+f.mainCmd+" ; "+f.subCmd+" ; "+f.strData);
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 撤防
+     * @param phone 用户ID
+     */
+    public void finishDefine(String phone, String time, CommandListener l) {
+        Frame f = createFrame();
+//        f.SubCmd = 0x02;
+        f.subCmd = 2;
+        f.strData = phone + "\t" + time;
+        Log.e("TCPMainClient", "[撤防] : "+f.platform+" ; "+f.version+" ; "+f.mainCmd+" ; "+f.subCmd+" ; "+f.strData);
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 报警抓拍.
+     * 
+     * @param userid 用户ID
+     * @param time 时间
+     * @param l 监听器
+     */
+    public void capture(String userid, String time, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 0x03;
+        f.strData = userid + "\t" + time;
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 扫描卡片.
+     * 
+     * @param userid 用户ID
+     * @param l
+     */
+    public void readCard(String userid, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 0x04;
+        f.strData = userid;
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 注册用户卡片.
+     * 
+     * @param userid 用户ID
+     * @param l
+     */
+    public void regCard(int mode, String phone, String cardNum, String nickname, byte[] headPortrait, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 0x05;
+        f.strData = mode + "\t" + phone+"\t"+cardNum+"\t"+nickname+"\t"+headPortrait;
+        Log.e("TCPMainManager", "regCard()   data = "+f.strData);
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 注销用户卡片.
+     * 
+     * @param phone 用户ID
+     * @param card 卡号
+     * @param l
+     */
+    public void unregCard(String phone, String card, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 0x06;
+        f.strData = phone + "\t" + card;
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 设置抓拍张数.
+     * 
+     * @param userid 用户ID
+     * @param num 张数
+     * @param l
+     */
+    public void paramCaptureSet(String userid, int num, String time, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 0x07;
+        f.strData = user + "\t" + num + "\t" + time;
+        // f.strData=user+"\t" + time;
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 设置抓拍张数.
+     * 
+     * @param userid 用户ID
+     * @param num 张数
+     * @param l
+     */
+    public void setCaptureNum(String userid, int num, String time, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 7;
+        f.strData = userid + "\t" + num + "\t" +time;
+        Log.d("TCPMainClient", "[设置抓拍张数]  upload data : "+f.strData);
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 设备抓拍时间间隔
+     * 
+     * @param userid 用户ID
+     * @param time 时间间隔
+     * @param l
+     */
+    public void paramCaptureTimeSet(String userid, int time, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 0x08;
+        f.strData = user + "\t" + time;
+        // f.strData=user+"\t" + time;
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 设置设备视频查看密码
+     * 
+     * @param userid 用户
+     * @param pwd 密码
+     * @param l
+     */
+    public void paramVideoPasswordSet(String userid, String pwd, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 0x09;
+        f.strData = user + "\t" + pwd;
+        // f.strData=user+"\t" + time;
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 校验设备视频查看密码
+     * 
+     * @param userid 用户
+     * @param pwd 密码
+     * @param l
+     */
+    public void checkVideoPassword(String userid, String pwd, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 10;
+        f.strData = user + "\t" + pwd;
+        // f.strData=user+"\t" + time;
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 设置抓拍分辨率
+     * @param userid
+     * @param pixel 分辨率
+     * @param l
+     */
+    public void paramCapturePixelSet(String userid, String pixel, String time, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 11;
+        f.strData = user + "\t" + pixel + "\t" + time;
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 设置定时抓拍时间
+     * @param userid
+     * @param time 抓拍时间
+     * @param l
+     */
+    public void setCaptureTime(String userid, String time, int order, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 12;
+        f.strData = userid + "\t" + time + "\t" + order;
+        Log.d("TCPMainClient", "[设置定时抓拍时间]  upload data :time = "+time+" ; order = "+order+" ; data = "+f.strData);
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 蜂鸣器开
+     * @param userid
+     * @param l
+     */
+    public void beepOn(String userid, String time, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 13;
+        f.strData = userid + "\t1" + "\t" + time;
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 蜂鸣器关
+     * @param userid
+     * @param l
+     */
+    public void beepOff(String userid, String time, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 13;
+        f.strData = userid + "\t0" + "\t" + time;
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 修改用户密码
+     * 
+     * @param phone 用户ID
+     * @param oldpwd 旧密码
+     * @param newpwd 新密码
+     * @param l
+     */
+    public void paramPasswordSet(String phone, String oldpwd, String newpwd, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 20;
+        f.strData = phone + "\t" + oldpwd + "\t" + newpwd;
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 读取文件列表.
+     * 
+     * @param userid
+     * @param filetype 0报警，1上传，2抓拍
+     * @param l
+     */
+    public void queryFiles(String userid, int filetype, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 39;
+        f.strData = userid + "\t" + filetype;
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 查询出入记录
+     * 
+     * @param userid
+     * @param l
+     */
+    public void queryOutRecords(String userid, CommandListener l) {
+        this.queryOutRecordsInner(userid + "\t0", l);
+    }
+
+    /**
+     * 查询指定人的出入记录
+     * 
+     * @param userid
+     * @param nickname 指令昵称
+     * @param l
+     */
+    public void queryOutRecords(String userid, String nickname, CommandListener l) {
+    	this.queryOutRecordsInner(userid + "\t1\t" + nickname, l);
+    }
+
+    /**
+     * 查询指定时间段的出入记录
+     * 
+     * @param userid
+     * @param time 时间，天[2013-03-05]
+     * @param l
+     */
+    public void queryOutRecordsTime(String userid, String time, CommandListener l) {
+        this.queryOutRecordsInner(userid + "\t2\t" + time, l);
+    }
+
+    /**
+     * 查询指定人在指令时间段的出入记录
+     * 
+     * @param userid
+     * @param nickname 指定人
+     * @param time 指定时间[2013-03-15]
+     * @param l
+     */
+    public void queryOutRecords(String userid, String nickname, String time, CommandListener l) {
+    	this.queryOutRecordsInner(userid + "\t3\t" + nickname + "\t" + time, l);
+    }
+
+
+
+    void queryOutRecordsInner(String data, CommandListener l) {
+        query(68, data, new QueryWarnListener(l));
+    }
+
+    /**
+     * 查询布防撤防记录
+     * @param userid
+     * @param l
+     */
+    public void queryDefineRecords(String userid, CommandListener l) {
+        this.query(69, userid + "\t0", new QueryWarnListener(l));
+    }
+
+    /**
+     * 特定日期布防撤防查询
+     * 
+     * @param userid
+     * @param time 日期
+     * @param l
+     */
+    public void queryDefineRecords(String userid, String time, CommandListener l) {
+        this.query(69, userid + "\t1\t" + time, new QueryWarnListener(l));
+    }
+
+    /**
+     * 布防查询
+     * 
+     * @param userid
+     * @param l
+     */
+    public void queryDefineRecords20(String userid, CommandListener l) {
+        this.query(69, userid + "\t2\t1", new QueryWarnListener(l));
+    }
+
+    /**
+     * 撤防查询
+     * 
+     * @param userid
+     * @param l
+     */
+    public void queryDefineRecords31(String userid, CommandListener l) {
+        this.query(69, userid + "\t3\t2", new QueryWarnListener(l));
+    }
+    
+    /**
+     * 指定时间布防查询
+     * @param phone
+     * @param l
+     */
+    public void queryDefineRecords34(String phone, String time, CommandListener l) {
+        this.query(69, phone + "\t4\t"+ time, new QueryWarnListener(l));
+    }
+    
+    /**
+     * 指定时间撤防查询
+     * @param phone
+     * @param l
+     */
+    public void queryDefineRecords35(String phone, String time, CommandListener l) {
+        this.query(69, phone + "\t5\t"+ time, new QueryWarnListener(l));
+    }
+
+    /**
+     * 查询报警记录
+     * 
+     * @param userid
+     * @param l
+     */
+    public void queryWarnRecord(String userid, CommandListener l) {
+        this.query(70, userid+"\t0", new QueryWarnListener(l));
+    }
+    
+    /**
+     * 温度报警查询
+     * 
+     * @param userid
+     * @param l
+     */
+    public void queryTemperatureWarnRecord(String userid, CommandListener l) {
+        this.query(70, userid+"\t1", new QueryWarnListener(l));
+    }
+
+    /**
+     * 入侵报警查询
+     * 
+     * @param userid
+     * @param l
+     */
+    public void queryInvadeWarnRecord(String userid, CommandListener l) {
+        this.query(70, userid+"\t2", new QueryWarnListener(l));
+    }
+
+    /**
+     * 特定日期之内的报警
+     * 
+     * @param userid
+     * @param time
+     * @param l
+     */
+    public void queryWarnRecord(String userid, String time, CommandListener l) {
+        this.query(70, userid+"\t3\t" + time, new QueryWarnListener(l));
+    }
+
+    /**
+     * 切换终端
+     * 
+     * @param userid
+     * @param tcode 终端编号
+     * @param pwd 终端密码
+     * @param l
+     */
+    public void switchTerminal(String userid, String tcode, String pwd, CommandListener l) {
+//        this.query(71, "userid\t" + tcode + "\t" + pwd, l);
+    	Frame f = createFrame();
+        f.subCmd = 71;
+        f.strData = userid + "\t" + tcode + "\t" + pwd;
+        Log.e("TcpMainClient", "切换终端    tcode = "+tcode+"; pwd = "+pwd+";");
+        this.sendToQueue(f, l);
+    }
+
+    /**
+     * 查询设备布/撤防状态
+     * 
+     * @param tcode 设备编号
+     * @param l
+     */
+    public void queryDefineStatus(String tcode, CommandListener l) {
+        this.query(72, tcode, l);
+    }
+
+    /**
+     * 查询用户级别
+     * 
+     * @param userid
+     * @param l
+     */
+    public void queryUserLevel(String userid, CommandListener l) {
+        this.query(73, userid, l);
+    }
+
+    /**
+     * 查询温度
+     * 
+     * @param userid
+     * @param l
+     */
+    public void queryTemperature(String userid, CommandListener l) {
+        this.query(74, userid, l);
+    }
+
+    /**
+     * 查询湿度
+     * 
+     * @param userid
+     * @param l
+     */
+    public void queryDampness(String userid, CommandListener l) {
+        this.query(75, userid, l);
+    }
+
+    /**
+     * 查询用户积分
+     * @param userid
+     * @param l
+     */
+    public void queryUserPoints(String userid, CommandListener l) {
+        this.query(76, userid, l);
+    }
+
+    /**
+     * 查询用户信息
+     * 
+     * @param userid
+     * @param l
+     */
+    public void queryUserInfo(String userid, CommandListener l) {
+        this.query(77, userid, l);
+    }
+
+    /**
+     * 修改用户信息
+     * 
+     * @param userid 用户ID
+     * @param nickname 昵称
+     * @param tel 紧急联系电话
+     * @param l
+     */
+    public void modifyUserInfo(String userid, String nickname, String tel, CommandListener l) {
+        this.query(78, userid + "\t" + nickname + "\t" + tel, l);
+        /*String name = "";
+        if (StringUtil.isNotEmpty(nickname)) {
+            try {
+                name = URLEncoder.encode(nickname, "gbk");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        this.query(78, userid + "\t" + name + "\t" + tel, l);*/
+    }
+    
+    /**
+     * 查询紧急联系电话
+     * @param userid
+     * @param l
+     */
+    public void queryEmergencyTelephone(String userid, CommandListener l) {
+        this.query(79, userid, l);
+    }
+    
+    /**
+     * 获取当前绑定终端
+     * @param phone
+     * @param l
+     */
+    public void getDeviceCode(String phone, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 80;
+        f.strData = phone;
+        this.sendToQueue(f, l);
+    }
+    
+    /**
+     * 用户反馈信息
+     * @param phone
+     * @param msg
+     * @param l
+     */
+    public void uploadFeedBack(String phone, String msg, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 81;
+        f.strData = phone + "\t" + msg;
+        this.sendToQueue(f, l);
+    }
+    
+    /**
+     * 获取当前用户设备信息
+     * @param phone
+     * @param l
+     */
+    public void getDeviceInfo(String phone, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 82;
+        f.strData = phone;
+        this.sendToQueue(f, l);
+    }
+    
+    /**
+     * 慧应用广告URL
+     * @param phone
+     * @param l
+     */
+    public void getAdsUrl(String phone, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 83;
+        f.strData = phone;
+        this.sendToQueue(f, l);
+    }
+    
+    /**
+     * 获取温度异常的10个温度值
+     * @param phone
+     * @param time
+     * @param l
+     */
+    public void getTemperatureAry(String phone, String time, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 84;
+        f.strData = phone + "\t" + time;
+        Log.d("TCPMainClient", "getTemperatureAry() strData = "+f.strData);
+        this.sendToQueue(f, l);
+    }
+    
+    /**
+     * 个人中心关于
+     * @param phone
+     * @param l
+     */
+    public void getAboutInfo(String phone, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 85;
+        f.strData = phone;
+        this.sendToQueue(f, l);
+    }
+    
+    /**
+     * 慧应用关联app下载
+     * @param phone
+     * @param platform
+     *          远程控制客户端 11
+     *          服务中心  12
+     *          商业服务  13  
+     *          阳光政务  14
+     *          惠社区      15
+     * @param l
+     */
+    public void getAppUrl(String phone, int platform, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 86;
+        f.strData = phone + "\t" + platform + "\t" + 0;
+        this.sendToQueue(f, l);
+    }
+    
+    /**
+     * 删除绑定设备
+     * @param phone
+     * @param deviceCode
+     * @param authCode
+     * @param l
+     */
+    public void deleteDevice(String phone, String deviceCode, String authCode, CommandListener l) {
+    	Frame f = createFrame();
+        f.subCmd = 87;
+        f.strData = phone + "\t" + deviceCode + "\t" + authCode;
+        this.sendToQueue(f, l);
+    }
+    
+    /**
+     * 获取抓拍张数
+     */
+    public void getCaptureNumber(String deviceCode, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 88;
+        f.strData = deviceCode;
+        this.sendToQueue(f, l);
+    }
+    
+    /**
+     * 获取抓拍间隔时间
+     */
+    public void getCaptureTime(String deviceCode, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 89;
+        f.strData = deviceCode;
+        this.sendToQueue(f, l);
+    }
+    
+    /**
+     * 获取抓拍间隔时间
+     */
+    public void getCaptureParams(String phone, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = 90;
+        f.strData = phone;
+        this.sendToQueue(f, l);
+    }
+    
+    /*public void bindTerminal(String phone, String deviceCode, String authCode, String address, CommandListener l) {
+    	Frame f = createFrame();
+    	f.subCmd = 2;
+    	f.strData = phone+"\t"+deviceCode+"\t"+authCode+"\t"+address;
+    	this.sendToQueue(f, l);
+    }*/
+
+    /**
+     * 查询
+     * @param subcmd 子功能号
+     * @param data 数据协议
+     * @param l
+     */
+    void query(int subcmd, String data, CommandListener l) {
+        Frame f = createFrame();
+        f.subCmd = subcmd;
+        f.strData = data;
+//        Log.d("TCPMainClient", "query()  subCmd = "+f.subCmd+"  ;  strData = "+f.strData);
+        this.sendToQueue(f, l, 90);
+    }
+
+    public static Frame createFrame() {
+        Frame f = new Frame();
+        f.platform = PLATFORM_APP;
+        f.mainCmd = MAIN_CMD;
+        f.version = VERSION_1;
+        return f;
+    }
+
+    /**
+     * 用于查询结果有多条数据的关于后续数据的处理
+     */
+    public static class QueryWarnListener2 implements CommandListener {
+        CommandListener listener = null;
+
+        public QueryWarnListener2(CommandListener l) {
+            listener = l;
+        }
+
+        @Override
+        public int onReceive(Frame src, Frame f) {
+            ArrayList<byte[]> datas = FrameTools.split(f.aryData, '\t');
+            if (listener != null) {
+                listener.onReceive(src, f);
+            }
+            if (datas.size() < 3) {
+                return 0;
+            }
+            return Integer.parseInt(FrameTools.getFrameData(datas.get(1))) - Integer.parseInt(FrameTools.getFrameData(datas.get(2))) - 1;
+        }
+
+        @Override
+        public void onTimeout(Frame src, Frame f) {
+            if (listener != null) {
+                listener.onTimeout(src, f);
+            }
+        }
+    }
+    
+    public static class QueryWarnListener implements CommandListener {
+    	int total = -1;
+    	int received = 0;
+        CommandListener listener = null;
+        public QueryWarnListener(CommandListener l) {
+            listener = l;
+        }
+		@Override
+		public int onReceive(Frame src, Frame f) {
+			 ArrayList<byte[]> datas = FrameTools.split(f.aryData, '\t');
+	            if (listener != null) {
+	                listener.onReceive(src, f);
+	            }
+	            if (datas.size() < 3) {
+	                return 0;
+	            }
+	            if (total == -1) {
+	            	total = Integer.parseInt(FrameTools.getFrameData(datas.get(0)));
+	            }
+	            received +=  Integer.parseInt(FrameTools.getFrameData(datas.get(1)));
+	            Log.e("TCPMainClient", "datas.get(0)="+FrameTools.getFrameData(datas.get(0))+" ; datas.get(1)="+FrameTools.getFrameData(datas.get(1))+" ; datas.get(2)="+FrameTools.getFrameData(datas.get(2)));
+	            Log.e("TCPMainClient", "QueryWarnListener  total = "+total+" ; received = "+received+" ; release = "+(total-received));
+	            return total - received;
+		}
+		@Override
+		public void onTimeout(Frame src, Frame f) {
+			if(listener != null) {
+				listener.onTimeout(src, f);
+			}
+		}
+    }
+    
+    public static class QueryWarnListener1 implements CommandListener {
+        int total = -1;
+        int received = 0;
+        CommandListener listener = null;
+        public QueryWarnListener1(CommandListener l) {
+            listener = l;
+        }
+        @Override
+        public int onReceive(Frame src, Frame f) {
+            ArrayList<byte[]> datas = FrameTools.split(f.aryData, '\t');
+            if (listener != null) {
+                listener.onReceive(src, f);
+            }
+            if (datas.size() < 3) {
+                return 0;
+            }
+            if (total == -1) {
+                total = Integer.parseInt(FrameTools.getFrameData(datas.get(1)));
+            }
+            received +=  Integer.parseInt(FrameTools.getFrameData(datas.get(2)));
+            Log.e("TCPMainClient", "datas.get(0)="+FrameTools.getFrameData(datas.get(0))+" ; datas.get(1)="+FrameTools.getFrameData(datas.get(1))+" ; datas.get(2)="+FrameTools.getFrameData(datas.get(2)));
+            Log.e("TCPMainClient", "QueryWarnListener  total = "+total+" ; received = "+received+" ; release = "+(total-received));
+            return total - received;
+        }
+        @Override
+        public void onTimeout(Frame src, Frame f) {
+            if(listener != null) {
+                listener.onTimeout(src, f);
+            }
+        }
+    }
+
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_app" >
+
+    <RelativeLayout 
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_title_bar" >
+        <ImageView 
+            android:id="@+id/back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/back_iv"
+            android:contentDescription="@null" />
+        <TextView 
+            android:id="@+id/submit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_20" />
+    </RelativeLayout>
+    
+    <TableLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="50dp" >
+        <TableRow >
+            <TextView 
+                android:layout_gravity="center_vertical"
+                android:text="@string/upload_head_portrait"
+                android:textColor="@color/white"
+            	android:textSize="@dimen/font_size_20" />
+            <ImageView 
+                android:id="@+id/upload_head_portrait_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/add_picture_iv"
+                android:contentDescription="@null" />
+        </TableRow>
+        <TableRow android:layout_marginTop="25dp">
+            <TextView 
+                android:layout_gravity="center_vertical"
+                android:text="@string/name"
+                android:textColor="@color/white"
+            	android:textSize="@dimen/font_size_20" />
+            <EditText 
+                android:id="@+id/name_et"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:background="@drawable/bg_table_one_row"
+                android:inputType="text" />
+        </TableRow>
+        <TableRow android:layout_marginTop="15dp">
+            <TextView 
+                android:layout_gravity="center_vertical"
+                android:text="@string/rfid_card"
+                android:textColor="@color/white"
+            	android:textSize="@dimen/font_size_20" />
+            <EditText 
+                android:id="@+id/rfid_card_et"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/bg_table_one_row"
+                android:inputType="text"
+                android:focusable="false" />
+        </TableRow>
+    </TableLayout>
+    
+</LinearLayout>

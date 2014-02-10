@@ -1,0 +1,284 @@
+package com.hiibox.houseshelter.net;
+
+import java.io.UnsupportedEncodingException;
+import java.nio.channels.Selector;
+import java.util.ArrayList;
+
+public class FrameTools {
+
+	public static final int Frame_Max = 512;
+	public static final int Frame_Len = 12;
+	public static final byte Frame_MainCmd_Login = 0x01;
+	public static final byte Frame_MainCmd_Centr = 0x0C;
+	public static final byte Frame_MainCmd_Client = 0x0E;
+	public static final byte Frame_MainCmd_Ping = 0x00;
+	public static Selector selector;
+
+	public boolean Thread_Ping = true;
+	public int Thread_PingTime = 0;
+
+	/**
+	 * 创建数据包
+	 * */
+	public static byte[] getFrameBuffData(Frame f) {
+		byte[] Buff = null;
+		byte[] dataBuff = null;
+		int intDataLen = 0;
+
+		if (f.strData != null && !f.strData.equals("")) {
+			try {
+				dataBuff = f.strData.getBytes("GBK");
+
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+			intDataLen = dataBuff.length;
+		} else {
+			dataBuff = f.aryData;
+			if (null == dataBuff) {
+				intDataLen = 0;
+			} else {
+				intDataLen = dataBuff.length;
+			}
+		}
+		
+//		Log.d("FrameTooles", "getFrameBuffData()    intDataLen = "+intDataLen);
+
+		Buff = new byte[Frame_Len + intDataLen];
+
+		/** 包头 ************/
+		Buff[0] = 36;
+		Buff[1] = 90;
+		Buff[2] = 71;
+		Buff[3] = 38;
+		/**************/
+
+		// 平台代码
+		IntToHighLowByte(Buff, 4, f.platform);
+
+		// 版本号
+		Buff[6] = (byte) f.version;
+
+		// 主功能命令字
+		Buff[7] = (byte) f.mainCmd;
+
+		// 子功能命令字
+		Buff[8] = (byte) f.subCmd;
+
+		// 数据长度
+		IntToHighLowByte(Buff, 9, intDataLen);
+		// 数据内容
+
+		if (intDataLen > 0) {
+			System.arraycopy(dataBuff, 0, Buff, 11, intDataLen);
+		}
+
+		// 校验码
+		Buff[Buff.length - 1] = getCheckSum(Buff);
+
+		return Buff;
+	}
+
+	public static void getByteToFrame(byte[] Buff, Frame f) {
+		int intVersion = 0;
+
+		// 检查版本
+		intVersion = Buff[6] & 0xFF;
+
+		switch (intVersion) {
+		case 1:
+			getByteToFrame_Version_1(Buff, f);
+			break;
+		}
+
+	}
+
+	/**
+	 * 解析数据包 Version:1
+	 * */
+	private static void getByteToFrame_Version_1(byte[] Buff, Frame f) {
+		byte CheckSum = 0;
+		int intDataLen = 0;
+		byte[] aryData = null;
+		// 取数据长度之最后一位当做长度
+		intDataLen = HighLowToInt(Buff[9], Buff[10]);
+		// 校验码校验
+		CheckSum = Buff[intDataLen + 11];
+		// System.out.println(getCheckSum(Buff,intDataLen+11));
+		if (CheckSum == getCheckSum(Buff, intDataLen + 11)) {
+			// 平台代码
+			f.platform = HighLowToInt(Buff[4], Buff[5]);
+
+			// 版本号
+			f.version = Buff[6] & 0xFF;
+
+			// 主功能命令字
+			f.mainCmd = Buff[7];
+
+			// 子功能命令字
+			f.subCmd = Buff[8] & 0xFF;
+
+			// 数据长度
+			intDataLen = HighLowToInt(Buff[9], Buff[10]);
+
+			if (intDataLen > 0) {
+				aryData = new byte[intDataLen];
+
+				System.arraycopy(Buff, 11, aryData, 0, intDataLen);
+
+				f.aryData = aryData;
+
+				f.strData = getFrameData(f.aryData);
+//				Log.e("FrameTools", "getByteToFrame_Version_1()  f.subCmd = "+f.subCmd+" ; data = "+f.strData);
+			}
+		} else {
+			System.out.println("check sum error!" + intDataLen);
+		}
+	}
+
+	public static String decodeFrameData(byte[] buff) {
+		String strData = "";
+
+		if (buff != null) {
+			try {
+				strData = new String(buff, "GBK");
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return strData;
+	}
+
+	public static String getFrameData(byte[] buff) {
+		return decodeFrameData(buff);
+	}
+
+	private static byte getCheckSum(byte[] Buff) {
+
+		return getCheckSum(Buff, Buff.length - 1);
+	}
+
+	private static byte getCheckSum(byte[] Buff, int len) {
+		byte b = 0;
+
+		for (int i = 4; i < len; i++) {
+			b ^= (0xff & Buff[i]);
+		}
+
+		return b;
+	}
+
+	/**
+	 * 数字型转换高低位
+	 * */
+	private static void IntToHighLowByte(byte[] aryData, int intS, int intData) {
+		int hValue = (intData & 0xFF00) >> 8;
+		int lValue = intData & 0xFF;
+
+		aryData[intS] = (byte) hValue;
+		aryData[intS + 1] = (byte) lValue;
+	}
+
+	/**
+	 * 高低位转换成数字型
+	 * */
+	public static int HighLowToInt(byte hb, byte lb) {
+		int intH = hb & 0xFF;
+		int intL = lb & 0xFF;
+
+		String strBinary = DecToBinary(intH, 8) + DecToBinary(intL, 8);
+
+		return Integer.valueOf(strBinary, 2);
+	}
+
+	/**
+	 * 十进制转二进制
+	 * **/
+	public static String DecToBinary(int intDec) {
+		return Integer.toBinaryString(intDec);
+	}
+
+	/**
+	 * 十进制转二进制
+	 * **/
+	public static String DecToBinary(int intDec, int intLen) {
+		String strBinary = "";
+		String strZ = "";
+		int intStrLen = 0;
+
+		strBinary = Integer.toBinaryString(intDec);
+
+		intStrLen = intLen - strBinary.length();
+
+		if (intStrLen > 0) {
+			for (int i = 0; i < intStrLen; i++) {
+				strZ += "0";
+			}
+
+			strBinary = strZ + strBinary;
+		}
+
+		return strBinary;
+	}
+
+	public static int parseInt(byte[] data) {
+		return Integer.parseInt(getFrameData(data));
+	}
+
+	public static ArrayList<byte[]> split(byte[] src, char sp) {
+		return split(src, (byte) sp);
+	}
+
+	public static ArrayList<byte[]> split(byte[] src, byte sp) {
+		ArrayList<byte[]> result = new ArrayList<byte[]>();
+		int p = 0;
+		for (int i = 0; i < src.length; i++) {
+			if (src[i] == sp) {
+				if (p < i) {
+					byte[] temp = new byte[i - p];
+					System.arraycopy(src, p, temp, 0, i - p);
+					result.add(temp);
+				} else {
+					// 空数据，连接两个\t
+					result.add(new byte[0]);
+				}
+				p = i + 1;
+			}
+		}
+		if (p < src.length) {
+			byte[] temp = new byte[src.length - p];
+			System.arraycopy(src, p, temp, 0, src.length - p);
+			result.add(temp);
+		}
+		return result;
+	}
+
+	public static void logln(String str) {
+		System.out.println(str);
+	}
+
+	public static void logln() {
+		System.out.println();
+	}
+
+	public static void log(String str) {
+		System.out.print(str);
+	}
+
+	public static void output(ArrayList<byte[]> datas) {
+		System.out.println(datas.size());
+		for (byte[] b : datas) {
+			logln(new String(b));
+		}
+		System.out.println("-----");
+	}
+
+	public static void hexoutput(byte[] datas) {
+
+		for (byte b : datas) {
+			log(String.format("%02x ", b & 0xff));
+		}
+
+	}
+}

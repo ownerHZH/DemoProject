@@ -1,0 +1,45 @@
+package com.hiibox.houseshelter.net;
+
+public class Frame {
+
+    /**
+     * 平台代码  APP为 4
+     */
+    public int platform = 0;
+
+    /**
+     * 协议版本 初始版本为1，以后如果存在重大功能变更则修改协议版本，代码分支，以便扩展并支持前期服务。
+     */
+    public int version = 1;
+
+    /**
+     * 主功能命令字 
+     * 心跳包：0x00
+     * 登陆服务器：0x01
+     * 消息服务器：0x0d
+     * 家庭卫士服务器：0x0e
+     * 文件服务器：0x0f
+     */
+    public byte mainCmd = 0;
+
+    /**
+     * 子功能命令字
+     */
+    public int subCmd = 0;
+
+    /**
+     * data数据
+     */
+    public String strData = "";
+
+    /**
+     * data数据
+     */
+    public byte[] aryData = null;
+
+    public Frame() {}
+
+    public Frame(byte[] Buff) {
+        FrameTools.getByteToFrame(Buff, this);
+    }
+}

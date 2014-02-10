@@ -1,0 +1,68 @@
+10
+
+dir
+14983
+svn://192.168.1.11/java/src/android/HouseShelter/res
+svn://192.168.1.11
+
+
+
+2013-12-09T05:44:15.012834Z
+14983
+wangj
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+c361950b-c03c-3e4a-9c86-937f9a5a948f
+
+
+
+
+
+
+0
+
+anim
+dir
+
+drawable
+dir
+
+drawable-hdpi
+dir
+
+drawable-ldpi
+dir
+
+drawable-mdpi
+dir
+
+drawable-xhdpi
+dir
+
+drawable-xxhdpi
+dir
+
+layout
+dir
+
+layout-land
+dir
+
+raw
+dir
+
+values
+dir
+

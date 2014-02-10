@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent" >
+
+    <ListView
+        android:id="@+id/family_members_lv"
+        style="@style/listview_style_with_wrap_content"
+        android:divider="@drawable/lv_divider_iv"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_white_frame_with_radius" />
+
+</RelativeLayout>

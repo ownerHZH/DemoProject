@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent" >
+    
+    <View style="@style/vertical_placeholder_style"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/shape_white_frame_with_radius" >
+        <TextView 
+            android:id="@+id/take_photos_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="10dp"
+            android:gravity="center"
+            android:text="@string/take_photos"
+            android:textColor="@color/dial_to_find_password"
+            android:textSize="@dimen/font_size_20" />
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/horizontal_divider_iv"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+        <TextView 
+            android:id="@+id/local_photos_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="10dp"
+            android:gravity="center"
+            android:text="@string/local_photos"
+            android:textColor="@color/dial_to_find_password"
+            android:textSize="@dimen/font_size_20" />
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/horizontal_divider_iv"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+        <TextView 
+            android:id="@+id/cancel_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/dial_to_find_password"
+            android:textSize="@dimen/font_size_20" />
+    </LinearLayout>
+
+</LinearLayout>

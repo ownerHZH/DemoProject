@@ -1,0 +1,351 @@
+package com.hiibox.houseshelter.util;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import android.annotation.SuppressLint;
+import android.util.Log;
+
+/**
+ * 日期工具类
+ * 
+ * @author ganhx
+ * 
+ */
+
+@SuppressLint("SimpleDateFormat")
+public class DateUtil {
+
+	public final static String DEFAULT_PATTERN = "yyyy-MM-dd HH:mm:ss";
+	@SuppressLint("SimpleDateFormat")
+	public final static SimpleDateFormat DEFAULT_SDF = new SimpleDateFormat(
+			DEFAULT_PATTERN);
+
+	/**
+	 * 把日期转换成yyyy年MM月dd日 HH:mm:ss格式
+	 * 
+	 * @param date
+	 * @return
+	 */
+	public static String convertDate(Date date) {
+		return DEFAULT_SDF.format(date);
+	}
+
+	/**
+	 * 把日期转换成pattern格式
+	 * 
+	 * @param date
+	 * @param pattern
+	 * @return
+	 */
+	@SuppressLint("SimpleDateFormat")
+	public static String convertDate(Date date, String pattern) {
+		return new SimpleDateFormat(pattern).format(date);
+	}
+
+	/**
+	 * @param date
+	 * @return
+	 */
+	public static Date convertStringToDate(String date) {
+		try {
+			return DEFAULT_SDF.parse(date);
+		} catch (ParseException e) {
+		}
+		return new Date();
+	}
+
+	/**
+	 * @param date
+	 * @param pattern
+	 * @return
+	 */
+	@SuppressLint("SimpleDateFormat")
+	public static Date convertStringToDate(String date, String pattern) {
+		try {
+			return new SimpleDateFormat(pattern).parse(date);
+		} catch (ParseException e) {
+		}
+		return new Date();
+	}
+
+	/**
+	 * 判断传入的日期是不是当月的第一天
+	 * 
+	 * @param date
+	 * @return
+	 */
+	public static boolean isFirstDayInMonth(Date date) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		return calendar.get(Calendar.DAY_OF_MONTH) == 1;
+	}
+
+	/**
+	 * 判断传入的日期是不是当年的第一天
+	 * 
+	 * @param date
+	 * @return
+	 */
+	public static boolean isFirstDayInYear(Date date) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		return calendar.get(Calendar.DAY_OF_YEAR) == 1;
+	}
+
+	/**
+	 * 去点时分秒后返回
+	 * 
+	 * @param date
+	 * @return
+	 */
+	public static Date rounding(Date date) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		return calendar.getTime();
+	}
+
+	/**
+	 * 把时间加上day天后返回，如果传负数代表减day天
+	 * 
+	 * @param date
+	 * @param day
+	 * @return
+	 */
+	public static Date dateAdd(Date date, int day) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) + day);
+		return calendar.getTime();
+	}
+
+	/**
+	 * 获取上一个月的第一天
+	 * 
+	 * @return
+	 */
+	public static Date getFirstDayOfPreviousMonth() {
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.MONTH, calendar.get(Calendar.MONTH) - 1);
+		calendar.set(Calendar.DATE, 1);
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		return calendar.getTime();
+	}
+
+	/**
+	 * 获取上一年的第一天
+	 * 
+	 * @return
+	 */
+	public static Date getFirstDayOfPreviousYear() {
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.YEAR, calendar.get(Calendar.YEAR) - 1);
+		calendar.set(Calendar.MONTH, 0);
+		calendar.set(Calendar.DATE, 1);
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		return calendar.getTime();
+	}
+
+	public static void main(String[] args) {
+		System.out.println(convertDate(getFirstDayOfPreviousMonth(),
+				DEFAULT_PATTERN));
+		System.out.println(convertDate(getFirstDayOfPreviousYear(),
+				DEFAULT_PATTERN));
+		System.out.println(convertStringToDate("2012-07-10 11:09:38"));
+	}
+
+	/**
+	 * 时间差计算，当时差小于12小时时，显示N小时前，小于一小时是，显示刚刚
+	 * 
+	 * @param date
+	 * @return string
+	 */
+	public static String cutDate(String date) {
+		String dateStr = null;
+		Date dateTemp;
+		Date dateNow;
+		dateNow = new Date();
+		dateTemp = convertStringToDate(date);
+		long day = (dateNow.getTime() - dateTemp.getTime())
+				/ (24 * 60 * 60 * 1000);
+		long hour = ((dateNow.getTime() - dateTemp.getTime())
+				/ (60 * 60 * 1000) - day * 24);
+		// long min=((l/(60*1000))-day*24*60-hour*60);
+		if (day > 0) {
+			dateStr = day + "天前";
+		} else if (day == 0 && hour == 0) {
+			dateStr = "刚刚更新";
+		} else {
+			dateStr = hour + "小时前";
+		}
+		return dateStr;
+	}
+
+	/**
+	 * 返回时间的年月日
+	 * 
+	 * @param date
+	 * @return string
+	 */
+	public static String cutDateYmd(String date) {
+		String dateStr = null;
+		Date dateTemp = convertStringToDate(date);
+		Log.i("dateTemp", "" + dateTemp);
+		dateStr = dateTemp.getYear() + 1900 + "-" + (dateTemp.getMonth() + 1)
+				+ "-" + dateTemp.getDate();
+		return dateStr;
+	}
+	
+	/**
+	 * 返回时间的年月日
+	 * 
+	 * @param date
+	 * @return string
+	 */
+	public static String changeDateToYmd(String date) {
+	    String dateStr = null;
+	    Date dateTemp = convertStringToDate(date);
+	    Log.i("dateTemp", "" + dateTemp);
+	    dateStr = dateTemp.getYear() + 1900 + "年" + (dateTemp.getMonth() + 1)
+	            + "月" + dateTemp.getDate() + "日";
+	    return dateStr;
+	}
+
+	// 返回时间的月日时分
+	public static String cutDateMdHm(String date) {
+		String dateStr = null;
+		Date dateTemp = convertStringToDate(date);
+		dateStr = dateTemp.getYear() + 1900 + "-" +(dateTemp.getMonth() + 1) + "-" + dateTemp.getDate() + "  "
+				+ dateTemp.getHours() + ":" + dateTemp.getMinutes();
+		return dateStr;
+	}
+
+	/**
+	 * 返回当前系统时间
+	 * 
+	 * @return string
+	 */
+	public static String getcurrentDay() {
+		Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
+
+		String str = DEFAULT_SDF.format(curDate);
+		return str;
+	}
+	
+	/**
+	 * 获取当前时间（HH:mm）
+	 * @return
+	 */
+	public static String getTime() {
+		String[] s = getcurrentDay().split(" ");
+		return s[1].substring(0, s[1].lastIndexOf(":"));
+	}
+	
+	/**
+	 * 获取当前时间半小时前的时间（HH:mm）
+	 * @return
+	 */
+	public static String getLastHalfAnHour() {
+	    Date currDate = new Date(System.currentTimeMillis()-30*60*1000);
+	    String[] s = DEFAULT_SDF.format(currDate).split(" ");
+	    return s[1].substring(0, s[1].lastIndexOf(":"));
+	}
+	
+	/**
+	 * 获取当前时间半小时前的时间（HH:mm）
+	 * @return
+	 */
+	public static String getLastHalfAnHour(String time) {
+	    String[] str = time.split(":");
+	    Date currDate = new Date(Integer.valueOf(str[0])*60*60*1000 + Integer.valueOf(str[1])*60*1000 -30*60*1000);
+	    String[] s = DEFAULT_SDF.format(currDate).split(" ");
+	    return s[1].substring(0, s[1].lastIndexOf(":"));
+	}
+
+	/**
+	 * 获取两日期之间的相差的天数
+	 */
+	@SuppressLint("SimpleDateFormat")
+	public static int getWorkTime(String endtime) {
+		String starttime = getcurrentDay();
+		starttime = starttime.substring(0, 10);
+		// 设置时间格式
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		// 开始日期
+		Date dateFrom = null;
+		Date dateTo = null;
+		try {
+			dateFrom = dateFormat.parse(starttime);
+			dateTo = dateFormat.parse(endtime);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		int workdays = 0;
+		Calendar cal = null;
+		while (dateFrom.before(dateTo) || dateFrom.equals(dateTo)) {
+			cal = Calendar.getInstance();
+			// 设置日期
+			cal.setTime(dateFrom);
+			// if ((cal.get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY)
+			// && (cal.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY)) {
+			// 进行比较，如果日期不等于周六也不等于周日，工作日+1
+			workdays++;
+			// }
+			// 日期加1
+			cal.add(Calendar.DAY_OF_MONTH, 1);
+			dateFrom = cal.getTime();
+		}
+		return workdays;
+	}
+	
+	public static long[] dateDiff(String startTime, String endTime, String format) {
+		long[] res = new long[3];
+		SimpleDateFormat sd = new SimpleDateFormat(format);
+		long nd = 1000*24*60*60;
+		long nh = 1000*60*60;
+		long nm = 1000*60;
+		long diff;
+		try {
+			diff = sd.parse(endTime).getTime() - sd.parse(startTime).getTime();
+			long day = diff/nd;//计算差多少天
+			long hour = diff%nd/nh;//计算差多少小时
+			long min = diff%nd%nh/nm;//计算差多少分钟
+			res[0] = day;
+			res[1] = hour;
+			res[2] = min;
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+	
+	public static long[] dateDiff(String startTime) {
+		long[] res = new long[2];
+		String currTime = DEFAULT_SDF.format(new Date());
+		long nd = 1000*24*60*60;
+		long nh = 1000*60*60;
+		long diff;
+		try {
+			diff = DEFAULT_SDF.parse(currTime).getTime() - DEFAULT_SDF.parse(startTime).getTime();
+			long day = diff/nd;//计算差多少天
+			long hour = diff%nd/nh;//计算差多少小时
+			res[0] = day;
+			res[1] = hour;
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+//		Log.e("DateUtil", "startTime = "+startTime+" ; currTime = "+currTime+" ; day = "+res[0]+" ; hour = "+res[1]);
+		return res;
+	}
+
+}

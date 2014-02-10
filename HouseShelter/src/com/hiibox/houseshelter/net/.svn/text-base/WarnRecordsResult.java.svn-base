@@ -1,0 +1,116 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package com.hiibox.houseshelter.net;
+
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Administrator
+ */
+public class WarnRecordsResult {
+	
+	
+	public static class WarnRecord {
+		/**
+		 * 报警类型，0温度报警,1是入侵报警
+		 */
+		public String warnType;
+		/**
+		 * 报警时间
+		 */
+		public String time;
+		/**
+		 * 入侵报警首张图片URL
+		 */
+		public String url;
+		/**
+		 * 温度报警时温度值
+		 */
+		public String temperature;
+	}
+	
+	int replyCmd;
+	int frameCount;
+	ArrayList<WarnRecord> records = new ArrayList<WarnRecord>();
+
+	/**
+	 * 回应时的命令字
+	 * @return 
+	 */
+	public int getReplyCmd() {
+		return replyCmd;
+	}
+
+	/**
+	 * 总数据包数
+	 * @return 
+	 */
+	public int getFrameCount() {
+		return frameCount;
+	}
+
+	/** 
+	 * 所有数据报文
+	 * @return 
+	 */
+	public ArrayList<WarnRecord> getRecords() {
+		return records;
+	}
+	
+	public static WarnRecordsResult prase(Frame f) {
+		WarnRecordsResult result = null;
+		ArrayList<byte[]> arrData = FrameTools.split(f.aryData, '\t');
+		if(arrData.size() < 2) {
+			return result;
+		}
+		result = new WarnRecordsResult();
+		result.replyCmd = Integer.parseInt(FrameTools.getFrameData(arrData.get(0)));
+		result.frameCount = Integer.parseInt(FrameTools.getFrameData(arrData.get(1)));
+		int sz = (arrData.size()-2)/2;
+		int j = 0;
+		for(int i = 0 ; i < sz; i ++) {
+			j = i * 2 + 2;
+			WarnRecord temp = new WarnRecord();
+			temp.warnType = FrameTools.getFrameData(arrData.get(j));
+			if (temp.warnType.equals("0")) {
+				temp.temperature = FrameTools.getFrameData(arrData.get(j+1));
+			} else {
+				temp.url = FrameTools.getFrameData(arrData.get(j+1));
+			}
+			result.records.add(temp);
+		}
+		return result;
+	}
+
+	/**
+	 * 解析一个数据包，根据解析包看是否还有其它包。
+	 * @param f
+	 * @return 剩余数据包个数,负数表示报文不正确
+	 */
+	/*public int parseFrame(Frame f) {
+		ArrayList<byte[]> datas = FrameTools.split(f.aryData, '\t');
+		
+		if (datas.size()<5) {
+			return -1;
+		}
+		replyCmd = FrameTools.parseInt(datas.get(0));
+		frameCount = FrameTools.parseInt(datas.get(1));
+		int current = FrameTools.parseInt(datas.get(2));
+		int warnType = FrameTools.parseInt(datas.get(3));
+		//包序号
+		int fcount = FrameTools.parseInt(datas.get(4));
+		for ( int j  = 0 ; j < fcount ;j++) {
+			WarnRecord rcd = new WarnRecord();
+			rcd.warnType = (byte)(warnType&0xff);
+			rcd.time = FrameTools.getFrameData(datas.get(j*2+5));
+			rcd.info = FrameTools.getFrameData(datas.get(j*2+6));
+			records.add(rcd);
+		}
+		return frameCount-fcount;
+	}*/
+}

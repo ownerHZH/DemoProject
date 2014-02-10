@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:background="@drawable/bg_homepage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- <LinearLayout 
+        android:id="@+id/top_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:paddingTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <RelativeLayout 
+            android:id="@+id/temperature_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+            <ImageView 
+                android:id="@+id/thermometer_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/thermometer_normal"
+                android:contentDescription="@null" />
+            <TextView 
+                android:id="@+id/weather_description_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_toRightOf="@id/thermometer_iv"
+                android:layout_alignTop="@id/thermometer_iv"
+                android:textSize="@dimen/font_size_18"
+                android:text="@string/comfortable"
+                android:textColor="@color/black" />
+            <TextView 
+                android:id="@+id/temperature_unit_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_toRightOf="@id/thermometer_iv"
+                android:layout_below="@id/weather_description_tv"
+                android:textSize="@dimen/font_size_12"
+                android:text="@string/temperature_unit"
+                android:textColor="@color/black" />
+            <TextView 
+                android:id="@+id/current_temperature_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/thermometer_iv"
+                android:layout_alignBottom="@id/thermometer_iv"
+                android:gravity="center"
+                android:text="@string/spaceholder"
+                android:textSize="@dimen/font_size_16"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:background="@color/homepage_top_seperate_line" />
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            <TextView 
+                android:id="@+id/humidity_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/humidity_wet"
+                android:drawableLeft="@drawable/humidity_icon"
+                android:textSize="@dimen/font_size_18"
+                android:drawablePadding="5dp"
+                android:textColor="@color/black" />
+            <TextView 
+                android:id="@+id/humidity_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/spaceholder"
+                android:textSize="@dimen/font_size_16"
+                android:drawableBottom="@drawable/water1"
+                android:textColor="@color/black" />
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone"
+            android:background="@color/homepage_top_seperate_line" />
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:orientation="vertical" >
+            <TextView 
+                android:id="@+id/score_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/score"
+                android:drawableLeft="@drawable/score_icon"
+                android:textSize="@dimen/font_size_18"
+                android:drawablePadding="5dp"
+                android:textColor="@color/black" />
+            <TextView 
+                android:id="@+id/score_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="@dimen/font_size_16"
+                android:textColor="@color/black" />
+            <ImageView 
+                android:id="@+id/score_value_iv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/score_value_icon" />
+        </LinearLayout>
+		<View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone"
+            android:background="@color/homepage_top_seperate_line" />
+		<LinearLayout 
+		    android:id="@+id/score_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:orientation="vertical" >
+            <TextView 
+                android:id="@+id/grade_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/grade"
+                android:drawableLeft="@drawable/grade_icon"
+                android:textSize="@dimen/font_size_18"
+                android:drawablePadding="5dp"
+                android:textColor="@color/black" />
+            <TextView 
+                android:id="@+id/grade_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/regular_members"
+                android:textSize="@dimen/font_size_16"
+                android:textColor="@color/black" />
+            <RatingBar 
+                android:id="@+id/user_grade_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:numStars="1"
+                style="@style/ratingBarStyle"
+        		android:isIndicator="true" />
+        </LinearLayout>
+    </LinearLayout> -->
+    <RelativeLayout
+        android:id="@+id/top_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/top_info_normal"
+        android:gravity="center_horizontal" >
+        <TextView
+            android:id="@+id/temperature_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/thermometer_normal"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:text="@string/spaceholder"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_36" />
+        <TextView
+            android:id="@+id/temperature_unit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/temperature_tv"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/temperature_tv"
+            android:text="@string/temperature_unit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_14" />
+        <TextView
+            android:id="@+id/temperature_description_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/temperature_tv"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@id/temperature_tv"
+            android:text="@string/comfortable"
+            android:textColor="@color/temperature_humidity_des"
+            android:textSize="@dimen/font_size_14" />
+        <TextView
+            android:id="@+id/humidity_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/temperature_description_tv"
+            android:drawableLeft="@drawable/humidity_iv"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:text="@string/spaceholder"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_36" />
+        <TextView
+            android:id="@+id/humidity_unit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/humidity_tv"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/humidity_tv"
+            android:text="@string/humidity_unit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_14" />
+        <TextView
+            android:id="@+id/humidity_description_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/humidity_tv"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@id/humidity_tv"
+            android:drawablePadding="2dp"
+            android:drawableRight="@drawable/water1"
+            android:text="@string/humidity_wet"
+            android:textColor="@color/temperature_humidity_des"
+            android:textSize="@dimen/font_size_14" />
+    </RelativeLayout>
+    <RelativeLayout 
+        android:id="@+id/defence_status_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentBottom="true" >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:text="@string/cancel_defence"
+            android:textSize="@dimen/font_size_16"
+            android:textColor="@color/black"/>
+        <SeekBar
+	        android:id="@+id/defence_seek_bar"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:max="100"
+	        android:paddingLeft="70dp"
+	        android:paddingRight="70dp"
+	        android:minHeight="10dp"
+	        android:maxHeight="10dp"
+	        android:progress="0"
+	        android:thumbOffset="1dp"
+	        android:progressDrawable="@drawable/seek_bar_layer"
+	        android:scrollbarStyle="outsideOverlay"
+	        android:thumb="@drawable/thumb_ttpod_gray_right" />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/defence"
+            android:textSize="@dimen/font_size_16"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/defence_status_layout"
+        android:layout_below="@id/top_info_layout"
+        android:orientation="vertical">
+        <FrameLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1.7">
+            <ImageView 
+                android:id="@+id/shield_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="60dp"
+	        	android:layout_marginRight="60dp"
+	        	android:background="@drawable/shield_silver"
+	        	android:contentDescription="@null" />
+            <ImageView 
+                android:id="@+id/eye_iv1"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/eyes_frame"
+                android:visibility="invisible"
+                android:contentDescription="@null" />
+            <ImageView 
+                android:id="@+id/eye_iv2"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/eyes_frame"
+                android:visibility="invisible"
+                android:contentDescription="@null" />
+            <ImageView 
+                android:id="@+id/eye_iv3"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/eyes_frame"
+                android:visibility="invisible"
+                android:contentDescription="@null" />
+            <ImageView 
+                android:id="@+id/cloud_eyes_iv"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/cloud_eyes_silver"
+                android:contentDescription="@null" />
+            <android.support.v4.view.ViewPager
+	            android:id="@+id/family_members_layout"
+	            android:layout_width="match_parent"
+	            android:layout_height="85dp"
+	            android:layout_marginLeft="20dp"
+	            android:layout_marginRight="20dp"
+	            android:layout_marginBottom="30dp"
+	            android:layout_gravity="bottom"
+	            android:background="@drawable/bg_family_members" />
+        </FrameLayout>
+        <!-- <RelativeLayout 
+	        android:id="@+id/cloud_eyes_layout"
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1.5"
+	        android:layout_marginLeft="50dp"
+	        android:layout_marginRight="50dp"
+	        android:background="@drawable/shield_silver">
+	        <android.support.v4.view.ViewPager
+	            android:id="@+id/family_members_layout"
+	            android:layout_width="match_parent"
+	            android:layout_height="85dp"
+	            android:layout_alignParentBottom="true"
+	            android:layout_marginBottom="20dp"
+	            android:background="@drawable/bg_family_members" />
+	    </RelativeLayout> -->
+    	<TableLayout
+            android:id="@+id/tab_item_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:stretchColumns="*"
+            android:shrinkColumns="*" >
+            <LinearLayout
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+                <ImageView
+                    android:id="@+id/imprinting_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_imprinting"
+                    android:contentDescription="@null" />
+                <RelativeLayout
+                    android:id="@+id/cloud_photo_album_layout"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp" >
+                    <ImageView
+                        android:id="@+id/cloud_photo_album_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" 
+                        android:background="@drawable/selector_cloud_photo_album"
+                        android:contentDescription="@null" />
+                    <TextView
+                        android:id="@+id/new_pictures_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_new_pictures"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+                <ImageView
+                    android:id="@+id/smart_app_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/selector_smart_app"
+                    android:contentDescription="@null" />
+                <ImageView
+                    android:id="@+id/self_center_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/selector_self_center"
+                    android:contentDescription="@null" />
+            </LinearLayout>
+        </TableLayout>
+	</LinearLayout>
+	
+    <!-- <ImageView 
+        android:id="@+id/cloud_eyes_iv"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginLeft="120dp"
+        android:background="@color/red"
+        android:contentDescription="@null" /> -->
+	
+</RelativeLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <ImageView 
+            android:id="@+id/back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/back_iv"
+            android:contentDescription="@null" />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/title_cloud_photo_album"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_20" />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
+        android:background="@drawable/bg_type_and_date">
+        <TextView 
+            android:id="@+id/type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:padding="10dp"
+            android:text="@string/all"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_18"
+            android:drawableLeft="@drawable/arrow_top_bottom"
+            android:drawablePadding="5dp" />
+        <TextView 
+            android:id="@+id/date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_18"
+            android:drawableLeft="@drawable/arrow_top_bottom"
+            android:drawablePadding="5dp" />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-10dp" >
+        <ImageView 
+            android:id="@+id/timer_shaft_iv"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_date_and_line"
+            android:contentDescription="@null"  />
+        <ProgressBar 
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+        <ListView 
+	        android:id="@+id/photo_album_lv"
+	        style="@style/listview_style" />
+    </RelativeLayout>
+    
+    <!-- <com.hiibox.houseshelter.view.PullToRefreshView
+        android:id="@+id/pull_to_refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/transparent"
+        android:layout_marginTop="-10dp"
+        android:orientation="vertical" >
+        <ImageView 
+            android:id="@+id/timer_shaft_iv"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_date_and_line"
+            android:contentDescription="@null"  />
+        <ProgressBar 
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+        <ListView 
+	        android:id="@+id/photo_album_lv"
+	        style="@style/listview_style"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent" />
+    </com.hiibox.houseshelter.view.PullToRefreshView> -->
+
+</LinearLayout>

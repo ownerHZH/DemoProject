@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_temperatrue_abnormal">
+        <View style="@style/horizontal_placeholder_style"/>
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <View style="@style/horizontal_placeholder_style"/>
+            <TextView 
+                android:id="@+id/warning_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="2013/09/21 12:31:00"
+                android:textColor="@color/intrude_text_color"
+                android:textSize="@dimen/font_size_15" />
+            <TextView 
+                android:id="@+id/warning_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/temperature_abnormal"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_18"
+                android:background="@drawable/shape_btn_yellow" />
+            <TextView 
+                android:id="@+id/curr_temperature_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="30C"
+                android:textColor="@color/red"
+                android:textSize="@dimen/font_size_18" />
+            <View style="@style/horizontal_placeholder_style"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

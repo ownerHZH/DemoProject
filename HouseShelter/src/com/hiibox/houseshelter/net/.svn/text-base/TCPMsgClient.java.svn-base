@@ -1,0 +1,130 @@
+/*
+ * To change this license header, choose License Headers in Project Properties. To change this
+ * template file, choose Tools | Templates and open the template in the editor.
+ */
+
+package com.hiibox.houseshelter.net;
+
+import java.io.IOException;
+import java.net.InetAddress;
+
+import android.util.Log;
+
+/**
+ * 消息服务器客户端
+ * 
+ * @author Administrator
+ */
+public class TCPMsgClient extends TCPServiceClientV2 {
+
+    public static int MAIN_CMD = 0x0d;
+    CommandListener cmdlistener = null;
+
+    public TCPMsgClient(InetAddress h, int p, CommandListener l) {
+        super(h, p, true);
+        cmdlistener = l;
+    }
+    
+    public TCPMsgClient(InetAddress h, int p) {
+    	super(h, p, true);
+    }
+    
+//    public void userAuth(String phone, CommandListener listener) {
+//		Frame f = createFrame();
+//        f.subCmd = 21;
+//        f.strData = phone;
+//    	this.sendToQueue(f, listener);
+//	}
+    
+    /**
+     * 向服务器反馈接收到的信息
+     * @param subCmd 子功能号
+     * @param msgId 消息ID
+     */
+    public void replyMsg(int subCmd, int msgId) {
+    	Frame f = createFrame();
+    	f.subCmd = subCmd;
+    	f.strData = msgId + "\t" + 0;
+    	Log.e("TCPMsgClient", "向服务器反馈接收到的信息  subCmd = "+subCmd+" ; strData = "+f.strData);
+    	try {
+			this.sendToServer(FrameTools.getFrameBuffData(f));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+
+    @Override
+    public Frame createLoginFrame(String user, String psw) {
+        Frame f = new Frame();
+        f.platform = 4;
+        f.mainCmd = 0x0d;
+        f.subCmd = 21;
+        f.strData = user;
+        return f;
+    }
+
+    @SuppressWarnings("unused")
+	public void run() {
+        connectInner();
+        if (listener != null) {
+            listener.onClientStart();
+        }
+        Command cmd = null;
+        if (0 == logined) {
+            loginReal();
+        }
+
+        if (-1 == logined) {
+            if (listener != null) {
+                listener.onLoginFail();
+            }
+            running = false;
+        }
+        int count = 0;
+        while (running) {
+            try {
+                // 有指令需要下发
+                Frame f = recvFrame(10);
+                if (f != null ) {
+//                	Log.d("PushMessageService", "[心跳接收数据] : MainCmd = " + f.mainCmd+" ; subCmd = "+f.subCmd+" ; strData = "+f.strData);
+                	if( cmdlistener != null) {
+                			int rc = cmdlistener.onReceive(null, f);
+                }
+                } else {
+                	count ++;
+                    try {
+                        Thread.sleep(50);
+                        if (count == 3) { // 在25s内没有接收到指令，则发送心跳
+                            count = 0;
+                            createLinkTestFrame();
+                            Frame f1 = recvFrame(45);
+//                            Log.d("PushMessageService", "[心跳发送数据] : MainCmd = " + f1.mainCmd+" ; subCmd = "+f1.subCmd+" ; strData = "+f1.strData);
+                            if (null == f1) { // 在45s内没有收到心跳，则视为断开连接
+                                break;
+                            } else {
+                            	count = 0;
+                            }
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        Log.d("TCPMsgClient", "InterruptedException ................."+e.toString());
+                    }
+                }
+            } catch (IOException ex) {
+                if (listener != null) {
+                    listener.onClientException(ex);
+                }
+                break;
+            }
+        }
+        close();
+    }
+
+    static Frame createFrame() {
+        Frame f = new Frame();
+        f.platform = PLATFORM_APP;
+        f.mainCmd = (byte) (MAIN_CMD & 0xff);
+        f.version = VERSION_1;
+        return f;
+    }
+}

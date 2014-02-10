@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/Zxing.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/Tencent_open_sdk.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/iotcamera.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/Tencent_weixin_sdk.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/SinaWeiboSDK.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

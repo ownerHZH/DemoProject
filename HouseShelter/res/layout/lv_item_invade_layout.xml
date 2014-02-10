@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout 
+        android:id="@+id/left_side_layout"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="13dp" >
+        <TextView 
+	        android:id="@+id/invade_time_tv"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="20dp"
+	        android:layout_marginTop="20dp"
+	        android:gravity="right"
+	        android:text="2013-10-28\n15:30"
+	        android:textColor="@color/intrude_text_color"
+	        android:textSize="@dimen/font_size_14" />
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:layout_toRightOf="@id/left_side_layout"
+        android:id="@+id/photo_album_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_photo_frame">
+        <TextView
+            android:id="@+id/invade_type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/btn_yellow"
+            android:paddingBottom="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="5dp"
+            android:text="@string/intrude"
+            android:textColor="@color/intrude_text_color"
+            android:textSize="@dimen/font_size_14" />
+        <ImageView 
+            android:id="@+id/invade_iv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:scaleType="fitXY"
+            android:contentDescription="@null" />
+    </LinearLayout>
+    
+    <ImageView 
+        android:id="@+id/date_node_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/photo_album_layout"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/date_node_iv"
+        android:contentDescription="@null" />
+
+</RelativeLayout>
