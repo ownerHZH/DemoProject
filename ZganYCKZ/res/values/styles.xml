@@ -1,0 +1,41 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+        
+    </style>
+<style name="progressBarHorizontal_color" parent="android:Widget.ProgressBar.Horizontal">
+		<item name="android:indeterminateOnly">false</item>
+		<item name="android:progressDrawable">@drawable/progress_color_horizontal</item>
+		<item name="android:minHeight">5dip</item>
+		<item name="android:maxHeight">5dip</item>
+	</style>
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <string name="hello">
+        
+<![CDATA[ 
+<html> 
+ <head></head> 
+ <body style="text-align:justify;color:gray;background-color:black;"> 
+  Lorem ipsum dolor sit amet, consectetur  
+  
+ adipiscing elit. Nunc pellentesque, urna 
+  nec hendrerit pellentesque, risus massa 
+ </body> 
+</html> 
+]]>
+    </string>
+
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroud"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_tilte" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:drawableTop="@drawable/huilife"
+                    android:text="智慧社区" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/huishequ_dowland"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:drawableTop="@drawable/dowload"
+                    android:text="立即下载" />
+            </LinearLayout>
+			 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="简介:慧社区手机APP是作为业主与物业、社区的主要交流工具，利用智能手机的普及性，将业主与物管、社区人员的沟通变得更加便捷，手机APP将提高业主生活满意度、提高物业服务质量与社区工作工作质量。" />
+             <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:drawableTop="@drawable/aqws"
+                    android:text="安全卫士" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/aqws_dowland"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:drawableTop="@drawable/dowload"
+                    android:text="立即下载" />
+            </LinearLayout>
+			 <TextView
+                    android:id="@+id/app_dowland"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="简介:安全卫士手机APP是作为业主与物业、社区的主要交流工具，利用智能手机的普及性，将业主与物管、社区人员的沟通变得更加便捷，手机APP将提高业主生活满意度、提高物业服务质量与社区工作工作质量。" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

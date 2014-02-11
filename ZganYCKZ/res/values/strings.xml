@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">远程控制</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="vip">VIP 积分</string>
+    <string name="more">更多应用</string>
+	<string name="set">设置</string>
+	<string name="user_info">用户信息</string>
+	<string name="alarm_record">报警记录</string>
+	<string name="switch_detalis">开关详情</string>
+	<string name="back">返回</string>
+	<string name="tel_numb">手&#160;机&#160;号:</string>
+	<string name="user_name">用&#160;户&#160;名:</string>
+    <string name="password">密&#160;&#160;码:</string>
+    <string name="repassword">密&#160;码&#160;确&#160;认:</string>
+    <string name="address">地&#160;&#160;&#160;址:</string>
+    <string name="wangguan_id">网关ID:</string>
+    <string name="change">修改</string>
+    <string name="shebei">设备</string>
+    <string name="about_yckz">关于远程控制</string>
+    <string name="yckz">远程控制</string>
+    <string name="dialog_read_from_dir">Open from dir</string>
+    <string name="logout_user">注销当前用户</string>
+    <string name="shebei_set">设备设置</string>
+     <string name="nicheng">昵&#160;&#160;称:</string>
+    <string name="zhuzhi">住&#160;&#160;址:</string>
+    <string name="sheibeiid">设&#160;备&#160;号:</string>
+    <string name="explain">(请认真填写，以便以后找回密码)</string>
+</resources>

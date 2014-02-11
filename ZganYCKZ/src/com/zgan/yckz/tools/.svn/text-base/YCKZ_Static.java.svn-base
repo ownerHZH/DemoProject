@@ -1,0 +1,30 @@
+package com.zgan.yckz.tools;
+
+public class YCKZ_Static {
+	/**
+	 * 
+	 */
+	public static String ip_port;
+	/**
+	 * VIP等级1,2,3,4...
+	 */
+	public static int VIP_level;
+	/**
+	 * VIP积分
+	 */
+	public static int VIP_score;
+	/**
+	 * 用户密码
+	 */
+	public static int USER_password;
+	
+	/**
+	 * 手机号/用户名
+	 */
+	public static String Phone_number="18716341029";
+	/**
+	 * 设备ID
+	 */
+	public static String ChildDeviceID[]=new String[100];
+	
+}

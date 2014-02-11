@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/decoding
+END
+DecodeHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/decoding/DecodeHandler.java
+END
+InactivityTimer.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/decoding/InactivityTimer.java
+END
+Intents.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/decoding/Intents.java
+END
+FinishListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/decoding/FinishListener.java
+END
+DecodeFormatManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/decoding/DecodeFormatManager.java
+END
+DecodeThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/decoding/DecodeThread.java
+END
+CaptureActivityHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/decoding/CaptureActivityHandler.java
+END

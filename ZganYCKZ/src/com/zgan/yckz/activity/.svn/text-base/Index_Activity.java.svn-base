@@ -1,0 +1,162 @@
+package com.zgan.yckz.activity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.zgan.yckz.R;
+import com.zgan.yckz.fragment.Chazuo_Frag;
+import com.zgan.yckz.fragment.Chufang_Frag;
+import com.zgan.yckz.fragment.Ciwo_Frag;
+import com.zgan.yckz.fragment.Keting_Frag;
+import com.zgan.yckz.fragment.Zhuwo_Frag;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+
+public class Index_Activity extends FragmentActivity {
+	ViewPager viewPager = null;
+	RadioGroup radioGroup = null;
+
+	// 客厅——按钮
+	RadioButton rad_keting;
+	// 主卧——按钮
+	RadioButton rad_zhuwo;
+	// 厨房——按钮
+	RadioButton rad_chufang;
+	// 插座——按钮
+	RadioButton rad_chazuo;
+	// 次卧——按钮
+	RadioButton rad_ciwo;
+
+	Keting_Frag keting_Frag = new Keting_Frag();
+	Zhuwo_Frag zhuwo_Frag = new Zhuwo_Frag();
+	Chufang_Frag chufang_Frag = new Chufang_Frag();
+	Ciwo_Frag ciwo_Frag = new Ciwo_Frag();
+	Chazuo_Frag chazuo_Frag = new Chazuo_Frag();
+
+	List<Fragment> list;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.line_index);
+		radioGroup = (RadioGroup) findViewById(R.id.radio_group);
+
+		rad_keting = (RadioButton) findViewById(R.id.rad_keting);
+		rad_zhuwo = (RadioButton) findViewById(R.id.rad_zhuwo);
+		rad_chazuo = (RadioButton) findViewById(R.id.rad_chazuo);
+		rad_ciwo = (RadioButton) findViewById(R.id.rad_ciwo);
+		rad_chufang = (RadioButton) findViewById(R.id.rad_chufang);
+
+		viewPager = (ViewPager) findViewById(R.id.view_pager);
+		list = new ArrayList<Fragment>();
+		list.add(keting_Frag);
+		list.add(chufang_Frag);
+		list.add(chazuo_Frag);
+		list.add(zhuwo_Frag);
+		list.add(ciwo_Frag);
+
+		viewPager
+				.setAdapter(new MyFragmentAdapter(getSupportFragmentManager()));
+		// 对radioGroup和viewPager做监听事件
+		radioGroup.setOnCheckedChangeListener(changelistener);
+		viewPager.setOnPageChangeListener(listener);
+
+	}
+
+	OnPageChangeListener listener = new OnPageChangeListener() {
+
+		@Override
+		public void onPageSelected(int arg0) {
+			// TODO Auto-generated method stub
+			switch (arg0) {
+			case 0:
+				rad_keting.setChecked(true);
+				break;
+			case 1:
+				rad_chufang.setChecked(true);
+				break;
+			case 2:
+				rad_chazuo.setChecked(true);
+				break;
+			case 3:
+				rad_zhuwo.setChecked(true);
+				break;
+			case 4:
+				rad_ciwo.setChecked(true);
+				break;
+
+			}
+		}
+
+		@Override
+		public void onPageScrolled(int arg0, float arg1, int arg2) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void onPageScrollStateChanged(int arg0) {
+			// TODO Auto-generated method stub
+
+		}
+	};
+	OnCheckedChangeListener changelistener = new OnCheckedChangeListener() {
+
+		@Override
+		public void onCheckedChanged(RadioGroup group, int checkedId) {
+			// TODO Auto-generated method stub
+			switch (checkedId) {
+			case R.id.rad_keting:
+				viewPager.setCurrentItem(0);
+				break;
+			case R.id.rad_chufang:
+				viewPager.setCurrentItem(1);
+				break;
+			case R.id.rad_chazuo:
+				viewPager.setCurrentItem(2);
+				break;
+			case R.id.rad_zhuwo:
+				viewPager.setCurrentItem(3);
+				break;
+			case R.id.rad_ciwo:
+				viewPager.setCurrentItem(4);
+				break;
+			}
+		}
+	};
+
+	class MyFragmentAdapter extends FragmentPagerAdapter {
+
+		public MyFragmentAdapter(FragmentManager fm) {
+			super(fm);
+			// TODO Auto-generated constructor stub
+		}
+
+		@Override
+		public Fragment getItem(int arg0) {
+			// TODO Auto-generated method stub
+			return list.get(arg0);
+		}
+
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			if (list != null) {
+				return list.size();
+			} else {
+				return 0;
+			}
+		}
+
+	}
+}

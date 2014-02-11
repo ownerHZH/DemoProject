@@ -1,0 +1,244 @@
+package com.zgan.yckz.activity;
+
+import java.io.IOException;
+import java.nio.channels.Selector;
+
+import com.zgan.yckz.R;
+import com.zgan.yckz.activity.User_Login.testGetData;
+import com.zgan.yckz.activity.User_Login.testSendData;
+import com.zgan.yckz.tcp.Frame;
+import com.zgan.yckz.tcp.FrameTools;
+import com.zgan.yckz.tcp.TCPThread;
+import com.zgan.yckz.tools.YCKZ_Activity;
+import com.zgan.yckz.tools.YCKZ_NetworkDetector;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.os.Looper;
+import android.telephony.TelephonyManager;
+import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class User_Reg extends Activity {
+	/**
+	 * 用户手机号
+	 */
+	EditText user_tel;
+	/**
+	 * 用户密码
+	 */
+	EditText user_pass;
+	/**
+	 * 用户再次确认密码
+	 */
+	EditText reuser_pass;
+	/**
+	 * 用户住址
+	 */
+	EditText user_address;
+	/**
+	 * 用户名
+	 */
+	EditText user_name;
+	/**
+	 * 用户设备号
+	 */
+	EditText user_shebei;
+	/**
+	 * 取消注册
+	 */
+	ImageView user_cancel;
+	/**
+	 * 提交
+	 */
+	ImageView user_commit;
+	/**
+	 * 二维码
+	 */
+	ImageView erweima;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.user_reg);
+
+		user_tel = (EditText) findViewById(R.id.user_tel);
+		user_pass = (EditText) findViewById(R.id.user_pasword);
+		reuser_pass = (EditText) findViewById(R.id.reuser_pasword);
+		user_name = (EditText) findViewById(R.id.user_name);
+		user_address = (EditText) findViewById(R.id.user_add);
+		user_shebei = (EditText) findViewById(R.id.user_shebei);
+
+		user_cancel = (ImageView) findViewById(R.id.cancel);
+		user_commit = (ImageView) findViewById(R.id.commit);
+		erweima = (ImageView) findViewById(R.id.erweima);
+
+		user_cancel.setOnClickListener(listener);
+		user_commit.setOnClickListener(listener);
+		erweima.setOnClickListener(listener);
+		Detectnetwork();
+		TelephonyManager mTelephonyMgr;
+		mTelephonyMgr = (TelephonyManager) getSystemService(User_Reg.this.TELEPHONY_SERVICE);
+		user_tel.setText(mTelephonyMgr.getLine1Number());
+	}
+
+	OnClickListener listener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			switch (v.getId()) {
+			case R.id.cancel:
+				finish();
+				break;
+			case R.id.commit:
+				Reg();
+				break;
+			case R.id.erweima:
+				Intent intent = new Intent(User_Reg.this, CaptureActivity.class);
+				startActivityForResult(intent, 100);
+				break;
+			}
+		}
+	};
+
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		if (20 == resultCode) {
+			String id = data.getExtras().getString("id");
+			user_shebei.setText(id);
+			Log.i("id", id);
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+
+	};
+
+	protected void Reg() {
+		// TODO Auto-generated method stub
+		if (!user_pass.getText().toString()
+				.equals(reuser_pass.getText().toString())) {
+			Toast.makeText(User_Reg.this, "两次密码不一样", Toast.LENGTH_SHORT).show();
+		} else {
+			Selector s1 = null;
+
+			try {
+				s1 = Selector.open();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			testSendData test = new testSendData();
+
+			testGetData testg = new testGetData();
+		}
+
+	}
+
+	class testGetData implements Runnable {
+		public testGetData() {
+			new Thread(this).start();
+		}
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			while (true) {
+				if (FrameTools.Queue_Receive.size() > 0) {
+					byte[] resultByte = null;
+
+					resultByte = FrameTools.Queue_Receive.poll();
+
+					Frame f = new Frame(resultByte);
+
+					Log.i("TCPClient", "接收数据...");
+					Log.i("TCPClient",
+							"接收数据...平台代码" + Integer.toString(f.Platform));
+					Log.i("TCPClient",
+							"接收数据...版本号" + Integer.toString(f.Version));
+					Log.i("TCPClient",
+							"接收数据...主功能命令字" + Byte.toString(f.MainCmd));
+					Log.i("TCPClient",
+							"接收数据...子功能命令字" + Integer.toString(f.SubCmd));
+					Log.i("TCPClient", "接收数据...数据" + f.strData);
+					Looper.prepare();
+					if (!f.strData.equals("0")) {
+						Toast.makeText(User_Reg.this, "对不起。注册失败" + f.strData,
+								Toast.LENGTH_SHORT).show();
+					} else {
+						Toast.makeText(User_Reg.this, "恭喜注册成功！",
+								Toast.LENGTH_SHORT).show();
+						User_Reg.this.finish();
+
+					}
+					Looper.loop();
+				}
+			}
+		}
+	}
+
+	class testSendData implements Runnable {
+		public testSendData() {
+			new Thread(this).start();
+		}
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+
+			Frame f = new Frame();
+			// 家庭卫士主14子 21
+			// 远程控制平台代码4主3子0
+			// 登陆服务器平台代码3主1子1.密码userid\t密码
+			//FFC995RPCEY7UM6PWZX1\t123456              
+			f.Platform = 4;
+			f.MainCmd = 0x01;
+			f.SubCmd = 3;
+			f.strData = user_tel.getText() + "\t" + user_pass.getText() + "\t"
+					+ "FFC995RPCEY7UM6PWZX1" + "\t66666666";
+
+			TCPThread tt = new TCPThread("61.186.245.251", 21000,
+					FrameTools.getFrameBuffData(f));
+
+			// FrameTools.toSendTcpData(f);
+			Log.i("testSendData", "发送登录");
+
+		}
+
+	}
+
+	/**
+	 * 检测网络是否可用
+	 */
+	protected void Detectnetwork() {
+		// TODO Auto-generated method stub
+		Boolean networkState = YCKZ_NetworkDetector.detect(User_Reg.this);
+
+		if (!networkState) {
+			new AlertDialog.Builder(this)
+					.setTitle("网络错误")
+					.setMessage("网络连接失败，请确认网络连接")
+					.setPositiveButton(
+							"确定",
+							new android.content.DialogInterface.OnClickListener() {
+								@Override
+								public void onClick(DialogInterface arg0,
+										int arg1) {
+									// TODO Auto-generated method stub
+									arg0.dismiss();
+								}
+							}).show();
+		}
+	}
+}

@@ -1,0 +1,90 @@
+package com.zgan.yckz.activity;
+
+import com.zgan.yckz.R;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class UserInfo_Activity extends Activity {
+	Button back;
+
+	Button logout_btn;
+
+	Builder builder;
+	SharedPreferences preferences;
+	SharedPreferences.Editor editor;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		preferences = getSharedPreferences("yckz_user", MODE_PRIVATE);
+		editor = preferences.edit();
+		builder = new AlertDialog.Builder(this);
+
+		setContentView(R.layout.userinfo_line);
+
+		back = (Button) findViewById(R.id.back);
+		logout_btn = (Button) findViewById(R.id.logout_btn);
+
+		back.setOnClickListener(listener);
+		logout_btn.setOnClickListener(listener);
+
+	}
+
+	OnClickListener listener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			switch (v.getId()) {
+			case R.id.back:
+				finish();
+				break;
+
+			case R.id.logout_btn:
+
+				builder.setTitle("提示");
+				builder.setMessage("是否注销当前用户？");
+				builder.setNegativeButton("取消",
+						new android.content.DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// TODO Auto-generated method stub
+
+							}
+
+						});
+				builder.setPositiveButton("确定",
+						new android.content.DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// TODO Auto-generated method stub
+								editor.clear();
+								editor.commit();
+
+							}
+
+						});
+				builder.create().show();
+
+				break;
+
+			}
+		}
+	};
+
+}

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp
+END
+TCPSend.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/TCPSend.java
+END
+TCPPing.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/TCPPing.java
+END
+SetSeting.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/SetSeting.java
+END
+TCPTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/TCPTest.java
+END
+TCPReceive.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/TCPReceive.java
+END
+Frame.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/Frame.java
+END
+FrameTools.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/FrameTools.java
+END
+TCPThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/TCPThread.java
+END

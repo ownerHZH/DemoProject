@@ -1,0 +1,130 @@
+package com.zgan.yckz.activity;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import com.zgan.yckz.R;
+import com.zgan.yckz.adapter.AlarmAdapter;
+import com.zgan.yckz.tools.SheBei;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.os.Bundle;
+import android.text.format.Time;
+import android.view.View;
+import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.ListView;
+import android.widget.TextView;
+
+/**
+ * 报警记录
+ * 
+ * @author Administrator
+ * 
+ */
+
+public class Alarm_Activity extends Activity {
+	/**
+	 * 返回按钮
+	 */
+	Button back;
+	/**
+	 * 时间按钮
+	 */
+	Button baojing_time;
+	TextView title;
+	TextView textView;
+	TextView size;
+	/**
+	 * 报警记录列表
+	 */
+	ListView listView;
+	List<SheBei> list=new ArrayList<SheBei>();
+	AlarmAdapter adapter;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.alarm_line);
+		title = (TextView) findViewById(R.id.title);
+		textView = (TextView) findViewById(R.id.vip_level);
+		size=(TextView)findViewById(R.id.cishu);
+		back = (Button) findViewById(R.id.back);
+		baojing_time = (Button) findViewById(R.id.baojing_time);
+		listView=(ListView)findViewById(R.id.alarm_data_listview);
+		if(getIntent().getExtras()!=null){
+			SheBei bei=new SheBei();
+			bei.setAlarm_time(getIntent().getExtras().getString("baojingtime"));
+			bei.setAlarm_type(getIntent().getExtras().getString("shebeiname"));
+			list.add(bei);
+			AlarmAdapter adapter=new AlarmAdapter(Alarm_Activity.this, list);
+			listView.setAdapter(adapter);
+		}
+		textView.setText("");
+		title.setText("报警记录");
+		size.setText(list.size()+"次");
+		textView.setOnClickListener(listener);
+		back.setOnClickListener(listener);
+		baojing_time.setOnClickListener(listener);
+		getNowTime();
+		
+	}
+	/*
+	 *  获取系统当前年月日
+	 */
+	private void getNowTime() {
+		// TODO Auto-generated method stub
+		Time time = new Time();
+		time.setToNow();
+		int year = time.year;
+		int month = time.month;
+		int date = time.monthDay;
+		baojing_time.setText(year + "/" + month + "/" + date);
+	}
+	/**
+	 * 按钮的事件监听
+	 */
+	OnClickListener listener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			switch (v.getId()) {
+			case R.id.back:
+				finish();
+				break;
+
+			case R.id.baojing_time:
+				showTimeDialog();
+				break;
+			
+			}
+
+		}
+	};
+
+	protected void showTimeDialog() {
+		// TODO Auto-generated method stub
+		Calendar c = Calendar.getInstance();
+		// 创建一个时间对话
+		AlertDialog alertDialog = new DatePickerDialog(Alarm_Activity.this,
+				new DatePickerDialog.OnDateSetListener() {
+
+					@Override
+					public void onDateSet(DatePicker view, int year,
+							int monthOfYear, int dayOfMonth) {
+						// TODO Auto-generated method stub
+						baojing_time.setText(year + "/" + monthOfYear + "/"
+								+ dayOfMonth);
+					}
+				}, c.get(Calendar.YEAR), c.get(Calendar.MONTH),
+				c.get(Calendar.DAY_OF_MONTH));
+		alertDialog.show();
+	}
+}

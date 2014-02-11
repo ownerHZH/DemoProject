@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera
+END
+FlashlightManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera/FlashlightManager.java
+END
+CameraManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera/CameraManager.java
+END
+AutoFocusCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera/AutoFocusCallback.java
+END
+CameraConfigurationManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera/CameraConfigurationManager.java
+END
+PlanarYUVLuminanceSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera/PlanarYUVLuminanceSource.java
+END
+PreviewCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera/PreviewCallback.java
+END
