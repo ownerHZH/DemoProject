@@ -121,7 +121,7 @@ public class User_Reg extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.user_reg);
 
-		User_Login.setHnadler(SubDatahandler);
+		//User_Login.setHnadler(SubDatahandler);
 
 		user_tel = (EditText) findViewById(R.id.user_tel);
 		user_pass = (EditText) findViewById(R.id.user_pasword);
@@ -181,7 +181,7 @@ public class User_Reg extends Activity {
 				.equals(reuser_pass.getText().toString())) {
 			Toast.makeText(User_Reg.this, "两次密码不一样", Toast.LENGTH_SHORT).show();
 		} else {
-
+			
 			try {
 				SendTestInfo();
 			} catch (Exception e) {

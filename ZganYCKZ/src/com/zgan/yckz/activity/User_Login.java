@@ -115,7 +115,7 @@ public class User_Login extends YCKZ_Activity {
 			case Constant.SERVERERROR:
 				System.out.println("NewSocketInfo  Constant.SERVERERROR "
 						+ msg.obj);
-				Toast.makeText(User_Login.this, "网络已断开或不可用！", Toast.LENGTH_LONG).show();
+				//Toast.makeText(User_Login.this, "网络已断开或不可用！", Toast.LENGTH_LONG).show();
 				break;
 			case Constant.DATASUCCESS:
 				Log.i("userlogin", "1");
@@ -135,6 +135,29 @@ public class User_Login extends YCKZ_Activity {
 
 				System.out.println("NewSocketInfo  Constant.DATASUCCESS "
 						+ buffer);
+				if (frame.MainCmd == 1 && frame.SubCmd == 3
+						&& frame.Platform == 1) {
+					if (frame.strData.substring(0, 1).equals("0")) {
+						Toast.makeText(User_Login.this, "注册成功，正在登录。。。",
+								Toast.LENGTH_SHORT).show();
+					} else {
+						Toast.makeText(User_Login.this,
+								"" + frame.strData.substring(1),
+								Toast.LENGTH_SHORT).show();
+					}
+				}
+					if (frame.MainCmd == 1 && frame.SubCmd == 1
+							&& frame.Platform == 1) {
+						if (frame.strData.substring(0, 1).equals("0")) {
+							/*Toast.makeText(User_Login.this, "正在登录。。。",
+									Toast.LENGTH_SHORT).show();*/
+						} else {
+							dialog.dismiss();
+							Toast.makeText(User_Login.this,
+									"" + frame.strData.substring(1),
+									Toast.LENGTH_SHORT).show();							
+						}
+				}
 				if (frame.MainCmd == 1 && frame.SubCmd == 4
 						&& frame.Platform == 1) {
 					String str = frame.strData.substring(1);
@@ -372,13 +395,8 @@ public class User_Login extends YCKZ_Activity {
 		go.setOnClickListener(listener);
 		reg.setOnClickListener(listener);
 		call_KF.setOnClickListener(listener);
-		if (YCKZ_Static.Phone_number!=null && YCKZ_Static.USER_password!=null) {
-			go_tel.setText(YCKZ_Static.Phone_number);
-			go_pass.setText(YCKZ_Static.USER_password);
-		}
-
-		//Detectnetwork();
-		/*try {
+		
+		try {
 			//cloudlogin1.zgantech.com/192.168.1.72
 			startNewClient("cloudlogin1.zgantech.com", 21000,
 					ClientDatahandler, 11, Constant.LOGIN_SERVERPLATFROM,
@@ -391,7 +409,15 @@ public class User_Login extends YCKZ_Activity {
 
 			System.out.println("NewSocketInfo" + "e.printStackTrace() "
 					+ e.getMessage());
-		}*/
+		}
+		
+		if (YCKZ_Static.Phone_number!=null && YCKZ_Static.USER_password!=null) {
+			go_tel.setText(YCKZ_Static.Phone_number);
+			go_pass.setText(YCKZ_Static.USER_password);
+		}
+
+		//Detectnetwork();
+		/**/
 
 	}
 
@@ -399,16 +425,22 @@ public class User_Login extends YCKZ_Activity {
 		// HandleClient();
 
 		String strLoginInfo = go_tel.getText().toString()+"\t"+go_pass.getText().toString();
+		
 		byte[] logininfo = strLoginInfo.getBytes();
 
-		// System.out.println("NewSocketInfo"+"#############################    "+logininfo);
+		 System.out.println("NewSocketInfo"+"#############################    "+strLoginInfo);
 		boolean bSend = SendData(Constant.LOGIN_SERVERPLATFROM, logininfo,
 				strLoginInfo.length(), Constant.LOGIN, Constant.LOGINSUBCMD,
 				Constant.VERSION);
+		//dialog.dismiss();
 		if (bSend) {
 			System.out.println("NewSocketInfo  " + strLoginInfo);
-		}
-
+			//Toast.makeText(context, "登录成功", Toast.LENGTH_SHORT).show();
+		}else
+		{
+			//dialog.dismiss();
+			//Toast.makeText(context, "登录失败，请重试！", Toast.LENGTH_SHORT).show();
+		}		
 	}
 
 	public static boolean SendData(int ServerID, byte[] cbData, int nDataSize,
@@ -563,21 +595,25 @@ public class User_Login extends YCKZ_Activity {
 				{
 					dialog.setMessage("正在登陆...请稍后");
 					dialog.show();
-					try {
-						//cloudlogin1.zgantech.com/192.168.1.72
-						startNewClient("cloudlogin1.zgantech.com", 21000,
-								ClientDatahandler, 11, Constant.LOGIN_SERVERPLATFROM,
-								Constant.INDEX_cbMessageVer);
-						System.out.println("NewSocketInfo" + "21000");
+					if (success) {
+						
+					} else {
+						try {
+							// cloudlogin1.zgantech.com/192.168.1.72
+							startNewClient("cloudlogin1.zgantech.com", 21000,
+									ClientDatahandler, 11,
+									Constant.LOGIN_SERVERPLATFROM,
+									Constant.INDEX_cbMessageVer);
+							System.out.println("NewSocketInfo" + "21000");
 
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
 
-						System.out.println("NewSocketInfo" + "e.printStackTrace() "
-								+ e.getMessage());
+							System.out.println("NewSocketInfo"
+									+ "e.printStackTrace() " + e.getMessage());
+						}
 					}
-					
 					
 					if (go_tel.getText() != null && go_pass.getText() != null
 							&& !"".equals(go_tel.getText().toString())

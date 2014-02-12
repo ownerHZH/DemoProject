@@ -155,7 +155,7 @@ public class Index_Activity extends FragmentActivity {
 			case Constant.SERVERERROR:
 				System.out.println("NewSocketInfo  Constant.SERVERERROR "
 						+ msg.obj);
-				Toast.makeText(Index_Activity.this, "网络已断开或不可用！", Toast.LENGTH_LONG).show();
+				//Toast.makeText(Index_Activity.this, "网络已断开或不可用！", Toast.LENGTH_LONG).show();
 				break;
 			case Constant.DATASUCCESS:
 				Log.i("index", "1");
