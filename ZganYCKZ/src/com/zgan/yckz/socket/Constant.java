@@ -9,6 +9,8 @@ public class Constant {
 	public final static int CHECKCODEERROR = 3000;
 	public final static int NETERROR = 4000;
 	public final static int SERVERERROR = 5000;
+	
+	//public final static int STACKOVERFLOW = 6666;
 
 	public final static int HOUSE_PLATFROM = 4;
 	public final static int LOGIN_SERVERPLATFROM = 1;

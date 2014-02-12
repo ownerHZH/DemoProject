@@ -24,13 +24,18 @@ import android.app.Dialog;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build.VERSION;
 import android.os.Bundle;
@@ -67,6 +72,8 @@ public class User_Login extends YCKZ_Activity {
 	 * 一键找回密码
 	 */
 	ImageView call_KF;
+	
+	Context context=User_Login.this;
 	
 	public static  boolean success;
 
@@ -108,6 +115,7 @@ public class User_Login extends YCKZ_Activity {
 			case Constant.SERVERERROR:
 				System.out.println("NewSocketInfo  Constant.SERVERERROR "
 						+ msg.obj);
+				Toast.makeText(User_Login.this, "网络已断开或不可用！", Toast.LENGTH_LONG).show();
 				break;
 			case Constant.DATASUCCESS:
 				Log.i("userlogin", "1");
@@ -328,6 +336,7 @@ public class User_Login extends YCKZ_Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.user_login);
 		clientList = new ArrayList<SanySocketClient>();
 		if (Integer.parseInt(VERSION.SDK) > 14
@@ -444,24 +453,24 @@ public class User_Login extends YCKZ_Activity {
 
 					HandleClient(i);
 					if (nServer > Constant.LOGIN_SERVERPLATFROM) {
-						SanySocketClient conn = new SanySocketClient(strip,
+						SanySocketClient conn=null;
+						try {
+						conn = new SanySocketClient(strip,
 								nPort, lhandler);
-
 						conn.setClientID(i);
 						conn.setPlatfrom(nplatfrom);// 平台代码
 						conn.SetServerID(ServerID);
 						conn.setVersion(cbVersion);
-						clientList.add(conn);
-						try {
-							success = conn.connect();
+						clientList.add(conn);						
+						success = conn.connect();
 						} catch (StackOverflowError e) {
-							success=false;
-							//Toast.makeText(User_Login.this, "网络已断开或网络无法使用，请检查网络！", 1).show();
+							//success=false;
+
 							Log.e("检查网络StackOverflowError", "检查网络");
 							e.printStackTrace();
 						}catch(Exception e)
 						{
-							success=false;
+							//success=false;
 							//Toast.makeText(context, "网络已断开或网络无法使用，请检查网络！", 1).show();
 							Log.e("检查网络Exception", "检查网络");
 							e.printStackTrace();
@@ -550,30 +559,17 @@ public class User_Login extends YCKZ_Activity {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.go:
-				dialog.setMessage("正在登陆...请稍后");
-				dialog.show();
-				try {
-					//cloudlogin1.zgantech.com/192.168.1.72
-					startNewClient("cloudlogin1.zgantech.com", 21000,
-							ClientDatahandler, 11, Constant.LOGIN_SERVERPLATFROM,
-							Constant.INDEX_cbMessageVer);
-					System.out.println("NewSocketInfo" + "21000");
-
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-
-					System.out.println("NewSocketInfo" + "e.printStackTrace() "
-							+ e.getMessage());
-				}
-				
-				
-				if (go_tel.getText() != null && go_pass.getText() != null
-						&& !"".equals(go_tel.getText().toString())
-						&& !"".equals(go_pass.getText().toString())) {
-					Log.i("登陆中", "登陆中");
+				if(YCKZ_NetworkDetector.detect((Activity) context))
+				{
+					dialog.setMessage("正在登陆...请稍后");
+					dialog.show();
 					try {
-						SendTestInfo();
+						//cloudlogin1.zgantech.com/192.168.1.72
+						startNewClient("cloudlogin1.zgantech.com", 21000,
+								ClientDatahandler, 11, Constant.LOGIN_SERVERPLATFROM,
+								Constant.INDEX_cbMessageVer);
+						System.out.println("NewSocketInfo" + "21000");
+
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -581,10 +577,29 @@ public class User_Login extends YCKZ_Activity {
 						System.out.println("NewSocketInfo" + "e.printStackTrace() "
 								+ e.getMessage());
 					}
-				} else {
+					
+					
+					if (go_tel.getText() != null && go_pass.getText() != null
+							&& !"".equals(go_tel.getText().toString())
+							&& !"".equals(go_pass.getText().toString())) {
+						Log.i("登陆中", "登陆中");
+						try {
+							SendTestInfo();
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
 
+							System.out.println("NewSocketInfo" + "e.printStackTrace() "
+									+ e.getMessage());
+						}
+					} else {
+
+					}
+				}else
+				{
+					Toast.makeText(context, "请连接网络！", Toast.LENGTH_LONG).show();
 				}
-
+				
 				break;
 
 			case R.id.reg:
@@ -757,5 +772,5 @@ public class User_Login extends YCKZ_Activity {
 		}
 		super.onDestroy();
 	}
-	
+	  	
 }
