@@ -26,40 +26,6 @@ svn:special svn:externals svn:needs-lock
 
 c390ab1c-c3a3-bb43-afa3-5d4300cc8aae
 
-activity_community_policital.xml
-file
-
-
-
-
-2013-12-20T01:35:03.659389Z
-6d3ea2836460c320be6e112e15c49469
-2013-12-20T01:30:02.658763Z
-113
-hzh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-257
-
 activity_community_service.xml
 file
 
@@ -128,6 +94,40 @@ hzh
 
 257
 
+activity_community_new_pay.xml
+file
+179
+
+
+
+2014-02-13T07:27:32.956190Z
+6d3ea2836460c320be6e112e15c49469
+2014-02-13T09:21:25.068916Z
+179
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+257
+
 main.xml
 file
 
@@ -162,40 +162,6 @@ hzh
 
 261
 
-activity_community_notification.xml
-file
-
-
-
-
-2013-12-20T01:35:03.671390Z
-6d3ea2836460c320be6e112e15c49469
-2013-12-20T01:30:02.658763Z
-113
-hzh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-257
-
 activity_community_modify_sex.xml
 file
 
@@ -206,40 +172,6 @@ file
 6d3ea2836460c320be6e112e15c49469
 2014-01-02T02:33:11.655043Z
 167
-hzh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-257
-
-activity_community_pay.xml
-file
-
-
-
-
-2013-12-20T01:35:03.673390Z
-6d3ea2836460c320be6e112e15c49469
-2013-12-20T01:30:02.658763Z
-113
 hzh
 
 
@@ -410,6 +342,108 @@ file
 6d3ea2836460c320be6e112e15c49469
 2013-12-31T06:04:26.572830Z
 164
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+257
+
+activity_community_policital.xml
+file
+
+
+
+
+2013-12-20T01:35:03.659389Z
+6d3ea2836460c320be6e112e15c49469
+2013-12-20T01:30:02.658763Z
+113
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+257
+
+activity_community_notification.xml
+file
+
+
+
+
+2013-12-20T01:35:03.671390Z
+6d3ea2836460c320be6e112e15c49469
+2013-12-20T01:30:02.658763Z
+113
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+257
+
+activity_community_pay.xml
+file
+
+
+
+
+2013-12-20T01:35:03.673390Z
+6d3ea2836460c320be6e112e15c49469
+2013-12-20T01:30:02.658763Z
+113
 hzh
 
 

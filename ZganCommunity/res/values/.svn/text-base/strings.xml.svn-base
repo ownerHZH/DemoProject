@@ -95,6 +95,10 @@
     <string name="usher">迎宾</string>
     <string name="driver">司机</string>
 
+    <!-- 社区通知字段 -->
+    <string name="community_notification_property_news">物业通知</string>
+    <string name="community_notification_announcement">社区公告</string>
+
     <!-- 登陆界面 -->
     <string name="tel_numb">手&#160;机&#160;号:</string>
     <string name="user_name">用&#160;户&#160;名:</string>
@@ -131,5 +135,6 @@
     <string name="title_activity_communtity_user_info">CommuntityUserInfoActivity</string>
     <string name="title_activity_community_modify_password">CommunityModifyPasswordActivity</string>
     <string name="title_activity_community_modify_sex">CommunityModifySexActivity</string>
+    <string name="title_activity_community_new_pay">CommunityNewPayActivity</string>
 
 </resources>

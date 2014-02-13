@@ -9,7 +9,7 @@
         android:largeScreens="true"
         android:normalScreens="true"
         android:resizeable="true"
-        android:smallScreens="true" />	
+        android:smallScreens="true" />
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -82,6 +82,7 @@
         </activity>
         <activity android:name="com.zgan.community.activity.CommunityNotificationActivity" >
         </activity>
+        <activity android:name="com.zgan.community.activity.CommunityNewNotificationActivity" />
         <activity android:name="com.zgan.community.activity.CommunityPayActivity" >
         </activity>
         <activity android:name="com.zgan.community.activity.CommunityTradeActivity" >
@@ -127,6 +128,10 @@
         <activity
             android:name="com.zgan.community.activity.CommunityModifySexActivity"
             android:label="@string/title_activity_community_modify_sex" >
+        </activity>
+        <activity
+            android:name="com.zgan.community.activity.CommunityNewPayActivity"
+            android:label="@string/title_activity_community_new_pay" >
         </activity>
     </application>
 

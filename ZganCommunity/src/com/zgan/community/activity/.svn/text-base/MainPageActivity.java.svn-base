@@ -99,14 +99,14 @@ public class MainPageActivity extends MainAcitivity {
 				break;*/
 			case R.id.communityNotification:
 				// 社区通知点击响应事件
-				intent = new Intent(con, CommunityNotificationActivity.class);
+				intent = new Intent(con, CommunityNewNotificationActivity.class);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				break;
 			case R.id.communityPay:
 				// 充值缴费点击响应事件
-				intent = new Intent(con, CommunityPayActivity.class);
+				intent = new Intent(con, CommunityNewPayActivity.class);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
