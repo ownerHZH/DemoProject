@@ -1,7 +1,7 @@
 9
 
 dir
-176
+177
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout
 https://192.168.1.88/svn/ZganCommunity
 
@@ -672,40 +672,6 @@ fr
 
 2206
 
-default_list.xml
-file
-
-
-
-
-2013-12-25T08:14:53.230377Z
-0d0faec50b5772f23ee7d22180fc6a76
-2013-12-25T08:31:49.531318Z
-140
-hzh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-570
-
 activity_community_trade.xml
 file
 
@@ -740,16 +706,16 @@ fr
 
 6159
 
-community_service_item.xml
+default_list.xml
 file
 
 
 
 
-2013-12-25T08:45:08.040179Z
-d31b7d4afc795c514ba986cd8d7e9406
-2013-12-25T09:08:45.889582Z
-141
+2013-12-25T08:14:53.230377Z
+0d0faec50b5772f23ee7d22180fc6a76
+2013-12-25T08:31:49.531318Z
+140
 hzh
 
 
@@ -772,7 +738,7 @@ hzh
 
 
 
-1953
+570
 
 activity_community_policital_detail.xml
 file
@@ -808,6 +774,40 @@ hzh
 
 2170
 
+community_service_item.xml
+file
+
+
+
+
+2013-12-25T08:45:08.040179Z
+d31b7d4afc795c514ba986cd8d7e9406
+2013-12-25T09:08:45.889582Z
+141
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1953
+
 line_map.xml
 file
 
@@ -841,40 +841,6 @@ fr
 
 
 1937
-
-line_life_pepsi.xml
-file
-
-
-
-
-2013-12-20T01:35:04.131416Z
-60f0be5347e3049bafe08ba77fbe3997
-2013-12-20T01:30:02.658763Z
-113
-hzh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1461
 
 activity_community_modify_sex.xml
 file
@@ -910,6 +876,40 @@ fr
 
 2290
 
+line_life_pepsi.xml
+file
+
+
+
+
+2013-12-20T01:35:04.131416Z
+60f0be5347e3049bafe08ba77fbe3997
+2013-12-20T01:30:02.658763Z
+113
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1461
+
 line_main_page.xml
 file
 
@@ -944,40 +944,6 @@ hzh
 
 1562
 
-activity_community_policital_list.xml
-file
-
-
-
-
-2013-12-20T01:35:04.135416Z
-7f121c5d0e27419901b00218ba211361
-2013-12-20T01:30:02.658763Z
-113
-hzh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-542
-
 line_register.xml
 file
 
@@ -1011,6 +977,40 @@ fr
 
 
 3094
+
+activity_community_policital_list.xml
+file
+
+
+
+
+2013-12-20T01:35:04.135416Z
+7f121c5d0e27419901b00218ba211361
+2013-12-20T01:30:02.658763Z
+113
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+542
 
 line_recinfo.xml
 file
