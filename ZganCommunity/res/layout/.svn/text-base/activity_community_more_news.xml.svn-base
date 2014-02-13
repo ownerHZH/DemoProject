@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/more"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CommunityMoreNewsActivity" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/top_title" />
+
+    <ListView
+        android:id="@+id/newslist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/include1"
+        android:layout_margin="20dp"
+        android:cacheColorHint="#00000000" >
+
+    </ListView>
+
+</RelativeLayout>

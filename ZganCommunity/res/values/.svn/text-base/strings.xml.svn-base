@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">慧社区</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_page">MainPageActivity</string>
+    <string name="menu_settings">Settings</string>
+
+    <!-- 主页字段 -->
+    <string name="name">匿名</string>
+    <string name="integral">积分 0 分</string>
+    <string name="community_name">*龙城大院社区*</string>
+    <string name="community_service">社区服务</string>
+    <string name="community_cheap">好便宜</string>
+    <string name="community_notification">社区通知</string>
+    <string name="community_pay">费用查询</string>
+    <string name="community_trade">社区商圈</string>
+    <string name="community_policital">民生政务</string>
+    <string name="community_recruit">招工信息</string>
+    <string name="community_livelihood">生活百事</string>
+    <string name="community_house_shelter">家庭卫士</string>
+    <string name="community_smart_housing">智能家居</string>
+    <string name="community_neighbour">邻里圈</string>
+    <string name="community_settings">我的设置</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- 社区服务字段 -->
+    <string name="community_service_move">搬家</string>
+    <string name="community_service_unlock">开锁服务</string>
+    <string name="community_service_plumber">水电维修</string>
+    <string name="community_service_pcrepair">电脑维修</string>
+    <string name="community_service_recycle">闲置回收</string>
+    <string name="community_service_pet">宠物之家</string>
+    <string name="community_service_psychological">心理辅导</string>
+    <string name="community_service_health">健康咨询</string>
+    <string name="community_service_law">法律咨询</string>
+    <string name="community_service_pipe">疏通管道</string>
+    <string name="community_service_matron">月嫂</string>
+    <string name="community_service_cleaning">保洁</string>
+    <string name="community_service_nanny">保姆</string>
+
+    <!-- 社区服务Item布局字段 -->
+    <string name="community_service_item_name">姓名:</string>
+    <string name="community_service_item_address">地址:</string>
+    <string name="community_service_item_phone">电话:</string>
+
+    <!-- 社区通知字段 -->
+    <string name="community_notification_landlord">联系物业:</string>
+    <string name="community_notification_vote">投票参与:</string>
+    <string name="community_notification_apply">报名参与:</string>
+    <string name="community_notification_detail">详细</string>
+    <string name="community_notification_news">紧急停水通知</string>
+    <string name="community_notification_news1">大风天气防空坠物</string>
+    <string name="community_notification_news2">关于组织免费体检</string>
+
+    <!-- 充值缴费字段 -->
+    <string name="community_pay_moneytitle">总费用查询：</string>
+    <string name="community_pay_goodsmanage">您本月物管费如下：</string>
+    <string name="community_pay_electric">您本月物电费如下：</string>
+    <string name="community_pay_water">您本月物水费如下：</string>
+    <string name="community_pay_phone">您本月物手机费如下：</string>
+    <string name="community_pay_totalmoney">总计：</string>
+
+    <!-- 缴费查询 item字段 -->
+    <string name="community_pay_item_own">欠费 ：</string>
+
+    <!-- 社区商圈字段 -->
+    <string name="community_trade_supermarket">小超市</string>
+    <string name="community_trade_snack">快餐</string>
+    <string name="community_trade_pasta">面食</string>
+    <string name="community_trade_barbecue">烧烤</string>
+    <string name="community_trade_hairdressing">美容美发</string>
+    <string name="community_trade_dryclean">干洗</string>
+    <string name="community_trade_leatherware">皮具保养</string>
+    <string name="community_trade_fondue">火锅</string>
+    <string name="community_trade_chinesemeal">中餐</string>
+    <string name="community_trade_teahouse">茶楼</string>
+    <string name="community_trade_kidstrain">儿童培训</string>
+    <string name="community_trade_trafficsearch">交通查询</string>
+
+    <!-- 阳光政务字段 -->
+    <string name="community_policital_news">实时政务</string>
+    <string name="community_policital_law">办公地点</string>
+    <string name="community_policital_detail_title">详情</string>
+    <string name="community_policital_detail_date">发布时间：</string>
+
+    <!-- 招工信息 -->
+    <string name="back">返回</string>
+    <string name="sales">销售</string>
+    <string name="wireman">电工</string>
+    <string name="clerk">文员</string>
+    <string name="baoan">保安</string>
+    <string name="dishwasher">洗碗工</string>
+    <string name="waiter">服务员</string>
+    <string name="usher">迎宾</string>
+    <string name="driver">司机</string>
+
+    <!-- 登陆界面 -->
+    <string name="tel_numb">手&#160;机&#160;号:</string>
+    <string name="user_name">用&#160;户&#160;名:</string>
+    <string name="password">密&#160;&#160;码:</string>
+    <string name="repassword">密&#160;码&#160;确&#160;认:</string>
+    <string name="address">地&#160;&#160;&#160;址:</string>
+
+    <!-- 生活百事 -->
+    <string name="guide">办事指南</string>
+    <string name="life_info">生活资讯</string>
+    <string name="house_magament">户籍管理</string>
+    <string name="family_plann">计划生育</string>
+    <string name="labor_arbitration">纳税</string>
+    <string name="social_security">社会保障</string>
+    <string name="labour_employment">劳动就业</string>
+    <string name="marriage_registration">婚姻登记</string>
+    <string name="consumer_protection">消费维权</string>
+    <string name="traffic_management">交通管理</string>
+    <string name="personnel_training">人事培训</string>
+    <string name="entry_exit">出入境</string>
+    <string name="environmental_management">劳动仲裁</string>
+    <string name="other_kid">住房</string>
+
+    <!-- 我的设置 -->
+    <string name="personal_settings">个人设置</string>
+    <string name="binding_community">绑定社区</string>
+    <string name="choice_community">切换社区</string>
+    <string name="msge_push">消息推送</string>
+    <string name="version_update">版本更新</string>
+    <string name="about">关于</string>
+    <string name="fake_content">	   中感科技秉承“智能生活的领导者”这一宗旨，通过领先的产品设计、优异的产品质量、完善的客户服务、规范的运行机制，培育强大的市场拓展能力、卓越的客户服务能力和杰出的运营管理能力，实现市场影响力和高价值增长的可持续发展。
+       身负“感知中国”的历史使命，中感科技与您携手，共同在这个伟大的时代书写浓墨重彩的一笔！</string>
+    <string name="news_list_title">更多通知</string>
+    <string name="title_activity_communtity_user_info">CommuntityUserInfoActivity</string>
+    <string name="title_activity_community_modify_password">CommunityModifyPasswordActivity</string>
+    <string name="title_activity_community_modify_sex">CommunityModifySexActivity</string>
+
+</resources>

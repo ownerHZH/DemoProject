@@ -1,0 +1,173 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainPageActivity" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/title_bak"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/textViewDefault"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="龙城大院智慧小区"
+                        android:textColor="@color/waite"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/headIco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="40dp"
+                        android:src="@drawable/local_ico" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/advertising"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/gallery_pic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" >
+
+                    <Button
+                        android:id="@+id/communityService"
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/main1" />
+
+                    <Button
+                        android:id="@+id/communityNotification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/main2" />
+
+                    <Button
+                        android:id="@+id/communityPay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/main3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" >
+
+                    <Button
+                        android:id="@+id/communityTrade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/main4" />
+
+                    <Button
+                        android:id="@+id/communityPolicital"
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/main5" />
+
+                    <Button
+                        android:id="@+id/communityRecruit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/main6" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" >
+
+                        <Button
+                            android:id="@+id/communityHouseShelter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="90dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/main8" />                      
+
+                        <Button
+                            android:id="@+id/communityLivelihood"                                                    
+                            android:layout_width="wrap_content"
+                            android:layout_height="90dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/main7" />                     
+
+
+                        <Button
+                            android:id="@+id/communitySettings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="90dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/main9" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

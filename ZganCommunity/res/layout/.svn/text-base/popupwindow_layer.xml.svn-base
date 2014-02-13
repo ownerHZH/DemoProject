@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/popupwin_bg"
+    android:gravity="top|center_vertical"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/editTextPopupWindow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:minLines="5" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/add_button"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignBottom="@+id/editTextPopupWindow"
+        android:layout_alignParentRight="false"
+        android:layout_alignRight="@+id/editTextPopupWindow"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/add_ico" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textViewDefault"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:text="周*"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:text="13888825648"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="确认提交" />
+
+</LinearLayout>

@@ -56,7 +56,8 @@ public class SmothActivity extends ActivityGroup
         initViews();
     }
 
-    private void initViews() {
+    @SuppressWarnings("deprecation")
+	private void initViews() {
         intentView = new Intent[] {new Intent(SmothActivity.this, CloudEyesActivity.class),
                         new Intent(SmothActivity.this, ImprintingActivity.class),
                         new Intent(SmothActivity.this, CloudPhotoAlbumActivity.class),
@@ -108,7 +109,8 @@ public class SmothActivity extends ActivityGroup
         getMAX_WIDTH();
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void onClick(View v) {
         int vid = v.getId();
         switch (vid) {
