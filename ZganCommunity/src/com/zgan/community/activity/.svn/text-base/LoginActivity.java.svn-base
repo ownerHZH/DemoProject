@@ -61,8 +61,8 @@ public class LoginActivity extends MainAcitivity {
 		go_tel = (EditText) findViewById(R.id.go_tel);
 		go_pas = (EditText) findViewById(R.id.go_pas);
 
-		go_tel.setText("15923258890");
-		go_pas.setText("123456");
+		/*go_tel.setText(preferences.getString("number", null));
+		go_pas.setText(preferences.getString("password", null));*/
 
 		go.setOnClickListener(listener);
 		reg.setOnClickListener(listener);

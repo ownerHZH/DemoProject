@@ -16,11 +16,13 @@ import com.zgan.community.R;
 import com.zgan.community.adapter.ReinfoAdapter;
 import com.zgan.community.data.Recinfo;
 import com.zgan.community.tools.MainAcitivity;
+import com.zgan.community.tools.ZganCommunityStaticData;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -46,6 +48,8 @@ public class UserSetting extends MainAcitivity {
 
 	Button logout;
 	private LinearLayout userInfoSetting;
+	SharedPreferences preferences;
+	SharedPreferences.Editor editor;
 
 	Handler handler = new Handler();
 	ProgressDialog dialog;
@@ -69,10 +73,12 @@ public class UserSetting extends MainAcitivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.line_usersetting);
+		preferences = getSharedPreferences("zgan_data", MODE_PRIVATE);
+		editor = preferences.edit();
 		back = (Button) findViewById(R.id.back);
 		logout = (Button) findViewById(R.id.out);
 		top_title = (TextView) findViewById(R.id.title);
-		userInfoSetting=(LinearLayout) findViewById(R.id.userInfoSetting);
+		userInfoSetting = (LinearLayout) findViewById(R.id.userInfoSetting);
 
 		top_title.setText("我的设置");
 
@@ -99,11 +105,12 @@ public class UserSetting extends MainAcitivity {
 				dialog.setTitle("提示");
 				dialog.setMessage("退出账号中，请稍后");
 				dialog.show();
-				OutUser("15923258890");
+				OutUser(ZganCommunityStaticData.User_Number);
 				break;
-				
+
 			case R.id.userInfoSetting:
-				Intent intentU=new Intent(UserSetting.this,CommuntityUserInfoActivity.class);
+				Intent intentU = new Intent(UserSetting.this,
+						CommuntityUserInfoActivity.class);
 				startActivity(intentU);
 				break;
 			}
@@ -168,6 +175,7 @@ public class UserSetting extends MainAcitivity {
 		public void run() {
 			// TODO Auto-generated method stub
 			dialog.dismiss();
+			editor.clear();
 			android.os.Process.killProcess(android.os.Process.myPid());
 			System.exit(0);
 		}

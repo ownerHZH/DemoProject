@@ -23,8 +23,10 @@ import com.zgan.community.data.ServiceInfo;
 import com.zgan.community.adapter.CommunityServiceAdapter;
 import com.zgan.community.data.CommunityService;
 import com.zgan.community.tools.MainAcitivity;
+import com.zgan.community.tools.ZganCommunityStaticData;
 
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -56,6 +58,7 @@ public class Reinfo_son extends MainAcitivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.line_recinfo_son);
+
 		handler = new Handler();
 
 		back = (Button) findViewById(R.id.back);
@@ -136,7 +139,8 @@ public class Reinfo_son extends MainAcitivity {
 			public void run() {
 				// TODO Auto-generated method stub
 				HttpGet get = new HttpGet(
-						"http://community1.zgantech.com/ZganJob.aspx?did=15923258890&sid="
+						"http://community1.zgantech.com/ZganJob.aspx?did="
+								+ ZganCommunityStaticData.User_Number + "&sid="
 								+ sid);
 
 				HttpClient client = new DefaultHttpClient();
@@ -150,7 +154,7 @@ public class Reinfo_son extends MainAcitivity {
 						String st = EntityUtils.toString(entity);
 
 						Log.i("st", "" + st);
-						
+
 						JSONObject jsonObject = new JSONObject(st);
 						String status = jsonObject.getString("status");
 						Log.i("status", "" + status);

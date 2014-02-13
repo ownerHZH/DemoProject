@@ -1,5 +1,8 @@
 package com.zgan.community.baidu;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +43,7 @@ public class ZganCommunityMapShow extends MainAcitivity {
 	private Button back;
 	private Button listshow;
 	private TextView title;
-
+	static List<MKPoiInfo> mkPoiInfos=new ArrayList<MKPoiInfo>();
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -59,6 +62,10 @@ public class ZganCommunityMapShow extends MainAcitivity {
 		back.setOnClickListener(l);
 		listshow.setOnClickListener(l);
 		mMapView = (MapView) findViewById(R.id.bmapsView);
+		GeoPoint point =new GeoPoint((int) (29.526199 * 1E6),
+				(int) (106.717878 * 1E6));  
+		//用给定的经纬度构造一个GeoPoint，单位是微度 (度 * 1E6)  
+		mMapView.getController().setCenter(point);//设置地图中心点  
 		mMapView.getController().enableClick(true);
 		mMapView.getController().setZoom(19);
 
@@ -85,6 +92,7 @@ public class ZganCommunityMapShow extends MainAcitivity {
 				if (error != 0 || res == null) {
 					Toast.makeText(ZganCommunityMapShow.this, "抱歉，未找到结果",
 							Toast.LENGTH_LONG).show();
+					mkPoiInfos.clear();
 					return;
 				}
 				// 将地图移动到第一个POI中心点
@@ -92,6 +100,7 @@ public class ZganCommunityMapShow extends MainAcitivity {
 					// 将poi结果显示到地图上
 					MyPoiOverlay poiOverlay = new MyPoiOverlay(
 							ZganCommunityMapShow.this, mMapView, mSearch);
+					mkPoiInfos= res.getAllPoi();				
 					poiOverlay.setData(res.getAllPoi());
 					mMapView.getOverlays().clear();
 					mMapView.getOverlays().add(poiOverlay);
@@ -234,8 +243,9 @@ public class ZganCommunityMapShow extends MainAcitivity {
 	 * @param v
 	 */
 	public void searchButtonProcess(String data) {
-		mSearch.poiSearchNearBy(data, new GeoPoint((int) (29.526166 * 1E6),
-				(int) (106.717886 * 1E6)), 500);
+		mSearch.poiSearchNearBy(data, new GeoPoint((int) (29.526199 * 1E6),
+				(int) (106.717878 * 1E6)), 500);
+		
 		// mSearch.poiSearchInCity("重庆", "美食");
 	}
 

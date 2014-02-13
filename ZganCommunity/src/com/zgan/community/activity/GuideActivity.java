@@ -33,6 +33,7 @@ import com.zgan.community.adapter.ReinfoAdapter;
 import com.zgan.community.data.CommunityService;
 import com.zgan.community.data.Recinfo;
 import com.zgan.community.tools.MainAcitivity;
+import com.zgan.community.tools.ZganCommunityStaticData;
 
 public class GuideActivity extends MainAcitivity {
 	Button back;
@@ -112,9 +113,9 @@ public class GuideActivity extends MainAcitivity {
 				GetData(10);
 			} else if (button_key.equals("出入境")) {
 				GetData(11);
-			}  else if (button_key.equals("公租房")) {
+			} else if (button_key.equals("公租房")) {
 				GetData(12);
-			}  else if (button_key.equals("兵役")) {
+			} else if (button_key.equals("兵役")) {
 				GetData(13);
 			} else {
 				dialog.dismiss();
@@ -131,7 +132,8 @@ public class GuideActivity extends MainAcitivity {
 			public void run() {
 				// TODO Auto-generated method stub
 				HttpGet get = new HttpGet(
-						"http://community1.zgantech.com/Zgan_BSZN.aspx?did=15923258890&sid="
+						"http://community1.zgantech.com/Zgan_BSZN.aspx?did="
+								+ ZganCommunityStaticData.User_Number + "&sid="
 								+ sid);
 				Log.i("00000000000", "00000000000");
 				HttpClient client = new DefaultHttpClient();

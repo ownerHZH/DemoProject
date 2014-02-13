@@ -1,15 +1,15 @@
 9
 
 dir
-166
+176
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout
 https://192.168.1.88/svn/ZganCommunity
 
 
 
-2013-12-31T08:18:35.545781Z
-165
-hzh
+2014-02-13T06:08:31.845537Z
+176
+fr
 
 
 svn:special svn:externals svn:needs-lock
@@ -270,11 +270,11 @@ file
 
 
 
-2013-12-31T08:04:15.303330Z
-ed300879a5eb8e350879d7d0f19963ed
-2013-12-31T08:18:35.545781Z
-165
-hzh
+2014-02-13T06:10:49.215871Z
+0e58a829951421fbbf5d9c2af9c6bac0
+2014-01-02T03:31:15.655918Z
+168
+fr
 
 
 
@@ -296,7 +296,7 @@ hzh
 
 
 
-2151
+2161
 
 activity_main_page.xml
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2013-12-31T05:27:59.992093Z
-ff852ce140072ecad2cb442cafa01733
-2013-12-31T06:04:26.572830Z
-164
-hzh
+2014-02-13T06:10:49.219871Z
+666baf5bef210f0a1302b19623b5e02a
+2014-02-13T06:08:31.845537Z
+176
+fr
 
 
 
@@ -672,40 +672,6 @@ fr
 
 2206
 
-activity_community_trade.xml
-file
-
-
-
-
-2013-12-31T06:00:42.058317Z
-214fba12548de164117a470159d18273
-2013-12-30T03:08:30.425883Z
-161
-fr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6159
-
 default_list.xml
 file
 
@@ -740,17 +706,17 @@ hzh
 
 570
 
-activity_community_policital_detail.xml
+activity_community_trade.xml
 file
 
 
 
 
-2013-12-27T08:43:14.007056Z
-091157bb2b4c066317b0ca81fb241d8c
-2013-12-27T08:49:06.837367Z
-157
-hzh
+2013-12-31T06:00:42.058317Z
+214fba12548de164117a470159d18273
+2013-12-30T03:08:30.425883Z
+161
+fr
 
 
 
@@ -772,7 +738,7 @@ hzh
 
 
 
-2170
+6159
 
 community_service_item.xml
 file
@@ -808,50 +774,16 @@ hzh
 
 1953
 
-line_map.xml
+activity_community_policital_detail.xml
 file
 
 
 
 
-2013-12-26T07:19:39.103400Z
-e6da23e7cffac43958032289ae078656
-2013-12-26T06:28:20.113045Z
-149
-fr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1625
-
-activity_community_modify_sex.xml
-file
-167
-
-
-
-2013-12-31T10:00:04.071777Z
-57f89367d05b82f8ae5bdb36bdb46d24
-2014-01-02T02:33:11.655043Z
-167
+2013-12-27T08:43:14.007056Z
+091157bb2b4c066317b0ca81fb241d8c
+2013-12-27T08:49:06.837367Z
+157
 hzh
 
 
@@ -874,7 +806,41 @@ hzh
 
 
 
-2206
+2170
+
+line_map.xml
+file
+
+
+
+
+2014-02-13T06:10:49.223872Z
+163ddf8a7d88e617ab964f29ea0293aa
+2014-02-13T06:08:31.845537Z
+176
+fr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1937
 
 line_life_pepsi.xml
 file
@@ -910,6 +876,40 @@ hzh
 
 1461
 
+activity_community_modify_sex.xml
+file
+
+
+
+
+2014-02-13T06:10:49.195870Z
+a9a5d059d3291c01cf2b0207ab01579c
+2014-01-02T03:31:15.655918Z
+168
+fr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2290
+
 line_main_page.xml
 file
 
@@ -944,40 +944,6 @@ hzh
 
 1562
 
-line_register.xml
-file
-
-
-
-
-2013-12-23T08:39:20.657380Z
-331ec7fae35c8e7b6e593bc82f66332f
-2013-12-23T08:04:29.559166Z
-121
-fr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2832
-
 activity_community_policital_list.xml
 file
 
@@ -1011,6 +977,40 @@ hzh
 
 
 542
+
+line_register.xml
+file
+
+
+
+
+2014-02-13T06:10:49.226872Z
+eebf9375b5d6b1320671ac628b462056
+2014-01-03T06:34:09.112049Z
+170
+fr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3094
 
 line_recinfo.xml
 file
@@ -1082,19 +1082,15 @@ hzh
 
 activity_communtity_user_info.xml
 file
-167
-
-
-
-2014-01-02T02:06:32.656350Z
-e643011affbfe479966829d4353dbca5
-2014-01-02T02:33:11.655043Z
-167
-hzh
 
 
 
 
+2014-02-13T06:10:49.211871Z
+133f6c5ba46f3726ce2abcd76fe9438d
+2014-01-03T02:17:06.704467Z
+169
+fr
 
 
 
@@ -1112,7 +1108,11 @@ hzh
 
 
 
-7505
+
+
+
+
+7452
 
 line_food.xml
 file

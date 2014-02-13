@@ -16,6 +16,7 @@ import com.zgan.community.jsontool.JsonEntity;
 import com.zgan.community.tools.MainAcitivity;
 import com.zgan.community.tools.MyProgressDialog;
 import com.zgan.community.tools.StringTypeToInt;
+import com.zgan.community.tools.ZganCommunityStaticData;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -70,7 +71,7 @@ public class CommunityServiceListActivity extends MainAcitivity {
 				HttpClientService svr = new HttpClientService(
 						AppConstants.HttpHostAdress+"ZganCommunityService.aspx");
 				//²ÎÊý
-				svr.addParameter("did","15923258890");
+				svr.addParameter("did",ZganCommunityStaticData.User_Number);
 				svr.addParameter("sid", StringTypeToInt.convertTypeToInt(button_key));
 				
 				HttpAndroidTask task = new HttpAndroidTask(con, svr,

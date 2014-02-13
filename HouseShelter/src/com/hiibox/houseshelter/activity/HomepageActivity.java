@@ -582,10 +582,12 @@ public class HomepageActivity extends ShaerlocActivity implements OnSeekBarChang
 		    return;
 		}
 		switch (subCmd) {
-			case 1:         
+			case 1: 
+				System.out.println("发送子功能1");
 				MyApplication.mainClient.startDefine(phone, DateUtil.getcurrentDay(), commandListener);
 				break;
-			case 3:         
+			case 3:  
+				System.out.println("发送子功能3");
 				MyApplication.mainClient.finishDefine(phone, DateUtil.getcurrentDay(), commandListener);
 				break;
 			case 4:                   
@@ -891,10 +893,12 @@ public class HomepageActivity extends ShaerlocActivity implements OnSeekBarChang
 		seekBar.setClickable(false);
 		defenceClikable = false;
         if (progress > 50) {
+        	System.out.println("seekBar开启");
         	sendRequest(1);
         	seekBar.setProgress(100);
             seekBar.setThumb(leftGrayDrawable);
         } else {
+        	System.out.println("seekBar关闭");
         	sendRequest(3);
         	seekBar.setProgress(0);
             seekBar.setThumb(rightGrayDrawable);

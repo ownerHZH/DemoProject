@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svn/ZganCommunity/!svn/ver/165/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout
+/svn/ZganCommunity/!svn/ver/176/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout
 END
 activity_community_service.xml
 K 25
@@ -49,7 +49,7 @@ activity_community_modify_password.xml
 K 25
 svn:wc:ra_dav:version-url
 V 140
-/svn/ZganCommunity/!svn/ver/165/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_modify_password.xml
+/svn/ZganCommunity/!svn/ver/168/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_modify_password.xml
 END
 activity_main_page.xml
 K 25
@@ -103,7 +103,7 @@ activity_community_notification.xml
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svn/ZganCommunity/!svn/ver/164/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_notification.xml
+/svn/ZganCommunity/!svn/ver/176/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_notification.xml
 END
 line_recinfo_son.xml
 K 25
@@ -117,23 +117,17 @@ svn:wc:ra_dav:version-url
 V 123
 /svn/ZganCommunity/!svn/ver/152/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/down_notification.xml
 END
-activity_community_trade.xml
-K 25
-svn:wc:ra_dav:version-url
-V 130
-/svn/ZganCommunity/!svn/ver/161/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_trade.xml
-END
 default_list.xml
 K 25
 svn:wc:ra_dav:version-url
 V 118
 /svn/ZganCommunity/!svn/ver/140/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/default_list.xml
 END
-activity_community_policital_detail.xml
+activity_community_trade.xml
 K 25
 svn:wc:ra_dav:version-url
-V 141
-/svn/ZganCommunity/!svn/ver/157/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_policital_detail.xml
+V 130
+/svn/ZganCommunity/!svn/ver/161/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_trade.xml
 END
 community_service_item.xml
 K 25
@@ -141,11 +135,23 @@ svn:wc:ra_dav:version-url
 V 128
 /svn/ZganCommunity/!svn/ver/141/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/community_service_item.xml
 END
+activity_community_policital_detail.xml
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/ZganCommunity/!svn/ver/157/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_policital_detail.xml
+END
 line_map.xml
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/ZganCommunity/!svn/ver/149/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/line_map.xml
+/svn/ZganCommunity/!svn/ver/176/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/line_map.xml
+END
+activity_community_modify_sex.xml
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/ZganCommunity/!svn/ver/168/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_modify_sex.xml
 END
 line_life_pepsi.xml
 K 25
@@ -153,29 +159,23 @@ svn:wc:ra_dav:version-url
 V 121
 /svn/ZganCommunity/!svn/ver/113/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/line_life_pepsi.xml
 END
-activity_community_modify_sex.xml
-K 25
-svn:wc:ra_dav:version-url
-V 135
-/svn/ZganCommunity/!svn/ver/167/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_modify_sex.xml
-END
 line_main_page.xml
 K 25
 svn:wc:ra_dav:version-url
 V 120
 /svn/ZganCommunity/!svn/ver/113/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/line_main_page.xml
 END
-line_register.xml
-K 25
-svn:wc:ra_dav:version-url
-V 119
-/svn/ZganCommunity/!svn/ver/121/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/line_register.xml
-END
 activity_community_policital_list.xml
 K 25
 svn:wc:ra_dav:version-url
 V 139
 /svn/ZganCommunity/!svn/ver/113/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_policital_list.xml
+END
+line_register.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/ZganCommunity/!svn/ver/170/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/line_register.xml
 END
 line_recinfo.xml
 K 25
@@ -193,7 +193,7 @@ activity_communtity_user_info.xml
 K 25
 svn:wc:ra_dav:version-url
 V 135
-/svn/ZganCommunity/!svn/ver/167/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_communtity_user_info.xml
+/svn/ZganCommunity/!svn/ver/169/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_communtity_user_info.xml
 END
 line_food.xml
 K 25

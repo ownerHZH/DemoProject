@@ -26,14 +26,16 @@
         android:orientation="vertical" >
 
         <EditText
+            android:id="@+id/reg_user_numb"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/phone_bg"
             android:inputType="number"
+            android:background="@drawable/phone_bg"
             android:singleLine="true" />
 
         <EditText
+            android:id="@+id/reg_user_pas"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -41,9 +43,11 @@
             android:layout_marginRight="5dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/setpas"
+            android:inputType="textPassword"
             android:singleLine="true" />
 
         <EditText
+            android:id="@+id/reg_user_repas"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -51,9 +55,11 @@
             android:layout_marginRight="5dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/rightpas"
+            android:inputType="textPassword"
             android:singleLine="true" />
 
         <ImageView
+            android:id="@+id/reg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

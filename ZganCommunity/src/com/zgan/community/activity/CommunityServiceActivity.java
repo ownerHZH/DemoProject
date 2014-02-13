@@ -1,6 +1,7 @@
 package com.zgan.community.activity;
 
 import com.zgan.community.R;
+import com.zgan.community.baidu.ZganCommunityMapShow;
 import com.zgan.community.tools.MainAcitivity;
 
 import android.os.Bundle;
@@ -89,79 +90,79 @@ public class CommunityServiceActivity extends MainAcitivity {
 				break;
             case R.id.buttonMove:
             	//搬家点击响应事件
-            	intent=new Intent(con,CommunityServiceListActivity.class);
+            	intent=new Intent(con,ZganCommunityMapShow.class);
             	intent.putExtra("button_key", "搬家");
 				startActivity(intent);
 				break;
             case R.id.buttonUnlock:
             	//开锁服务点击响应事件
-            	intent=new Intent(con,CommunityServiceListActivity.class);
+            	intent=new Intent(con,ZganCommunityMapShow.class);
             	intent.putExtra("button_key", "开锁服务");
 				startActivity(intent);
 				break;
             case R.id.buttonPlumber:
             	//水电维修点击响应事件
-            	intent=new Intent(con,CommunityServiceListActivity.class);
+            	intent=new Intent(con,ZganCommunityMapShow.class);
             	intent.putExtra("button_key", "水电维修");
 				startActivity(intent);
 				break;
              case R.id.buttonPCrepair:
             	//电脑维修点击响应事件
-            	 intent=new Intent(con,CommunityServiceListActivity.class);
+            	 intent=new Intent(con,ZganCommunityMapShow.class);
              	intent.putExtra("button_key", "电脑维修");
  				startActivity(intent);
  				break;
             case R.id.buttonRecycle:
             	//闲置回收点击响应事件
-            	intent=new Intent(con,CommunityServiceListActivity.class);
+            	intent=new Intent(con,ZganCommunityMapShow.class);
             	intent.putExtra("button_key", "闲置回收");
 				startActivity(intent);
 				break;
             case R.id.buttonPet:
             	//宠物之家点击响应事件
-            	intent=new Intent(con,CommunityServiceListActivity.class);
+            	intent=new Intent(con,ZganCommunityMapShow.class);
             	intent.putExtra("button_key", "宠物之家");
 				startActivity(intent);
 				break;
             case R.id.buttonPsychological:
             	//心理辅导点击响应事件
-            	intent=new Intent(con,CommunityServiceListActivity.class);
+            	intent=new Intent(con,ZganCommunityMapShow.class);
             	intent.putExtra("button_key", "心理辅导");
 				startActivity(intent);
 				break;
             case R.id.buttonHealth:
             	//健康咨询点击响应事件
-            	intent=new Intent(con,CommunityServiceListActivity.class);
+            	intent=new Intent(con,ZganCommunityMapShow.class);
             	intent.putExtra("button_key", "健康咨询");
 				startActivity(intent);
 				break;
             case R.id.buttonLaw:
             	//法律咨询点击响应事件
-            	intent=new Intent(con,CommunityServiceListActivity.class);
+            	intent=new Intent(con,ZganCommunityMapShow.class);
             	intent.putExtra("button_key", "法律咨询");
 				startActivity(intent);
 				break;
             case R.id.buttonPipe:
             	//疏通管道点击响应事件
-            	intent=new Intent(con,CommunityServiceListActivity.class);
+            	intent=new Intent(con,ZganCommunityMapShow.class);
             	intent.putExtra("button_key", "疏通管道");
 				startActivity(intent);
 				break;
             case R.id.buttonMatron:
             	//月嫂点击响应事件
-            	intent=new Intent(con,CommunityServiceListActivity.class);
+            	intent=new Intent(con,ZganCommunityMapShow.class);
             	intent.putExtra("button_key", "月嫂");
 				startActivity(intent);
 				break;
             case R.id.buttonCleaning:
             	//保洁点击响应事件
-            	intent=new Intent(con,CommunityServiceListActivity.class);
+            	intent=new Intent(con,ZganCommunityMapShow.class);
             	intent.putExtra("button_key", "保洁");
 				startActivity(intent);
 				break;
             case R.id.buttonNanny:
             	//保姆点击响应事件
-            	intent=new Intent(con,CommunityServiceListActivity.class);
+            	intent=new Intent(con,ZganCommunityMapShow.class);
             	intent.putExtra("button_key","保姆");//nanny.getText().toString()
 				startActivity(intent);
 				break;

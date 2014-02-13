@@ -17,6 +17,7 @@ import com.zgan.community.jsontool.HttpResponseHandler;
 import com.zgan.community.jsontool.JsonEntity;
 import com.zgan.community.tools.MainAcitivity;
 import com.zgan.community.tools.MyProgressDialog;
+import com.zgan.community.tools.ZganCommunityStaticData;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -136,7 +137,7 @@ public class CommunityNotificationActivity extends MainAcitivity {
 		HttpClientService svr = new HttpClientService(
 				AppConstants.HttpHostAdress+"ZganNews.aspx");//"http://community1.zgantech.com/ZganNews.aspx?did=15923258890"
 		//²ÎÊý
-		svr.addParameter("did","15923258890");
+		svr.addParameter("did",ZganCommunityStaticData.User_Number);
 		//svr.addParameter("sid", StringTypeToInt.convertTypeToInt(button_key));
 		
 		HttpAndroidTask task = new HttpAndroidTask(con, svr,
