@@ -14,6 +14,7 @@ import com.zgan.community.tools.MainAcitivity;
 import android.os.Bundle;
 import android.os.Build.VERSION;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -78,7 +79,9 @@ public class CommunityNewPayActivity extends MainAcitivity {
 			
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(con, "你点击了按钮", Toast.LENGTH_SHORT).show();
+				//Toast.makeText(con, "你点击了按钮", Toast.LENGTH_SHORT).show();
+				Intent intent=new Intent(con,CommunityPayHistoryListActivity.class);
+				startActivity(intent);
 			}
 		});
 	}
@@ -95,16 +98,22 @@ public class CommunityNewPayActivity extends MainAcitivity {
             public void onDateChanged(DatePicker view, int year,
                     int monthOfYear, int dayOfMonth) {
                 Toast.makeText(con,"您选择的日期是："+year+"年"+(monthOfYear+1)+"月",1).show();
+                Map<String,String> map=new HashMap();
+        		map.put("date", "物业账单");
+        		map.put("money", "200");
+        		data.add(map);
+        		communityPayAdapter.notifyDataSetChanged();
             }
             
         });
 	}
 	
+	List<Map<String,String>> data=new ArrayList<Map<String,String>>();
 	/**
 	 * 使各List显示数据
 	 */
 	private void showDetail() {
-		List<Map<String,String>> data=new ArrayList<Map<String,String>>();
+		//data=new ArrayList<Map<String,String>>();
 		
 		Map<String,String> map=new HashMap();
 		map.put("date", "物业账单");

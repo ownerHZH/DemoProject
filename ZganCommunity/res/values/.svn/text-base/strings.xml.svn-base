@@ -23,6 +23,7 @@
     <string name="community_neighbour">邻里圈</string>
     <string name="community_settings">我的设置</string>
     <string name="hello_world">Hello world!</string>
+    <string name="community_pay_history">查询账单</string>
 
     <!-- 社区服务字段 -->
     <string name="community_service_move">搬家</string>
@@ -136,5 +137,6 @@
     <string name="title_activity_community_modify_password">CommunityModifyPasswordActivity</string>
     <string name="title_activity_community_modify_sex">CommunityModifySexActivity</string>
     <string name="title_activity_community_new_pay">CommunityNewPayActivity</string>
+    <string name="title_activity_community_pay_history_list">CommunityPayHistoryListActivity</string>
 
 </resources>

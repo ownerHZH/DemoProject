@@ -427,42 +427,43 @@ public final class R {
         public static final int activity_community_new_pay=0x7f030004;
         public static final int activity_community_notification=0x7f030005;
         public static final int activity_community_pay=0x7f030006;
-        public static final int activity_community_policital=0x7f030007;
-        public static final int activity_community_policital_detail=0x7f030008;
-        public static final int activity_community_policital_list=0x7f030009;
-        public static final int activity_community_service=0x7f03000a;
-        public static final int activity_community_trade=0x7f03000b;
-        public static final int activity_communtity_user_info=0x7f03000c;
-        public static final int activity_main=0x7f03000d;
-        public static final int activity_main_page=0x7f03000e;
-        public static final int button_signal_layout=0x7f03000f;
-        public static final int community_pay_item=0x7f030010;
-        public static final int community_political_item=0x7f030011;
-        public static final int community_service_item=0x7f030012;
-        public static final int customprogressdialog=0x7f030013;
-        public static final int date_picker_signal_layout=0x7f030014;
-        public static final int default_list=0x7f030015;
-        public static final int default_list_item=0x7f030016;
-        public static final int down_notification=0x7f030017;
-        public static final int line_aqwsapp=0x7f030018;
-        public static final int line_food=0x7f030019;
-        public static final int line_life_pepsi=0x7f03001a;
-        public static final int line_life_pepsi_son=0x7f03001b;
-        public static final int line_main_page=0x7f03001c;
-        public static final int line_map=0x7f03001d;
-        public static final int line_maplistdetails=0x7f03001e;
-        public static final int line_maplistshow=0x7f03001f;
-        public static final int line_neighborhood_circle=0x7f030020;
-        public static final int line_recinfo=0x7f030021;
-        public static final int line_recinfo_son=0x7f030022;
-        public static final int line_recinfo_son_details=0x7f030023;
-        public static final int line_register=0x7f030024;
-        public static final int line_usersetting=0x7f030025;
-        public static final int line_wizard_community=0x7f030026;
-        public static final int list_recinfo_item=0x7f030027;
-        public static final int popupwindow_layer=0x7f030028;
-        public static final int top_title=0x7f030029;
-        public static final int user_login=0x7f03002a;
+        public static final int activity_community_pay_history_list=0x7f030007;
+        public static final int activity_community_policital=0x7f030008;
+        public static final int activity_community_policital_detail=0x7f030009;
+        public static final int activity_community_policital_list=0x7f03000a;
+        public static final int activity_community_service=0x7f03000b;
+        public static final int activity_community_trade=0x7f03000c;
+        public static final int activity_communtity_user_info=0x7f03000d;
+        public static final int activity_main=0x7f03000e;
+        public static final int activity_main_page=0x7f03000f;
+        public static final int button_signal_layout=0x7f030010;
+        public static final int community_pay_item=0x7f030011;
+        public static final int community_political_item=0x7f030012;
+        public static final int community_service_item=0x7f030013;
+        public static final int customprogressdialog=0x7f030014;
+        public static final int date_picker_signal_layout=0x7f030015;
+        public static final int default_list=0x7f030016;
+        public static final int default_list_item=0x7f030017;
+        public static final int down_notification=0x7f030018;
+        public static final int line_aqwsapp=0x7f030019;
+        public static final int line_food=0x7f03001a;
+        public static final int line_life_pepsi=0x7f03001b;
+        public static final int line_life_pepsi_son=0x7f03001c;
+        public static final int line_main_page=0x7f03001d;
+        public static final int line_map=0x7f03001e;
+        public static final int line_maplistdetails=0x7f03001f;
+        public static final int line_maplistshow=0x7f030020;
+        public static final int line_neighborhood_circle=0x7f030021;
+        public static final int line_recinfo=0x7f030022;
+        public static final int line_recinfo_son=0x7f030023;
+        public static final int line_recinfo_son_details=0x7f030024;
+        public static final int line_register=0x7f030025;
+        public static final int line_usersetting=0x7f030026;
+        public static final int line_wizard_community=0x7f030027;
+        public static final int list_recinfo_item=0x7f030028;
+        public static final int popupwindow_layer=0x7f030029;
+        public static final int top_title=0x7f03002a;
+        public static final int user_login=0x7f03002b;
     }
     public static final class menu {
         public static final int activity_cheap=0x7f090000;
@@ -472,150 +473,153 @@ public final class R {
         public static final int activity_community_new_pay=0x7f090004;
         public static final int activity_community_notification=0x7f090005;
         public static final int activity_community_pay=0x7f090006;
-        public static final int activity_community_policital=0x7f090007;
-        public static final int activity_community_policital_detail=0x7f090008;
-        public static final int activity_community_policital_list=0x7f090009;
-        public static final int activity_community_service=0x7f09000a;
-        public static final int activity_community_trade=0x7f09000b;
-        public static final int activity_communtity_user_info=0x7f09000c;
-        public static final int activity_main_page=0x7f09000d;
-        public static final int main=0x7f09000e;
+        public static final int activity_community_pay_history_list=0x7f090007;
+        public static final int activity_community_policital=0x7f090008;
+        public static final int activity_community_policital_detail=0x7f090009;
+        public static final int activity_community_policital_list=0x7f09000a;
+        public static final int activity_community_service=0x7f09000b;
+        public static final int activity_community_trade=0x7f09000c;
+        public static final int activity_communtity_user_info=0x7f09000d;
+        public static final int activity_main_page=0x7f09000e;
+        public static final int main=0x7f09000f;
     }
     public static final class string {
-        public static final int about=0x7f070065;
+        public static final int about=0x7f070066;
         public static final int action_settings=0x7f070001;
-        public static final int address=0x7f070051;
+        public static final int address=0x7f070052;
         public static final int app_name=0x7f070000;
         /**  招工信息 
          */
-        public static final int back=0x7f070042;
-        public static final int baoan=0x7f070046;
-        public static final int binding_community=0x7f070061;
-        public static final int choice_community=0x7f070062;
-        public static final int clerk=0x7f070045;
+        public static final int back=0x7f070043;
+        public static final int baoan=0x7f070047;
+        public static final int binding_community=0x7f070062;
+        public static final int choice_community=0x7f070063;
+        public static final int clerk=0x7f070046;
         public static final int community_cheap=0x7f070008;
         public static final int community_house_shelter=0x7f07000f;
         public static final int community_livelihood=0x7f07000e;
         public static final int community_name=0x7f070006;
         public static final int community_neighbour=0x7f070011;
         public static final int community_notification=0x7f070009;
-        public static final int community_notification_announcement=0x7f07004c;
-        public static final int community_notification_apply=0x7f070026;
-        public static final int community_notification_detail=0x7f070027;
+        public static final int community_notification_announcement=0x7f07004d;
+        public static final int community_notification_apply=0x7f070027;
+        public static final int community_notification_detail=0x7f070028;
         /**  社区通知字段 
          */
-        public static final int community_notification_landlord=0x7f070024;
-        public static final int community_notification_news=0x7f070028;
-        public static final int community_notification_news1=0x7f070029;
-        public static final int community_notification_news2=0x7f07002a;
+        public static final int community_notification_landlord=0x7f070025;
+        public static final int community_notification_news=0x7f070029;
+        public static final int community_notification_news1=0x7f07002a;
+        public static final int community_notification_news2=0x7f07002b;
         /**  社区通知字段 
          */
-        public static final int community_notification_property_news=0x7f07004b;
-        public static final int community_notification_vote=0x7f070025;
+        public static final int community_notification_property_news=0x7f07004c;
+        public static final int community_notification_vote=0x7f070026;
         public static final int community_pay=0x7f07000a;
-        public static final int community_pay_electric=0x7f07002d;
-        public static final int community_pay_goodsmanage=0x7f07002c;
+        public static final int community_pay_electric=0x7f07002e;
+        public static final int community_pay_goodsmanage=0x7f07002d;
+        public static final int community_pay_history=0x7f070014;
         /**  缴费查询 item字段 
          */
-        public static final int community_pay_item_own=0x7f070031;
+        public static final int community_pay_item_own=0x7f070032;
         /**  充值缴费字段 
          */
-        public static final int community_pay_moneytitle=0x7f07002b;
-        public static final int community_pay_phone=0x7f07002f;
-        public static final int community_pay_totalmoney=0x7f070030;
-        public static final int community_pay_water=0x7f07002e;
+        public static final int community_pay_moneytitle=0x7f07002c;
+        public static final int community_pay_phone=0x7f070030;
+        public static final int community_pay_totalmoney=0x7f070031;
+        public static final int community_pay_water=0x7f07002f;
         public static final int community_policital=0x7f07000c;
-        public static final int community_policital_detail_date=0x7f070041;
-        public static final int community_policital_detail_title=0x7f070040;
-        public static final int community_policital_law=0x7f07003f;
+        public static final int community_policital_detail_date=0x7f070042;
+        public static final int community_policital_detail_title=0x7f070041;
+        public static final int community_policital_law=0x7f070040;
         /**  阳光政务字段 
          */
-        public static final int community_policital_news=0x7f07003e;
+        public static final int community_policital_news=0x7f07003f;
         public static final int community_recruit=0x7f07000d;
         public static final int community_service=0x7f070007;
-        public static final int community_service_cleaning=0x7f07001f;
-        public static final int community_service_health=0x7f07001b;
-        public static final int community_service_item_address=0x7f070022;
+        public static final int community_service_cleaning=0x7f070020;
+        public static final int community_service_health=0x7f07001c;
+        public static final int community_service_item_address=0x7f070023;
         /**  社区服务Item布局字段 
          */
-        public static final int community_service_item_name=0x7f070021;
-        public static final int community_service_item_phone=0x7f070023;
-        public static final int community_service_law=0x7f07001c;
-        public static final int community_service_matron=0x7f07001e;
+        public static final int community_service_item_name=0x7f070022;
+        public static final int community_service_item_phone=0x7f070024;
+        public static final int community_service_law=0x7f07001d;
+        public static final int community_service_matron=0x7f07001f;
         /**  社区服务字段 
          */
-        public static final int community_service_move=0x7f070014;
-        public static final int community_service_nanny=0x7f070020;
-        public static final int community_service_pcrepair=0x7f070017;
-        public static final int community_service_pet=0x7f070019;
-        public static final int community_service_pipe=0x7f07001d;
-        public static final int community_service_plumber=0x7f070016;
-        public static final int community_service_psychological=0x7f07001a;
-        public static final int community_service_recycle=0x7f070018;
-        public static final int community_service_unlock=0x7f070015;
+        public static final int community_service_move=0x7f070015;
+        public static final int community_service_nanny=0x7f070021;
+        public static final int community_service_pcrepair=0x7f070018;
+        public static final int community_service_pet=0x7f07001a;
+        public static final int community_service_pipe=0x7f07001e;
+        public static final int community_service_plumber=0x7f070017;
+        public static final int community_service_psychological=0x7f07001b;
+        public static final int community_service_recycle=0x7f070019;
+        public static final int community_service_unlock=0x7f070016;
         public static final int community_settings=0x7f070012;
         public static final int community_smart_housing=0x7f070010;
         public static final int community_trade=0x7f07000b;
-        public static final int community_trade_barbecue=0x7f070035;
-        public static final int community_trade_chinesemeal=0x7f07003a;
-        public static final int community_trade_dryclean=0x7f070037;
-        public static final int community_trade_fondue=0x7f070039;
-        public static final int community_trade_hairdressing=0x7f070036;
-        public static final int community_trade_kidstrain=0x7f07003c;
-        public static final int community_trade_leatherware=0x7f070038;
-        public static final int community_trade_pasta=0x7f070034;
-        public static final int community_trade_snack=0x7f070033;
+        public static final int community_trade_barbecue=0x7f070036;
+        public static final int community_trade_chinesemeal=0x7f07003b;
+        public static final int community_trade_dryclean=0x7f070038;
+        public static final int community_trade_fondue=0x7f07003a;
+        public static final int community_trade_hairdressing=0x7f070037;
+        public static final int community_trade_kidstrain=0x7f07003d;
+        public static final int community_trade_leatherware=0x7f070039;
+        public static final int community_trade_pasta=0x7f070035;
+        public static final int community_trade_snack=0x7f070034;
         /**  社区商圈字段 
          */
-        public static final int community_trade_supermarket=0x7f070032;
-        public static final int community_trade_teahouse=0x7f07003b;
-        public static final int community_trade_trafficsearch=0x7f07003d;
-        public static final int consumer_protection=0x7f07005a;
-        public static final int dishwasher=0x7f070047;
-        public static final int driver=0x7f07004a;
-        public static final int entry_exit=0x7f07005d;
-        public static final int environmental_management=0x7f07005e;
-        public static final int fake_content=0x7f070066;
-        public static final int family_plann=0x7f070055;
+        public static final int community_trade_supermarket=0x7f070033;
+        public static final int community_trade_teahouse=0x7f07003c;
+        public static final int community_trade_trafficsearch=0x7f07003e;
+        public static final int consumer_protection=0x7f07005b;
+        public static final int dishwasher=0x7f070048;
+        public static final int driver=0x7f07004b;
+        public static final int entry_exit=0x7f07005e;
+        public static final int environmental_management=0x7f07005f;
+        public static final int fake_content=0x7f070067;
+        public static final int family_plann=0x7f070056;
         /**  生活百事 
          */
-        public static final int guide=0x7f070052;
+        public static final int guide=0x7f070053;
         public static final int hello_world=0x7f070013;
-        public static final int house_magament=0x7f070054;
+        public static final int house_magament=0x7f070055;
         public static final int integral=0x7f070005;
-        public static final int labor_arbitration=0x7f070056;
-        public static final int labour_employment=0x7f070058;
-        public static final int life_info=0x7f070053;
-        public static final int marriage_registration=0x7f070059;
+        public static final int labor_arbitration=0x7f070057;
+        public static final int labour_employment=0x7f070059;
+        public static final int life_info=0x7f070054;
+        public static final int marriage_registration=0x7f07005a;
         public static final int menu_settings=0x7f070003;
-        public static final int msge_push=0x7f070063;
+        public static final int msge_push=0x7f070064;
         /**  主页字段 
          */
         public static final int name=0x7f070004;
-        public static final int news_list_title=0x7f070067;
-        public static final int other_kid=0x7f07005f;
-        public static final int password=0x7f07004f;
+        public static final int news_list_title=0x7f070068;
+        public static final int other_kid=0x7f070060;
+        public static final int password=0x7f070050;
         /**  我的设置 
          */
-        public static final int personal_settings=0x7f070060;
-        public static final int personnel_training=0x7f07005c;
-        public static final int repassword=0x7f070050;
-        public static final int sales=0x7f070043;
-        public static final int social_security=0x7f070057;
+        public static final int personal_settings=0x7f070061;
+        public static final int personnel_training=0x7f07005d;
+        public static final int repassword=0x7f070051;
+        public static final int sales=0x7f070044;
+        public static final int social_security=0x7f070058;
         /**  登陆界面 
          */
-        public static final int tel_numb=0x7f07004d;
-        public static final int title_activity_community_modify_password=0x7f070069;
-        public static final int title_activity_community_modify_sex=0x7f07006a;
-        public static final int title_activity_community_new_pay=0x7f07006b;
-        public static final int title_activity_communtity_user_info=0x7f070068;
+        public static final int tel_numb=0x7f07004e;
+        public static final int title_activity_community_modify_password=0x7f07006a;
+        public static final int title_activity_community_modify_sex=0x7f07006b;
+        public static final int title_activity_community_new_pay=0x7f07006c;
+        public static final int title_activity_community_pay_history_list=0x7f07006d;
+        public static final int title_activity_communtity_user_info=0x7f070069;
         public static final int title_activity_main_page=0x7f070002;
-        public static final int traffic_management=0x7f07005b;
-        public static final int user_name=0x7f07004e;
-        public static final int usher=0x7f070049;
-        public static final int version_update=0x7f070064;
-        public static final int waiter=0x7f070048;
-        public static final int wireman=0x7f070044;
+        public static final int traffic_management=0x7f07005c;
+        public static final int user_name=0x7f07004f;
+        public static final int usher=0x7f07004a;
+        public static final int version_update=0x7f070065;
+        public static final int waiter=0x7f070049;
+        public static final int wireman=0x7f070045;
     }
     public static final class style {
         public static final int ActivityStyle=0x7f080000;

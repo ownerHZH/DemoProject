@@ -133,6 +133,10 @@
             android:name="com.zgan.community.activity.CommunityNewPayActivity"
             android:label="@string/title_activity_community_new_pay" >
         </activity>
+        <activity
+            android:name="com.zgan.community.activity.CommunityPayHistoryListActivity"
+            android:label="@string/title_activity_community_pay_history_list" >
+        </activity>
     </application>
 
 </manifest>
