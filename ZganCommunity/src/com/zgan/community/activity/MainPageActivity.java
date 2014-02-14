@@ -173,7 +173,7 @@ public class MainPageActivity extends MainAcitivity {
 				break;
 			case R.id.headIco:
 				// 我的设置点击响应事件
-				intent = new Intent(con, UserSetting.class);
+				intent = new Intent(con, CommunitySetting.class);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);

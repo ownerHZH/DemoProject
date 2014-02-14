@@ -141,6 +141,10 @@
             android:name="com.zgan.community.activity.CommunityContactProperty"
             android:label="@string/title_activity_community_contact_property" >
         </activity>
+        <activity
+            android:name="com.zgan.community.activity.CommunitySetting"
+            android:label="@string/title_activity_community_setting" >
+        </activity>
     </application>
 
 </manifest>

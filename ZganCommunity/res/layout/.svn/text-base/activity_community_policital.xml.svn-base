@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayoutContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -35,24 +36,67 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    android:layout_marginTop="20dp" >
+                    android:layout_marginTop="20dp"
+                    android:cacheColorHint="#00000000"
+                    android:listSelector="#00000000" >
 
                 </ListView>
                 
-                <ListView
-                    android:id="@+id/listViewPolitical2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="20dp" >
+                <LinearLayout
+                     android:id="@+id/linearLayoutPolitical2"
+				     android:layout_width="match_parent"
+				     android:layout_height="match_parent"
+				     android:layout_gravity="bottom|center"
+				     android:layout_marginLeft="15dp"
+				     android:layout_marginRight="15dp"
+				     android:layout_marginTop="20dp"
+				     android:orientation="vertical" >
+				    
+                    <ListView
+                        android:id="@+id/listViewPolitical2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="9"
+                        android:cacheColorHint="#00000000"
+                        android:listSelector="#00000000" >
 
-                </ListView>
+                    </ListView>
+                    
+				    <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="match_parent"
+				        android:layout_weight="1"
+				        android:gravity="bottom|center"
+				        android:orientation="horizontal" >
+				        
+				    <Button
+				        android:id="@+id/buttonCity"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:text="市政府部门" />
+				
+				    <Button
+				        android:id="@+id/buttonCounty"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:text="区县政府" />
+				
+				    <Button
+				        android:id="@+id/buttonCommonService"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:text="公共服务单位" />
+				    
+				    </LinearLayout>
+				
+				</LinearLayout>
+                
             </FrameLayout>
         </LinearLayout>
-    </TabHost>
+    </TabHost>        
 
 </LinearLayout>

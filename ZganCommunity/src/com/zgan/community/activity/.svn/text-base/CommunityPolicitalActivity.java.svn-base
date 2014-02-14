@@ -2,6 +2,7 @@ package com.zgan.community.activity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.Inflater;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -36,6 +37,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
@@ -69,12 +71,16 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 	private List<MSZW_BGDD> MSZW_BGDDList = new ArrayList<MSZW_BGDD>();
 
 	private CommunityPolicitalAdapter adapter;
+	
+	private Button buttonCity; //市政府部门
+	private Button buttonCounty;//区县政府
+	private Button buttonCommonService;//公共服务单位
 
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_community_policital);
+		setContentView(R.layout.activity_community_policital);		
 
 		back = (Button) findViewById(R.id.back);
 		title = (TextView) findViewById(R.id.title);
@@ -83,9 +89,17 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 		con = CommunityPolicitalActivity.this;
 		list = (ListView) findViewById(R.id.listViewPolitical);
 		list2 = (ListView) findViewById(R.id.listViewPolitical2);
+		
+		buttonCity=(Button) findViewById(R.id.buttonCity);
+		buttonCounty=(Button) findViewById(R.id.buttonCounty);
+		buttonCommonService=(Button) findViewById(R.id.buttonCommonService);
+		
 		ButtonClickListener l = new ButtonClickListener();
 		back.setOnClickListener(l);
-
+		buttonCity.setOnClickListener(l);
+		buttonCounty.setOnClickListener(l);
+		buttonCommonService.setOnClickListener(l);
+		
 		handler = new Handler();
 		/*
 		 * dialog = new ProgressDialog(this); dialog.setTitle(null);
@@ -224,7 +238,7 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 		tabHost.addTab(tabHost
 				.newTabSpec("tab2")
 				.setIndicator(getString(R.string.community_policital_law), null)
-				.setContent(R.id.listViewPolitical2));
+				.setContent(R.id.linearLayoutPolitical2));
 		setTabViewParas();// 设置Tab显示属性
 		setTabBackground();// 第一次设置显示背景色
 		// showData(1);//显示第一页的数据
@@ -256,6 +270,18 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 			switch (v.getId()) {
 			case R.id.back:
 				finish();
+				break;
+			case R.id.buttonCity:
+				//市政府部门点击事件
+
+				break;
+			case R.id.buttonCounty:
+				//区县政府点击事件
+
+				break;
+			case R.id.buttonCommonService:
+				//公共服务单位点击事件
+
 				break;
 
 			default:
@@ -314,6 +340,7 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 							if (isNotNull(conStr)) {
 								JSONArray ContentDatacontent = new JSONArray(
 										conStr);
+								System.out.println("条数==="+ContentDatacontent.length());
 								if (ContentDatacontent.length() > 0) {
 									for (int i = 0; i < ContentDatacontent
 											.length(); i++) {

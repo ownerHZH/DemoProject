@@ -139,7 +139,7 @@
     <string name="title_activity_community_new_pay">CommunityNewPayActivity</string>
     <string name="title_activity_community_pay_history_list">CommunityPayHistoryListActivity</string>
     <string name="title_activity_community_contact_property">CommunityContactProperty</string>
-    
     <string name="community_contact_property">联系物业</string>
+    <string name="title_activity_community_setting">CommunitySetting</string>
 
 </resources>

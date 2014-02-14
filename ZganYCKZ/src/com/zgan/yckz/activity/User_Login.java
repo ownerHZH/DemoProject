@@ -398,7 +398,7 @@ public class User_Login extends YCKZ_Activity {
 		
 		try {
 			//cloudlogin1.zgantech.com/192.168.1.72
-			startNewClient("cloudlogin1.zgantech.com", 21000,
+			startNewClient("192.168.1.72", 21000,
 					ClientDatahandler, 11, Constant.LOGIN_SERVERPLATFROM,
 					Constant.INDEX_cbMessageVer);
 			System.out.println("NewSocketInfo" + "21000");

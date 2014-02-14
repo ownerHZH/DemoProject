@@ -137,6 +137,10 @@
             android:name="com.zgan.community.activity.CommunityPayHistoryListActivity"
             android:label="@string/title_activity_community_pay_history_list" >
         </activity>
+        <activity
+            android:name="com.zgan.community.activity.CommunityContactProperty"
+            android:label="@string/title_activity_community_contact_property" >
+        </activity>
     </application>
 
 </manifest>
