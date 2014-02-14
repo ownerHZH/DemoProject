@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class MainPageActivity extends MainAcitivity {
 
@@ -23,6 +24,7 @@ public class MainPageActivity extends MainAcitivity {
 	private Button communityLivelihood; // 生活百事
 	private Button communityHouseShelter; // 家庭卫士
 	private Button communitySettings; // 我的设置
+	private ImageView setting;
 
 	/*private TextView name; // 姓名
 	private TextView integral; // 积分
@@ -48,7 +50,7 @@ public class MainPageActivity extends MainAcitivity {
 		communityLivelihood = (Button) findViewById(R.id.communityLivelihood);
 		communityHouseShelter = (Button) findViewById(R.id.communityHouseShelter);
 		communitySettings = (Button) findViewById(R.id.communitySettings);
-
+		setting=(ImageView) findViewById(R.id.headIco);
 		/*name = (TextView) findViewById(R.id.textViewName); // 显示的姓名
 		integral = (TextView) findViewById(R.id.textViewIntegral); // 显示积分
 		communityName = (TextView) findViewById(R.id.textViewCommunityName); // 显示加入的社区名称
@@ -69,6 +71,7 @@ public class MainPageActivity extends MainAcitivity {
 		communityRecruit.setOnClickListener(l);
 		communityLivelihood.setOnClickListener(l);
 		communityHouseShelter.setOnClickListener(l);
+		setting.setOnClickListener(l);
 		//communitySmartHousing.setOnClickListener(l);
 		//communityNeighbor.setOnClickListener(l);
 		communitySettings.setOnClickListener(l);
@@ -162,11 +165,19 @@ public class MainPageActivity extends MainAcitivity {
 				break;*/
 			case R.id.communitySettings:
 				// 我的设置点击响应事件
+				intent = new Intent(con, CommunityContactProperty.class);
+				startActivity(intent);
+				// Acticity切换动画
+				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
+				//finish();
+				break;
+			case R.id.headIco:
+				// 我的设置点击响应事件
 				intent = new Intent(con, UserSetting.class);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
-				finish();
+				//finish();
 				break;
 
 			default:
