@@ -52,7 +52,7 @@
 				     android:layout_gravity="bottom|center"
 				     android:layout_marginLeft="15dp"
 				     android:layout_marginRight="15dp"
-				     android:layout_marginTop="20dp"
+				     android:layout_marginTop="20dp"				     
 				     android:orientation="vertical" >
 				    
                     <ListView
@@ -67,29 +67,31 @@
                     </ListView>
                     
 				    <LinearLayout
+				        android:id="@+id/category"
 				        android:layout_width="match_parent"
 				        android:layout_height="match_parent"
 				        android:layout_weight="1"
 				        android:gravity="bottom|center"
+				        android:visibility="gone"
 				        android:orientation="horizontal" >
 				        
 				    <Button
 				        android:id="@+id/buttonCity"
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content"
-				        android:text="市政府部门" />
+				        android:text="@string/community_policital_law_sz" />
 				
 				    <Button
 				        android:id="@+id/buttonCounty"
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content"
-				        android:text="区县政府" />
+				        android:text="@string/community_policital_law_qx" />
 				
 				    <Button
 				        android:id="@+id/buttonCommonService"
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content"
-				        android:text="公共服务单位" />
+				        android:text="@string/community_policital_law_gg" />
 				    
 				    </LinearLayout>
 				

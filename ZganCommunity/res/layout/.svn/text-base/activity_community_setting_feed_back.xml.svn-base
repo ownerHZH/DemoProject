@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CommunitySettingFeedBack" >
+
+    <include layout="@layout/title_commit_layout"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical" >
+        
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_community_setting_feed_back_inputtitle" />
+
+    <EditText
+        android:id="@+id/adviceInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="@string/activity_community_setting_feed_back_inputhint"
+        android:inputType="textMultiLine"
+        android:minLines="10" >
+
+        <requestFocus />
+    </EditText>
+    </LinearLayout>
+
+</LinearLayout>

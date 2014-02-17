@@ -63,6 +63,12 @@ svn:wc:ra_dav:version-url
 V 118
 /svn/ZganCommunity/!svn/ver/113/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/menu/activity_cheap.xml
 END
+activity_community_setting.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/ZganCommunity/!svn/ver/182/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/menu/activity_community_setting.xml
+END
 activity_communtity_user_info.xml
 K 25
 svn:wc:ra_dav:version-url
@@ -74,6 +80,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 132
 /svn/ZganCommunity/!svn/ver/113/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/menu/activity_community_policital.xml
+END
+activity_community_setting_feed_back.xml
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/ZganCommunity/!svn/ver/183/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/menu/activity_community_setting_feed_back.xml
 END
 activity_community_notification.xml
 K 25

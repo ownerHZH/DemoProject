@@ -84,6 +84,9 @@
     <string name="community_policital_law">办公地点</string>
     <string name="community_policital_detail_title">详情</string>
     <string name="community_policital_detail_date">发布时间：</string>
+    <string name="community_policital_law_sz">市政府部门</string>
+    <string name="community_policital_law_qx">区县政府</string>
+    <string name="community_policital_law_gg">公共服务单位</string>
 
     <!-- 招工信息 -->
     <string name="back">返回</string>
@@ -141,5 +144,27 @@
     <string name="title_activity_community_contact_property">CommunityContactProperty</string>
     <string name="community_contact_property">联系物业</string>
     <string name="title_activity_community_setting">CommunitySetting</string>
+
+    <!-- 个人设置字段 -->
+    <string name="activity_community_setting_hint">扩充长度</string>
+    <string name="activity_community_setting_phone">手机号：</string>
+    <string name="activity_community_setting_local">楼座号：</string>
+    <string name="activity_community_setting_nickname">昵称：</string>
+    <string name="activity_community_setting_button_change">修改</string>
+    <string name="activity_community_setting_button_sure">确定</string>
+    <string name="activity_community_setting_birth">生日：</string>
+    <string name="activity_community_setting_sex">性别：</string>
+    <string name="activity_community_setting_sex_male">男</string>
+    <string name="activity_community_setting_sex_female">女</string>
+    <string name="activity_community_setting_password">密码：</string>
+    <string name="activity_community_setting_push_message">消息推送</string>
+    <string name="activity_community_setting_push_message_open">开</string>
+    <string name="activity_community_setting_push_message_close">关</string>
+    <string name="activity_community_setting_advice">意见反馈</string>
+    <string name="activity_community_setting_about">关于</string>
+    <string name="title_activity_community_setting_feed_back">CommunitySettingFeedBack</string>
+    <string name="activity_community_setting_feed_back_inputtitle">请输入您对我们的意见：</string>
+    <string name="activity_community_setting_feed_back_inputhint">输入文本...</string>
+    <string name="activity_community_setting_feed_back_title">设置</string>
 
 </resources>

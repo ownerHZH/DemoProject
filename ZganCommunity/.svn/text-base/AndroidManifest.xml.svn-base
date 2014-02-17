@@ -139,7 +139,18 @@
         </activity>
         <activity
             android:name="com.zgan.community.activity.CommunityContactProperty"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
             android:label="@string/title_activity_community_contact_property" >
+        </activity>
+        <activity
+            android:name="com.zgan.community.activity.CommunitySetting"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"           
+            android:label="@string/title_activity_community_setting" >
+        </activity>
+        <activity
+            android:name="com.zgan.community.activity.CommunitySettingFeedBack"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            android:label="@string/title_activity_community_setting_feed_back" >
         </activity>
     </application>
 

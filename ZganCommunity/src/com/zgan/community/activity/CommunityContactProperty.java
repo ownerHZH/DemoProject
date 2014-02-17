@@ -38,7 +38,7 @@ public class CommunityContactProperty extends MainAcitivity {
 		title.setText(R.string.community_contact_property);
 		commit=(Button) findViewById(R.id.buttonCommit);
 		radioGroup=(RadioGroup) findViewById(R.id.radioGroup1);
-		editText=(EditText) findViewById(R.id.editText1);
+		editText=(EditText) findViewById(R.id.adviceInput);
 		
 		con = CommunityContactProperty.this;
 		

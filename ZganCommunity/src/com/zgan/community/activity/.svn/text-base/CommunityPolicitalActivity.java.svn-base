@@ -72,6 +72,7 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 
 	private CommunityPolicitalAdapter adapter;
 	
+	private LinearLayout category;
 	private Button buttonCity; //市政府部门
 	private Button buttonCounty;//区县政府
 	private Button buttonCommonService;//公共服务单位
@@ -90,6 +91,7 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 		list = (ListView) findViewById(R.id.listViewPolitical);
 		list2 = (ListView) findViewById(R.id.listViewPolitical2);
 		
+		category=(LinearLayout) findViewById(R.id.category);
 		buttonCity=(Button) findViewById(R.id.buttonCity);
 		buttonCounty=(Button) findViewById(R.id.buttonCounty);
 		buttonCommonService=(Button) findViewById(R.id.buttonCommonService);
@@ -366,6 +368,8 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 								JSONArray MSZW_BGDDcontent = new JSONArray(
 										msStr);
 								if (MSZW_BGDDcontent.length() > 0) {
+									category.setVisibility(View.VISIBLE);
+									
 									for (int i = 0; i < MSZW_BGDDcontent
 											.length(); i++) {
 										MSZW_BGDD c = new MSZW_BGDD();
@@ -384,6 +388,9 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 										c.setTel(json.getString("Tel"));
 										MSZW_BGDDList.add(c);
 									}
+								}else
+								{
+									category.setVisibility(View.GONE);
 								}
 							}
 							handler.post(r);
