@@ -241,62 +241,63 @@ public class Index_Activity extends FragmentActivity {
 							new String[] { Port[0] });
 
 					Log.i("888888888888", "888888888");
-					c.moveToFirst();
 					Log.i("更新新数据", "更新新数据");
-					if (c.getCount() == 2) {
+					if(c.moveToFirst())
+					{
+						if (c.getCount() == 2) {
 
-						if (c.getString(c.getColumnIndex("_Port")).equals("92")) {
-							Log.i("1", "92");
-							String staues = Port[1].substring(0, 1) + "000";
+							if (c.getString(c.getColumnIndex("_Port")).equals("92")) {
+								Log.i("1", "92");
+								String staues = Port[1].substring(0, 1) + "000";
+								UpdateSQL1(db, Port[0],
+										c.getString(c.getColumnIndex("_Port")),
+										staues);
+								Log.i("1staues", ""+staues);
+							} else if (c.getString(c.getColumnIndex("_Port"))
+									.equals("71")) {
+								Log.i("1", "71");
+
+								String staues = "00" + Port[1].substring(2, 3)
+										+ "0";
+								UpdateSQL1(db, Port[0],
+										c.getString(c.getColumnIndex("_Port")),
+										staues);
+								Log.i("1staues", ""+staues);
+
+							}
+							c.moveToNext();
+							if (c.getString(c.getColumnIndex("_Port")).equals("92")) {
+								Log.i("2", "92");
+
+								String staues = Port[1].substring(0, 1) + "000";
+								UpdateSQL1(db, Port[0],
+										c.getString(c.getColumnIndex("_Port")),
+										staues);
+								Log.i("1staues", ""+staues);
+
+							} else if (c.getString(c.getColumnIndex("_Port"))
+									.equals("71")) {
+								Log.i("2", "71");
+
+								String staues = "00" + Port[1].substring(2, 3)
+										+ "0";
+								UpdateSQL1(db, Port[0],
+										c.getString(c.getColumnIndex("_Port")),
+										staues);
+								Log.i("1staues", ""+staues);
+
+
+							}
+
+						} else {
+							String staues = "0" + Port[1].substring(1, 2) + "00";
+							Log.i("插座或者开关", ""+c.getString(c.getColumnIndex("_Port")));
+							Log.i("staues", ""+staues);
+
 							UpdateSQL1(db, Port[0],
-									c.getString(c.getColumnIndex("_Port")),
-									staues);
-							Log.i("1staues", ""+staues);
-						} else if (c.getString(c.getColumnIndex("_Port"))
-								.equals("71")) {
-							Log.i("1", "71");
-
-							String staues = "00" + Port[1].substring(2, 3)
-									+ "0";
-							UpdateSQL1(db, Port[0],
-									c.getString(c.getColumnIndex("_Port")),
-									staues);
-							Log.i("1staues", ""+staues);
-
+									c.getString(c.getColumnIndex("_Port")), staues);
 						}
-						c.moveToNext();
-						if (c.getString(c.getColumnIndex("_Port")).equals("92")) {
-							Log.i("2", "92");
-
-							String staues = Port[1].substring(0, 1) + "000";
-							UpdateSQL1(db, Port[0],
-									c.getString(c.getColumnIndex("_Port")),
-									staues);
-							Log.i("1staues", ""+staues);
-
-						} else if (c.getString(c.getColumnIndex("_Port"))
-								.equals("71")) {
-							Log.i("2", "71");
-
-							String staues = "00" + Port[1].substring(2, 3)
-									+ "0";
-							UpdateSQL1(db, Port[0],
-									c.getString(c.getColumnIndex("_Port")),
-									staues);
-							Log.i("1staues", ""+staues);
-
-
-						}
-
-					} else {
-						String staues = "0" + Port[1].substring(1, 2) + "00";
-						Log.i("插座或者开关", ""+c.getString(c.getColumnIndex("_Port")));
-						Log.i("staues", ""+staues);
-
-						UpdateSQL1(db, Port[0],
-								c.getString(c.getColumnIndex("_Port")), staues);
-					}
-
+					}										
 					c.close();
 					//
 

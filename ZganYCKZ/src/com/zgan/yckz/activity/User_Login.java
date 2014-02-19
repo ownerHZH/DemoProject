@@ -264,7 +264,7 @@ public class User_Login extends YCKZ_Activity {
 									if (list_details.size() == 9
 											&& list_details.size() > 1) {									
 										sheBei.setSubDevid(list_details.get(0));
-										sheBei.setMAC(list_details.get(1));
+										sheBei.setMAC(list_details.get(1).toUpperCase());
 										sheBei.setPort(list_details.get(2));
 										sheBei.setProductNo(list_details.get(3));
 										sheBei.setDeviceNo(list_details.get(4));
@@ -274,8 +274,8 @@ public class User_Login extends YCKZ_Activity {
 										sheBei.setJobStatus(list_details.get(8));
 										Log.i("list_details.get(0)",
 												"" + list_details.get(0));
-										Log.i("list_details.get(1)",
-												"" + list_details.get(1));
+										Log.i("list_details.get(1).toUpperCase()",
+												"" + list_details.get(1).toUpperCase());
 										Log.i("list_details.get(2)",
 												"" + list_details.get(2));
 										Log.i("list_details.get(3)",
@@ -293,12 +293,12 @@ public class User_Login extends YCKZ_Activity {
 										list_shebei.add(sheBei);
 
 									
-										mac = list_details.get(1);
+										mac = list_details.get(1).toUpperCase();
 										Log.i("888888888888", mac);										
 										Log.i("插入新数据", "插入新数据");
 										
 										InSertSQl(db, list_details.get(0),
-												list_details.get(1),
+												list_details.get(1).toUpperCase(),
 												list_details.get(2),
 												list_details.get(3),
 												list_details.get(4),
@@ -309,19 +309,18 @@ public class User_Login extends YCKZ_Activity {
 										Cursor c = db
 												.rawQuery(
 														"select *from SubDevList where _MAC=?",
-														new String[] { list_details
-																.get(1) });
-										mac=list_details.get(1);
+														new String[] { list_details.get(1).toUpperCase() });
+										mac=list_details.get(1).toUpperCase();
 										Log.i("888888888888", "888888888");
 								if (c.moveToNext()) {
 									Log.i("更新新数据", "更新新数据");
 
-									UpdateSQL1(db, list_details.get(1),
+									UpdateSQL1(db,list_details.get(1).toUpperCase(),
 											list_details.get(5));
 								} else {
 									Log.i("插入新数据", "插入新数据");
 
-									InSertSQl1(db, list_details.get(1),
+									InSertSQl1(db, list_details.get(1).toUpperCase(),
 											list_details.get(5));
 								}
 
@@ -384,6 +383,7 @@ public class User_Login extends YCKZ_Activity {
 		db = yckz_SQLHelper.getReadableDatabase();
 		
 		db.execSQL("delete from  table_SubDev ");
+		db.execSQL("delete from  SubDevList ");
 		
 		go_tel = (EditText) findViewById(R.id.go_tel);
 		go_pass = (EditText) findViewById(R.id.go_pas);
