@@ -99,17 +99,18 @@ public final class R {
         public static final int reg_back=0x7f020024;
         public static final int regin_logo=0x7f020025;
         public static final int register_iv=0x7f020026;
-        public static final int shebei_icon=0x7f020027;
-        public static final int switch_icon=0x7f020028;
-        public static final int user_info_icon=0x7f020029;
-        public static final int weima=0x7f02002a;
-        public static final int welcome=0x7f02002b;
-        public static final int wsj_bg=0x7f02002c;
-        public static final int yuan_bg=0x7f02002d;
-        public static final int yun_data=0x7f02002e;
-        public static final int yun_icon=0x7f02002f;
-        public static final int zg_version=0x7f020030;
-        public static final int zhuwo_bg=0x7f020031;
+        public static final int restart_bg=0x7f020027;
+        public static final int shebei_icon=0x7f020028;
+        public static final int switch_icon=0x7f020029;
+        public static final int user_info_icon=0x7f02002a;
+        public static final int weima=0x7f02002b;
+        public static final int welcome=0x7f02002c;
+        public static final int wsj_bg=0x7f02002d;
+        public static final int yuan_bg=0x7f02002e;
+        public static final int yun_data=0x7f02002f;
+        public static final int yun_icon=0x7f020030;
+        public static final int zg_version=0x7f020031;
+        public static final int zhuwo_bg=0x7f020032;
     }
     public static final class id {
         public static final int IconIV=0x7f070011;
@@ -296,6 +297,7 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f090002;
+        public static final int Transparent=0x7f090003;
         public static final int progressBarHorizontal_color=0x7f090001;
     }
 }

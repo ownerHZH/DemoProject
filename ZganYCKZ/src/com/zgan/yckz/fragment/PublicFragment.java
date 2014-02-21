@@ -118,7 +118,12 @@ public class PublicFragment extends Fragment {
 		textView = (TextView) view.findViewById(R.id.subname);
 		deng_btn1 = (ImageView) view.findViewById(R.id.deng_btn1);
 		deng_btn1.setOnClickListener(l);
-		Select();
+		try {
+			Select();
+		} catch (NullPointerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// Showview();
 
 		return view;

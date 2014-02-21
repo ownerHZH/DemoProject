@@ -78,10 +78,12 @@ public class User_Login extends YCKZ_Activity {
 	public static  boolean success;
 
 	SharedPreferences preferences;
+	SharedPreferences repreferences;
 	SharedPreferences.Editor editor;
 	private static List<SanySocketClient> clientList;
 	
 	ProgressDialog dialog;
+	Dialog reStartDialog;
 	List<String> list_id;
 	List<String> list_details;
 	List<SheBei> list_shebei;
@@ -94,7 +96,7 @@ public class User_Login extends YCKZ_Activity {
 	
 	public static String MAC=null;
 
-	Handler ClientDatahandler = new Handler() {
+    public Handler ClientDatahandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
 			// TODO Auto-generated method stub
@@ -337,6 +339,7 @@ public class User_Login extends YCKZ_Activity {
 										Index_Activity.class);
 								startActivity(intent);
 								dialog.dismiss();
+								reStartDialog.dismiss();
 								finish();
 							}
 							
@@ -358,7 +361,7 @@ public class User_Login extends YCKZ_Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.user_login);
 		clientList = new ArrayList<SanySocketClient>();
 		if (Integer.parseInt(VERSION.SDK) > 14
@@ -379,6 +382,8 @@ public class User_Login extends YCKZ_Activity {
 		editor = preferences.edit();
 		
 		dialog=new ProgressDialog(User_Login.this);
+		reStartDialog=new Dialog(User_Login.this, R.style.Transparent);
+		
 		yckz_SQLHelper = new YCKZ_SQLHelper(this, "yckz.db3", 1);
 		db = yckz_SQLHelper.getReadableDatabase();
 		
@@ -418,7 +423,14 @@ public class User_Login extends YCKZ_Activity {
 
 		//Detectnetwork();
 		/**/
-
+		if(getIntent().getStringExtra("restart")!=null)
+		{
+			if(getIntent().getStringExtra("restart").equals("restart"))
+	        {
+	        	reStart();
+	        }
+		}
+        
 	}
 
 	public void SendTestInfo() throws Exception {
@@ -554,7 +566,8 @@ public class User_Login extends YCKZ_Activity {
 		}
 	}
 
-	public static void setHnadler(Handler handler) {
+	public static void setHnadler(Handler handler) 
+	{
 		if (clientList.size() > 0) {
 			for (int i = 0; i < clientList.size(); i++) {
 				SanySocketClient con = clientList.get(i);
@@ -564,8 +577,9 @@ public class User_Login extends YCKZ_Activity {
 			}
 		}else{
 			
-		}
+		}		
 	}
+
 
 	public static void startNewClient(String strip, int nport, Handler handler,
 			int nPlatfrom, int ServerID, byte cbVersion) throws Exception {
@@ -808,5 +822,62 @@ public class User_Login extends YCKZ_Activity {
 		}
 		super.onDestroy();
 	}
-	  	
+	  
+	  //重新登录
+	  public void reStart()
+	  {
+		  repreferences = getSharedPreferences("yckz_user", MODE_PRIVATE);
+
+		  YCKZ_Static.Phone_number= repreferences.getString("user_name", null);
+		  YCKZ_Static.USER_password= repreferences.getString("user_pas", null);
+		  
+		  if (YCKZ_Static.Phone_number!=null && YCKZ_Static.USER_password!=null) {
+				go_tel.setText(YCKZ_Static.Phone_number);
+				go_pass.setText(YCKZ_Static.USER_password);
+			}
+		  
+		  if(YCKZ_NetworkDetector.detect((Activity) context))
+			{				
+				reStartDialog.show();
+				if (success) {
+					
+				} else {
+					try {
+						// cloudlogin1.zgantech.com/192.168.1.72
+						startNewClient("cloudlogin1.zgantech.com", 21000,
+								ClientDatahandler, 11,
+								Constant.LOGIN_SERVERPLATFROM,
+								Constant.INDEX_cbMessageVer);
+						System.out.println("NewSocketInfo" + "21000");
+
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+
+						System.out.println("NewSocketInfo"
+								+ "e.printStackTrace() " + e.getMessage());
+					}
+				}
+				
+				if (go_tel.getText() != null && go_pass.getText() != null
+						&& !"".equals(go_tel.getText().toString())
+						&& !"".equals(go_pass.getText().toString())) {
+					Log.i("登陆中", "登陆中");
+					try {
+						SendTestInfo();
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+
+						System.out.println("NewSocketInfo" + "e.printStackTrace() "
+								+ e.getMessage());
+					}
+				} else {
+
+				}
+			}else
+			{
+				Toast.makeText(context, "请连接网络！", Toast.LENGTH_LONG).show();
+			}
+	  }
 }

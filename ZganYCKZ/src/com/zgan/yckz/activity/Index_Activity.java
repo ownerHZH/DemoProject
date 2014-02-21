@@ -331,7 +331,15 @@ public class Index_Activity extends FragmentActivity {
 					.penaltyLog().penaltyDeath().build());
 		}
 
-		User_Login.setHnadler(SubDatahandler);
+		try {
+			User_Login.setHnadler(SubDatahandler);
+		} catch (NullPointerException e) {			
+			Intent intent=new Intent(this,User_Login.class);
+			intent.putExtra("restart", "restart");
+			startActivity(intent);
+			finish();
+			e.printStackTrace();
+		}
 		yckz_SQLHelper = new YCKZ_SQLHelper(this, "yckz.db3", 1);
 		db = yckz_SQLHelper.getReadableDatabase();
 
@@ -353,7 +361,7 @@ public class Index_Activity extends FragmentActivity {
 		viewPager = (ViewPager) findViewById(R.id.view_pager);
 		// 将5个fragement添加到list中
 		list = new ArrayList<Fragment>();
-		Select();
+		Select();		
 		// 加载5个fragment到viewpager中
 
 		// 对radioGroup和viewPager做监听事件
@@ -489,7 +497,12 @@ public class Index_Activity extends FragmentActivity {
 			// TODO Auto-generated method stub
 			tag = position;
 			PublicFragment fragment = (PublicFragment) list.get(position);
-			fragment.Select();
+			try {
+				fragment.Select();
+			} catch (NullPointerException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			fragment.Showview();
 		}
 
