@@ -314,7 +314,7 @@ public class Index_Activity extends FragmentActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-
+				
 		setContentView(R.layout.index_line);
 		if (Integer.parseInt(VERSION.SDK) > 14
 				|| Integer.parseInt(VERSION.SDK) == 14) {
@@ -330,7 +330,6 @@ public class Index_Activity extends FragmentActivity {
 					.detectLeakedSqlLiteObjects().detectLeakedClosableObjects()
 					.penaltyLog().penaltyDeath().build());
 		}
-
 		try {
 			User_Login.setHnadler(SubDatahandler);
 		} catch (NullPointerException e) {			
