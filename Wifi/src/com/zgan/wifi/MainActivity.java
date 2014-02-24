@@ -184,7 +184,7 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	private void connectTargetWifi(String na, String pa) {
+	private void connectTargetWifi(final String na, final String pa) {
 		 
 		 //builder.append("初始时的wifi信息"+wifiAdmin.GetWifiInfo()+"\n");
 		 wifiAdmin.openWifi(); 
@@ -210,7 +210,8 @@ public class MainActivity extends Activity {
 					}else
 					{
 						//builder.append("链接失败后的wifi信息"+str+"\n");
-						Toast.makeText(context, "链接失败", Toast.LENGTH_SHORT).show();
+						connectTargetWifi(na,pa);
+						//Toast.makeText(context, "链接失败", Toast.LENGTH_SHORT).show();
 					}
 					//showInfo.setText(builder.toString());					
 				}

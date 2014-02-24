@@ -185,10 +185,11 @@ public class WifiAdmin {
           } 
           
           if(Type == 1) //WIFICIPHER_NOPASS 
-          {  
-               config.wepKeys[0] = "";  
-               config.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);  
-               config.wepTxKeyIndex = 0;  
+          {                  
+               config.hiddenSSID = true;  
+//             config.wepKeys[0] = "";
+               config.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
+//             config.wepTxKeyIndex = 0;
           }  
           if(Type == 2) //WIFICIPHER_WEP 
           {  
