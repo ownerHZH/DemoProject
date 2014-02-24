@@ -5,6 +5,15 @@ import java.nio.channels.Selector;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import android.util.Log;
+
+import java.io.UnsupportedEncodingException;
+import java.nio.channels.Selector;
+import java.util.LinkedList;
+import java.util.Queue;
+
+import android.util.Log;
+
 public class FrameTools {
 
 	public static final int Frame_Max = 512;
@@ -95,8 +104,8 @@ public class FrameTools {
 		int intVersion = 0;
 
 		// 检查版本
-		intVersion = Buff[6] & 0xFF;
-
+		intVersion = Buff[2] & 0xFF;
+		Log.i("Buff[6] & 0xFF", ""+intVersion);
 		switch (intVersion) {
 		case 1:
 			getByteToFrame_Version_1(Buff, f);
@@ -104,6 +113,7 @@ public class FrameTools {
 		}
 
 	}
+	
 
 	/**
 	 * 解析数据包 Version:1
@@ -118,23 +128,27 @@ public class FrameTools {
 
 		if (CheckSum == getCheckSum(Buff)) {
 			// 平台代码
-			f.Platform = HighLowToInt(Buff[4], Buff[5]);
+			f.Platform = HighLowToInt(Buff[0], Buff[1]);
+			Log.i("Buff[6] & 0xFF", "f.Platform"+f.Platform);
 
 			// 版本号
-			f.Version = Buff[6] & 0xFF;
+			f.Version = Buff[2] & 0xFF;
+			Log.i("Buff[6] & 0xFF", "f.Version"+f.Version);
 
 			// 主功能命令字
-			f.MainCmd = Buff[7];
+			f.MainCmd = Buff[3];
+			Log.i("Buff[6] & 0xFF", "f.MainCmd"+f.MainCmd);
 
 			// 子功能命令字
-			f.SubCmd = Buff[8] & 0xFF;
+			f.SubCmd = Buff[4] & 0xFF;
+			Log.i("Buff[6] & 0xFF", ""+f.SubCmd);
 
 			// 数据长度
-			intDataLen=HighLowToInt(Buff[9], Buff[10]);
+			intDataLen=HighLowToInt(Buff[5], Buff[6]);
 			
 			aryData=new byte[intDataLen];
 			
-			System.arraycopy(Buff, 11, aryData, 0, intDataLen);
+			System.arraycopy(Buff, 7, aryData, 0, intDataLen);
 			
 			f.aryData=aryData;
 			
@@ -160,7 +174,7 @@ public class FrameTools {
 	private static byte getCheckSum(byte[] Buff) {
 		byte b = 0;
 
-		for (int i = 4; i < (Buff.length - 1); i++) {
+		for (int i = 0; i < (Buff.length - 1); i++) {
 			b ^= Buff[i];
 		}
 

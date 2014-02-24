@@ -1,15 +1,15 @@
 9
 
 dir
-5
-https://192.168.1.88/svn/ZganYCKZ/libs
+6
+https://192.168.1.88/svn/ZganYCKZ/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/libs
 https://192.168.1.88/svn/ZganYCKZ
 
 
 
-
-
-
+2014-02-24T01:55:28.571281Z
+6
+hzh
 
 
 svn:special svn:externals svn:needs-lock
@@ -23,5 +23,142 @@ svn:special svn:externals svn:needs-lock
 
 
 
-incomplete
+
+cc352d3f-8073-6d4d-921b-f6c41652b215
+
+core.jar.tmp
+file
+
+
+
+
+2014-02-24T03:11:41.926591Z
+0cb1fccf8a982758e05f88a3c37e12a3
+2014-02-24T01:55:28.571281Z
+6
+hzh
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+245201
+
+core.jar
+file
+
+
+
+
+2014-02-24T03:11:41.930591Z
+0cb1fccf8a982758e05f88a3c37e12a3
+2014-02-24T01:55:28.571281Z
+6
+hzh
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+245201
+
+ksoap2-android-assembly-3.0.0-jar-with-dependencies.jar
+file
+
+
+
+
+2014-02-24T03:11:41.914590Z
+204be046edd02b5d1601f601799ae9d7
+2014-02-24T01:55:28.571281Z
+6
+hzh
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+156948
+
+android-support-v4.jar
+file
+
+
+
+
+2014-02-24T03:11:41.920591Z
+9974894df6e8ba95bb27f5e85e2cdfb5
+2014-02-24T01:55:28.571281Z
+6
+hzh
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+393154
 

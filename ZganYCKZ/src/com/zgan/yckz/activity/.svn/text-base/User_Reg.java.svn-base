@@ -2,13 +2,14 @@ package com.zgan.yckz.activity;
 
 import java.io.IOException;
 import java.nio.channels.Selector;
+import java.util.List;
 
 import com.zgan.yckz.R;
-import com.zgan.yckz.activity.User_Login.testGetData;
-import com.zgan.yckz.activity.User_Login.testSendData;
+
+import com.zgan.yckz.socket.Constant;
+import com.zgan.yckz.socket.SanySocketClient;
 import com.zgan.yckz.tcp.Frame;
 import com.zgan.yckz.tcp.FrameTools;
-import com.zgan.yckz.tcp.TCPThread;
 import com.zgan.yckz.tools.YCKZ_Activity;
 import com.zgan.yckz.tools.YCKZ_NetworkDetector;
 
@@ -18,7 +19,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
+import android.os.Message;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
@@ -65,6 +68,51 @@ public class User_Reg extends Activity {
 	 * 二维码
 	 */
 	ImageView erweima;
+	private static List<SanySocketClient> clientList;
+	Handler SubDatahandler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			// super.handleMessage(msg);
+			switch (msg.what) {
+			case Constant.DATAERROR:
+				System.out.println("NewSocketInfo  Constant.DATAERROR  "
+						+ msg.obj);
+				break;
+			case Constant.CHECKCODEERROR:
+				System.out.println("NewSocketInfo  Constant.CHECKCODEERROR "
+						+ msg.obj);
+				break;
+			case Constant.NETERROR:
+				System.out.println("NewSocketInfo  Constant.NETERROR  "
+						+ msg.obj);
+				break;
+			case Constant.SERVERERROR:
+				System.out.println("NewSocketInfo  Constant.SERVERERROR "
+						+ msg.obj);
+				break;
+			case Constant.DATASUCCESS:
+				byte[] buffer;
+				// buffer = new byte[Constant.MSG_NUM];
+				// Arrays.fill(buffer, (byte)0);
+				buffer = (byte[]) msg.obj;
+
+				Log.i("buffer", "" + buffer);
+				Frame frame = new Frame(buffer);
+				System.out.println("接收数据...平台代码" + frame.Platform);
+				System.out.println("接收数据...版本号" + frame.Version);
+				System.out.println("接收数据...主功能命令字" + frame.MainCmd);
+				System.out.println("接收数据...子功能命令字" + frame.SubCmd);
+				System.out.println("接收数据...数据" + frame.strData);
+
+				System.out.println("NewSocketInfo  Constant.DATASUCCESS "
+						+ buffer);
+
+				Toast.makeText(User_Reg.this, "" + frame.strData.substring(1),
+						Toast.LENGTH_SHORT).show();
+			}
+		}
+	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +120,8 @@ public class User_Reg extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.user_reg);
+
+		//User_Login.setHnadler(SubDatahandler);
 
 		user_tel = (EditText) findViewById(R.id.user_tel);
 		user_pass = (EditText) findViewById(R.id.user_pasword);
@@ -126,94 +176,39 @@ public class User_Reg extends Activity {
 
 	protected void Reg() {
 		// TODO Auto-generated method stub
+
 		if (!user_pass.getText().toString()
 				.equals(reuser_pass.getText().toString())) {
 			Toast.makeText(User_Reg.this, "两次密码不一样", Toast.LENGTH_SHORT).show();
 		} else {
-			Selector s1 = null;
-
+			
 			try {
-				s1 = Selector.open();
-			} catch (IOException e) {
+				SendTestInfo();
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
-			testSendData test = new testSendData();
-
-			testGetData testg = new testGetData();
 		}
 
 	}
 
-	class testGetData implements Runnable {
-		public testGetData() {
-			new Thread(this).start();
-		}
+	public void SendTestInfo() throws Exception {
+		// HandleClient();
 
-		@Override
-		public void run() {
-			// TODO Auto-generated method stub
-			while (true) {
-				if (FrameTools.Queue_Receive.size() > 0) {
-					byte[] resultByte = null;
+		String strLoginInfo = user_tel.getText().toString() + "\t"
+				+ user_pass.getText().toString() + "\t" + "2B2B2B2B2B2B2B2B"
+				+ "\t" + 66666666 + "\t"
+				+ (new String(("重庆").getBytes("GBK"), "ISO8859_1")) + "\t"
+				+ (new String(("重庆").getBytes("GBK"), "ISO8859_1"));
+		byte[] logininfo = strLoginInfo.getBytes();
 
-					resultByte = FrameTools.Queue_Receive.poll();
-
-					Frame f = new Frame(resultByte);
-
-					Log.i("TCPClient", "接收数据...");
-					Log.i("TCPClient",
-							"接收数据...平台代码" + Integer.toString(f.Platform));
-					Log.i("TCPClient",
-							"接收数据...版本号" + Integer.toString(f.Version));
-					Log.i("TCPClient",
-							"接收数据...主功能命令字" + Byte.toString(f.MainCmd));
-					Log.i("TCPClient",
-							"接收数据...子功能命令字" + Integer.toString(f.SubCmd));
-					Log.i("TCPClient", "接收数据...数据" + f.strData);
-					Looper.prepare();
-					if (!f.strData.equals("0")) {
-						Toast.makeText(User_Reg.this, "对不起。注册失败" + f.strData,
-								Toast.LENGTH_SHORT).show();
-					} else {
-						Toast.makeText(User_Reg.this, "恭喜注册成功！",
-								Toast.LENGTH_SHORT).show();
-						User_Reg.this.finish();
-
-					}
-					Looper.loop();
-				}
-			}
-		}
-	}
-
-	class testSendData implements Runnable {
-		public testSendData() {
-			new Thread(this).start();
-		}
-
-		@Override
-		public void run() {
-			// TODO Auto-generated method stub
-
-			Frame f = new Frame();
-			// 家庭卫士主14子 21
-			// 远程控制平台代码4主3子0
-			// 登陆服务器平台代码3主1子1.密码userid\t密码
-			//FFC995RPCEY7UM6PWZX1\t123456              
-			f.Platform = 4;
-			f.MainCmd = 0x01;
-			f.SubCmd = 3;
-			f.strData = user_tel.getText() + "\t" + user_pass.getText() + "\t"
-					+ "FFC995RPCEY7UM6PWZX1" + "\t66666666";
-
-			TCPThread tt = new TCPThread("61.186.245.251", 21000,
-					FrameTools.getFrameBuffData(f));
-
-			// FrameTools.toSendTcpData(f);
-			Log.i("testSendData", "发送登录");
-
+		// System.out.println("NewSocketInfo"+"#############################    "+logininfo);
+		boolean bSend = User_Login.SendData(Constant.LOGIN_SERVERPLATFROM,
+				logininfo, strLoginInfo.length(), Constant.LOGIN,
+				Constant.INDEX_cbMainCmdID, Constant.VERSION);
+		if (bSend) {
+			System.out.println("NewSocketInfo  " + strLoginInfo);
 		}
 
 	}

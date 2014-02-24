@@ -11,8 +11,14 @@ public class YCKZ_SQLHelper extends SQLiteOpenHelper {
 
 	String creat_list = "create table if not exists table_SubDev"
 			+ "(_ID integer primary key autoincrement,_SubDvId text,_MAC text,_Port text,"
-			+ "_ProductNo text,_DeviceNo text,_DeviceName text,_Status text," +
-			"_RegTime text,_JobStatus text)";
+			+ "_ProductNo text,_DeviceNo text,_DeviceName text,_Status text,"
+			+ "_RegTime text,_JobStatus text)";
+	String creat_SubDevList = "create table if not exists SubDevList(" +
+			" _ID integer primary key autoincrement," +
+			"_MAC text,_DeviceName text)";
+	String creat_AlarmDevList = "create table if not exists AlarmDevList(" +
+			" _ID integer primary key autoincrement," +
+			"_AlarmTime text)";
 
 	public YCKZ_SQLHelper(Context context, String name) {
 		this(context, name, VERSION);
@@ -30,8 +36,10 @@ public class YCKZ_SQLHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub	
+		db.execSQL(creat_SubDevList);
 		db.execSQL(creat_list);
+		db.execSQL(creat_AlarmDevList);
 	}
 
 	@Override

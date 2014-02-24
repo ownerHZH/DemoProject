@@ -1,31 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android
 END
 .classpath
 K 25
 svn:wc:ra_dav:version-url
-V 35
-/svn/ZganYCKZ/!svn/ver/5/.classpath
+V 80
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/.classpath
 END
 project.properties
 K 25
 svn:wc:ra_dav:version-url
-V 43
-/svn/ZganYCKZ/!svn/ver/5/project.properties
+V 88
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/project.properties
 END
 .project
 K 25
 svn:wc:ra_dav:version-url
-V 33
-/svn/ZganYCKZ/!svn/ver/5/.project
+V 78
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/.project
+END
+lint.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/lint.xml
 END
 proguard-project.txt
 K 25
 svn:wc:ra_dav:version-url
-V 45
-/svn/ZganYCKZ/!svn/ver/5/proguard-project.txt
+V 90
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/proguard-project.txt
 END
 AndroidManifest.xml
 K 25
 svn:wc:ra_dav:version-url
-V 44
-/svn/ZganYCKZ/!svn/ver/5/AndroidManifest.xml
+V 89
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/AndroidManifest.xml
+END
+ic_launcher-web.png
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ic_launcher-web.png
 END

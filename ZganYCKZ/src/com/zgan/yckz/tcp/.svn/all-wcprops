@@ -1,53 +1,53 @@
 K 25
 svn:wc:ra_dav:version-url
-V 46
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp
+V 91
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tcp
 END
 TCPSend.java
 K 25
 svn:wc:ra_dav:version-url
-V 59
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/TCPSend.java
+V 104
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tcp/TCPSend.java
 END
 TCPPing.java
 K 25
 svn:wc:ra_dav:version-url
-V 59
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/TCPPing.java
+V 104
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tcp/TCPPing.java
 END
 SetSeting.java
 K 25
 svn:wc:ra_dav:version-url
-V 61
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/SetSeting.java
+V 106
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tcp/SetSeting.java
 END
 TCPTest.java
 K 25
 svn:wc:ra_dav:version-url
-V 59
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/TCPTest.java
+V 104
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tcp/TCPTest.java
 END
 TCPReceive.java
 K 25
 svn:wc:ra_dav:version-url
-V 62
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/TCPReceive.java
+V 107
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tcp/TCPReceive.java
 END
 Frame.java
 K 25
 svn:wc:ra_dav:version-url
-V 57
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/Frame.java
+V 102
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tcp/Frame.java
 END
 FrameTools.java
 K 25
 svn:wc:ra_dav:version-url
-V 62
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/FrameTools.java
+V 107
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tcp/FrameTools.java
 END
 TCPThread.java
 K 25
 svn:wc:ra_dav:version-url
-V 61
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tcp/TCPThread.java
+V 106
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tcp/TCPThread.java
 END

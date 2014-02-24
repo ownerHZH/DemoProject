@@ -1,15 +1,15 @@
 9
 
 dir
-5
-https://192.168.1.88/svn/ZganYCKZ/src/com/zgan/yckz/view
+6
+https://192.168.1.88/svn/ZganYCKZ/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/view
 https://192.168.1.88/svn/ZganYCKZ
 
 
 
-2014-01-06T05:56:08.251773Z
-5
-fr
+2014-02-24T01:55:28.571281Z
+6
+hzh
 
 
 svn:special svn:externals svn:needs-lock
@@ -32,11 +32,11 @@ file
 
 
 
-2014-01-17T07:12:02.884879Z
+2014-02-24T03:11:38.742409Z
 8cbde02fdd04338ba451ed3468ff87bc
-2014-01-06T05:56:08.251773Z
-5
-fr
+2014-02-24T01:55:28.571281Z
+6
+hzh
 
 
 
@@ -66,11 +66,11 @@ file
 
 
 
-2014-01-17T07:12:02.886879Z
+2014-02-24T03:11:38.745409Z
 82fa2e4c87e52d3564001798f984b96c
-2014-01-06T05:56:08.251773Z
-5
-fr
+2014-02-24T01:55:28.571281Z
+6
+hzh
 
 
 

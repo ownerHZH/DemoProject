@@ -1,17 +1,23 @@
 K 25
 svn:wc:ra_dav:version-url
-V 50
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/adapter
+V 95
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/adapter
 END
 KaiGuanAdapter.java
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/adapter/KaiGuanAdapter.java
+V 115
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/adapter/KaiGuanAdapter.java
+END
+GridviewAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/adapter/GridviewAdapter.java
 END
 AlarmAdapter.java
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/adapter/AlarmAdapter.java
+V 113
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/adapter/AlarmAdapter.java
 END

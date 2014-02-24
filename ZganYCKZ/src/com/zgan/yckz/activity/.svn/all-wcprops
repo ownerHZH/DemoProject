@@ -1,71 +1,83 @@
 K 25
 svn:wc:ra_dav:version-url
-V 51
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/activity
+V 96
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity
 END
 CaptureActivity.java
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/activity/CaptureActivity.java
+V 117
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/CaptureActivity.java
 END
 Main_Acitivty.java
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/activity/Main_Acitivty.java
+V 115
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/Main_Acitivty.java
 END
 Index_Activity.java
 K 25
 svn:wc:ra_dav:version-url
-V 71
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/activity/Index_Activity.java
+V 116
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/Index_Activity.java
+END
+PhoneFile_Activity.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/PhoneFile_Activity.java
 END
 UserInfo_Activity.java
 K 25
 svn:wc:ra_dav:version-url
-V 74
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/activity/UserInfo_Activity.java
+V 119
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/UserInfo_Activity.java
 END
 User_Login.java
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/activity/User_Login.java
+V 112
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/User_Login.java
 END
 More_Acitivity.java
 K 25
 svn:wc:ra_dav:version-url
-V 71
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/activity/More_Acitivity.java
+V 116
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/More_Acitivity.java
 END
 SheBeiSet_Activity.java
 K 25
 svn:wc:ra_dav:version-url
-V 75
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/activity/SheBeiSet_Activity.java
+V 120
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/SheBeiSet_Activity.java
 END
 Alarm_Activity.java
 K 25
 svn:wc:ra_dav:version-url
-V 71
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/activity/Alarm_Activity.java
+V 116
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/Alarm_Activity.java
 END
 Vip_Info.java
 K 25
 svn:wc:ra_dav:version-url
-V 65
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/activity/Vip_Info.java
+V 110
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/Vip_Info.java
 END
 User_Reg.java
 K 25
 svn:wc:ra_dav:version-url
-V 65
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/activity/User_Reg.java
+V 110
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/User_Reg.java
+END
+AppActivtiy.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/AppActivtiy.java
 END
 UpDataUserShebei.java
 K 25
 svn:wc:ra_dav:version-url
-V 73
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/activity/UpDataUserShebei.java
+V 118
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/activity/UpDataUserShebei.java
 END

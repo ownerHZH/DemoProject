@@ -1,53 +1,53 @@
 K 25
 svn:wc:ra_dav:version-url
-V 48
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tools
+V 93
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tools
 END
 SheBei.java
 K 25
 svn:wc:ra_dav:version-url
-V 60
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tools/SheBei.java
+V 105
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tools/SheBei.java
 END
 YCKZ_SQLHelper.java
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tools/YCKZ_SQLHelper.java
+V 113
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tools/YCKZ_SQLHelper.java
 END
 YCKZ_NetworkDetector.java
 K 25
 svn:wc:ra_dav:version-url
-V 74
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tools/YCKZ_NetworkDetector.java
+V 119
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tools/YCKZ_NetworkDetector.java
 END
 YCKZ_Base64.java
 K 25
 svn:wc:ra_dav:version-url
-V 65
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tools/YCKZ_Base64.java
+V 110
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tools/YCKZ_Base64.java
 END
 YCKZ_RetriveArticleService.java
 K 25
 svn:wc:ra_dav:version-url
-V 80
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tools/YCKZ_RetriveArticleService.java
+V 125
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tools/YCKZ_RetriveArticleService.java
 END
 YCKZ_Static.java
 K 25
 svn:wc:ra_dav:version-url
-V 65
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tools/YCKZ_Static.java
+V 110
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tools/YCKZ_Static.java
 END
 YCKZ_DES.java
 K 25
 svn:wc:ra_dav:version-url
-V 62
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tools/YCKZ_DES.java
+V 107
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tools/YCKZ_DES.java
 END
 YCKZ_Activity.java
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/tools/YCKZ_Activity.java
+V 112
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/tools/YCKZ_Activity.java
 END

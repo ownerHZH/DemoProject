@@ -41,6 +41,9 @@ public class UpDataUserShebei extends Activity {
 	String mac=null;
 	
 	String subname=null;
+	
+	List<SheBei> list = new ArrayList<SheBei>();
+
 	@Override
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
@@ -60,11 +63,9 @@ public class UpDataUserShebei extends Activity {
 		db = yckz_SQLHelper.getReadableDatabase();
 		
 		
-		update = (TextView) findViewById(R.id.vip_level);
 		textView=(TextView)findViewById(R.id.title);
 		back = (Button) findViewById(R.id.back);
 		listView = (ListView) findViewById(R.id.listview);
-		List<SheBei> list = new ArrayList<SheBei>();
 		
 		update.setText("");
 		textView.setText("ÃÌº”…Ë÷√");
@@ -72,10 +73,7 @@ public class UpDataUserShebei extends Activity {
 		back.setOnClickListener(listener);
 		
 		Select();
-		SheBei sheBei=new SheBei();
-		sheBei.setMAC(mac);
-		sheBei.setDeviceName(subname);
-		list.add(sheBei);
+		
 		KaiGuanAdapter adapter = new KaiGuanAdapter(this, list);
 		listView.setAdapter(adapter);
 
@@ -85,11 +83,15 @@ public class UpDataUserShebei extends Activity {
 		// TODO Auto-generated method stub
 		Cursor c = db.rawQuery("select *from table_SubDev",new String[]{});
 
-		if (c.moveToFirst()) {
+		while (c.moveToNext()) {
 			mac = c.getString(c.getColumnIndex("_MAC"));
 			subname=c.getString(c.getColumnIndex("_DeviceName"));
 			Log.i("mac", mac);
 			Log.i("subname", subname);
+			SheBei  sheBei=new SheBei();
+			sheBei.setMAC(mac);
+			sheBei.setDeviceName(subname);
+			list.add(sheBei);
 		}
 		c.close();
 	}

@@ -1,15 +1,15 @@
 9
 
 dir
-5
-https://192.168.1.88/svn/ZganYCKZ/src/com/zgan/yckz
+6
+https://192.168.1.88/svn/ZganYCKZ/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz
 https://192.168.1.88/svn/ZganYCKZ
 
 
 
-2014-01-06T05:56:08.251773Z
-5
-fr
+2014-02-24T01:55:28.571281Z
+6
+hzh
 
 
 svn:special svn:externals svn:needs-lock
@@ -41,6 +41,12 @@ dir
 camera
 dir
 
+socket
+dir
+
+dowtools
+dir
+
 view
 dir
 
@@ -50,11 +56,33 @@ file
 
 
 
+2014-02-24T03:11:39.005424Z
+1446a90ba1c4f8c09544ec8e0ebdc46c
+2014-02-24T01:55:28.571281Z
+6
+hzh
 
-14bf3d2e02f580f952404355f86195b9
-2014-01-06T05:56:08.251773Z
-5
-fr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1527
 
 activity
 dir

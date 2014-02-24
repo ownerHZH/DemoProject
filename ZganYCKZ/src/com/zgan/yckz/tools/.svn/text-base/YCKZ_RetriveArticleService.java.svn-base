@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import com.zgan.yckz.R;
 import com.zgan.yckz.Welcome;
 import com.zgan.yckz.tcp.FrameTools;
-import com.zgan.yckz.tcp.TCPSend;
 
 
 import android.app.AlertDialog;
@@ -48,10 +47,10 @@ public class YCKZ_RetriveArticleService extends Service{
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		// TODO Auto-generated method stub
-		initService();
+		//initService();
 		return super.onStartCommand(intent, flags, startId);
 	}
-	private void initService() {
+	/*private void initService() {
 		// TODO Auto-generated method stub
 		Thread getArticlesThread = new Thread(null, mTask, "getZganPushMsg");
 		new Thread(new Runnable() {
@@ -81,7 +80,7 @@ public class YCKZ_RetriveArticleService extends Service{
 		}).start();
 		getArticlesThread.start();
 
-	}
+	}*/
 	Runnable mTask = new Runnable() {
 
 		@Override

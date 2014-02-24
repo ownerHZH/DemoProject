@@ -1,9 +1,8 @@
 package com.zgan.yckz;
 
-import com.zgan.yckz.activity.Main_Acitivty;
 import com.zgan.yckz.activity.User_Login;
-import com.zgan.yckz.activity.User_Reg;
 import com.zgan.yckz.tools.YCKZ_Activity;
+import com.zgan.yckz.tools.YCKZ_Static;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -27,8 +26,8 @@ public class Welcome extends YCKZ_Activity {
 		setContentView(R.layout.welcome);
 		preferences = getSharedPreferences("yckz_user", MODE_PRIVATE);
 
-		user_name = preferences.getString("user_name", null);
-		user_pas = preferences.getString("user_pas", null);
+		YCKZ_Static.Phone_number=user_name = preferences.getString("user_name", null);
+		YCKZ_Static.USER_password=user_pas = preferences.getString("user_pas", null);
 		LinearLayout layout = (LinearLayout) findViewById(R.id.line_welcome);
 		layout.setOnClickListener(listener);
 
@@ -40,16 +39,11 @@ public class Welcome extends YCKZ_Activity {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 
-			if (user_name != null && !"".equals(user_name) && user_pas != null
-					&& !"".equals(user_pas)) {
-				Intent intent = new Intent(Welcome.this, Main_Acitivty.class);
-				startActivity(intent);
-				finish();
-			} else {
+				
 				Intent intent = new Intent(Welcome.this, User_Login.class);
 				startActivity(intent);
 				finish();
-			}
+			
 		}
 	};
 

@@ -135,7 +135,15 @@ public class KaiGuanAdapter extends BaseAdapter {
 					delete.setVisibility(View.GONE);
 					selector.setVisibility(View.GONE);
 					ID.setVisibility(View.VISIBLE);
-					
+					/*db.delete("table_SubDev", "_MAC like?", new String[]{list.get(position).getMAC()});
+					Frame f = new Frame();
+					Log.i("获取离网设备信息", "获取离网设备信息");
+
+					f.Platform = 4;
+					f.MainCmd = 1;
+					f.SubCmd = 3;
+					f.strData = list.get(position).getMAC();
+					FrameTools.toSendTcpData(f);*/
 					
 					list.remove(position);				
 					

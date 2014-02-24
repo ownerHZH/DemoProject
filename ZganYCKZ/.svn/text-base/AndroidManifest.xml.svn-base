@@ -28,10 +28,10 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme" 
+        android:persistent="true">
         <activity
-            android:name="com.zgan.yckz.Welcome"
-            android:label="@string/app_name" >
+            android:name="com.zgan.yckz.Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,6 +46,7 @@
         </service>
         <service android:name="com.zgan.yckz.tcp.TCPTest" />
 
+        <!--
         <receiver
             android:name="com.zgan.yckz.tools.YCKZ_RetriveArticleService"
             android:launchMode="singleTop" >
@@ -53,7 +54,8 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-.-
+        -->
+
         <activity
             android:name="com.zgan.yckz.activity.Main_Acitivty"
             android:launchMode="singleTask" />
@@ -65,9 +67,18 @@
         <activity android:name="com.zgan.yckz.activity.UpDataUserShebei" />
         <activity android:name="com.zgan.yckz.activity.User_Login" />
         <activity android:name="com.zgan.yckz.activity.CaptureActivity" />
+        <activity android:name="com.zgan.yckz.activity.Index_Activity" />
+        <activity android:name="com.zgan.yckz.activity.AppActivtiy" />
         <activity
             android:name="com.zgan.yckz.activity.User_Reg"
             android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.zgan.yckz.activity.PhoneFile_Activity"
+            android:theme="@android:style/Theme.Dialog" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

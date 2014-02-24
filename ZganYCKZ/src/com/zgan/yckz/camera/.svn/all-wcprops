@@ -1,41 +1,41 @@
 K 25
 svn:wc:ra_dav:version-url
-V 49
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera
+V 94
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/camera
 END
 FlashlightManager.java
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera/FlashlightManager.java
+V 117
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/camera/FlashlightManager.java
 END
 CameraManager.java
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera/CameraManager.java
+V 113
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/camera/CameraManager.java
 END
 AutoFocusCallback.java
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera/AutoFocusCallback.java
+V 117
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/camera/AutoFocusCallback.java
 END
 CameraConfigurationManager.java
 K 25
 svn:wc:ra_dav:version-url
-V 81
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera/CameraConfigurationManager.java
+V 126
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/camera/CameraConfigurationManager.java
 END
 PlanarYUVLuminanceSource.java
 K 25
 svn:wc:ra_dav:version-url
-V 79
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera/PlanarYUVLuminanceSource.java
+V 124
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/camera/PlanarYUVLuminanceSource.java
 END
 PreviewCallback.java
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/svn/ZganYCKZ/!svn/ver/5/src/com/zgan/yckz/camera/PreviewCallback.java
+V 115
+/svn/ZganYCKZ/!svn/ver/6/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/src/com/zgan/yckz/camera/PreviewCallback.java
 END
