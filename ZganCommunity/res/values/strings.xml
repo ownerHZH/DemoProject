@@ -53,6 +53,7 @@
     <string name="community_notification_news">紧急停水通知</string>
     <string name="community_notification_news1">大风天气防空坠物</string>
     <string name="community_notification_news2">关于组织免费体检</string>
+    <string name="community_notification_title">通知公告</string>
 
     <!-- 充值缴费字段 -->
     <string name="community_pay_moneytitle">总费用查询：</string>

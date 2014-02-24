@@ -23,7 +23,7 @@ public class MainPageActivity extends MainAcitivity {
 	private Button communityRecruit; // 招工信息
 	private Button communityLivelihood; // 生活百事
 	private Button communityHouseShelter; // 家庭卫士
-	private Button communitySettings; // 我的设置
+	private Button communitySettings; // 联系物业
 	private ImageView setting;
 
 	/*private TextView name; // 姓名

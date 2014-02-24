@@ -66,7 +66,7 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 
 		back = (Button) findViewById(R.id.back);
 		title = (TextView) findViewById(R.id.title);
-		title.setText(R.string.community_policital);
+		title.setText(R.string.community_notification_title);
 
 		con = CommunityNewNotificationActivity.this;
 		list = (ListView) findViewById(R.id.listViewPolitical);

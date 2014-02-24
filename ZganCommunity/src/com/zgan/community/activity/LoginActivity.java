@@ -40,7 +40,7 @@ public class LoginActivity extends MainAcitivity {
 	 * µÇÂ½°´Å¥
 	 */
 	ImageView go;
-	ImageView reg;
+	//ImageView reg;
 	Handler handler = new Handler();
 	ProgressDialog dialog;
 	String szIme;
@@ -56,7 +56,7 @@ public class LoginActivity extends MainAcitivity {
 		editor = preferences.edit();
 
 		go = (ImageView) findViewById(R.id.go);
-		reg = (ImageView) findViewById(R.id.reg);
+		//reg = (ImageView) findViewById(R.id.reg);
 
 		go_tel = (EditText) findViewById(R.id.go_tel);
 		go_pas = (EditText) findViewById(R.id.go_pas);
@@ -65,7 +65,7 @@ public class LoginActivity extends MainAcitivity {
 		go_pas.setText(preferences.getString("password", null));
 
 		go.setOnClickListener(listener);
-		reg.setOnClickListener(listener);
+		//reg.setOnClickListener(listener);
 		TelephonyManager TelephonyMgr = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
 		szIme = TelephonyMgr.getDeviceId();
 		Log.i("szIme", szIme);
@@ -87,12 +87,12 @@ public class LoginActivity extends MainAcitivity {
 
 				break;
 
-			case R.id.reg:
+			/*case R.id.reg:
 
 				Intent intent = new Intent(LoginActivity.this,
 						RegisterActivity.class);
 				startActivity(intent);
-				break;
+				break;*/
 			}
 
 		}
