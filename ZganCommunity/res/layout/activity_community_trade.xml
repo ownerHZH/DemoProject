@@ -3,25 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CommunityTradeActivity" >
+    tools:context=".CommunityTradeActivity" >    
 
     <include layout="@layout/top_title" />
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/twolevel_bg" >
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp" >
+                android:layout_marginRight="10dp" >
 
                 <Button
                     android:id="@+id/buttonSupermarket"
@@ -29,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/chaoshi" />
+                    android:background="@drawable/cyms" />
 
                 <Button
                     android:id="@+id/buttonSnack"
@@ -37,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/kuaican" />
+                    android:background="@drawable/qpyl" />
 
                 <Button
                     android:id="@+id/buttonPasta"
@@ -45,12 +50,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/miansi" />
+                    android:background="@drawable/blcs" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp" >
 
@@ -60,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/shaokao" />
+                    android:background="@drawable/cwmr" />
 
                 <Button
                     android:id="@+id/buttonHairdressing"
@@ -68,7 +74,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/meirong" />
+                    android:background="@drawable/yfzs" />
 
                 <Button
                     android:id="@+id/buttonDryclean"
@@ -76,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/ganxi" />
+                    android:background="@drawable/qcmr" />
             </LinearLayout>
 
             <LinearLayout
@@ -91,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/piju" />
+                    android:background="@drawable/myyp" />
 
                 <Button
                     android:id="@+id/buttonFondue"
@@ -99,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/huoguo" />
+                    android:background="@drawable/xhyz" />
 
                 <Button
                     android:id="@+id/buttonChinesemeal"
@@ -107,41 +113,17 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/zhongcan" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" >
-
-                <Button
-                    android:id="@+id/buttonTeahouse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/chalou" />
-
-                <Button
-                    android:id="@+id/buttonKidstrain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/ertong" />
-
-                <Button
-                    android:id="@+id/buttonTrafficsearch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/jiaotong" />
+                    android:background="@drawable/jypx" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:background="@drawable/bottom_bar_bg"
+        android:orientation="horizontal" >
 
+    </LinearLayout> 
+    
 </LinearLayout>
