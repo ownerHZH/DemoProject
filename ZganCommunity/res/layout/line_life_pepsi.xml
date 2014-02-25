@@ -21,7 +21,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
-            android:drawableTop="@drawable/home_reservation1"
             android:text="办事指南" />
 
         <Button
@@ -30,7 +29,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
-            android:drawableTop="@drawable/home_houserental"
             android:text="@string/life_info" />
 
         <TextView

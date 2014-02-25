@@ -8,17 +8,20 @@
 
     <include
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         layout="@layout/top_title" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center" >
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/twolevel_bg" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
             android:layout_weight="9"
             android:gravity="center"
             android:orientation="vertical" >
@@ -33,28 +36,28 @@
                 <Button
                     android:id="@+id/buttonPipe"
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/p1" />
+                    android:background="@drawable/jdwx" />
 
                 <Button
                     android:id="@+id/buttonUnlock"
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/p2" />
+                    android:background="@drawable/sdwx" />
 
                 <Button
                     android:id="@+id/buttonPlumber"
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/p3" />
+                    android:background="@drawable/jzbj" />
             </LinearLayout>
 
             <LinearLayout
@@ -67,63 +70,28 @@
                 <Button
                     android:id="@+id/buttonPCrepair"
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/p4" />
+                    android:background="@drawable/bjgs" />
 
                 <Button
                     android:id="@+id/buttonRecycle"
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/p5" />
+                    android:background="@drawable/ysbm" />
 
                 <Button
                     android:id="@+id/buttonPet"
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/p6" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                android:visibility="gone" >
-
-                <Button
-                    android:id="@+id/buttonPsychological"
-                    android:layout_width="wrap_content"
-                    android:layout_height="90dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/p7" />
-
-                <Button
-                    android:id="@+id/buttonHealth"
-                    android:layout_width="wrap_content"
-                    android:layout_height="90dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/p8" />
-
-                <Button
-                    android:id="@+id/buttonLaw"
-                    android:layout_width="wrap_content"
-                    android:layout_height="90dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/p9" />
+                    android:background="@drawable/eshh" />
             </LinearLayout>
 
             <LinearLayout
@@ -136,69 +104,36 @@
                 <Button
                     android:id="@+id/buttonMove"
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/p10" />
+                    android:background="@drawable/ksfw" />
 
                 <Button
                     android:id="@+id/buttonMatron"
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/p11" />
+                    android:background="@drawable/gdst" />
 
                 <Button
                     android:id="@+id/buttonCleaning"
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/p12" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:visibility="gone" >
-
-                <Button
-                    android:id="@+id/buttonNanny"
-                    android:layout_width="wrap_content"
-                    android:layout_height="90dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/p13" />
-
-                <!-- 下面两个是占位置的，显示的时候屏蔽 -->
-
-                <Button
-                    android:id="@+id/buttonNanny_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/p13"
-                    android:visibility="invisible" />
-
-                <Button
-                    android:id="@+id/buttonNanny_2"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/p13"
-                    android:visibility="invisible" />
+                    android:background="@drawable/xyfw" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:background="@drawable/bottom_bar_bg" >
+        
+    </LinearLayout>
 </LinearLayout>

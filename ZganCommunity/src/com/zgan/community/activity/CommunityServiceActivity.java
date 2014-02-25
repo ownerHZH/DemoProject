@@ -24,13 +24,13 @@ public class CommunityServiceActivity extends MainAcitivity {
 	private Button pcrepair;       //电脑维修
 	private Button recycle;        //闲置回收
 	private Button pet;            //宠物之家
-	private Button psychological;  //心理辅导
-	private Button health;         //健康咨询
-	private Button law;            //法律咨询
+	//private Button psychological;  //心理辅导
+	//private Button health;         //健康咨询
+	//private Button law;            //法律咨询
 	private Button pipe;           //疏通管道
 	private Button matron;         //月嫂
 	private Button cleaning;       //保洁
-	private Button nanny;          //保姆
+	//private Button nanny;          //保姆
 	
 	private Context con;
 	private Intent intent=null;    //装载跳转界面的 意图
@@ -50,13 +50,9 @@ public class CommunityServiceActivity extends MainAcitivity {
 		pcrepair=(Button) findViewById(R.id.buttonPCrepair);
 		recycle=(Button) findViewById(R.id.buttonRecycle);
 		pet=(Button) findViewById(R.id.buttonPet);
-		psychological=(Button) findViewById(R.id.buttonPsychological);
-		health=(Button) findViewById(R.id.buttonHealth);
-		law=(Button) findViewById(R.id.buttonLaw);
 		pipe=(Button) findViewById(R.id.buttonPipe);
 		matron=(Button) findViewById(R.id.buttonMatron);
 		cleaning=(Button) findViewById(R.id.buttonCleaning);
-		nanny=(Button) findViewById(R.id.buttonNanny);
 		
 		con=CommunityServiceActivity.this;                     //初始化Context
 		
@@ -69,13 +65,9 @@ public class CommunityServiceActivity extends MainAcitivity {
         pcrepair.setOnClickListener(l);
         recycle.setOnClickListener(l);
         pet.setOnClickListener(l);
-        psychological.setOnClickListener(l);
-        health.setOnClickListener(l);
-        law.setOnClickListener(l);
         pipe.setOnClickListener(l);
         matron.setOnClickListener(l);
         cleaning.setOnClickListener(l);
-        nanny.setOnClickListener(l);
 	}
 
 	public class ButtonClickListener implements View.OnClickListener
@@ -91,79 +83,55 @@ public class CommunityServiceActivity extends MainAcitivity {
             case R.id.buttonMove:
             	//搬家点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "搬家");
+            	intent.putExtra("button_key", "家电维修");
 				startActivity(intent);
 				break;
             case R.id.buttonUnlock:
             	//开锁服务点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "开锁服务");
+            	intent.putExtra("button_key", "水电维修");
 				startActivity(intent);
 				break;
             case R.id.buttonPlumber:
             	//水电维修点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "水电维修");
+            	intent.putExtra("button_key", "家政保洁");
 				startActivity(intent);
 				break;
              case R.id.buttonPCrepair:
             	//电脑维修点击响应事件
             	 intent=new Intent(con,ZganCommunityMapShow.class);
-             	intent.putExtra("button_key", "电脑维修");
+             	intent.putExtra("button_key", "搬家公司");
  				startActivity(intent);
  				break;
             case R.id.buttonRecycle:
             	//闲置回收点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "闲置回收");
+            	intent.putExtra("button_key", "月嫂保姆");
 				startActivity(intent);
 				break;
             case R.id.buttonPet:
             	//宠物之家点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "宠物之家");
-				startActivity(intent);
-				break;
-            case R.id.buttonPsychological:
-            	//心理辅导点击响应事件
-            	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "心理辅导");
-				startActivity(intent);
-				break;
-            case R.id.buttonHealth:
-            	//健康咨询点击响应事件
-            	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "健康咨询");
-				startActivity(intent);
-				break;
-            case R.id.buttonLaw:
-            	//法律咨询点击响应事件
-            	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "法律咨询");
+            	intent.putExtra("button_key", "二手回收");
 				startActivity(intent);
 				break;
             case R.id.buttonPipe:
             	//疏通管道点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "疏通管道");
+            	intent.putExtra("button_key", "开锁服务");
 				startActivity(intent);
 				break;
             case R.id.buttonMatron:
             	//月嫂点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "月嫂");
+            	intent.putExtra("button_key", "管道疏通");
 				startActivity(intent);
 				break;
             case R.id.buttonCleaning:
             	//保洁点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "保洁");
-				startActivity(intent);
-				break;
-            case R.id.buttonNanny:
-            	//保姆点击响应事件
-            	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key","保姆");//nanny.getText().toString()
+            	intent.putExtra("button_key", "洗衣服务");
 				startActivity(intent);
 				break;
 
