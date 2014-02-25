@@ -4,6 +4,7 @@ package com.zgan.yckz.socket;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
@@ -22,8 +23,10 @@ import android.util.Log;
  * 2. 所有的接口采用装饰器模式, 出现问题只需要修改最底层的代码, 容易维护
  *
  */
-public class SanySocketClient {
-	
+public class SanySocketClient implements Serializable {
+
+	private static final long serialVersionUID = -5320160305195473688L;
+
 	public Socket clientSocket;
 	
 	private InetSocketAddress tcpAddress;

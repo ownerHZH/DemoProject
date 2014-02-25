@@ -337,6 +337,7 @@ public class Index_Activity extends FragmentActivity {
 			intent.putExtra("restart", "restart");
 			startActivity(intent);
 			finish();
+			//User_Login.setHnadler(SubDatahandler,this);
 			e.printStackTrace();
 		}
 		yckz_SQLHelper = new YCKZ_SQLHelper(this, "yckz.db3", 1);

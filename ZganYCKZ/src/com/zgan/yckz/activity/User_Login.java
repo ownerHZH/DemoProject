@@ -1,9 +1,16 @@
 package com.zgan.yckz.activity;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.StreamCorruptedException;
 import java.nio.channels.Selector;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.kobjects.base64.Base64;
 
 import com.zgan.yckz.R;
 import com.zgan.yckz.fragment.PublicFragment;
@@ -32,6 +39,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
@@ -567,7 +575,7 @@ public class User_Login extends YCKZ_Activity {
 	}
 
 	public static void setHnadler(Handler handler) 
-	{
+	{		
 		if (clientList.size() > 0) {
 			for (int i = 0; i < clientList.size(); i++) {
 				SanySocketClient con = clientList.get(i);
@@ -579,6 +587,43 @@ public class User_Login extends YCKZ_Activity {
 			
 		}		
 	}
+	
+	/**
+	 * 获取保存在SharedPreferences中的clientList
+	 * 保存位置在onPause()方法中
+	 * @param handler
+	 * @param context
+	 *//*
+	@SuppressWarnings("unchecked")
+	public static void setHnadler(Handler handler,Context context) 
+	{
+		clientList=new ArrayList<SanySocketClient>();
+		SharedPreferences  p = context.getSharedPreferences("clientList", MODE_PRIVATE);
+		byte[] base64Bytes = Base64.decode(p.getString("clientList", null));  
+		ByteArrayInputStream bais = new ByteArrayInputStream(base64Bytes);  
+		ObjectInputStream ois;
+		try {
+			ois = new ObjectInputStream(bais);
+			clientList = (List<SanySocketClient>) ois.readObject(); 
+		} catch (StreamCorruptedException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		if (clientList.size() > 0) {
+			for (int i = 0; i < clientList.size(); i++) {
+				SanySocketClient con = clientList.get(i);
+				con.setHandler(handler);
+				System.out.println("NewSocketInfo"
+						+ "setHnadler(Handler handler)");
+			}
+		}else{
+			
+		}		
+	}*/
 
 
 	public static void startNewClient(String strip, int nport, Handler handler,
@@ -826,7 +871,7 @@ public class User_Login extends YCKZ_Activity {
 	  //重新登录
 	  public void reStart()
 	  {
-		  repreferences = getSharedPreferences("yckz_user", MODE_PRIVATE);
+		  repreferences = context.getSharedPreferences("yckz_user", MODE_PRIVATE);
 
 		  YCKZ_Static.Phone_number= repreferences.getString("user_name", null);
 		  YCKZ_Static.USER_password= repreferences.getString("user_pas", null);
@@ -880,4 +925,28 @@ public class User_Login extends YCKZ_Activity {
 				Toast.makeText(context, "请连接网络！", Toast.LENGTH_LONG).show();
 			}
 	  }
+
+	@Override
+	protected void onPause() {
+		/*SharedPreferences  p = getSharedPreferences("clientList", MODE_PRIVATE);
+		Editor e = p.edit();
+		
+		ByteArrayOutputStream toByte = new ByteArrayOutputStream();
+		ObjectOutputStream oos;
+		try {
+			oos = new ObjectOutputStream(toByte);
+			oos.writeObject(clientList);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		//对byte[]进行Base64编码
+		String clientList = new String(Base64.encode(toByte.toByteArray()));
+		// 存储
+		e.putString("clientList", clientList);
+		e.commit();*/
+		
+		super.onPause();
+	}
 }
