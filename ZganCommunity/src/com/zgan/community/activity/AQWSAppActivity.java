@@ -42,7 +42,7 @@ public class AQWSAppActivity extends MainAcitivity {
 	ImageView app_logo;
 
 	TextView top_title;
-	TextView app_name;
+	//TextView app_name;
 
 	Button app_dow;
 
@@ -56,10 +56,8 @@ public class AQWSAppActivity extends MainAcitivity {
 		app_dow = (Button) findViewById(R.id.app_dowland);
 
 		top_title = (TextView) findViewById(R.id.title);
-		app_name = (TextView) findViewById(R.id.app_name);
 
 		top_title.setText("ฯ๊ว้");
-		app_name.setText("");
 
 		app_dow.setOnClickListener(listener);
 		back.setOnClickListener(listener);

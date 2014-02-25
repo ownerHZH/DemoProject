@@ -208,19 +208,25 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 	/**
 	 * 设置Tab切换背景
 	 */
+	@SuppressWarnings("deprecation")
 	public void setTabBackground() {
 		// 设置Tab背景
 		int count = tabWidget.getChildCount();
-		for (int i = 0; i < count; i++) {
-			View v = tabWidget.getChildAt(i);
-			if (tabHost.getCurrentTab() == i) {
-				v.setBackgroundColor(Color.WHITE);
+			if (tabHost.getCurrentTab() == 0) {
+				//v.setBackgroundColor(Color.WHITE);
 				// 在这里最好自己设置一个图片作为背景更好
-				// v.setBackgroundDrawable(getResources().getDrawable(R.drawable.chat));
+				View v0=tabHost.getChildAt(0);
+				View v1=tabHost.getChildAt(1);
+			    v0.setBackgroundDrawable(getResources().getDrawable(R.drawable.zheng2));
+			    v1.setBackgroundDrawable(getResources().getDrawable(R.drawable.ban1));
+				
 			} else {
-				v.setBackgroundColor(Color.GRAY);
+				//v.setBackgroundColor(Color.GRAY);
+				View v0=tabHost.getChildAt(0);
+				View v1=tabHost.getChildAt(1);
+			    v0.setBackgroundDrawable(getResources().getDrawable(R.drawable.zheng1));
+			    v1.setBackgroundDrawable(getResources().getDrawable(R.drawable.ban2));
 			}
-		}
 	}
 
 	/**
@@ -234,12 +240,14 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 
 		tabHost.addTab(tabHost
 				.newTabSpec("tab1")
-				.setIndicator(getString(R.string.community_policital_news),
-						null).setContent(R.id.listViewPolitical));
+				.setIndicator(null,//getString(R.string.community_policital_news),
+						null)
+			    .setContent(R.id.listViewPolitical));
 
 		tabHost.addTab(tabHost
 				.newTabSpec("tab2")
-				.setIndicator(getString(R.string.community_policital_law), null)
+				.setIndicator(null,//getString(R.string.community_policital_law),
+						null)
 				.setContent(R.id.linearLayoutPolitical2));
 		setTabViewParas();// 设置Tab显示属性
 		setTabBackground();// 第一次设置显示背景色
@@ -254,13 +262,13 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 		int count = tabWidget.getChildCount();// TabHost中有一个getTabWidget()的方法
 		for (int i = 0; i < count; i++) {
 			View view = tabWidget.getChildTabViewAt(i);
-			view.getLayoutParams().height = 80; // tabWidget.getChildAt(i)
+			view.getLayoutParams().height = 75; // tabWidget.getChildAt(i)
 			// view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-			final TextView tv = (TextView) view
+			/*final TextView tv = (TextView) view
 					.findViewById(android.R.id.title);
 			tv.setTextSize(20);
 			tv.setTextColor(this.getResources().getColorStateList(
-					android.R.color.black));
+					android.R.color.black));*/
 		}
 	}
 
