@@ -140,6 +140,13 @@ public class LoginActivity extends MainAcitivity {
 									"请输入正确的账号和密码", Toast.LENGTH_SHORT).show();
 							Looper.loop();
 						}
+					}else
+					{
+						Looper.prepare();
+						dialog.dismiss();
+						Toast.makeText(getApplicationContext(),
+								"账号不存在", Toast.LENGTH_SHORT).show();
+						Looper.loop();
 					}
 
 				} catch (Exception e) {

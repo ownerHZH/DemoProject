@@ -75,7 +75,7 @@ public class CommunityPayAdapter extends BaseAdapter {
          holder.date.setText(list.get(position).get("date").toString());
          holder.money.setText("гд"+list.get(position).get("money").toString());
          
-         if (list.size() == 1) {
+         /*if (list.size() == 1) {
              convertView.setBackgroundResource(R.drawable.circle_list_single);
          } else if (list.size() > 1) {
              if (position == 0) {
@@ -85,7 +85,7 @@ public class CommunityPayAdapter extends BaseAdapter {
              } else {
                  convertView.setBackgroundResource(R.drawable.circle_list_middle);
              }
-         }
+         }*/
           
          return convertView;
        }

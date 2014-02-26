@@ -26,17 +26,17 @@ svn:special svn:externals svn:needs-lock
 
 c390ab1c-c3a3-bb43-afa3-5d4300cc8aae
 
-labour_employment.png
+phone_nub_bg.9.png
 file
 
 
 
+add
 
-2014-02-25T06:17:11.115227Z
-76f5fd7dcbbb7c719db0a4daef3efb22
-2013-12-30T06:37:28.604545Z
-162
-fr
+f22d54272558165b192eb252cb52cdaa
+
+
+
 has-props
 
 
@@ -45,20 +45,9 @@ has-props
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-6963
+copied
+https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/phone_nub_bg.9.png
+177
 
 btn_cook.png
 file
@@ -94,40 +83,6 @@ has-props
 
 8576
 
-btn_waiter.png
-file
-
-
-
-
-2014-02-25T08:06:31.116438Z
-3279e429c7e4b22f098ede405a8f3d90
-2013-12-27T07:10:25.605006Z
-155
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9151
-
 meirong.png
 file
 
@@ -161,40 +116,6 @@ has-props
 
 
 7542
-
-social_security.png
-file
-
-
-
-
-2014-02-25T06:17:15.115456Z
-68b8b86620de89abb07b9f1b459cfce0
-2013-12-30T06:37:28.604545Z
-162
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8788
 
 consumer_protection.png
 file
@@ -264,17 +185,17 @@ has-props
 
 7324
 
-other_kid.png
+login.png
 file
 
 
 
+add
 
-2014-02-25T06:17:14.115399Z
-409fb77a9111a0ffdfb61ad59a07018a
-2013-12-30T06:37:28.604545Z
-162
-fr
+a8a9ff67921c7433d1c7a587bf44255c
+
+
+
 has-props
 
 
@@ -283,20 +204,9 @@ has-props
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-6977
+copied
+https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/login.png
+177
 
 btn_sales.png
 file
@@ -332,40 +242,6 @@ has-props
 
 10018
 
-btn_mechanic.png
-file
-
-
-
-
-2014-02-25T08:06:27.116209Z
-8f253d7520a9205a43f0f2b0135e6592
-2013-12-27T07:10:25.605006Z
-155
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6935
-
 chalou.png
 file
 
@@ -399,88 +275,6 @@ has-props
 
 
 9502
-
-index_bg.jpg
-file
-0
-
-
-add
-
-
-
-
-
-has-props
-has-prop-mods
-
-btn_assistant.png
-file
-
-
-
-
-2014-02-25T08:05:14.209039Z
-f6a48af46bf5199d2af7bb27a30fe9e5
-2013-12-27T07:10:25.605006Z
-155
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8996
-
-miansi.png
-file
-
-
-
-delete
-2013-12-31T06:00:42.529344Z
-d4ce5f89bf878df02a69b85efc08388d
-2013-12-30T03:08:30.425883Z
-161
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10781
 
 regin_logo.png
 file
@@ -572,74 +366,6 @@ has-props
 
 
 8933
-
-login_logo.png
-file
-
-
-
-
-2013-12-20T01:35:04.068412Z
-c8507312501e49dc7426e92feca9f5c2
-2013-12-20T01:30:02.658763Z
-113
-hzh
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3162
-
-house_magament.png
-file
-
-
-
-
-2014-02-25T06:17:08.115056Z
-5b133029b0e4be46b98da51142f61c42
-2013-12-30T06:37:28.604545Z
-162
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6505
 
 labor_arbitration.png
 file
@@ -743,6 +469,29 @@ has-props
 
 10568
 
+drag_logo.png
+file
+
+
+
+add
+
+bce3ae05d459d11aaf90fd0d64b4b0db
+
+
+
+has-props
+
+
+
+
+
+
+
+copied
+https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/drag_logo.png
+177
+
 ertong.png
 file
 
@@ -776,40 +525,6 @@ has-props
 
 
 6813
-
-btn_driver.png
-file
-
-
-
-
-2014-02-25T08:06:25.117095Z
-14bcede5d272cc434ab97fec14c4c57e
-2013-12-27T07:10:25.605006Z
-155
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9681
 
 blue_bg.png
 file
@@ -959,17 +674,17 @@ copied
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/main2.png
 177
 
-ganxi.png
+main3.png
 file
 
 
 
-delete
-2013-12-31T06:00:42.548345Z
-b95eb3acc7ad373d38a01044cc1a46ff
-2013-12-30T03:08:30.425883Z
-161
-fr
+add
+
+749cbb8dcc0f46a23818f6d05c353bf7
+
+
+
 has-props
 
 
@@ -978,54 +693,9 @@ has-props
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-6249
-
-zhongcan.png
-file
-
-
-
-delete
-2013-12-31T06:00:42.556346Z
-e0829c939c500d0699fd6c319aa1a36b
-2013-12-30T03:08:30.425883Z
-161
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6914
+copied
+https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/main3.png
+177
 
 piju.png
 file
@@ -1061,29 +731,6 @@ has-props
 
 8168
 
-main3.png
-file
-
-
-
-add
-
-749cbb8dcc0f46a23818f6d05c353bf7
-
-
-
-has-props
-
-
-
-
-
-
-
-copied
-https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/main3.png
-177
-
 main4.png
 file
 
@@ -1105,6 +752,29 @@ has-props
 
 copied
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/main4.png
+177
+
+main5.png
+file
+
+
+
+add
+
+784fda8b731be123a90efd7c7ed4bd17
+
+
+
+has-props
+
+
+
+
+
+
+
+copied
+https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/main5.png
 177
 
 family_plann.png
@@ -1141,14 +811,14 @@ has-props
 
 7102
 
-main5.png
+main6.png
 file
 
 
 
 add
 
-784fda8b731be123a90efd7c7ed4bd17
+15a15578ce59b96f6760804164fd7450
 
 
 
@@ -1161,76 +831,8 @@ has-props
 
 
 copied
-https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/main5.png
+https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/main6.png
 177
-
-military_service.png
-file
-
-
-
-
-2014-02-25T06:17:13.116342Z
-f204c5b2dfa5cacae549575051bf733b
-2013-12-30T06:37:28.604545Z
-162
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7397
-
-jiaotong.png
-file
-
-
-
-delete
-2013-12-31T06:00:42.563346Z
-3526bcdab37cc73436ef6856e4e57cf2
-2013-12-30T03:08:30.425883Z
-161
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6749
 
 traffic_management.png
 file
@@ -1266,39 +868,16 @@ has-props
 
 7197
 
-main6.png
-file
-
-
-
-add
-
-15a15578ce59b96f6760804164fd7450
-
-
-
-has-props
-
-
-
-
-
-
-
-copied
-https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/main6.png
-177
-
-btn_courier.png
+military_service.png
 file
 
 
 
 
-2014-02-25T08:06:23.781018Z
-d4db2207a2c4cf89cc17ebb27ed59637
-2013-12-27T07:10:25.605006Z
-155
+2014-02-25T06:17:13.116342Z
+f204c5b2dfa5cacae549575051bf733b
+2013-12-30T06:37:28.604545Z
+162
 fr
 has-props
 
@@ -1321,41 +900,7 @@ has-props
 
 
 
-9249
-
-kuaican.png
-file
-
-
-
-delete
-2013-12-31T06:00:42.576347Z
-d86174c0eb4a200c69428b5957e1dbb7
-2013-12-30T03:08:30.425883Z
-161
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7819
+7397
 
 main7.png
 file
@@ -1413,40 +958,6 @@ has-props
 
 
 12516
-
-housing.png
-file
-
-
-
-
-2014-02-25T06:17:09.115113Z
-4ae32aecb0934b8ea215d14ec310f13c
-2013-12-30T06:37:28.604545Z
-162
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5174
 
 main8.png
 file
@@ -1527,108 +1038,6 @@ has-props
 copied
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/main9.png
 177
-
-chaoshi.png
-file
-
-
-
-delete
-2013-12-31T06:00:42.586347Z
-25e772b4e3ce460a3ab090d8919ad548
-2013-12-30T03:08:30.425883Z
-161
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8991
-
-marriage_registration.png
-file
-
-
-
-
-2014-02-25T06:17:12.115284Z
-101573665aeef061edfec2187e509ff5
-2013-12-30T06:37:28.604545Z
-162
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8856
-
-btn_customer_service.png
-file
-
-
-
-
-2014-02-25T08:06:24.121038Z
-844503e8d1612a1fe6bec970516b7e46
-2013-12-27T07:10:25.605006Z
-155
-fr
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9833
 
 btn_other.png
 file
@@ -1731,6 +1140,740 @@ has-props
 
 
 10222
+
+labour_employment.png
+file
+
+
+
+
+2014-02-25T06:17:11.115227Z
+76f5fd7dcbbb7c719db0a4daef3efb22
+2013-12-30T06:37:28.604545Z
+162
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6963
+
+btn_waiter.png
+file
+
+
+
+
+2014-02-25T08:06:31.116438Z
+3279e429c7e4b22f098ede405a8f3d90
+2013-12-27T07:10:25.605006Z
+155
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9151
+
+llinear_bg.png
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+social_security.png
+file
+
+
+
+
+2014-02-25T06:17:15.115456Z
+68b8b86620de89abb07b9f1b459cfce0
+2013-12-30T06:37:28.604545Z
+162
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8788
+
+other_kid.png
+file
+
+
+
+
+2014-02-25T06:17:14.115399Z
+409fb77a9111a0ffdfb61ad59a07018a
+2013-12-30T06:37:28.604545Z
+162
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6977
+
+btn_mechanic.png
+file
+
+
+
+
+2014-02-25T08:06:27.116209Z
+8f253d7520a9205a43f0f2b0135e6592
+2013-12-27T07:10:25.605006Z
+155
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6935
+
+index_bg.jpg
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+login_bg.jpg
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+btn_assistant.png
+file
+
+
+
+
+2014-02-25T08:05:14.209039Z
+f6a48af46bf5199d2af7bb27a30fe9e5
+2013-12-27T07:10:25.605006Z
+155
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8996
+
+miansi.png
+file
+
+
+
+delete
+2013-12-31T06:00:42.529344Z
+d4ce5f89bf878df02a69b85efc08388d
+2013-12-30T03:08:30.425883Z
+161
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10781
+
+password_bg.9.png
+file
+
+
+
+add
+
+cd398f259af7e5072676f40825951364
+
+
+
+has-props
+
+
+
+
+
+
+
+copied
+https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/password_bg.9.png
+177
+
+local_ico.png
+file
+
+
+
+add
+
+940fd6c5b1cccd197c23909dcc0e88e7
+
+
+
+has-props
+
+
+
+
+
+
+
+copied
+https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/local_ico.png
+177
+
+login_logo.png
+file
+
+
+
+
+2013-12-20T01:35:04.068412Z
+c8507312501e49dc7426e92feca9f5c2
+2013-12-20T01:30:02.658763Z
+113
+hzh
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3162
+
+house_magament.png
+file
+
+
+
+
+2014-02-25T06:17:08.115056Z
+5b133029b0e4be46b98da51142f61c42
+2013-12-30T06:37:28.604545Z
+162
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6505
+
+btn_driver.png
+file
+
+
+
+
+2014-02-25T08:06:25.117095Z
+14bcede5d272cc434ab97fec14c4c57e
+2013-12-27T07:10:25.605006Z
+155
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9681
+
+ganxi.png
+file
+
+
+
+delete
+2013-12-31T06:00:42.548345Z
+b95eb3acc7ad373d38a01044cc1a46ff
+2013-12-30T03:08:30.425883Z
+161
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6249
+
+zhongcan.png
+file
+
+
+
+delete
+2013-12-31T06:00:42.556346Z
+e0829c939c500d0699fd6c319aa1a36b
+2013-12-30T03:08:30.425883Z
+161
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6914
+
+jiaotong.png
+file
+
+
+
+delete
+2013-12-31T06:00:42.563346Z
+3526bcdab37cc73436ef6856e4e57cf2
+2013-12-30T03:08:30.425883Z
+161
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6749
+
+btn_courier.png
+file
+
+
+
+
+2014-02-25T08:06:23.781018Z
+d4db2207a2c4cf89cc17ebb27ed59637
+2013-12-27T07:10:25.605006Z
+155
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9249
+
+kuaican.png
+file
+
+
+
+delete
+2013-12-31T06:00:42.576347Z
+d86174c0eb4a200c69428b5957e1dbb7
+2013-12-30T03:08:30.425883Z
+161
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7819
+
+housing.png
+file
+
+
+
+
+2014-02-25T06:17:09.115113Z
+4ae32aecb0934b8ea215d14ec310f13c
+2013-12-30T06:37:28.604545Z
+162
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5174
+
+chaoshi.png
+file
+
+
+
+delete
+2013-12-31T06:00:42.586347Z
+25e772b4e3ce460a3ab090d8919ad548
+2013-12-30T03:08:30.425883Z
+161
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8991
+
+marriage_registration.png
+file
+
+
+
+
+2014-02-25T06:17:12.115284Z
+101573665aeef061edfec2187e509ff5
+2013-12-30T06:37:28.604545Z
+162
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8856
+
+btn_customer_service.png
+file
+
+
+
+
+2014-02-25T08:06:24.121038Z
+844503e8d1612a1fe6bec970516b7e46
+2013-12-27T07:10:25.605006Z
+155
+fr
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9833
 
 phone_logo.png
 file

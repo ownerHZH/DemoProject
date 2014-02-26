@@ -12,6 +12,7 @@ import com.zgan.yckz.tcp.Frame;
 import com.zgan.yckz.tcp.FrameTools;
 import com.zgan.yckz.tools.YCKZ_Activity;
 import com.zgan.yckz.tools.YCKZ_NetworkDetector;
+import com.zgan.yckz.tools.YCKZ_Static;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -68,6 +69,11 @@ public class User_Reg extends Activity {
 	 * 二维码
 	 */
 	ImageView erweima;
+	EditText yzm;
+	
+	SharedPreferences preferences;
+	SharedPreferences.Editor editor;
+	
 	private static List<SanySocketClient> clientList;
 	Handler SubDatahandler = new Handler() {
 		@Override
@@ -122,6 +128,8 @@ public class User_Reg extends Activity {
 		setContentView(R.layout.user_reg);
 
 		//User_Login.setHnadler(SubDatahandler);
+		preferences = getSharedPreferences("yckz_user", MODE_PRIVATE);
+		editor = preferences.edit();
 
 		user_tel = (EditText) findViewById(R.id.user_tel);
 		user_pass = (EditText) findViewById(R.id.user_pasword);
@@ -133,6 +141,7 @@ public class User_Reg extends Activity {
 		user_cancel = (ImageView) findViewById(R.id.cancel);
 		user_commit = (ImageView) findViewById(R.id.commit);
 		erweima = (ImageView) findViewById(R.id.erweima);
+		yzm=(EditText) findViewById(R.id.shebeiyzm);
 
 		user_cancel.setOnClickListener(listener);
 		user_commit.setOnClickListener(listener);
@@ -180,7 +189,14 @@ public class User_Reg extends Activity {
 		if (!user_pass.getText().toString()
 				.equals(reuser_pass.getText().toString())) {
 			Toast.makeText(User_Reg.this, "两次密码不一样", Toast.LENGTH_SHORT).show();
-		} else {
+		}else if(user_shebei.getText().toString().trim().equals(""))
+		{
+			Toast.makeText(User_Reg.this, "设备号不能为空", Toast.LENGTH_SHORT).show();
+		}else if(yzm.getText().toString().trim().equals(""))
+		{
+			Toast.makeText(User_Reg.this, "验证码不能为空", Toast.LENGTH_SHORT).show();
+		}
+		else {
 			
 			try {
 				SendTestInfo();
@@ -195,10 +211,15 @@ public class User_Reg extends Activity {
 
 	public void SendTestInfo() throws Exception {
 		// HandleClient();
+		YCKZ_Static.Phone_number=user_tel.getText().toString();
+		YCKZ_Static.USER_password=user_pass.getText().toString();
+		editor.putString("user_name", YCKZ_Static.Phone_number);
+		editor.putString("user_pas", YCKZ_Static.USER_password);
+		editor.commit();
 
 		String strLoginInfo = user_tel.getText().toString() + "\t"
-				+ user_pass.getText().toString() + "\t" + "2B2B2B2B2B2B2B2B"
-				+ "\t" + 66666666 + "\t"
+				+ user_pass.getText().toString() + "\t" + user_shebei.getText().toString()
+				+ "\t" + yzm.getText().toString().trim() + "\t"
 				+ (new String(("重庆").getBytes("GBK"), "ISO8859_1")) + "\t"
 				+ (new String(("重庆").getBytes("GBK"), "ISO8859_1"));
 		byte[] logininfo = strLoginInfo.getBytes();

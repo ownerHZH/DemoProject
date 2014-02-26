@@ -83,7 +83,7 @@ public class CommunityServiceActivity extends MainAcitivity {
             case R.id.buttonMove:
             	//搬家点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "家电维修");
+            	intent.putExtra("button_key", "开锁服务");
 				startActivity(intent);
 				break;
             case R.id.buttonUnlock:
@@ -119,7 +119,7 @@ public class CommunityServiceActivity extends MainAcitivity {
             case R.id.buttonPipe:
             	//疏通管道点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "开锁服务");
+            	intent.putExtra("button_key", "家电维修");
 				startActivity(intent);
 				break;
             case R.id.buttonMatron:

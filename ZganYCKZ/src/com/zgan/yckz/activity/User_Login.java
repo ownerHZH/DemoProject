@@ -542,7 +542,7 @@ public class User_Login extends YCKZ_Activity {
 						} else if (nServer == 9) {
 							cbMainCmd = 0x03;
 						}
-						String strLoginInfo = "89898989";
+						String strLoginInfo = YCKZ_Static.Phone_number;
 						byte[] info = strLoginInfo.getBytes();
 						boolean bSend = SendData(nServer, info,
 								strLoginInfo.length(), cbMainCmd,

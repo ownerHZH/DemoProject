@@ -155,8 +155,8 @@
     <string name="activity_community_setting_button_sure">确定</string>
     <string name="activity_community_setting_birth">生日：</string>
     <string name="activity_community_setting_sex">性别：</string>
-    <string name="activity_community_setting_sex_male">男</string>
-    <string name="activity_community_setting_sex_female">女</string>
+    <string name="activity_community_setting_sex_male">    男</string>
+    <string name="activity_community_setting_sex_female">  女</string>
     <string name="activity_community_setting_password">密码：</string>
     <string name="activity_community_setting_push_message">消息推送</string>
     <string name="activity_community_setting_push_message_open">开</string>

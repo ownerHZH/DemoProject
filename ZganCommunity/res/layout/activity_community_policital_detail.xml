@@ -2,11 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     android:orientation="vertical"
-    android:background="@drawable/main_bg"
     tools:context=".CommunityPolicitalDetailActivity" >
+
     <include layout="@layout/top_title"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_up"
+        android:orientation="vertical" >
+        
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,5 +68,6 @@
             android:text="@string/fake_content" />
 
     </ScrollView>
+    </LinearLayout>
 
 </LinearLayout>

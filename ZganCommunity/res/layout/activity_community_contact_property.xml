@@ -2,14 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="top"
+    android:background="@drawable/bg"
+    android:gravity="top|center_horizontal"
     android:orientation="vertical" >
 
     <include layout="@layout/title_commit_layout"/>
 
-    <ScrollView 
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
         
     <LinearLayout
         android:layout_width="fill_parent"
@@ -17,68 +19,160 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:orientation="vertical" >
         
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="请选择：" />
+        android:text="请选择："
+        android:textSize="20sp" />
 
                 <RadioGroup
                     android:id="@+id/radioGroup1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
 
                     <RadioButton
                         android:id="@+id/radio0"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/sexradiobutton"
+                        android:button="@null"
                         android:checked="false"
-                        android:text="报事报修"
+                        android:gravity="right|center_vertical"
                         android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="报事报修" />
+                    
+                    </LinearLayout>
+                    
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
 
                     <RadioButton
                         android:id="@+id/radio1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="我需要物业上门，请与我联系"
+                        android:background="@drawable/sexradiobutton"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="right|center_vertical"
                         android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我需要物业上门，请与我联系" />
+                    
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
 
                     <RadioButton
                         android:id="@+id/radio2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="我需要室内管道维修"
+                        android:background="@drawable/sexradiobutton"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="right|center_vertical"
                         android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我需要室内管道维修" />
                     
+                    </LinearLayout>
+                    
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
                     <RadioButton
                         android:id="@+id/radio3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="我家出现漏水漏电"
+                        android:background="@drawable/sexradiobutton"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="right|center_vertical"
                         android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我家出现漏水漏电" />
                     
+                    </LinearLayout>
+                    
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
                     <RadioButton
                         android:id="@+id/radio4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="以上没有可选项，我的问题如下"
+                        android:background="@drawable/sexradiobutton"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="right|center_vertical"
                         android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="以上没有可选项，我的问题如下：" />
+                    
+                    </LinearLayout>
+                                     
 
                 </RadioGroup>
 
                 <EditText
                     android:id="@+id/adviceInput"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="200dp"
+                    android:background="@drawable/advice_edittext"
                     android:ems="10"
                     android:gravity="top|center_vertical"
                     android:hint="输入文本..."
                     android:inputType="textMultiLine"
-                    android:minLines="5" >
+                    android:minLines="5"
+                    android:padding="10dp" >
                    
                 </EditText>
    </LinearLayout>
    </ScrollView>
+   
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@drawable/bottom_bar_bg" >
+        
+    </LinearLayout>
 </LinearLayout>

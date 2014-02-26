@@ -67,7 +67,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:layout_weight="9"
+                        android:layout_weight="1"
                         android:cacheColorHint="#00000000"
                         android:listSelector="#00000000" >
 
@@ -76,29 +76,28 @@
 				    <LinearLayout
 				        android:id="@+id/category"
 				        android:layout_width="match_parent"
-				        android:layout_height="match_parent"
-				        android:layout_weight="1"
+				        android:layout_height="wrap_content"
 				        android:gravity="bottom|center"
-				        android:visibility="gone"
-				        android:orientation="horizontal" >
+				        android:orientation="horizontal"
+				        android:visibility="gone" >
 				        
 				    <Button
 				        android:id="@+id/buttonCity"
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content"
-				        android:text="@string/community_policital_law_sz" />
+				        android:background="@drawable/ssbm" />
 				
 				    <Button
 				        android:id="@+id/buttonCounty"
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content"
-				        android:text="@string/community_policital_law_qx" />
+				        android:background="@drawable/qxzf" />
 				
 				    <Button
 				        android:id="@+id/buttonCommonService"
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content"
-				        android:text="@string/community_policital_law_gg" />
+				        android:background="@drawable/ggfwdw" />
 				    
 				    </LinearLayout>
 				

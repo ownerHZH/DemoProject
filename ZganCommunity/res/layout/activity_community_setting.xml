@@ -10,7 +10,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@drawable/p_setting_bg" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,13 +31,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_community_setting_hint"
-                    android:text="@string/activity_community_setting_phone" />
+                    android:text="@string/activity_community_setting_phone"
+                    android:textColor="#fff" />
 
                 <TextView
                     android:id="@+id/phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="13xxxxxxxxx" />
+                    android:text="13xxxxxxxxx"
+                    android:textColor="#fff" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -49,13 +54,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_community_setting_hint"
-                    android:text="@string/activity_community_setting_local" />
+                    android:text="@string/activity_community_setting_local"
+                    android:textColor="#fff" />
 
                 <TextView
                     android:id="@+id/balcony"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="11-5-2" />
+                    android:text="11-5-2"
+                    android:textColor="#fff" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -69,17 +77,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_community_setting_hint"
-                    android:text="@string/activity_community_setting_nickname" />
+                    android:text="@string/activity_community_setting_nickname"
+                    android:textColor="#fff" />
 
                 <EditText
                     android:id="@+id/nicknameText"
+                    style="null"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:enabled="false"
                     android:singleLine="true"
-                    android:text="XXX" >
+                    android:text="XXX"
+                    android:background="@null"
+                    android:textColor="#fff" >
 
                     <requestFocus />
                 </EditText>
@@ -88,7 +100,8 @@
                     android:id="@+id/nicknameChange"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/activity_community_setting_button_change" />
+                    android:background="@drawable/change_btn" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -102,7 +115,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_community_setting_hint"
-                    android:text="@string/activity_community_setting_birth" />
+                    android:text="@string/activity_community_setting_birth"
+                    android:textColor="#fff" />
 
                 <EditText
                     android:id="@+id/birthText"
@@ -113,13 +127,16 @@
                     android:ems="10"
                     android:enabled="false"
                     android:singleLine="true"
-                    android:text="1987-12-24" />
+                    android:text="1987-12-24"
+                    android:background="@null"
+                    android:textColor="#fff" />
 
                 <Button
                     android:id="@+id/birthChange"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/activity_community_setting_button_change" />
+                    android:background="@drawable/change_btn" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -133,31 +150,55 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_community_setting_hint"
-                    android:text="@string/activity_community_setting_sex" />
+                    android:text="@string/activity_community_setting_sex"
+                    android:textColor="#fff" />
 
                 <RadioGroup
                     android:id="@+id/sexRadioGroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="fill_horizontal"
                     android:orientation="horizontal" >
 
                     <RadioButton
                         android:id="@+id/radio0"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/sexradiobutton"
+                        android:button="@null"
                         android:checked="true"
+                        android:gravity="right|start"
+                        android:textColor="#fff"
+                        android:width="20dp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
                         android:text="@string/activity_community_setting_sex_male"
-                        android:textColor="#000" />
+                        android:textColor="#fff" />
 
                     <RadioButton
                         android:id="@+id/radio1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/sexradiobutton"
+                        android:button="@null"
+                        android:gravity="right|start"
+                        android:textColor="#fff"
+                        android:width="20dp" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="@string/activity_community_setting_sex_female"
-                        android:textColor="#000" />
+                        android:textColor="#fff" />
 
                 </RadioGroup>
-
             </LinearLayout>
 
             <LinearLayout
@@ -171,19 +212,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_community_setting_hint"
-                    android:text="@string/activity_community_setting_password" />
+                    android:text="@string/activity_community_setting_password"
+                    android:textColor="#fff" />
 
                 <TextView
                     android:id="@+id/TextView05"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="xxxxxxxxx" />
+                    android:text="xxxxxxxxx"
+                    android:textColor="#fff" />
 
                 <Button
                     android:id="@+id/passwordChange"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/activity_community_setting_button_change" />
+                    android:background="@drawable/change_btn" />
             
             </LinearLayout>
 
@@ -198,7 +241,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_community_setting_hint"
-                    android:text="@string/activity_community_setting_push_message" />
+                    android:text="@string/activity_community_setting_push_message"
+                    android:textColor="#fff" />
                 
                 <com.zgan.community.tools.SlipButton
                     android:id="@+id/slipbutton"
@@ -220,8 +264,17 @@
                     android:id="@+id/TextView02"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:hint="@string/activity_community_setting_hint"
-                    android:text="@string/activity_community_setting_advice" />
+                    android:text="@string/activity_community_setting_advice"
+                    android:textColor="#fff" />
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/right_btn" />
 
             </LinearLayout>
 
@@ -237,11 +290,27 @@
                     android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:hint="@string/activity_community_setting_hint"
-                    android:text="@string/activity_community_setting_about" />
+                    android:text="@string/activity_community_setting_about"
+                    android:textColor="#fff" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/right_btn" />
 
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:background="@drawable/p_setting_bg_bottom" >
+
+    </LinearLayout>
 
 </LinearLayout>

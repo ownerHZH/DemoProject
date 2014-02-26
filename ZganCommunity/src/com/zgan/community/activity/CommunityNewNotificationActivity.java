@@ -1,5 +1,6 @@
 package com.zgan.community.activity;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ import com.zgan.community.tools.MainAcitivity;
 import com.zgan.community.tools.MyProgressDialog;
 import com.zgan.community.tools.ZganCommunityStaticData;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.content.Context;
@@ -182,16 +184,19 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 	 */
 	public void setTabBackground() {
 		// 设置Tab背景
-		int count = tabWidget.getChildCount();
-		for (int i = 0; i < count; i++) {
-			View v = tabWidget.getChildAt(i);
-			if (tabHost.getCurrentTab() == i) {
-				v.setBackgroundColor(Color.WHITE);
-				// 在这里最好自己设置一个图片作为背景更好
-				// v.setBackgroundDrawable(getResources().getDrawable(R.drawable.chat));
-			} else {
-				v.setBackgroundColor(Color.GRAY);
-			}
+		View v0=tabWidget.getChildTabViewAt(0);
+		View v1=tabWidget.getChildTabViewAt(1);
+		//int count = tabWidget.getChildCount();
+		if (tabHost.getCurrentTab() == 0) {
+			//v.setBackgroundColor(Color.WHITE);
+			// 在这里最好自己设置一个图片作为背景更好				
+		    v0.setBackgroundDrawable(getResources().getDrawable(R.drawable.wu2));
+		    v1.setBackgroundDrawable(getResources().getDrawable(R.drawable.she1));
+			
+		} else {
+			//v.setBackgroundColor(Color.GRAY);
+		    v0.setBackgroundDrawable(getResources().getDrawable(R.drawable.wu1));
+		    v1.setBackgroundDrawable(getResources().getDrawable(R.drawable.she2));
 		}
 	}
 
@@ -206,12 +211,12 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 
 		tabHost.addTab(tabHost
 				.newTabSpec("tab1")
-				.setIndicator(getString(R.string.community_notification_property_news),
+				.setIndicator(null,
 						null).setContent(R.id.listViewPolitical));
 
 		tabHost.addTab(tabHost
 				.newTabSpec("tab2")
-				.setIndicator(getString(R.string.community_notification_announcement), null)
+				.setIndicator(null, null)
 				.setContent(R.id.listViewPolitical2));
 		setTabViewParas();// 设置Tab显示属性
 		setTabBackground();// 第一次设置显示背景色
@@ -226,13 +231,57 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 		int count = tabWidget.getChildCount();// TabHost中有一个getTabWidget()的方法
 		for (int i = 0; i < count; i++) {
 			View view = tabWidget.getChildTabViewAt(i);
-			view.getLayoutParams().height = 80; // tabWidget.getChildAt(i)
+			view.getLayoutParams().height = 78; // tabWidget.getChildAt(i)
 			// view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-			final TextView tv = (TextView) view
+			/*final TextView tv = (TextView) view
 					.findViewById(android.R.id.title);
 			tv.setTextSize(20);
 			tv.setTextColor(this.getResources().getColorStateList(
-					android.R.color.black));
+					android.R.color.black));*/
+			Field mBottomLeftStrip;
+	        Field mBottomRightStrip;
+			 if (Float.valueOf(Build.VERSION.RELEASE.substring(0, 3)) <= 2.1) {
+	               try {
+	                  mBottomLeftStrip = tabWidget.getClass().getDeclaredField ("mBottomLeftStrip");
+	                  mBottomRightStrip = tabWidget.getClass().getDeclaredField ("mBottomRightStrip");
+	                  if(!mBottomLeftStrip.isAccessible()) {
+	                    mBottomLeftStrip.setAccessible(true);
+	                  }
+	                  if(!mBottomRightStrip.isAccessible()){
+	                    mBottomRightStrip.setAccessible(true);
+	                  }
+	                mBottomLeftStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
+	                mBottomRightStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
+	                 
+	               } catch (Exception e) {
+	                 e.printStackTrace();
+	               }
+	        } else {
+	         
+	         //如果是2.2,2.3版本开发,可以使用一下方法tabWidget.setStripEnabled(false)
+	         //tabWidget.setStripEnabled(false);
+	         
+	         //但是很可能你开发的android应用是2.1版本，
+	         //tabWidget.setStripEnabled(false)编译器是无法识别而报错的,这时仍然可以使用上面的
+	         //反射实现，但是代码的改改
+	         
+	          try {
+	           //2.2,2.3接口是mLeftStrip，mRightStrip两个变量，当然代码与上面部分重复了
+	                 mBottomLeftStrip = tabWidget.getClass().getDeclaredField ("mLeftStrip");
+	                 mBottomRightStrip = tabWidget.getClass().getDeclaredField ("mRightStrip");
+	                 if(!mBottomLeftStrip.isAccessible()) {
+	                   mBottomLeftStrip.setAccessible(true);
+	                 }
+	                 if(!mBottomRightStrip.isAccessible()){
+	                   mBottomRightStrip.setAccessible(true);
+	                 }
+	               mBottomLeftStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
+	               mBottomRightStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
+	                
+	              } catch (Exception e) {
+	                e.printStackTrace();
+	              }
+	        }
 		}
 	}
 

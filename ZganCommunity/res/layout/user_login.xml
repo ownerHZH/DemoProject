@@ -20,6 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lc_logo"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/llinear_bg"
         android:gravity="center_horizontal"
