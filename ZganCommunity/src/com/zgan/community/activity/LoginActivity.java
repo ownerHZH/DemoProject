@@ -10,6 +10,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import com.zgan.community.R;
+import com.zgan.community.jsontool.AppConstants;
 import com.zgan.community.tools.MainAcitivity;
 import com.zgan.community.tools.ZganCommunityStaticData;
 
@@ -108,8 +109,8 @@ public class LoginActivity extends MainAcitivity {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				HttpGet get = new HttpGet(
-						"http://community1.zgantech.com/ZganLogin.aspx?uname="
+				HttpGet get = new HttpGet(AppConstants.HttpHostAdress+
+						"zganlogin.aspx?uname="
 								+ userid + "&pwd=" + password + "&meid=" + meid);
 
 				HttpClient client = new DefaultHttpClient();

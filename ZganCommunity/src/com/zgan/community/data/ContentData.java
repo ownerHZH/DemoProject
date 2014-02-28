@@ -13,40 +13,34 @@ public class ContentData implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String CID;
-	private String Title;
-	private String CContent;
-	private String ContentTime;
-	private String Publishers;
-	
-	public String getCID() {
-		return CID;
+	private String id;
+	private String title;
+	private String content;
+	private String releasetime;
+	public String getId() {
+		return id;
 	}
-	public void setCID(String cID) {
-		CID = cID;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
 	}
-	public String getCContent() {
-		return CContent;
+	public String getContent() {
+		return content;
 	}
-	public void setCContent(String cContent) {
-		CContent = cContent;
+	public void setContent(String content) {
+		this.content = content;
 	}
-	public String getContentTime() {
-		return ContentTime;
+	public String getReleasetime() {
+		return releasetime;
 	}
-	public void setContentTime(String contentTime) {
-		ContentTime = contentTime;
+	public void setReleasetime(String releasetime) {
+		this.releasetime = releasetime;
 	}
-	public String getPublishers() {
-		return Publishers;
-	}
-	public void setPublishers(String publishers) {
-		Publishers = publishers;
-	}
+	
+	
 }

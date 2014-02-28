@@ -19,7 +19,15 @@ import com.zgan.community.R;
 import com.zgan.community.adapter.CommunityPolicitalAdapter;
 import com.zgan.community.data.ContentData;
 import com.zgan.community.data.MSZW_BGDD;
+import com.zgan.community.data.News;
 import com.zgan.community.jsontool.AppConstants;
+import com.zgan.community.jsontool.DialogUtil;
+import com.zgan.community.jsontool.GsonUtil;
+import com.zgan.community.jsontool.HttpAndroidTask;
+import com.zgan.community.jsontool.HttpClientService;
+import com.zgan.community.jsontool.HttpPreExecuteHandler;
+import com.zgan.community.jsontool.HttpResponseHandler;
+import com.zgan.community.jsontool.JsonEntity;
 import com.zgan.community.tools.MainAcitivity;
 import com.zgan.community.tools.MyProgressDialog;
 import com.zgan.community.tools.ZganCommunityStaticData;
@@ -28,6 +36,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.ProgressDialog;
+import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -55,7 +64,7 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 
 	private ListView list;
 	private ListView list2;
-	// private List<String> dList;//装载数据的List
+	//private List<String> dList;//装载数据的List
 
 	private Context con;
 	private TabHost tabHost;
@@ -74,7 +83,7 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 
 	private CommunityPolicitalAdapter adapter;
 	
-	private LinearLayout category;
+	//private LinearLayout category;
 	private Button buttonCity; //市政府部门
 	private Button buttonCounty;//区县政府
 	private Button buttonCommonService;//公共服务单位
@@ -93,7 +102,7 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 		list = (ListView) findViewById(R.id.listViewPolitical);
 		list2 = (ListView) findViewById(R.id.listViewPolitical2);
 		
-		category=(LinearLayout) findViewById(R.id.category);
+		//category=(LinearLayout) findViewById(R.id.category);
 		buttonCity=(Button) findViewById(R.id.buttonCity);
 		buttonCounty=(Button) findViewById(R.id.buttonCounty);
 		buttonCommonService=(Button) findViewById(R.id.buttonCommonService);
@@ -105,13 +114,11 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 		buttonCommonService.setOnClickListener(l);
 		
 		handler = new Handler();
-		/*
-		 * dialog = new ProgressDialog(this); dialog.setTitle(null);
-		 * dialog.setMessage("加载中，请稍后"); dialog.show();
-		 */
-		dialog = new MyProgressDialog(this);
-		dialog.start("加载中，请稍后...");
+		 
+		//dialog = new MyProgressDialog(this);
+		//dialog.start("加载中，请稍后...");
 
+		
 		initTabHost(); // 初始化TabHost
 		// setTabViewParas();//设置Tab显示属性
 		// tabHost.setCurrentTab(1);
@@ -120,8 +127,7 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 		// 手势内部类初始化
 		detector = new GestureDetector(new MySimpleGestureDetector());
 		getData();// 获取网络数据
-
-	}
+	}		
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
@@ -200,9 +206,16 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 		public void onTabChanged(String str) {
 			setTabBackground();
 			if (str.equals("tab1")) {
-				showData(1);
+				if(contentDataList.size()>0)
+				{
+					showData(1);
+				}else
+				{
+					getData();
+				}
+				
 			} else if (str.equals("tab2")) {
-				showData(2);
+			    getData_b(-1);			
 			}
 		}
 	}
@@ -240,14 +253,12 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 
 		tabHost.addTab(tabHost
 				.newTabSpec("tab1")
-				.setIndicator(null,//getString(R.string.community_policital_news),
-						null)
+				.setIndicator(null,null)
 			    .setContent(R.id.listViewPolitical));
 
 		tabHost.addTab(tabHost
 				.newTabSpec("tab2")
-				.setIndicator(null,//getString(R.string.community_policital_law),
-						null)
+				.setIndicator(null,null)
 				.setContent(R.id.linearLayoutPolitical2));
 		setTabViewParas();// 设置Tab显示属性
 		setTabBackground();// 第一次设置显示背景色
@@ -317,8 +328,6 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 	}
 
 	public class ButtonClickListener implements View.OnClickListener {
-		Intent intent = null;
-
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
@@ -327,17 +336,16 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 				break;
 			case R.id.buttonCity:
 				//市政府部门点击事件
-
+                 getData_b(0);
 				break;
 			case R.id.buttonCounty:
 				//区县政府点击事件
-
+				getData_b(1);
 				break;
 			case R.id.buttonCommonService:
 				//公共服务单位点击事件
-
+				getData_b(2);
 				break;
-
 			default:
 				break;
 			}
@@ -362,105 +370,103 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 	}
 
 	// 获取网络数据
-	private void getData() {
-		// TODO Auto-generated method stub
-		new Thread() {
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				HttpGet get = new HttpGet(AppConstants.HttpHostAdress
-						+ "ZganContent.aspx?did="
-						+ ZganCommunityStaticData.User_Number);
+	//社区公告数据
+		private void getData() {
+			// TODO Auto-generated method stub
+			//newsList = new ArrayList<News>();
 
-				HttpClient client = new DefaultHttpClient();
-				HttpResponse httpResponse;
-				try {
-					httpResponse = client.execute(get);
-					HttpEntity entity = httpResponse.getEntity();
-					StatusLine line = httpResponse.getStatusLine();
-					// Log.i("linecode", "" + line.getStatusCode());
-					if (line.getStatusCode() == 200) {
-						st = EntityUtils.toString(entity);
-						JSONObject jsonObject = new JSONObject(st);
-						String status = jsonObject.get("status").toString();
-						// Log.i("status", "" + status+"");
-						if ("0".equals(status)) {
-							Data = jsonObject.getString("data");
-							JSONArray array = new JSONArray(Data);
-
-							JSONObject jsonObject2 = array.getJSONObject(0);
-							String conStr = jsonObject2
-									.getString("ContentData");
-							if (isNotNull(conStr)) {
-								JSONArray ContentDatacontent = new JSONArray(
-										conStr);
-								System.out.println("条数==="+ContentDatacontent.length());
-								if (ContentDatacontent.length() > 0) {
-									for (int i = 0; i < ContentDatacontent
-											.length(); i++) {
-										ContentData c = new ContentData();
-										JSONObject json = ContentDatacontent
-												.getJSONObject(i);
-										c.setCContent(json
-												.getString("CContent"));
-										c.setCID(json.getString("CID"));
-										c.setContentTime(json
-												.getString("ContentTime"));
-										c.setPublishers(json
-												.getString("Publishers"));
-										c.setTitle(json.getString("Title"));
-										contentDataList.add(c);
-									}
-								}
-							}
-
-							JSONObject jsonObject3 = array.getJSONObject(1);
-							String msStr = jsonObject3.getString("MSZW_BGDD");
-							if (isNotNull(msStr)) {
-								JSONArray MSZW_BGDDcontent = new JSONArray(
-										msStr);
-								if (MSZW_BGDDcontent.length() > 0) {
-									category.setVisibility(View.VISIBLE);
+			HttpClientService svr = new HttpClientService(
+					AppConstants.HttpHostAdress+"zgancontent.aspx");//"http://community1.zgantech.com/ZganNews.aspx?did=15923258890"
+			//参数
+			svr.addParameter("did",ZganCommunityStaticData.User_Number);
+					
+			HttpAndroidTask task = new HttpAndroidTask(con, svr,
+					new HttpResponseHandler() {
+						// 响应事件
+						@SuppressWarnings("unchecked")
+						public void onResponse(Object obj) {
+							dialog.stop();
+							JsonEntity jsonEntity = GsonUtil.parseObj2JsonEntity(
+									obj,con,false);
+							if (jsonEntity.getStatus() == 1) {
+								handler.post(none);
+							} else if (jsonEntity.getStatus() == 0) {
+								contentDataList=(List<ContentData>) GsonUtil.getData(
+											jsonEntity,AppConstants.type_contentDataList);	
 									
-									for (int i = 0; i < MSZW_BGDDcontent
-											.length(); i++) {
-										MSZW_BGDD c = new MSZW_BGDD();
-										JSONObject json = MSZW_BGDDcontent
-												.getJSONObject(i);
-										c.setAddLX(json.getString("AddLX"));
-										c.setAddress(json.getString("Address"));
-										c.setCID(json.getString("CID"));
-										c.setGPSCoordinates(json
-												.getString("GPSCoordinates"));
-										c.setPublishers(json
-												.getString("Publishers"));
-										c.setPublishTime(json
-												.getString("PublishTime"));
-										c.setSName(json.getString("SName"));
-										c.setTel(json.getString("Tel"));
-										MSZW_BGDDList.add(c);
-									}
-								}else
-								{
-									category.setVisibility(View.GONE);
-								}
-							}
-							handler.post(r);
-						} else {
-							handler.post(none);
+									if(contentDataList.size()>0)
+					                {
+					                	//有数据的时候操作
+										handler.post(r);
+					                }else
+					                {
+					                	//没有数据时候提示
+					                	handler.post(none);
+					                }														
+							}														
 						}
+					}, new HttpPreExecuteHandler() {
+						public void onPreExecute(Context context) {
+							dialog = new MyProgressDialog(context);
+							DialogUtil.setAttr4progressDialog(dialog);
+						}
+					});
+			task.execute(new String[] {});	
+		}
+		
+		private void getData_b(int flid) {
+			// TODO Auto-generated method stub
+			//newsList = new ArrayList<News>();
 
-					}
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-				// super.run();
+			HttpClientService svr = new HttpClientService(
+					AppConstants.HttpHostAdress+"zgancontent.aspx");//"http://community1.zgantech.com/ZganNews.aspx?did=15923258890"
+			//参数
+			svr.addParameter("did",ZganCommunityStaticData.User_Number);
+			if(flid==-1)
+			{
+				svr.addParameter("method","bgdd");
+			}else
+			{
+				svr.addParameter("method","bgddfl");
+				svr.addParameter("flid",flid);
 			}
-		}.start();
+			
+					
+			HttpAndroidTask task = new HttpAndroidTask(con, svr,
+					new HttpResponseHandler() {
+						// 响应事件
+						@SuppressWarnings("unchecked")
+						public void onResponse(Object obj) {
+							dialog.stop();
+							JsonEntity jsonEntity = GsonUtil.parseObj2JsonEntity(
+									obj,con,false);
+							if (jsonEntity.getStatus() == 1) {
+								handler.post(none);
+							} else if (jsonEntity.getStatus() == 0) {
+								MSZW_BGDDList.clear();
+								MSZW_BGDDList=(List<MSZW_BGDD>) GsonUtil.getData(
+											jsonEntity,AppConstants.type_mSZW_BGDDList);	
+									
+									if(MSZW_BGDDList.size()>0)
+					                {
+					                	//有数据的时候操作
+										handler.post(r_b);
+					                }else
+					                {
+					                	//没有数据时候提示
+					                	handler.post(none_b);
+					                }														
+							}														
+						}
+					}, new HttpPreExecuteHandler() {
+						public void onPreExecute(Context context) {
+							dialog = new MyProgressDialog(context);
+							DialogUtil.setAttr4progressDialog(dialog);
+						}
+					});
+			task.execute(new String[] {});	
+		}
 
-	}
 
 	// 无数据处理操作
 	Runnable none = new Runnable() {
@@ -481,11 +487,8 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 		public void run() {
 			// TODO Auto-generated method stub
 			// dialog.dismiss();
-			dialog.stop();
 			if (contentDataList.size() <= 0) {
 				Toast.makeText(con, "实时政务没有可加载的数据", 2).show();
-				tabHost.setCurrentTabByTag("tab2");// 选中第二个Tab
-				showData(2);// 初始化数据
 			} else {
 				tabHost.setCurrentTabByTag("tab1");// 选中第一个Tab
 				showData(1);// 初始化数据
@@ -493,6 +496,32 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 
 		}
 	};
+	
+	// 无数据处理操作
+		Runnable none_b = new Runnable() {
+
+			@Override
+			public void run() {
+				Toast.makeText(con, "没有可供加载的数据", 2).show();
+			}
+		};
+
+		// 数据加载完之后的操作
+		Runnable r_b = new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				// dialog.dismiss();
+				if (MSZW_BGDDList.size() <= 0) {
+					Toast.makeText(con, "没有可加载的数据", 2).show();
+				} else {
+					tabHost.setCurrentTabByTag("tab2");// 选中第一个Tab
+					showData(2);// 初始化数据
+				}
+
+			}
+		};
 
 	public boolean isNotNull(String str) {
 		return ((str != null) && (str != "") && (!str.equals(null)) && (!str

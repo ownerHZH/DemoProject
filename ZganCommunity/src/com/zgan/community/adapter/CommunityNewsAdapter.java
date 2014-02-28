@@ -92,7 +92,7 @@ public class CommunityNewsAdapter extends BaseAdapter {
 		/**
 		 * 为Item添加样式
 		 */
-		if (dataList.size() == 1) {
+		/*if (dataList.size() == 1) {
 			convertView.setBackgroundResource(R.drawable.circle_list_single);
 		} else if (dataList.size() > 1) {
 			if (position == 0) {
@@ -102,7 +102,7 @@ public class CommunityNewsAdapter extends BaseAdapter {
 			} else {
 				convertView.setBackgroundResource(R.drawable.circle_list_middle);
 			}
-		}
+		}*/
 
 		return convertView;
 	}

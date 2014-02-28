@@ -104,7 +104,7 @@ public class CommunityPolicitalAdapter extends BaseAdapter {
 			/**
 			 * 为Item添加样式
 			 */
-			if (dataList.size() == 1) {
+			/*if (dataList.size() == 1) {
 				convertView.setBackgroundResource(R.drawable.circle_list_single);
 			} else if (dataList.size() > 1) {
 				if (position == 0) {
@@ -114,11 +114,11 @@ public class CommunityPolicitalAdapter extends BaseAdapter {
 				} else {
 					convertView.setBackgroundResource(R.drawable.circle_list_middle);
 				}
-			}
+			}*/
 		}else
 		{
 			final MSZW_BGDD mszwBgdd=((List<MSZW_BGDD>)dataList).get(position);
-			holder.title.setText(mszwBgdd.getSName());
+			holder.title.setText(mszwBgdd.getName());
 			holder.title.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -135,7 +135,7 @@ public class CommunityPolicitalAdapter extends BaseAdapter {
 			/**
 			 * 为Item添加样式
 			 */
-			if (dataList.size() == 1) {
+			/*if (dataList.size() == 1) {
 				convertView.setBackgroundResource(R.drawable.circle_list_single);
 			} else if (dataList.size() > 1) {
 				if (position == 0) {
@@ -145,7 +145,7 @@ public class CommunityPolicitalAdapter extends BaseAdapter {
 				} else {
 					convertView.setBackgroundResource(R.drawable.circle_list_middle);
 				}
-			}
+			}*/
 		}
 		//holder.title.setText(dataList.get(position).toString());
 		//holder.date.setText(list.get(position).toString());

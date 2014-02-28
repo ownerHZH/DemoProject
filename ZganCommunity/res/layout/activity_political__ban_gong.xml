@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayoutPolitical2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="top|center"
+    android:background="@drawable/bg_up"
+    android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/listViewPolitical2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:cacheColorHint="#00000000"
+                android:listSelector="#00000000" >
+
+            </ListView>
+                  
+		    <LinearLayout
+		        android:id="@+id/category"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="bottom|center"
+		        android:orientation="horizontal"
+		        android:paddingBottom="10dp"
+		        android:paddingTop="5dp"
+		        android:visibility="visible" >
+		        
+		    <Button
+		        android:id="@+id/buttonCity"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/ssbm" />
+		
+		    <Button
+		        android:id="@+id/buttonCounty"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/qxzf" />
+		
+		    <Button
+		        android:id="@+id/buttonCommonService"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/ggfwdw" />
+		    
+		    </LinearLayout>
+		
+</LinearLayout>

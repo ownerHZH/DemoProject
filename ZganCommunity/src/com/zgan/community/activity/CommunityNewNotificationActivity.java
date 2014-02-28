@@ -56,7 +56,8 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 	int did = 1;
 	int sid = 1;
 
-	private List<News> newsList=new ArrayList<News>();;
+	private List<News> newsList=new ArrayList<News>();
+	private List<News> newsList_s=new ArrayList<News>();
 	private MyProgressDialog pdialog;
 	private CommunityNewsAdapter communityNewsAdapter;
 
@@ -91,8 +92,8 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 		// tabHost.setCurrentTab(0);
 		// 手势内部类初始化
 		detector = new GestureDetector(new MySimpleGestureDetector());
-		getData();// 获取网络数据
-
+		getData();// 获取网络数据   物业通知
+		//getData_s(); //社区公告数据
 	}
 
 	@Override
@@ -172,9 +173,22 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 		public void onTabChanged(String str) {
 			setTabBackground();
 			if (str.equals("tab1")) {
-				showData(1);
+				if(newsList.size()>0)
+				{
+					showData(1);
+				}else
+				{
+					getData();
+				}
+				
 			} else if (str.equals("tab2")) {
-				showData(2);
+				if(newsList_s.size()>0)
+				{
+					showData(2);
+				}else
+				{
+					getData_s();
+				}				
 			}
 		}
 	}
@@ -305,20 +319,12 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 	private void showData(int i) {
 		// dList=new ArrayList<String>();
 		if (i == 1) {
-			/*adapter = new CommunityPolicitalAdapter(con, contentDataList, 1);
-			list.setDivider(null);// 设置ListView没有分割线
-			list.setAdapter(adapter);
-			adapter.notifyDataSetChanged();*/
 			communityNewsAdapter=new CommunityNewsAdapter(con, newsList);
 			list.setDivider(null);// 设置ListView没有分割线
 			list.setAdapter(communityNewsAdapter);
 			communityNewsAdapter.notifyDataSetChanged();
 		} else {
-			/*adapter = new CommunityPolicitalAdapter(con, MSZW_BGDDList, 2);
-			list2.setDivider(null);// 设置ListView没有分割线
-			list2.setAdapter(adapter);
-			adapter.notifyDataSetChanged();*/
-			communityNewsAdapter=new CommunityNewsAdapter(con, newsList);
+			communityNewsAdapter=new CommunityNewsAdapter(con, newsList_s);
 			list2.setDivider(null);// 设置ListView没有分割线
 			list2.setAdapter(communityNewsAdapter);
 			communityNewsAdapter.notifyDataSetChanged();
@@ -332,11 +338,11 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 		//newsList = new ArrayList<News>();
 
 		HttpClientService svr = new HttpClientService(
-				AppConstants.HttpHostAdress+"ZganNews.aspx");//"http://community1.zgantech.com/ZganNews.aspx?did=15923258890"
+				AppConstants.HttpHostAdress+"zgannews.aspx");//"http://community1.zgantech.com/ZganNews.aspx?did=15923258890"
 		//参数
 		svr.addParameter("did",ZganCommunityStaticData.User_Number);
-		//svr.addParameter("sid", StringTypeToInt.convertTypeToInt(button_key));
-		
+		svr.addParameter("method","news_wy");
+				
 		HttpAndroidTask task = new HttpAndroidTask(con, svr,
 				new HttpResponseHandler() {
 					// 响应事件
@@ -348,18 +354,18 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 						if (jsonEntity.getStatus() == 1) {
 							handler.post(none);
 						} else if (jsonEntity.getStatus() == 0) {
-							newsList=(List<News>) GsonUtil.getData(
-									jsonEntity,AppConstants.type_newsList);	
-							
-							if(newsList.size()>0)
-			                {
-			                	//有数据的时候操作
-								handler.post(r);
-			                }else
-			                {
-			                	//没有数据时候提示
-			                	handler.post(none);
-			                }
+								newsList=(List<News>) GsonUtil.getData(
+										jsonEntity,AppConstants.type_newsList);	
+								
+								if(newsList.size()>0)
+				                {
+				                	//有数据的时候操作
+									handler.post(r);
+				                }else
+				                {
+				                	//没有数据时候提示
+				                	handler.post(none);
+				                }														
 						}														
 					}
 				}, new HttpPreExecuteHandler() {
@@ -369,21 +375,98 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 					}
 				});
 		task.execute(new String[] {});	
-
 	}
+	
+	//社区公告数据
+	private void getData_s() {
+		// TODO Auto-generated method stub
+		//newsList = new ArrayList<News>();
 
+		HttpClientService svr = new HttpClientService(
+				AppConstants.HttpHostAdress+"zgannews.aspx");//"http://community1.zgantech.com/ZganNews.aspx?did=15923258890"
+		//参数
+		svr.addParameter("did",ZganCommunityStaticData.User_Number);
+		svr.addParameter("method","news_cq");
+				
+		HttpAndroidTask task = new HttpAndroidTask(con, svr,
+				new HttpResponseHandler() {
+					// 响应事件
+					@SuppressWarnings("unchecked")
+					public void onResponse(Object obj) {
+						pdialog.stop();
+						JsonEntity jsonEntity = GsonUtil.parseObj2JsonEntity(
+								obj,con,false);
+						if (jsonEntity.getStatus() == 1) {
+							handler.post(none_s);
+						} else if (jsonEntity.getStatus() == 0) {
+								newsList_s=(List<News>) GsonUtil.getData(
+										jsonEntity,AppConstants.type_newsList);	
+								
+								if(newsList_s.size()>0)
+				                {
+				                	//有数据的时候操作
+									handler.post(r_s);
+				                }else
+				                {
+				                	//没有数据时候提示
+				                	handler.post(none_s);
+				                }														
+						}														
+					}
+				}, new HttpPreExecuteHandler() {
+					public void onPreExecute(Context context) {
+						pdialog = new MyProgressDialog(context);
+						DialogUtil.setAttr4progressDialog(pdialog);
+					}
+				});
+		task.execute(new String[] {});	
+	}
+	
+	
+	// 数据加载完之后的操作
+			Runnable r_s = new Runnable() {
+
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					// dialog.dismiss();
+					//dialog.stop();
+					if (newsList_s.size() <= 0) {
+						Toast.makeText(con, "社区公告无数据", 1).show();					
+					} else {
+						//tabHost.setCurrentTabByTag("tab2");// 选中第一个Tab
+						showData(2);// 初始化数据
+					}
+
+				}
+			};
+
+		// 无数据处理操作
+		Runnable none_s = new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				// dialog.dismiss();
+				//dialog.stop();
+				Toast.makeText(con, "社区公告无数据", 2).show();
+			}
+		};
+
+		
 	// 无数据处理操作
-	Runnable none = new Runnable() {
+		Runnable none = new Runnable() {
 
-		@Override
-		public void run() {
-			// TODO Auto-generated method stub
-			// dialog.dismiss();
-			//dialog.stop();
-			Toast.makeText(con, "没有可供加载的数据", 2).show();
-		}
-	};
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				// dialog.dismiss();
+				//dialog.stop();
+				Toast.makeText(con, "没有可供加载的数据", 2).show();
+			}
+		};
 
+		
 	// 数据加载完之后的操作
 	Runnable r = new Runnable() {
 
@@ -393,9 +476,7 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 			// dialog.dismiss();
 			//dialog.stop();
 			if (newsList.size() <= 0) {
-				Toast.makeText(con, "没有可加载的数据", 2).show();
-				tabHost.setCurrentTabByTag("tab2");// 选中第二个Tab
-				showData(2);// 初始化数据
+				Toast.makeText(con, "没有数据", 2).show();
 			} else {
 				tabHost.setCurrentTabByTag("tab1");// 选中第一个Tab
 				showData(1);// 初始化数据

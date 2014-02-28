@@ -63,14 +63,13 @@
         <activity
             android:name="com.zgan.community.Advertising"
             android:label="@string/app_name" >
-            
-        </activity>
-        <activity android:name="com.zgan.community.activity.MainPageActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.zgan.community.activity.MainPageActivity" >
         </activity>
         <activity android:name="com.zgan.community.activity.RecruitmentInfo" />
         <activity android:name="com.zgan.community.activity.CommunityServiceActivity" >
@@ -140,18 +139,27 @@
         </activity>
         <activity
             android:name="com.zgan.community.activity.CommunityContactProperty"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"
-            android:label="@string/title_activity_community_contact_property" >
+            android:label="@string/title_activity_community_contact_property"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
         </activity>
         <activity
             android:name="com.zgan.community.activity.CommunitySetting"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"           
-            android:label="@string/title_activity_community_setting" >
+            android:label="@string/title_activity_community_setting"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
         </activity>
         <activity
             android:name="com.zgan.community.activity.CommunitySettingFeedBack"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"
-            android:label="@string/title_activity_community_setting_feed_back" >
+            android:label="@string/title_activity_community_setting_feed_back"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <activity android:name="com.zgan.community.activity.MainTabActivity" />
+        <activity
+            android:name="com.zgan.community.activity.Policital_ZhengWU"
+            android:label="@string/title_activity_policital__zheng_wu" >
+        </activity>
+        <activity
+            android:name="com.zgan.community.activity.Political_BanGongl_BanGong"
+            android:label="@string/title_activity_political__ban_gong" >
         </activity>
     </application>
 

@@ -7,42 +7,32 @@ public class News implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	String NID;//		主键
-	String Title;//		标题
-	String NContent	;//	内容
-	String ReleaseTime	;//	时间
-	String Publishers	;//	发布人
-	
-	public String getNID() {
-		return NID;
+	String id;//		主键
+	String title;//		标题
+	String content	;//	内容
+	String time	;//	时间
+	public String getId() {
+		return id;
 	}
-	public void setNID(String nID) {
-		NID = nID;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
 	}
-	public String getNContent() {
-		return NContent;
+	public String getContent() {
+		return content;
 	}
-	public void setNContent(String nContent) {
-		NContent = nContent;
+	public void setContent(String content) {
+		this.content = content;
 	}
-	public String getReleaseTime() {
-		return ReleaseTime;
+	public String getTime() {
+		return time;
 	}
-	public void setReleaseTime(String releaseTime) {
-		ReleaseTime = releaseTime;
+	public void setTime(String time) {
+		this.time = time;
 	}
-	public String getPublishers() {
-		return Publishers;
-	}
-	public void setPublishers(String publishers) {
-		Publishers = publishers;
-	}
-	
-
 }

@@ -116,14 +116,6 @@
                     android:background="@drawable/jypx" />
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
-    
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="25dp"
-        android:background="@drawable/bottom_bar_bg"
-        android:orientation="horizontal" >
-
-    </LinearLayout> 
+    </ScrollView> 
     
 </LinearLayout>

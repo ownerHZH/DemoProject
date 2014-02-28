@@ -32,6 +32,7 @@ import com.zgan.community.adapter.CommunityServiceAdapter;
 import com.zgan.community.adapter.ReinfoAdapter;
 import com.zgan.community.data.CommunityService;
 import com.zgan.community.data.Recinfo;
+import com.zgan.community.jsontool.AppConstants;
 import com.zgan.community.tools.MainAcitivity;
 import com.zgan.community.tools.ZganCommunityStaticData;
 
@@ -131,8 +132,8 @@ public class GuideActivity extends MainAcitivity {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				HttpGet get = new HttpGet(
-						"http://community1.zgantech.com/Zgan_BSZN.aspx?did="
+				HttpGet get = new HttpGet(AppConstants.HttpHostAdress+
+						"Zgan_BSZN.aspx?did="
 								+ ZganCommunityStaticData.User_Number + "&sid="
 								+ sid);
 				Log.i("00000000000", "00000000000");

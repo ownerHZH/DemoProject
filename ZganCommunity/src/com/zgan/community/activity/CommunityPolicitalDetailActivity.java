@@ -71,8 +71,8 @@ public class CommunityPolicitalDetailActivity extends MainAcitivity {
 			}else
 			{
 				title.setText(contentData.getTitle());
-				date.setText(contentData.getContentTime());
-				content.setText(Html.fromHtml(contentData.getCContent()));
+				date.setText(contentData.getReleasetime());
+				content.setText(Html.fromHtml(contentData.getContent()));
 			}		
 		}else if(pageNumber==2)
 		{
@@ -82,11 +82,11 @@ public class CommunityPolicitalDetailActivity extends MainAcitivity {
 				Toast.makeText(context, "数据不完整", 2).show();
 			}else
 			{
-				title.setText(mszwBgdd.getSName());
-				date.setText(mszwBgdd.getPublishTime());
+				title.setText(mszwBgdd.getName());
+				/*date.setText(mszwBgdd.getPublishTime());
 				content.setText(Html.fromHtml("   地址："+mszwBgdd.getAddress()+"\r\n<br/>"+
 						mszwBgdd.getAddLX()+
-						"<br/>联系电话："+mszwBgdd.getTel()));
+						"<br/>联系电话："+mszwBgdd.getTel()));*/
 			}		
 		}else if(pageNumber==20)
 		{
@@ -98,8 +98,8 @@ public class CommunityPolicitalDetailActivity extends MainAcitivity {
 			}else
 			{
 				title.setText(news.getTitle());
-				date.setText(news.getReleaseTime());
-				content.setText(Html.fromHtml(news.getNContent()));
+				date.setText(news.getTime());
+				content.setText(Html.fromHtml(news.getContent()));
 			}
 		}
 	}
