@@ -1,7 +1,7 @@
 9
 
 dir
-185
+187
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-mdpi
 https://192.168.1.88/svn/ZganCommunity
 
@@ -60,40 +60,6 @@ has-props
 
 414892
 
-galler_two.png
-file
-
-
-
-
-2013-12-20T01:35:03.985408Z
-8145e28801d191651b35323edd8af1df
-2013-12-20T01:30:02.658763Z
-113
-hzh
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-172188
-
 blue_bg.png
 file
 
@@ -127,6 +93,40 @@ has-props
 
 
 374
+
+galler_two.png
+file
+
+
+
+
+2013-12-20T01:35:03.985408Z
+8145e28801d191651b35323edd8af1df
+2013-12-20T01:30:02.658763Z
+113
+hzh
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+172188
 
 galler_one.png
 file
@@ -264,16 +264,16 @@ has-props
 
 1250
 
-ss.png
+progress_2.png
 file
 
 
 
 
-2013-12-20T01:35:03.991408Z
-f28d25639b72bd23cdee71bb48c1b28e
-2013-12-20T01:30:02.658763Z
-113
+2013-12-27T06:28:36.410000Z
+663d771a5baad0b41d83c50c7dbfc777
+2013-12-27T06:55:49.289078Z
+154
 hzh
 has-props
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-10222
+1297
 
 setting_bg.png
 file
@@ -332,16 +332,16 @@ has-props
 
 510
 
-progress_2.png
+ss.png
 file
 
 
 
 
-2013-12-27T06:28:36.410000Z
-663d771a5baad0b41d83c50c7dbfc777
-2013-12-27T06:55:49.289078Z
-154
+2013-12-20T01:35:03.991408Z
+f28d25639b72bd23cdee71bb48c1b28e
+2013-12-20T01:30:02.658763Z
+113
 hzh
 has-props
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-1297
+10222
 
 progress_3.png
 file
@@ -434,40 +434,6 @@ has-props
 
 1286
 
-progress_5.png
-file
-
-
-
-
-2013-12-27T06:29:16.636000Z
-9b2f50968629f5dcbdeba4a7d5277d3f
-2013-12-27T06:55:49.289078Z
-154
-hzh
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1310
-
 icon.png
 file
 
@@ -501,6 +467,40 @@ has-props
 
 
 6232
+
+progress_5.png
+file
+
+
+
+
+2013-12-27T06:29:16.636000Z
+9b2f50968629f5dcbdeba4a7d5277d3f
+2013-12-27T06:55:49.289078Z
+154
+hzh
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1310
 
 progress_6.png
 file

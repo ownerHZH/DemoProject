@@ -3,27 +3,50 @@
     android:id="@+id/list_item"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="30dp"
-    android:background="@drawable/setting_bg"
+    android:layout_marginBottom="30dp"
+    android:layout_marginTop="30dp"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    android:gravity="center_vertical"
     android:orientation="vertical"
-    android:padding="10dp" >
+    android:paddingBottom="20dp" >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="left" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/name" />
 
     <TextView
         android:id="@+id/store_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_marginRight="5dp"
         android:layout_weight="1"
         android:ellipsize="end"
         android:singleLine="true"
         android:text="bb" />
 
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp" >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/weizhi" />
 
         <TextView
             android:id="@+id/store_adress"
@@ -35,16 +58,19 @@
             android:ellipsize="end"
             android:singleLine="true"
             android:text="bb" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/right" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp" >
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/phoneico" />
 
         <TextView
             android:id="@+id/store_tel"
@@ -56,11 +82,6 @@
             android:ellipsize="end"
             android:singleLine="true"
             android:text="bb" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/right" />
     </LinearLayout>
 
 </LinearLayout>

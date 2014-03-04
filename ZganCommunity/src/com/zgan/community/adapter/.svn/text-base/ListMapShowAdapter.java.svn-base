@@ -10,6 +10,7 @@ import com.zgan.community.tools.MapShow;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -73,6 +74,14 @@ public class ListMapShowAdapter extends BaseAdapter {
 		store_name.setText(mapShowlist.getS_name());
 		store_address.setText("µÿ÷∑£∫"+mapShowlist.getS_address());
 		store_tel.setText("TEL:"+mapShowlist.getS_tel());
+		store_tel.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:"+mapShowlist.getS_tel()));		    
+				context.startActivity(intent);
+			}
+		});
 
 		return convertView;
 	}
@@ -81,8 +90,7 @@ public class ListMapShowAdapter extends BaseAdapter {
 
 		@Override
 		public void onClick(View v) {
-			// TODO Auto-generated method stub
-
+			
 		}
 	};
 
