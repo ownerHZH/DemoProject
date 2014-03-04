@@ -141,7 +141,7 @@ public class Reinfo_son extends MainAcitivity {
 				// TODO Auto-generated method stub
 				HttpGet get = new HttpGet(AppConstants.HttpHostAdress+
 						"zganjobs.aspx?did="
-								+ ZganCommunityStaticData.User_Number + "&sid="
+								+ ZganCommunityStaticData.User_Number + "&id="
 								+ sid);
 
 				HttpClient client = new DefaultHttpClient();

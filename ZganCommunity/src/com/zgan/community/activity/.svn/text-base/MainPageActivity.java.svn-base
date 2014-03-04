@@ -23,7 +23,7 @@ public class MainPageActivity extends MainAcitivity {
 	private Button communityRecruit; // 招工信息
 	private Button communityLivelihood; // 生活百事
 	private Button communityHouseShelter; // 家庭卫士
-	private Button communitySettings; // 我的设置
+	private Button communitySettings; // 联系物业
 	private ImageView setting;
 
 	/*private TextView name; // 姓名
@@ -87,7 +87,8 @@ public class MainPageActivity extends MainAcitivity {
 			switch (v.getId()) {
 			case R.id.communityService:
 				// 社区服务点击响应事件
-				intent = new Intent(con, CommunityServiceActivity.class);
+				intent = new Intent(con, MainTabActivity.class);
+				intent.putExtra("TAG", R.id.radio_button0);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
@@ -102,7 +103,8 @@ public class MainPageActivity extends MainAcitivity {
 				break;*/
 			case R.id.communityNotification:
 				// 社区通知点击响应事件
-				intent = new Intent(con, CommunityNewNotificationActivity.class);
+				intent = new Intent(con, MainTabActivity.class);
+				intent.putExtra("TAG", R.id.radio_button2);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
@@ -116,28 +118,32 @@ public class MainPageActivity extends MainAcitivity {
 				break;
 			case R.id.communityTrade:
 				// 社区商圈点击响应事件
-				intent = new Intent(con, CommunityTradeActivity.class);
+				intent = new Intent(con, MainTabActivity.class);
+				intent.putExtra("TAG", R.id.radio_button1);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				break;
 			case R.id.communityPolicital:
 				// 阳光政务点击响应事件
-				intent = new Intent(con, CommunityPolicitalActivity.class);
+				intent = new Intent(con, MainTabActivity.class);
+				intent.putExtra("TAG", R.id.radio_button5);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				break;
 			case R.id.communityRecruit:
 				// 招工信息点击响应事件
-				intent = new Intent(con, RecruitmentInfo.class);
+				intent = new Intent(con, MainTabActivity.class);
+				intent.putExtra("TAG", R.id.radio_button3);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				break;
 			case R.id.communityLivelihood:
 				// 生活百事点击响应事件
-				intent = new Intent(con, Life_Pepsi_son.class);
+				intent = new Intent(con, MainTabActivity.class);
+				intent.putExtra("TAG", R.id.radio_button4);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);

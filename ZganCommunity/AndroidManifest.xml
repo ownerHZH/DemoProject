@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zgan.community"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="@string/app_var" >
 
     <supports-screens
         android:anyDensity="true"
@@ -160,6 +160,10 @@
         <activity
             android:name="com.zgan.community.activity.Political_BanGongl_BanGong"
             android:label="@string/title_activity_political__ban_gong" >
+        </activity>
+        <activity
+            android:name="com.zgan.community.activity.RecruitDetailActivity"
+            android:label="@string/title_activity_recruit_detail" >
         </activity>
     </application>
 

@@ -160,7 +160,7 @@ public class CommunityNotificationActivity extends MainAcitivity {
 			                	/*communityServiceAdapter = new CommunityServiceAdapter(
 			    						CommunityServiceListActivity.this, serviceInfoList);
 			    				listview.setAdapter(communityServiceAdapter);*/
-								webView.loadDataWithBaseURL(null,newsList.get(0).getNContent(), "text/html", "utf-8",null);
+								//webView.loadDataWithBaseURL(null,newsList.get(0).getNContent(), "text/html", "utf-8",null);
 			                }else
 			                {
 			                	//没有数据时候提示

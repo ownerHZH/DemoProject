@@ -1,7 +1,7 @@
 9
 
 dir
-177
+185
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/adapter
 https://192.168.1.88/svn/ZganCommunity
 
@@ -28,14 +28,14 @@ c390ab1c-c3a3-bb43-afa3-5d4300cc8aae
 
 CommunityPayAdapter.java
 file
+187
 
 
 
-
-2013-12-20T01:34:59.363143Z
-671a0c413e4bb24c49d89ac7eb7b9638
-2013-12-20T01:30:02.658763Z
-113
+2014-03-03T05:56:42.651888Z
+02417a524de2e7e819908571447d4c76
+2014-03-03T06:20:54.449170Z
+187
 hzh
 
 
@@ -58,7 +58,7 @@ hzh
 
 
 
-2961
+2970
 
 DefaultListAdapter.java
 file
@@ -96,14 +96,14 @@ hzh
 
 CommunityNewsAdapter.java
 file
+186
 
 
 
-
-2013-12-27T08:29:42.149620Z
-3b6eb508fca1705218aa2563fbd55d9d
-2013-12-27T08:49:06.837367Z
-157
+2014-02-28T07:58:51.994209Z
+e48e6af48286cbcd7c9cac12f48686bd
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -126,52 +126,18 @@ hzh
 
 
 
-3131
+3135
 
 ReinfoAdapter.java
 file
+187
 
 
 
-
-2013-12-25T08:18:41.159414Z
-b9458978ec2ae159c65ce8306984de31
-2013-12-25T01:51:22.977825Z
-134
-fr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2408
-
-CommunityPolicitalAdapter.java
-file
-
-
-
-
-2013-12-27T09:34:29.934989Z
-91674bdd1c49a3cdde6f6cd648369ff2
-2013-12-30T02:48:54.729833Z
-160
+2014-03-03T03:08:50.469792Z
+6685716512b6cf0805fb9f01cf28d55d
+2014-03-03T06:20:54.449170Z
+187
 hzh
 
 
@@ -194,7 +160,41 @@ hzh
 
 
 
-4661
+2395
+
+CommunityPolicitalAdapter.java
+file
+186
+
+
+
+2014-02-28T09:15:23.301816Z
+e3b4f2c9dbfca3bcc812f821d78c9e31
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4668
 
 CommunityServiceAdapter.java
 file

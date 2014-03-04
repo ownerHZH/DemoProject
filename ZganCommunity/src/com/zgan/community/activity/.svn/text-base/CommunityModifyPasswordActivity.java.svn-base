@@ -57,7 +57,7 @@ public class CommunityModifyPasswordActivity extends MainAcitivity {
 		newpass = (EditText) findViewById(R.id.newPassword);
 		renewpass = (EditText) findViewById(R.id.renewPassword);
 
-		save = (Button) findViewById(R.id.save);
+		save = (Button) findViewById(R.id.buttonCommit);
 
 		back.setOnClickListener(l);// 后退注册监听
 		save.setOnClickListener(l);// 密码修改确认按钮注册监听事件
@@ -73,7 +73,7 @@ public class CommunityModifyPasswordActivity extends MainAcitivity {
 				finish();
 				break;
 
-			case R.id.save:
+			case R.id.buttonCommit:
 				UpPassWord(); // 密码确认操作
 				finish();
 				break;

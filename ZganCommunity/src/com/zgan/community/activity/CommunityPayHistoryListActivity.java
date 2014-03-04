@@ -125,22 +125,7 @@ public class CommunityPayHistoryListActivity extends MainAcitivity {
 
 			/**设置TextView显示的内容 和Title点击事件*/ 
 			final String str=dataList.get(position);
-			holder.title.setText(str);
-
-			/**
-			 * 为Item添加样式
-			 */
-			if (dataList.size() == 1) {
-				convertView.setBackgroundResource(R.drawable.circle_list_single);
-			} else if (dataList.size() > 1) {
-				if (position == 0) {
-					convertView.setBackgroundResource(R.drawable.circle_list_top);
-				} else if (position == (dataList.size() - 1)) {
-					convertView.setBackgroundResource(R.drawable.circle_list_bottom);
-				} else {
-					convertView.setBackgroundResource(R.drawable.circle_list_middle);
-				}
-			}
+			holder.title.setText(str);			
 
 			return convertView;
 	       }

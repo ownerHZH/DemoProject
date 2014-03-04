@@ -29,9 +29,9 @@ public class CommunityTradeActivity extends MainAcitivity {
 	private Button leatherware;  //皮具保养
 	private Button fondue;       //火锅
 	private Button chinesemeal;  //中餐
-	private Button teahouse;     //茶楼
-	private Button kidstrain;    //儿童培训
-	private Button trafficsearch;//交通查询
+	//private Button teahouse;     //茶楼
+	//private Button kidstrain;    //儿童培训
+	//private Button trafficsearch;//交通查询
 	
 	private Context con;
 	private Intent intent=null;
@@ -53,9 +53,6 @@ public class CommunityTradeActivity extends MainAcitivity {
 		leatherware=(Button) findViewById(R.id.buttonLeatherware);
 		fondue=(Button) findViewById(R.id.buttonFondue);
 		chinesemeal=(Button) findViewById(R.id.buttonChinesemeal);
-		teahouse=(Button) findViewById(R.id.buttonTeahouse);
-		kidstrain=(Button) findViewById(R.id.buttonKidstrain);
-		trafficsearch=(Button) findViewById(R.id.buttonTrafficsearch);
 		
 		con = CommunityTradeActivity.this;        //初始化一个全局的Context
 		
@@ -70,9 +67,6 @@ public class CommunityTradeActivity extends MainAcitivity {
         leatherware.setOnClickListener(l);
         fondue.setOnClickListener(l);
         chinesemeal.setOnClickListener(l);                //按钮注册监听器
-        teahouse.setOnClickListener(l);
-        kidstrain.setOnClickListener(l);
-        trafficsearch.setOnClickListener(l);
         back.setOnClickListener(l);
 	}
 
@@ -89,74 +83,55 @@ public class CommunityTradeActivity extends MainAcitivity {
             	//小超市点击响应事件
             	
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "超市");
+            	intent.putExtra("button_key", "餐饮美食");
 				startActivity(intent);
 				break;
             case R.id.buttonSnack:
             	//快餐点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "快餐");
+            	intent.putExtra("button_key", "棋牌娱乐");
 				startActivity(intent);
   				break;
             case R.id.buttonPasta:
             	//面食点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "面食");
+            	intent.putExtra("button_key", "便利超市");
 				startActivity(intent);
   				break;
             case R.id.buttonBarbecue:
             	//烧烤点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "烧烤");
+            	intent.putExtra("button_key", "宠物美容");
 				startActivity(intent);
   				break;
             case R.id.buttonHairdressing:
              	//美容美发点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "美容美发");
+            	intent.putExtra("button_key", "药房诊所");
 				startActivity(intent);
   				break;
             case R.id.buttonDryclean:
              	//干洗点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "干洗");
+            	intent.putExtra("button_key", "汽车美容");
 				startActivity(intent);
   				break;
             case R.id.buttonLeatherware:
              	//皮具保养点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "皮具保养");
+            	intent.putExtra("button_key", "母婴用品");
 				startActivity(intent);
   				break;
             case R.id.buttonFondue:
              	//火锅点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "火锅");
+            	intent.putExtra("button_key", "鲜花养殖");
 				startActivity(intent);
   				break;
             case R.id.buttonChinesemeal:
               	//中餐点击响应事件
             	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "中餐");
-				startActivity(intent);
-  				break;
-            case R.id.buttonTeahouse:
-              	//茶楼点击响应事件
-            	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "茶楼");
-				startActivity(intent);
-  				break;
-            case R.id.buttonTrafficsearch:
-              	//公交站点点击响应事件
-            	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "公交站点");
-				startActivity(intent);
-				break;
-
-            case R.id.buttonKidstrain:
-              	//儿童培训点击响应事件
-            	intent=new Intent(con,ZganCommunityMapShow.class);
-            	intent.putExtra("button_key", "儿童培训");
+            	intent.putExtra("button_key", "教育培训");
 				startActivity(intent);
   				break;
 

@@ -10,6 +10,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import com.zgan.community.R;
+import com.zgan.community.jsontool.AppConstants;
 import com.zgan.community.tools.MainAcitivity;
 import com.zgan.community.tools.ZganCommunityStaticData;
 
@@ -40,7 +41,7 @@ public class LoginActivity extends MainAcitivity {
 	 * 登陆按钮
 	 */
 	ImageView go;
-	ImageView reg;
+	//ImageView reg;
 	Handler handler = new Handler();
 	ProgressDialog dialog;
 	String szIme;
@@ -56,7 +57,7 @@ public class LoginActivity extends MainAcitivity {
 		editor = preferences.edit();
 
 		go = (ImageView) findViewById(R.id.go);
-		reg = (ImageView) findViewById(R.id.reg);
+		//reg = (ImageView) findViewById(R.id.reg);
 
 		go_tel = (EditText) findViewById(R.id.go_tel);
 		go_pas = (EditText) findViewById(R.id.go_pas);
@@ -65,7 +66,7 @@ public class LoginActivity extends MainAcitivity {
 		go_pas.setText(preferences.getString("password", null));
 
 		go.setOnClickListener(listener);
-		reg.setOnClickListener(listener);
+		//reg.setOnClickListener(listener);
 		TelephonyManager TelephonyMgr = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
 		szIme = TelephonyMgr.getDeviceId();
 		Log.i("szIme", szIme);
@@ -87,12 +88,12 @@ public class LoginActivity extends MainAcitivity {
 
 				break;
 
-			case R.id.reg:
+			/*case R.id.reg:
 
 				Intent intent = new Intent(LoginActivity.this,
 						RegisterActivity.class);
 				startActivity(intent);
-				break;
+				break;*/
 			}
 
 		}
@@ -108,8 +109,8 @@ public class LoginActivity extends MainAcitivity {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				HttpGet get = new HttpGet(
-						"http://community1.zgantech.com/ZganLogin.aspx?uname="
+				HttpGet get = new HttpGet(AppConstants.HttpHostAdress+
+						"zganlogin.aspx?uname="
 								+ userid + "&pwd=" + password + "&meid=" + meid);
 
 				HttpClient client = new DefaultHttpClient();
@@ -140,6 +141,13 @@ public class LoginActivity extends MainAcitivity {
 									"请输入正确的账号和密码", Toast.LENGTH_SHORT).show();
 							Looper.loop();
 						}
+					}else
+					{
+						Looper.prepare();
+						dialog.dismiss();
+						Toast.makeText(getApplicationContext(),
+								"账号不存在", Toast.LENGTH_SHORT).show();
+						Looper.loop();
 					}
 
 				} catch (Exception e) {

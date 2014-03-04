@@ -97,7 +97,7 @@ public class CommunityPayActivity extends MainAcitivity {
 			Total+=Integer.parseInt(moneyMap.get("money"));
 		}
 		
-		communityPayAdapter=new CommunityPayAdapter(con,data);
+		//communityPayAdapter=new CommunityPayAdapter(con,data);
 		goodsManager.setAdapter(communityPayAdapter);
 		electric.setAdapter(communityPayAdapter);
 		water.setAdapter(communityPayAdapter);

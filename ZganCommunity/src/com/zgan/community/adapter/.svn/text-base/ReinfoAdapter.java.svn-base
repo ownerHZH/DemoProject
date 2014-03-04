@@ -69,7 +69,7 @@ public class ReinfoAdapter extends BaseAdapter {
 
 		recinfo = list.get(position);
 		
-		company.setText(recinfo.getCompany());
+		company.setText(recinfo.getTitle());
 
 		layout.setTag(recinfo);
 		layout.setOnClickListener(listener);
@@ -85,8 +85,8 @@ public class ReinfoAdapter extends BaseAdapter {
 			Intent intent = new Intent(v.getContext(), Reinfo_son_details.class);
 			Bundle bundle = new Bundle();
 			recinfo = (Recinfo) v.getTag();
-			bundle.putString("company", recinfo.getCompany());
-			bundle.putString("Recruitment_info", recinfo.getRecruitment_info());
+			bundle.putString("company", recinfo.getTitle());
+			bundle.putString("Recruitment_info", recinfo.getContent());
 
 			intent.putExtras(bundle);
 			context.startActivity(intent);

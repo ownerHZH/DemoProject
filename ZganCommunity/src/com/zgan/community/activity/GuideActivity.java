@@ -14,6 +14,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
@@ -30,10 +31,19 @@ import android.widget.Toast;
 import com.zgan.community.R;
 import com.zgan.community.adapter.CommunityServiceAdapter;
 import com.zgan.community.adapter.ReinfoAdapter;
+import com.zgan.community.data.BgddDetail;
 import com.zgan.community.data.CommunityService;
 import com.zgan.community.data.Recinfo;
 import com.zgan.community.jsontool.AppConstants;
+import com.zgan.community.jsontool.DialogUtil;
+import com.zgan.community.jsontool.GsonUtil;
+import com.zgan.community.jsontool.HttpAndroidTask;
+import com.zgan.community.jsontool.HttpClientService;
+import com.zgan.community.jsontool.HttpPreExecuteHandler;
+import com.zgan.community.jsontool.HttpResponseHandler;
+import com.zgan.community.jsontool.JsonEntity;
 import com.zgan.community.tools.MainAcitivity;
+import com.zgan.community.tools.MyProgressDialog;
 import com.zgan.community.tools.ZganCommunityStaticData;
 
 public class GuideActivity extends MainAcitivity {
@@ -45,6 +55,8 @@ public class GuideActivity extends MainAcitivity {
 	List<Recinfo> list;
 	ProgressDialog dialog;
 	Handler handler;
+	
+	private Context context=GuideActivity.this;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -83,41 +95,37 @@ public class GuideActivity extends MainAcitivity {
 				&& !"".equals(getIntent().getExtras().getString("button_key"))) {
 			String button_key = getIntent().getExtras().getString("button_key");
 			top_title.setText(button_key);
-			Log.i("button_key", "button_key");
 
 			dialog = new ProgressDialog(this);
 			dialog.setTitle("提示");
 			dialog.setMessage("加载中，请稍后");
 			dialog.show();
-			Log.i("22222222", "222222222");
 
 			list = new ArrayList<Recinfo>();
 			if (button_key.equals("户籍")) {
-				GetData(1);
+				getData(1);
 			} else if (button_key.equals("社保")) {
-				GetData(3);
+				getData(3);
 			} else if (button_key.equals("就业")) {
-				GetData(4);
+				getData(4);
 			} else if (button_key.equals("车辆")) {
-				GetData(5);
+				getData(5);
 			} else if (button_key.equals("公证")) {
-				GetData(6);
+				getData(6);
 			} else if (button_key.equals("婚姻")) {
-				Log.i("111111111", "111111111111");
-
-				GetData(7);
+				getData(7);
 			} else if (button_key.equals("生育")) {
-				GetData(8);
+				getData(8);
 			} else if (button_key.equals("纳税")) {
-				GetData(9);
+				getData(9);
 			} else if (button_key.equals("住房")) {
-				GetData(10);
+				getData(10);
 			} else if (button_key.equals("出入境")) {
-				GetData(11);
+				getData(11);
 			} else if (button_key.equals("公租房")) {
-				GetData(12);
+				getData(12);
 			} else if (button_key.equals("兵役")) {
-				GetData(13);
+				getData(13);
 			} else {
 				dialog.dismiss();
 				Toast.makeText(getApplicationContext(), "暂无招聘信息",
@@ -126,16 +134,15 @@ public class GuideActivity extends MainAcitivity {
 		}
 	}
 
-	private void GetData(final int sid) {
+	/*private void GetData(final int sid) {
 		// TODO Auto-generated method stub
 		new Thread() {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
 				HttpGet get = new HttpGet(AppConstants.HttpHostAdress+
-						"Zgan_BSZN.aspx?did="
-								+ ZganCommunityStaticData.User_Number + "&sid="
-								+ sid);
+						"zgancontent.aspx?did="
+								+ ZganCommunityStaticData.User_Number + "&method=bszn");
 				Log.i("00000000000", "00000000000");
 				HttpClient client = new DefaultHttpClient();
 				HttpResponse httpResponse;
@@ -157,14 +164,19 @@ public class GuideActivity extends MainAcitivity {
 						JSONArray array = new JSONArray(Data);
 						for (int i = 0; i < array.length(); i++) {
 							JSONObject jsonObject2 = array.getJSONObject(i);
-							String content = jsonObject2.getString("CContent");
-							String title = jsonObject2.getString("Title");
+							String content = jsonObject2.getString("content");
+							String title = jsonObject2.getString("title");
+							String id = jsonObject2.getString("id");
+							String releasetime = jsonObject2.getString("releasetime");
+							
 							recinfo = new Recinfo();
 							recinfo.setCompany(title);
 							recinfo.setRecruitment_info(content);
+							recinfo.setId(id);
+							recinfo.setTitle(title);
+							recinfo.setContent(content);
+							recinfo.setReleasetime(releasetime);
 							list.add(recinfo);
-							Log.i("content", content);
-							Log.i("title", title);
 
 						}
 						handler.post(r);
@@ -179,7 +191,7 @@ public class GuideActivity extends MainAcitivity {
 			}
 		}.start();
 
-	}
+	}*/
 
 	Runnable r = new Runnable() {
 
@@ -201,5 +213,48 @@ public class GuideActivity extends MainAcitivity {
 			finish();
 		}
 	};
+	
+	//获取办事指南信息
+	private void getData(int i) {
+		// TODO Auto-generated method stub
+		//newsList = new ArrayList<News>();
+
+		HttpClientService svr = new HttpClientService(
+				AppConstants.HttpHostAdress+"zgancontent.aspx");//"http://community1.zgantech.com/ZganNews.aspx?did=15923258890"
+		//参数
+		svr.addParameter("did",ZganCommunityStaticData.User_Number);
+		svr.addParameter("method","bsznfllist");
+	    svr.addParameter("flid",i);
+				
+		HttpAndroidTask task = new HttpAndroidTask(context, svr,
+				new HttpResponseHandler() {
+					// 响应事件
+					@SuppressWarnings("unchecked")
+					public void onResponse(Object obj) {
+						JsonEntity jsonEntity = GsonUtil.parseObj2JsonEntity(
+								obj,context,false);
+						if (jsonEntity.getStatus() == 1) {
+							Toast.makeText(context, "暂时没有信息", Toast.LENGTH_SHORT).show();
+						} else if (jsonEntity.getStatus() == 0) {
+							list=(List<Recinfo>) GsonUtil.getData(
+										jsonEntity,AppConstants.type_recinfoList);	
+								
+								if(list.size()>0)
+				                {
+				                	//有数据的时候操作
+									handler.post(r);
+				                }else
+				                {
+				                	//没有数据时候提示
+				                	Toast.makeText(context, "暂时没有信息", Toast.LENGTH_SHORT).show();
+				                }														
+						}														
+					}
+				}, new HttpPreExecuteHandler() {
+					public void onPreExecute(Context context) {
+					}
+				});
+		task.execute(new String[] {});	
+	}
 
 }

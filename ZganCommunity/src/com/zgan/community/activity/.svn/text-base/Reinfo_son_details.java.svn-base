@@ -45,6 +45,10 @@ public class Reinfo_son_details extends MainAcitivity {
 			title.setText(tit);
 		}
 		top_title.setText("详细信息");
+		
+		content.setBackgroundColor(0); // 设置背景色
+		content.getBackground().setAlpha(0); // 设置填充透明度 范围：0-255
+		content.setBackgroundResource(R.drawable.bg_up);
 	}
 
 	OnClickListener listener = new OnClickListener() {

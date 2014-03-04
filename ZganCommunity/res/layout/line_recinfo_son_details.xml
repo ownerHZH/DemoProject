@@ -9,6 +9,13 @@
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         layout="@layout/top_title" />
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="5dp"
+        android:background="@drawable/bg_up"
+        android:orientation="vertical" >
 
     <TextView
         android:id="@+id/info_title"
@@ -28,5 +35,6 @@
         android:background="@drawable/bg_up"
         android:text="50W以上急聘经理"
         android:textSize="15sp" />
+   </LinearLayout>
 
 </LinearLayout>

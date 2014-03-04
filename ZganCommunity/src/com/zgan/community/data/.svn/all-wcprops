@@ -7,13 +7,19 @@ MSZW_BGDD.java
 K 25
 svn:wc:ra_dav:version-url
 V 133
-/svn/ZganCommunity/!svn/ver/140/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/data/MSZW_BGDD.java
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/data/MSZW_BGDD.java
+END
+BgddDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/data/BgddDetail.java
 END
 ContentData.java
 K 25
 svn:wc:ra_dav:version-url
 V 135
-/svn/ZganCommunity/!svn/ver/140/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/data/ContentData.java
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/data/ContentData.java
 END
 CommunityService.java
 K 25
@@ -25,7 +31,13 @@ Recinfo.java
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svn/ZganCommunity/!svn/ver/113/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/data/Recinfo.java
+/svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/data/Recinfo.java
+END
+Pay.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/data/Pay.java
 END
 CommunityNotification.java
 K 25
@@ -37,7 +49,7 @@ News.java
 K 25
 svn:wc:ra_dav:version-url
 V 128
-/svn/ZganCommunity/!svn/ver/157/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/data/News.java
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/data/News.java
 END
 ServiceInfo.java
 K 25

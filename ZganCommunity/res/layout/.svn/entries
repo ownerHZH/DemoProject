@@ -1,15 +1,15 @@
 9
 
 dir
-177
+185
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout
 https://192.168.1.88/svn/ZganCommunity
 
 
 
-2014-02-13T06:08:31.845537Z
-176
-fr
+2014-02-17T05:41:47.530524Z
+183
+hzh
 
 
 svn:special svn:externals svn:needs-lock
@@ -28,20 +28,15 @@ c390ab1c-c3a3-bb43-afa3-5d4300cc8aae
 
 activity_community_service.xml
 file
+186
 
 
 
-
-2013-12-31T06:00:42.061317Z
-6022373e2c1c4e8e67d6413fef00a52d
-2013-12-30T06:37:28.604545Z
-162
-fr
-
-
-
-
-
+2014-02-28T03:11:39.359558Z
+7cd1f4d54cca9ab45b2bb66be387872e
+2014-03-03T01:23:28.127253Z
+186
+hzh
 
 
 
@@ -58,24 +53,24 @@ fr
 
 
 
-8452
+
+
+
+
+
+5471
 
 line_recinfo_son_details.xml
 file
+187
 
 
 
-
-2013-12-24T09:40:13.950358Z
-5f618e00e6df0a9898e6d95f9631dd3c
-2013-12-24T09:33:15.831499Z
-130
-fr
-
-
-
-
-
+2014-03-03T05:34:27.221506Z
+f3b7d3a9e76ddf02b49a42e1085a521c
+2014-03-03T06:20:54.449170Z
+187
+hzh
 
 
 
@@ -92,7 +87,12 @@ fr
 
 
 
-1107
+
+
+
+
+
+1359
 
 line_maplistshow.xml
 file
@@ -130,20 +130,15 @@ fr
 
 line_aqwsapp.xml
 file
+186
 
 
 
-
-2013-12-26T07:19:39.098400Z
-bcf6dc3065cd3080fd311d86f662366a
-2013-12-26T06:28:20.113045Z
-149
-fr
-
-
-
-
-
+2014-02-25T09:26:23.072522Z
+76e2e8d849741c42b55beb4c9dc01c8c
+2014-03-03T01:23:28.127253Z
+186
+hzh
 
 
 
@@ -160,7 +155,12 @@ fr
 
 
 
-1921
+
+
+
+
+
+2479
 
 line_usersetting.xml
 file
@@ -198,7 +198,7 @@ hzh
 
 activity_community_pay_history_list.xml
 file
-180
+
 
 
 
@@ -300,48 +300,14 @@ hzh
 
 activity_community_modify_password.xml
 file
+186
 
 
 
-
-2014-02-13T06:10:49.215871Z
-0e58a829951421fbbf5d9c2af9c6bac0
-2014-01-02T03:31:15.655918Z
-168
-fr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2161
-
-activity_main_page.xml
-file
-
-
-
-
-2013-12-31T06:04:25.294085Z
-d15e61fef586fc5b38fa4445c378f484
-2013-12-31T06:04:26.572830Z
-164
+2014-02-26T05:22:07.553286Z
+da3469439691ea4168a3e70b2b71d9d4
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -364,7 +330,41 @@ hzh
 
 
 
-7773
+4051
+
+activity_main_page.xml
+file
+186
+
+
+
+2014-02-26T06:32:45.072658Z
+cc7de36f5a82906a7600be9310c2c506
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7335
 
 activity_cheap.xml
 file
@@ -402,20 +402,15 @@ hzh
 
 list_recinfo_item.xml
 file
+187
 
 
 
-
-2013-12-25T08:18:59.262450Z
-d41750afb147bc3b51029039bdb2504f
-2013-12-25T01:51:22.977825Z
-134
-fr
-
-
-
-
-
+2014-03-03T05:37:24.416641Z
+b212efc163a398fca6bdad97f6323f02
+2014-03-03T06:20:54.449170Z
+187
+hzh
 
 
 
@@ -432,7 +427,12 @@ fr
 
 
 
-957
+
+
+
+
+
+952
 
 line_neighborhood_circle.xml
 file
@@ -470,14 +470,14 @@ hzh
 
 activity_community_policital.xml
 file
-183
+186
 
 
 
-2014-02-17T03:36:15.244774Z
-f39c117aced2c64f0d3688b6e9601755
-2014-02-17T05:41:47.530524Z
-183
+2014-02-28T09:31:00.124400Z
+4dc5c7aedfed9aa94547b26f1ae9407b
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -500,7 +500,7 @@ hzh
 
 
 
-3930
+4291
 
 activity_main.xml
 file
@@ -536,22 +536,51 @@ hzh
 
 316
 
+activity_policital__zheng_wu.xml
+file
+186
+
+
+
+2014-02-28T05:22:58.313209Z
+6ffd82244605ee449853ae7717e2b2ba
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+419
+
 top_title.xml
 file
+186
 
 
 
-
-2013-12-24T09:40:13.941358Z
-b819844021497be1ec5b1f84d58a49f2
-2013-12-24T06:05:09.803729Z
-129
-fr
-
-
-
-
-
+2014-02-25T06:51:33.299177Z
+cfb9e84d0cc3626b9e6aa6ca5dc9a0f5
+2014-03-03T01:23:28.127253Z
+186
+hzh
 
 
 
@@ -568,24 +597,24 @@ fr
 
 
 
-1105
+
+
+
+
+
+1143
 
 line_life_pepsi_son.xml
 file
+186
 
 
 
-
-2013-12-31T06:00:42.071318Z
-529af8c065b4d4909e51fca24f542aa5
-2013-12-30T06:37:28.604545Z
-162
-fr
-
-
-
-
-
+2014-02-28T03:12:20.254897Z
+9aac15619a822b4fc1d55aee46ec6afd
+2014-03-03T01:23:28.127253Z
+186
+hzh
 
 
 
@@ -602,7 +631,12 @@ fr
 
 
 
-5695
+
+
+
+
+
+5993
 
 activity_community_notification.xml
 file
@@ -638,16 +672,16 @@ fr
 
 6051
 
-line_recinfo_son.xml
+activity_recruit_detail.xml
 file
+187
 
 
 
-
-2013-12-20T01:35:04.170418Z
-fcdff4bc516da1bea677ae5feadc029c
-2013-12-20T01:30:02.658763Z
-113
+2014-03-03T03:41:29.288830Z
+b743b35beac1f9e6066961105d8667ed
+2014-03-03T06:20:54.449170Z
+187
 hzh
 
 
@@ -670,7 +704,41 @@ hzh
 
 
 
-593
+508
+
+line_recinfo_son.xml
+file
+187
+
+
+
+2014-03-03T05:26:09.265024Z
+fceade4c518efeb0bbf33ea1d1ce9202
+2014-03-03T06:20:54.449170Z
+187
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+860
 
 down_notification.xml
 file
@@ -706,16 +774,16 @@ fr
 
 2206
 
-activity_community_contact_property.xml
+activity_community_trade.xml
 file
-183
+186
 
 
 
-2014-02-17T02:55:45.175782Z
-bf24894bcc1e85c365d0e4ff3e06dd84
-2014-02-17T05:41:47.530524Z
-183
+2014-02-28T03:11:58.058628Z
+5046928846d7cf649cec38eef1c709b1
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -738,7 +806,7 @@ hzh
 
 
 
-3428
+5012
 
 default_list.xml
 file
@@ -774,50 +842,16 @@ hzh
 
 570
 
-activity_community_trade.xml
+activity_community_contact_property.xml
 file
+186
 
 
 
-
-2013-12-31T06:00:42.058317Z
-214fba12548de164117a470159d18273
-2013-12-30T03:08:30.425883Z
-161
-fr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6159
-
-activity_community_new_pay.xml
-file
-179
-
-
-
-2014-02-13T09:01:18.660962Z
-5effb65b7b1361920531b1057772f143
-2014-02-13T09:21:25.068916Z
-179
+2014-02-26T05:01:11.248430Z
+b1e22a42e20e6eb50cadc0484b81815a
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -840,7 +874,41 @@ hzh
 
 
 
-655
+7571
+
+activity_community_policital_detail.xml
+file
+186
+
+
+
+2014-02-26T01:49:37.631032Z
+01e760d92e0a23a99b5aa148b816da49
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2433
 
 community_service_item.xml
 file
@@ -876,16 +944,16 @@ hzh
 
 1953
 
-activity_community_policital_detail.xml
+activity_community_new_pay.xml
 file
+186
 
 
 
-
-2013-12-27T08:43:14.007056Z
-091157bb2b4c066317b0ca81fb241d8c
-2013-12-27T08:49:06.837367Z
-157
+2014-02-28T04:40:11.553398Z
+51e9ecbcb09d2de9e969550e9eca794d
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -908,52 +976,18 @@ hzh
 
 
 
-2170
+729
 
 line_map.xml
 file
+186
 
 
 
-
-2014-02-13T06:10:49.223872Z
-163ddf8a7d88e617ab964f29ea0293aa
-2014-02-13T06:08:31.845537Z
-176
-fr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1937
-
-title_commit_layout.xml
-file
-182
-
-
-
-2014-02-14T08:12:05.832985Z
-d3eb00ba5559f9053b821e64f2485274
-2014-02-17T02:09:11.934283Z
-182
+2014-02-28T04:35:52.321571Z
+c48299de485f76e3eb2d273b74b23bf0
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -976,18 +1010,52 @@ hzh
 
 
 
-1492
+1964
+
+activity_political__ban_gong.xml
+file
+186
+
+
+
+2014-02-28T05:44:48.057122Z
+d989af8912f4c2204dd20180538e6be9
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1838
 
 line_life_pepsi.xml
 file
+186
 
 
 
-
-2013-12-20T01:35:04.131416Z
-60f0be5347e3049bafe08ba77fbe3997
-2013-12-20T01:30:02.658763Z
-113
+2014-02-25T08:31:29.297129Z
+15883c676bd29467a93aad02dfcba4cc
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -1010,7 +1078,7 @@ hzh
 
 
 
-1461
+1336
 
 activity_community_modify_sex.xml
 file
@@ -1046,16 +1114,16 @@ fr
 
 2290
 
-line_main_page.xml
+title_commit_layout.xml
 file
+186
 
 
 
-delete
-2013-12-20T01:35:04.133416Z
-f5d41653b686e6a862b2c16c77d99962
-2013-12-20T01:30:02.658763Z
-113
+2014-02-26T04:38:34.423824Z
+a83bebeff6873e87b8dfa98720a7eba6
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -1078,7 +1146,31 @@ hzh
 
 
 
-1562
+1530
+
+line_main_page.xml
+file
+186
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
 
 line_register.xml
 file
@@ -1150,48 +1242,14 @@ hzh
 
 line_recinfo.xml
 file
+186
 
 
 
-
-2013-12-31T06:00:42.074318Z
-70a3526216b01d4856e6b871b61ac9a0
-2013-12-30T03:08:30.425883Z
-161
-fr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5622
-
-activity_community_policital_news.xml
-file
-181
-
-
-
-2014-02-14T03:51:56.715000Z
-9edf80acfe5adce89f24abe57384cdff
-2014-02-14T07:15:50.522825Z
-181
+2014-02-28T03:12:59.388136Z
+d77ad6b7e7d5cf932c905db3641b2992
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -1214,7 +1272,41 @@ hzh
 
 
 
-2494
+5719
+
+activity_community_policital_news.xml
+file
+186
+
+
+
+2014-02-28T09:31:24.045768Z
+a376304edf46ffc56d4554a54cec38d1
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2836
 
 default_list_item.xml
 file
@@ -1252,48 +1344,14 @@ hzh
 
 activity_communtity_user_info.xml
 file
+186
 
 
 
-
-2014-02-13T06:10:49.211871Z
-133f6c5ba46f3726ce2abcd76fe9438d
-2014-01-03T02:17:06.704467Z
-169
-fr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7452
-
-activity_community_setting.xml
-file
-183
-
-
-
-2014-02-17T05:27:17.599839Z
-9866ecb66464a0f3eb9f2dfb4bfce5d5
-2014-02-17T05:41:47.530524Z
-183
+2014-02-25T08:29:43.284065Z
+43177c4b2d96b7416cd2444acd05ab98
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -1316,7 +1374,41 @@ hzh
 
 
 
-10304
+7221
+
+activity_community_setting.xml
+file
+186
+
+
+
+2014-02-26T04:23:20.538552Z
+3c6ab53c16f2d283b6009e6eb4afc0e4
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13184
 
 line_food.xml
 file
@@ -1352,16 +1444,16 @@ hzh
 
 446
 
-activity_community_setting_feed_back.xml
+maintabs.xml
 file
-183
+186
 
 
 
-2014-02-17T03:06:54.669075Z
-8a6ecd9139668fcef53ad7b6e695a61a
-2014-02-17T05:41:47.530524Z
-183
+2014-02-28T03:33:28.163418Z
+5d8f462ca61a947b45e5aa4d941e63fc
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -1384,18 +1476,52 @@ hzh
 
 
 
-1217
+2248
+
+activity_community_setting_feed_back.xml
+file
+186
+
+
+
+2014-02-26T05:00:18.584417Z
+5d2ae3a6f96fc841e084983d60efb850
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1421
 
 community_political_item.xml
 file
+186
 
 
 
-
-2013-12-31T05:21:22.390352Z
-d7e121bdbd53829bc4c2c1c577da3c34
-2013-12-31T06:04:26.572830Z
-164
+2014-02-28T08:01:26.275033Z
+4c35a6d8fa75168f66756940ce3b565c
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -1418,11 +1544,11 @@ hzh
 
 
 
-987
+1156
 
 date_picker_signal_layout.xml
 file
-179
+
 
 
 
@@ -1456,14 +1582,14 @@ hzh
 
 button_signal_layout.xml
 file
-179
+186
 
 
 
-2014-02-13T09:05:06.123972Z
-d1c1350d7185aa0ac634503ce2a12671
-2014-02-13T09:21:25.068916Z
-179
+2014-02-26T03:13:34.192107Z
+c6dfc90c1d6051d558f83f1b9fadf370
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -1486,24 +1612,19 @@ hzh
 
 
 
-574
+588
 
 user_login.xml
 file
+186
 
 
 
-
-2013-12-23T08:39:20.661380Z
-a65afc0775661dc2bf15521d16b4130b
-2013-12-23T07:51:25.408199Z
-120
-fr
-
-
-
-
-
+2014-02-26T06:16:23.102493Z
+bce5d580f175d9e239f0a5f1db2152c2
+2014-03-03T01:23:28.127253Z
+186
+hzh
 
 
 
@@ -1520,7 +1641,12 @@ fr
 
 
 
-2877
+
+
+
+
+
+2961
 
 activity_community_pay.xml
 file
@@ -1558,7 +1684,7 @@ hzh
 
 community_pay_item.xml
 file
-179
+
 
 
 

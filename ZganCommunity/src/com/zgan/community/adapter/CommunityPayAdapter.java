@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.zgan.community.R;
 import com.zgan.community.data.CommunityService;
+import com.zgan.community.data.Pay;
 
 import android.content.Context;
 import android.content.Intent;
@@ -21,13 +22,13 @@ public class CommunityPayAdapter extends BaseAdapter {
 
 	private Context context;
 	private LayoutInflater inflater;//得到一个LayoutInfalter对象用来导入布局 
-	private List<Map<String,String>> list;
+	private List<Pay> list;
 	
 	/**
 	 * 构造函数
 	 * @param context
 	 */
-	public CommunityPayAdapter(Context context,List list)
+	public CommunityPayAdapter(Context context,List<Pay> list)
 	{
 		this.context=context;
 		inflater=LayoutInflater.from(context);
@@ -61,7 +62,7 @@ public class CommunityPayAdapter extends BaseAdapter {
 	          holder = new ViewHolder();
 	          
 	         /**得到各个控件的对象*/                    
-	         holder.date = (TextView) convertView.findViewById(R.id.payItemDate);
+	         holder.name = (TextView) convertView.findViewById(R.id.payItemDate);
 	         holder.money = (TextView) convertView.findViewById(R.id.payItemOwnMoney);
 	         
 	         convertView.setTag(holder);//绑定ViewHolder对象                   
@@ -72,8 +73,8 @@ public class CommunityPayAdapter extends BaseAdapter {
          }
 
          /**设置TextView显示的内容*/            
-         holder.date.setText(list.get(position).get("date").toString());
-         holder.money.setText("￥"+list.get(position).get("money").toString());
+         holder.name.setText(list.get(position).getZDName());
+         holder.money.setText("￥"+list.get(position).getZDMoney());
          
          /*if (list.size() == 1) {
              convertView.setBackgroundResource(R.drawable.circle_list_single);
@@ -94,7 +95,7 @@ public class CommunityPayAdapter extends BaseAdapter {
 	 * 存放控件
 	 * */
 	public final class ViewHolder{
-		public TextView date;      
+		public TextView name;      
 		public TextView money;    
 	}
 }

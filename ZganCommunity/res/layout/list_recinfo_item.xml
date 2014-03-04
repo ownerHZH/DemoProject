@@ -2,29 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/list_item"
     android:layout_width="fill_parent"
-    android:layout_height="35dp"
-    android:layout_margin="30dp"
-    android:background="@drawable/setting_bg"
+    android:layout_height="wrap_content"
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:padding="10dp" >
 
-
     <TextView
         android:id="@+id/company"
-      android:layout_width="0dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
         android:layout_weight="1"
         android:ellipsize="end"
         android:singleLine="true"
-        android:text="bb" />
+        android:text="bb"
+        android:textSize="20sp" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/right" />
+        android:src="@drawable/right"
+        android:visibility="gone" />
 
 </LinearLayout>

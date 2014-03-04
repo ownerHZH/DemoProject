@@ -9,7 +9,17 @@ import java.util.Map;
 
 import com.zgan.community.R;
 import com.zgan.community.adapter.CommunityPayAdapter;
+import com.zgan.community.data.Pay;
+import com.zgan.community.data.Recinfo;
+import com.zgan.community.jsontool.AppConstants;
+import com.zgan.community.jsontool.GsonUtil;
+import com.zgan.community.jsontool.HttpAndroidTask;
+import com.zgan.community.jsontool.HttpClientService;
+import com.zgan.community.jsontool.HttpPreExecuteHandler;
+import com.zgan.community.jsontool.HttpResponseHandler;
+import com.zgan.community.jsontool.JsonEntity;
 import com.zgan.community.tools.MainAcitivity;
+import com.zgan.community.tools.ZganCommunityStaticData;
 
 import android.os.Bundle;
 import android.os.Build.VERSION;
@@ -43,6 +53,8 @@ public class CommunityNewPayActivity extends MainAcitivity {
 	
 	private CommunityPayAdapter communityPayAdapter;
 	
+	List<Pay> data=new ArrayList<Pay>();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -61,7 +73,8 @@ public class CommunityNewPayActivity extends MainAcitivity {
 				finish();
 			}
 		});
-        showDetail();//显示假定数据
+              	
+		listViewDetail.setDivider(null);
 	}
 	
 	public void initView()
@@ -84,6 +97,22 @@ public class CommunityNewPayActivity extends MainAcitivity {
 				startActivity(intent);
 			}
 		});
+		
+		initData();
+
+	}
+
+	private void initData() {
+		Calendar calendar=Calendar.getInstance();
+        int year=calendar.get(Calendar.YEAR);
+        int monthOfYear=calendar.get(Calendar.MONTH);
+        int y=monthOfYear+1;
+        String sy = "01";
+        if(y<10)
+        {
+        	sy="0"+y;
+        }
+		getData(year+sy);
 	}
 	
 	public void datePickerInit()
@@ -97,47 +126,59 @@ public class CommunityNewPayActivity extends MainAcitivity {
 
             public void onDateChanged(DatePicker view, int year,
                     int monthOfYear, int dayOfMonth) {
-                Toast.makeText(con,"您选择的日期是："+year+"年"+(monthOfYear+1)+"月",1).show();
-                Map<String,String> map=new HashMap();
-        		map.put("date", "物业账单");
-        		map.put("money", "200");
-        		data.add(map);
-        		communityPayAdapter.notifyDataSetChanged();
+                int y=monthOfYear+1;
+                String sy = "01";
+                if(y<10)
+                {
+                	sy="0"+y;
+                }
+        		getData(year+sy);
             }
             
         });
 	}
 	
-	List<Map<String,String>> data=new ArrayList<Map<String,String>>();
-	/**
-	 * 使各List显示数据
-	 */
-	private void showDetail() {
-		//data=new ArrayList<Map<String,String>>();
-		
-		Map<String,String> map=new HashMap();
-		map.put("date", "物业账单");
-		map.put("money", "200");
-		data.add(map);
-		
-		Map<String,String> map1=new HashMap();
-		map1.put("date", "水费");
-		map1.put("money", "400");
-		data.add(map1);
-		
-		Map<String,String> map2=new HashMap();
-		map2.put("date", "电费");
-		map2.put("money", "1000");
-		data.add(map2);	
-		
-		Map<String,String> map3=new HashMap();
-		map3.put("date", "燃气费");
-		map3.put("money", "1000");
-		data.add(map3);
-		
-		communityPayAdapter=new CommunityPayAdapter(con,data);
-		listViewDetail.setAdapter(communityPayAdapter);		
-		listViewDetail.setDivider(null);
+	//获取办事指南信息
+	private void getData(String ny) {
+
+		HttpClientService svr = new HttpClientService(
+				AppConstants.HttpHostAdress+"zganwyzd.aspx");//"http://community1.zgantech.com/ZganNews.aspx?did=15923258890"
+		//参数
+		svr.addParameter("did",ZganCommunityStaticData.User_Number);
+		svr.addParameter("ny",ny);
+				
+		HttpAndroidTask task = new HttpAndroidTask(con, svr,
+				new HttpResponseHandler() {
+					// 响应事件
+					@SuppressWarnings("unchecked")
+					public void onResponse(Object obj) {
+						JsonEntity jsonEntity = GsonUtil.parseObj2JsonEntity(
+								obj,con,false);
+						if (jsonEntity.getStatus() == 1) {
+							Toast.makeText(con, "无此信息", Toast.LENGTH_SHORT).show();
+						} else if (jsonEntity.getStatus() == 0) {
+							data.clear();
+							data=(List<Pay>) GsonUtil.getData(
+										jsonEntity,AppConstants.type_payList);	
+								
+								if(data.size()>0)
+				                {
+				                	//有数据的时候操作
+									communityPayAdapter=new CommunityPayAdapter(con,data);
+									listViewDetail.setAdapter(communityPayAdapter);	
+									communityPayAdapter.notifyDataSetChanged();
+				                }else
+				                {
+				                	//没有数据时候提示
+				                	Toast.makeText(con, "无此信息", Toast.LENGTH_SHORT).show();
+				                }														
+						}														
+					}
+				}, new HttpPreExecuteHandler() {
+					public void onPreExecute(Context context) {
+					}
+				});
+		task.execute(new String[] {});	
 	}
 
 

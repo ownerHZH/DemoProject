@@ -15,5 +15,35 @@ public class Recinfo {
 	public void setRecruitment_info(String recruitment_info) {
 		Recruitment_info = recruitment_info;
 	}
+	
+	String id;
+	String title;
+	String content;
+	String releasetime;
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getReleasetime() {
+		return releasetime;
+	}
+	public void setReleasetime(String releasetime) {
+		this.releasetime = releasetime;
+	}
 
 }

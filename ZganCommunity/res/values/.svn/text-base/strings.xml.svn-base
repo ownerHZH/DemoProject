@@ -53,6 +53,7 @@
     <string name="community_notification_news">紧急停水通知</string>
     <string name="community_notification_news1">大风天气防空坠物</string>
     <string name="community_notification_news2">关于组织免费体检</string>
+    <string name="community_notification_title">通知公告</string>
 
     <!-- 充值缴费字段 -->
     <string name="community_pay_moneytitle">总费用查询：</string>
@@ -154,8 +155,8 @@
     <string name="activity_community_setting_button_sure">确定</string>
     <string name="activity_community_setting_birth">生日：</string>
     <string name="activity_community_setting_sex">性别：</string>
-    <string name="activity_community_setting_sex_male">男</string>
-    <string name="activity_community_setting_sex_female">女</string>
+    <string name="activity_community_setting_sex_male">    男</string>
+    <string name="activity_community_setting_sex_female">  女</string>
     <string name="activity_community_setting_password">密码：</string>
     <string name="activity_community_setting_push_message">消息推送</string>
     <string name="activity_community_setting_push_message_open">开</string>
@@ -166,5 +167,11 @@
     <string name="activity_community_setting_feed_back_inputtitle">请输入您对我们的意见：</string>
     <string name="activity_community_setting_feed_back_inputhint">输入文本...</string>
     <string name="activity_community_setting_feed_back_title">设置</string>
+    <string name="title_activity_policital__zheng_wu">Policital_ZhengWU</string>
+    <string name="title_activity_political__ban_gong">Political_BanGong</string>
+
+    <!-- 版本控制 -->
+    <string name="app_var">v1.0.022401</string>
+    <string name="title_activity_recruit_detail">RecruitDetailActivity</string>
 
 </resources>

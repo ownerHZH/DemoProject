@@ -5,10 +5,13 @@ import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.zgan.community.data.BgddDetail;
 import com.zgan.community.data.CommunityService;
 import com.zgan.community.data.ContentData;
 import com.zgan.community.data.MSZW_BGDD;
 import com.zgan.community.data.News;
+import com.zgan.community.data.Pay;
+import com.zgan.community.data.Recinfo;
 import com.zgan.community.data.ServiceInfo;
 
 public class AppConstants {
@@ -32,5 +35,11 @@ public class AppConstants {
 	public static Type type_contentDataList = new TypeToken<List<ContentData>>() {
 	}.getType();
 	public static Type type_mSZW_BGDDList = new TypeToken<List<MSZW_BGDD>>() {
+	}.getType();
+	public static Type type_bgddDetailList = new TypeToken<List<BgddDetail>>() {
+	}.getType();
+	public static Type type_recinfoList = new TypeToken<List<Recinfo>>() {
+	}.getType();
+	public static Type type_payList = new TypeToken<List<Pay>>() {
 	}.getType();
 }

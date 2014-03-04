@@ -9,6 +9,30 @@ svn:wc:ra_dav:version-url
 V 126
 /svn/ZganCommunity/!svn/ver/113/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable/circle_list_bottom.xml
 END
+radio2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable/radio2.xml
+END
+radio3.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable/radio3.xml
+END
+radio4.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable/radio4.xml
+END
+radio5.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable/radio5.xml
+END
 circle_list_middle.xml
 K 25
 svn:wc:ra_dav:version-url
@@ -21,6 +45,12 @@ svn:wc:ra_dav:version-url
 V 119
 /svn/ZganCommunity/!svn/ver/167/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable/radiobutton.xml
 END
+sexradiobutton.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable/sexradiobutton.xml
+END
 circle_list_single.xml
 K 25
 svn:wc:ra_dav:version-url
@@ -32,4 +62,16 @@ K 25
 svn:wc:ra_dav:version-url
 V 123
 /svn/ZganCommunity/!svn/ver/113/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable/circle_list_top.xml
+END
+radio0.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable/radio0.xml
+END
+radio1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable/radio1.xml
 END

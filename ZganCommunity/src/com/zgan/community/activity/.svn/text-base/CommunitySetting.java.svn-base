@@ -47,6 +47,8 @@ public class CommunitySetting extends MainAcitivity {
 	private TextView phone;//手机号码
 	private SlipButton messageSwitch;//消息推送开关
 	
+	private boolean clicked=false;
+	
 	//创建一个常量，标识DatePickerDialog  
     private static final int DATE_PICKER_ID = 3;
 	
@@ -132,16 +134,21 @@ public class CommunitySetting extends MainAcitivity {
 	
 	public void buttonToggleAction(Button button,EditText editText)
 	{
-		if(!button.getText().toString().equals(getString(R.string.activity_community_setting_button_sure)))
+		if(clicked)
+		{
+			clicked=false;
+		}else
+		{
+			clicked=true;
+		}
+		if(clicked)
 		{
 			editText.setEnabled(true);
 			editText.requestFocus();
-			button.setText(getString(R.string.activity_community_setting_button_sure));
 		}else
 		{
 			editText.setEnabled(false);
 			editText.clearFocus();
-			button.setText(getString(R.string.activity_community_setting_button_change));
 		}
 	}
 	

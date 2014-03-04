@@ -170,4 +170,8 @@
     <string name="title_activity_policital__zheng_wu">Policital_ZhengWU</string>
     <string name="title_activity_political__ban_gong">Political_BanGong</string>
 
+    <!-- 版本控制 -->
+    <string name="app_var">v1.0.022401</string>
+    <string name="title_activity_recruit_detail">RecruitDetailActivity</string>
+
 </resources>

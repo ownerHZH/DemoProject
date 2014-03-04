@@ -1,15 +1,15 @@
 9
 
 dir
-177
+185
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity
 https://192.168.1.88/svn/ZganCommunity
 
 
 
-2014-02-13T06:08:31.845537Z
-176
-fr
+2014-02-17T05:41:47.530524Z
+183
+hzh
 
 
 svn:special svn:externals svn:needs-lock
@@ -62,20 +62,15 @@ hzh
 
 Reinfo_son.java
 file
+187
 
 
 
-
-2014-02-13T06:10:45.079635Z
-a2eec0dea61399f883af96986068f253
-2014-01-03T06:34:09.112049Z
-170
-fr
-
-
-
-
-
+2014-03-03T03:28:38.260730Z
+07b2ef3b5854e050a99b87ae96651db2
+2014-03-03T06:20:54.449170Z
+187
+hzh
 
 
 
@@ -92,7 +87,12 @@ fr
 
 
 
-6397
+
+
+
+
+
+6444
 
 MapActivitiy.java
 file
@@ -164,20 +164,15 @@ hzh
 
 Reinfo_son_details.java
 file
+187
 
 
 
-
-2013-12-26T07:19:39.310412Z
-a8763c7d54f72ded9f94a919c031c7a1
-2013-12-26T06:28:20.113045Z
-149
-fr
-
-
-
-
-
+2014-03-03T05:31:14.634490Z
+e5afdbeff7695358126f59a58d410ca2
+2014-03-03T06:20:54.449170Z
+187
+hzh
 
 
 
@@ -194,24 +189,24 @@ fr
 
 
 
-1614
+
+
+
+
+
+1788
 
 CommunityNotificationActivity.java
 file
+186
 
 
 
-
-2014-02-13T06:10:45.087635Z
-5688f4fc039e23ab596799374f6f3251
-2014-01-03T06:34:09.112049Z
-170
-fr
-
-
-
-
-
+2014-02-28T08:02:00.018963Z
+0c516ba9808d17a8c127f1f77666e266
+2014-03-03T01:23:28.127253Z
+186
+hzh
 
 
 
@@ -228,7 +223,80 @@ fr
 
 
 
-9856
+
+
+
+
+
+9858
+
+Political_BanGong.java
+file
+186
+
+
+
+2014-02-28T09:15:39.678753Z
+4dbebea47240d133e506218cf73776b1
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6271
+
+RecruitDetailActivity.java
+file
+187
+
+
+
+2014-03-03T04:57:29.358651Z
+1893a86f377858779504cdf1a23a8c75
+2014-03-03T06:20:54.449170Z
+187
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4845
 
 CommunityServiceListActivity.java
 file
@@ -300,20 +368,15 @@ fr
 
 CommunityTradeActivity.java
 file
+186
 
 
 
-
-2013-12-31T06:00:40.093205Z
-4da1c452e246e860d8dddcda143f9b40
-2013-12-30T03:08:30.425883Z
-161
-fr
-
-
-
-
-
+2014-02-25T07:03:07.696895Z
+6baa163f9e3fb5eee14ec0adaf287f2a
+2014-03-03T01:23:28.127253Z
+186
+hzh
 
 
 
@@ -330,18 +393,23 @@ fr
 
 
 
-6289
+
+
+
+
+
+5290
 
 CommunitySetting.java
 file
-183
+186
 
 
 
-2014-02-17T05:22:51.069594Z
-8ced6a8bad852ee7be7a131a3ed34d25
-2014-02-17T05:41:47.530524Z
-183
+2014-02-26T04:31:18.923915Z
+bcf3ca040e847e7c4bcf1b558a7defc1
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -364,52 +432,18 @@ hzh
 
 
 
-6054
+5916
 
 CommunityServiceActivity.java
 file
+186
 
 
 
-
-2014-02-13T06:10:45.112636Z
-ffbeff75e7997f039c1f3391984bd845
-2014-02-13T06:08:31.845537Z
-176
-fr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6593
-
-CommunityNewPayActivity.java
-file
-180
-
-
-
-2014-02-13T09:49:37.076742Z
-13ad428fb11d26552fd5c4eab3563eb2
-2014-02-13T09:51:47.963295Z
-180
+2014-02-26T06:06:52.805874Z
+ecd92e597ce1834c69e65624cde0f41a
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -432,11 +466,45 @@ hzh
 
 
 
-6217
+5274
+
+CommunityNewPayActivity.java
+file
+187
+
+
+
+2014-03-03T06:13:24.359182Z
+08e026f04103b0ceace4dbc0dfe559fa
+2014-03-03T06:20:54.449170Z
+187
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7718
 
 CommunitySettingFeedBack.java
 file
-183
+
 
 
 
@@ -468,16 +536,16 @@ hzh
 
 1859
 
-CommunityPayHistoryListActivity.java
+AQWSAppActivity.java
 file
-180
+186
 
 
 
-2014-02-13T09:45:16.424833Z
-89e3b248ad3fd2ecf12057dbd363059b
-2014-02-13T09:51:47.963295Z
-180
+2014-02-25T09:23:05.858242Z
+586c6518cdcf2f134d8666eb060b8c2e
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -500,24 +568,19 @@ hzh
 
 
 
-4320
+3933
 
-AQWSAppActivity.java
+CommunityPayHistoryListActivity.java
 file
+187
 
 
 
-
-2013-12-27T07:19:06.297343Z
-6f5a7f2ac40724cde9e5564586ce6884
-2013-12-27T07:10:25.605006Z
-155
-fr
-
-
-
-
-
+2014-03-03T05:58:03.958538Z
+357304bb89cb5de59a23a0a86ac29e72
+2014-03-03T06:20:54.449170Z
+187
+hzh
 
 
 
@@ -534,7 +597,12 @@ fr
 
 
 
-4010
+
+
+
+
+
+3823
 
 Life_Pepsi_son.java
 file
@@ -606,14 +674,14 @@ fr
 
 CommunityPolicitalActivity.java
 file
-183
+186
 
 
 
-2014-02-17T03:38:40.212066Z
-17e40b1080b438e15e8c63c26c9b3dc2
-2014-02-17T05:41:47.530524Z
-183
+2014-02-28T09:27:18.340714Z
+9f4bca9b339b7b58f171e0cdafc2db47
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -636,11 +704,11 @@ hzh
 
 
 
-13035
+16411
 
 CommunityContactProperty.java
 file
-183
+
 
 
 
@@ -674,48 +742,14 @@ hzh
 
 GuideActivity.java
 file
+187
 
 
 
-
-2014-02-13T06:10:45.092635Z
-7357edb67019220047c04978c2a7be39
-2014-01-03T06:34:09.112049Z
-170
-fr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5718
-
-CommunityPayActivity.java
-file
-
-
-
-
-2013-12-20T01:34:59.496151Z
-932d0858619e7a3123abbb4c5d0041f7
-2013-12-20T01:30:02.658763Z
-113
+2014-03-03T03:33:25.128138Z
+4a74658a28cd88e678365971a6b0bc13
+2014-03-03T06:20:54.449170Z
+187
 hzh
 
 
@@ -738,7 +772,41 @@ hzh
 
 
 
-4195
+7920
+
+CommunityPayActivity.java
+file
+187
+
+
+
+2014-03-03T05:57:07.833328Z
+320d8837399446f99e6e7f7a103e76ae
+2014-03-03T06:20:54.449170Z
+187
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4197
 
 UserSetting.java
 file
@@ -776,20 +844,15 @@ fr
 
 RecruitmentInfo.java
 file
+187
 
 
 
-
-2013-12-27T07:19:06.292343Z
-6454ca9aaf7c4bd2cf75b4eda55d3e74
-2013-12-27T07:10:25.605006Z
-155
-fr
-
-
-
-
-
+2014-03-03T04:21:40.092720Z
+ff5d5c38e94fa9a8b90015f72571b535
+2014-03-03T06:20:54.449170Z
+187
+hzh
 
 
 
@@ -806,7 +869,12 @@ fr
 
 
 
-5523
+
+
+
+
+
+5647
 
 CommunityMoreNewsActivity.java
 file
@@ -844,14 +912,14 @@ hzh
 
 CommunityNewNotificationActivity.java
 file
-181
+186
 
 
 
-2014-02-14T04:34:21.562752Z
-1cd926928eab2c2ab6ddd001ac9d12ab
-2014-02-14T07:15:50.522825Z
-181
+2014-02-28T08:36:13.689426Z
+2c3ed955ff0f4dcc414ebfd905fe22d5
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -874,52 +942,18 @@ hzh
 
 
 
-10573
-
-LoginActivity.java
-file
-183
-
-
-
-2014-02-17T02:41:41.810949Z
-eef990b659a017e0151139fdbe16f235
-2014-02-17T05:41:47.530524Z
-183
-hzh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4799
+14992
 
 CommunityPolicitalDetailActivity.java
 file
+187
 
 
 
-
-2013-12-27T08:32:43.813011Z
-733746f834224570610b4e06e170a4fe
-2013-12-27T08:49:06.837367Z
-157
+2014-03-03T05:07:53.859371Z
+75201c5ef45685eb32a487e3b1b7ea2a
+2014-03-03T06:20:54.449170Z
+187
 hzh
 
 
@@ -942,7 +976,109 @@ hzh
 
 
 
-3341
+6169
+
+LoginActivity.java
+file
+186
+
+
+
+2014-02-28T06:28:43.673870Z
+113aa17efd1691eec7b8e9f037c954c5
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5046
+
+Policital_ZhengWU.java
+file
+186
+
+
+
+2014-02-28T09:04:50.233607Z
+e3993afefe78da59990864cb6a1e6f6f
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5252
+
+MainTabActivity.java
+file
+186
+
+
+
+2014-02-28T04:34:48.266907Z
+994070943d678a30d405475142068039
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4139
 
 Neighborhood_Circle.java
 file
@@ -1014,48 +1150,14 @@ hzh
 
 CommunityModifyPasswordActivity.java
 file
+186
 
 
 
-
-2014-02-13T06:10:45.121637Z
-5c01470bd1370d576fae7fefe6264818
-2014-01-03T06:34:09.112049Z
-170
-fr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5397
-
-MainPageActivity.java
-file
-182
-
-
-
-2014-02-14T08:14:00.990572Z
-e1c16e7fba2c075bac672eecb553c255
-2014-02-17T02:09:11.934283Z
-182
+2014-02-26T05:21:41.655805Z
+f64b169467127393cc8fbb48c792ba89
+2014-03-03T01:23:28.127253Z
+186
 hzh
 
 
@@ -1078,5 +1180,39 @@ hzh
 
 
 
-8311
+5413
+
+MainPageActivity.java
+file
+186
+
+
+
+2014-02-28T04:29:21.171199Z
+f0f2cc9785cad58ac7fe3f8520038530
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8562
 

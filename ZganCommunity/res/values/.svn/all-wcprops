@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svn/ZganCommunity/!svn/ver/167/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/values
+/svn/ZganCommunity/!svn/ver/185/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/values
 END
 colors.xml
 K 25
@@ -13,17 +13,29 @@ styles.xml
 K 25
 svn:wc:ra_dav:version-url
 V 112
-/svn/ZganCommunity/!svn/ver/154/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/values/styles.xml
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/values/styles.xml
+END
+drawables.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/values/drawables.xml
 END
 strings.xml
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svn/ZganCommunity/!svn/ver/183/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/values/strings.xml
+/svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/values/strings.xml
 END
 dimens.xml
 K 25
 svn:wc:ra_dav:version-url
 V 112
-/svn/ZganCommunity/!svn/ver/113/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/values/dimens.xml
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/values/dimens.xml
+END
+ids.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/values/ids.xml
 END

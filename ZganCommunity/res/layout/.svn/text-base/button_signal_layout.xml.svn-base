@@ -11,6 +11,6 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="30dp"
-        android:text="更多历史账单" />
+        android:background="@drawable/morezhangdan_btn" />
 
 </LinearLayout>

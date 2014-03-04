@@ -102,85 +102,84 @@ public class RecruitmentInfo extends MainAcitivity {
 				break;
 
 			case R.id.waiter:
-				Intent intent = new Intent(RecruitmentInfo.this,
-						Reinfo_son.class);
+				Intent intent = new Intent(RecruitmentInfo.this,RecruitDetailActivity.class);
 				Bundle bundle = new Bundle();
 				bundle.putString("button_key", "服务员");
 				intent.putExtras(bundle);
 				startActivity(intent);
 				break;
 			case R.id.gamble:
-				intent = new Intent(RecruitmentInfo.this, Reinfo_son.class);
+				intent = new Intent(RecruitmentInfo.this, RecruitDetailActivity.class);
 				bundle = new Bundle();
 				bundle.putString("button_key", "保洁");
 				intent.putExtras(bundle);
 				startActivity(intent);
 				break;
 			case R.id.driver:
-				intent = new Intent(RecruitmentInfo.this, Reinfo_son.class);
+				intent = new Intent(RecruitmentInfo.this, RecruitDetailActivity.class);
 				bundle = new Bundle();
 				bundle.putString("button_key", "司机");
 				intent.putExtras(bundle);
 				startActivity(intent);
 				break;
 			case R.id.cook:
-				intent = new Intent(RecruitmentInfo.this, Reinfo_son.class);
+				intent = new Intent(RecruitmentInfo.this, RecruitDetailActivity.class);
 				bundle = new Bundle();
 				bundle.putString("button_key", "厨师");
 				intent.putExtras(bundle);
 				startActivity(intent);
 				break;
 			case R.id.courier:
-				intent = new Intent(RecruitmentInfo.this, Reinfo_son.class);
+				intent = new Intent(RecruitmentInfo.this, RecruitDetailActivity.class);
 				bundle = new Bundle();
 				bundle.putString("button_key", "快递员");
 				intent.putExtras(bundle);
 				startActivity(intent);
 				break;
 			case R.id.sales:
-				intent = new Intent(RecruitmentInfo.this, Reinfo_son.class);
+				intent = new Intent(RecruitmentInfo.this, RecruitDetailActivity.class);
 				bundle = new Bundle();
 				bundle.putString("button_key", "销售");
 				intent.putExtras(bundle);
 				startActivity(intent);
 				break;
 			case R.id.mechanic:
-				intent = new Intent(RecruitmentInfo.this, Reinfo_son.class);
+				intent = new Intent(RecruitmentInfo.this, RecruitDetailActivity.class);
 				bundle = new Bundle();
 				bundle.putString("button_key", "技工");
 				intent.putExtras(bundle);
 				startActivity(intent);
 				break;
 			case R.id.customer_service:
-				intent = new Intent(RecruitmentInfo.this, Reinfo_son.class);
+				intent = new Intent(RecruitmentInfo.this, RecruitDetailActivity.class);
 				bundle = new Bundle();
 				bundle.putString("button_key", "客服");
 				intent.putExtras(bundle);
 				startActivity(intent);
 				break;
 			case R.id.assistant:
-				intent = new Intent(RecruitmentInfo.this, Reinfo_son.class);
+				intent = new Intent(RecruitmentInfo.this, RecruitDetailActivity.class);
 				bundle = new Bundle();
 				bundle.putString("button_key", "营业员");
 				intent.putExtras(bundle);
 				startActivity(intent);
 				break;
 			case R.id.accounting:
-				intent = new Intent(RecruitmentInfo.this, Reinfo_son.class);
+				intent = new Intent(RecruitmentInfo.this, RecruitDetailActivity.class);
 				bundle = new Bundle();
 				bundle.putString("button_key", "会计");
 				intent.putExtras(bundle);
 				startActivity(intent);
 				break;
 			case R.id.secretary:
-				intent = new Intent(RecruitmentInfo.this, Reinfo_son.class);
+				intent = new Intent(RecruitmentInfo.this, RecruitDetailActivity.class);
 				bundle = new Bundle();
 				bundle.putString("button_key", "文员");
 				intent.putExtras(bundle);
 				startActivity(intent);
 				break;
 			case R.id.other:
-				intent = new Intent(RecruitmentInfo.this, Reinfo_son.class);
+				intent = new Intent(RecruitmentInfo.this, RecruitDetailActivity.class);
 				bundle = new Bundle();
 				bundle.putString("button_key", "其他");
 				intent.putExtras(bundle);
