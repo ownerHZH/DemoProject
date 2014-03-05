@@ -113,7 +113,8 @@ public class CommunitySetting extends MainAcitivity {
 				break;
 			case R.id.about:
 				//¹ØÓÚ
-				
+				Intent aboutI=new Intent(con,About_Detail_Activity.class);
+				startActivity(aboutI);
 				break;
 			case R.id.nicknameChange:
 				//ĞŞ¸ÄêÇ³Æ

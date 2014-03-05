@@ -108,11 +108,11 @@ public class Index_Activity extends FragmentActivity {
 	SQLiteDatabase db;
 
 	// 初始化5个fragment
-	ZhuwoFramgement zhuwoFramgement = new ZhuwoFramgement();
+	/*ZhuwoFramgement zhuwoFramgement = new ZhuwoFramgement();
 	CiwoFramgment ciwoFramgment = new CiwoFramgment();
 	ChazuoFramgement chazuoFramgement = new ChazuoFramgement();
 	KetingFramgment ketingFramgment = new KetingFramgment();
-	ChufangFramgement chufangFramgement = new ChufangFramgement();
+	ChufangFramgement chufangFramgement = new ChufangFramgement();*/
 	PublicFragment publicFragment;
 
 	public int tag = 0;
@@ -206,101 +206,77 @@ public class Index_Activity extends FragmentActivity {
 				}
 				if (frame.MainCmd == 2 && frame.SubCmd == 2) {
 					String Port[] = frame.strData.split(",");
-					Log.i("操作成功", frame.strData);
-					Log.i("Port[0]", Port[0]);
-					Log.i("Port[1]", Port[1]);
 					PublicFragment f = (PublicFragment) list.get(tag);
-					if (Port[0].equals(f.MAC1)) {
-						Log.i("Port[0]", Port[0]);
-						if (f.flag == 1) {
-							if (Port[1].length() > 1) {
-
-								f.stautes1 = Integer.parseInt(Port[1]
-										.substring(1, 2));
+					Cursor c = null;
+					try {
+						if (Port[0].equals(f.MAC1)) {
+							if (f.flag == 1) {
+								if (Port[1].length() > 1) {
+									f.stautes1 = Integer.parseInt(Port[1]
+											.substring(1, 2));
+									f.Showview();
+								} else {
+									f.stautes1 = Integer.parseInt(Port[1]);
+									f.Showview();
+								}
+							} else if (f.flag == 2) {
+								f.stautes1 = Integer.parseInt(Port[1].substring(0,
+										1));
+								f.stautes2 = Integer.parseInt(Port[1].substring(2,
+										3));
 								f.Showview();
+							}
+						}
+						c = db.rawQuery(
+								"select *from table_SubDev where _MAC=?",
+								new String[] { Port[0] });
+
+						if(c.moveToFirst())
+						{
+							if (c.getCount() == 2) {
+
+								if (c.getString(c.getColumnIndex("_Port")).equals("92")) {
+									String staues = Port[1].substring(0, 1) + "000";
+									UpdateSQL1(db, Port[0],
+											c.getString(c.getColumnIndex("_Port")),
+											staues);
+								} else if (c.getString(c.getColumnIndex("_Port"))
+										.equals("71")) {
+									String staues = "00" + Port[1].substring(2, 3)
+											+ "0";
+									UpdateSQL1(db, Port[0],
+											c.getString(c.getColumnIndex("_Port")),
+											staues);
+								}
+								c.moveToNext();
+								if (c.getString(c.getColumnIndex("_Port")).equals("92")) {
+									String staues = Port[1].substring(0, 1) + "000";
+									UpdateSQL1(db, Port[0],
+											c.getString(c.getColumnIndex("_Port")),
+											staues);
+								} else if (c.getString(c.getColumnIndex("_Port"))
+										.equals("71")) {
+									String staues = "00" + Port[1].substring(2, 3)
+											+ "0";
+									UpdateSQL1(db, Port[0],
+											c.getString(c.getColumnIndex("_Port")),
+											staues);
+								}
 
 							} else {
-
-								f.stautes1 = Integer.parseInt(Port[1]);
-								f.Showview();
-
+								String staues = "0" + Port[1].substring(1, 2) + "00";
+								UpdateSQL1(db, Port[0],
+										c.getString(c.getColumnIndex("_Port")), staues);
 							}
-						} else if (f.flag == 2) {
-							f.stautes1 = Integer.parseInt(Port[1].substring(0,
-									1));
-							f.stautes2 = Integer.parseInt(Port[1].substring(2,
-									3));
-
-							f.Showview();
-
 						}
-					}
-
-					Cursor c = db.rawQuery(
-							"select *from table_SubDev where _MAC=?",
-							new String[] { Port[0] });
-
-					Log.i("888888888888", "888888888");
-					Log.i("更新新数据", "更新新数据");
-					if(c.moveToFirst())
+					}catch (ArrayIndexOutOfBoundsException e) {
+						e.printStackTrace();
+					}catch (Exception e) {
+						e.printStackTrace();
+					}finally
 					{
-						if (c.getCount() == 2) {
-
-							if (c.getString(c.getColumnIndex("_Port")).equals("92")) {
-								Log.i("1", "92");
-								String staues = Port[1].substring(0, 1) + "000";
-								UpdateSQL1(db, Port[0],
-										c.getString(c.getColumnIndex("_Port")),
-										staues);
-								Log.i("1staues", ""+staues);
-							} else if (c.getString(c.getColumnIndex("_Port"))
-									.equals("71")) {
-								Log.i("1", "71");
-
-								String staues = "00" + Port[1].substring(2, 3)
-										+ "0";
-								UpdateSQL1(db, Port[0],
-										c.getString(c.getColumnIndex("_Port")),
-										staues);
-								Log.i("1staues", ""+staues);
-
-							}
-							c.moveToNext();
-							if (c.getString(c.getColumnIndex("_Port")).equals("92")) {
-								Log.i("2", "92");
-
-								String staues = Port[1].substring(0, 1) + "000";
-								UpdateSQL1(db, Port[0],
-										c.getString(c.getColumnIndex("_Port")),
-										staues);
-								Log.i("1staues", ""+staues);
-
-							} else if (c.getString(c.getColumnIndex("_Port"))
-									.equals("71")) {
-								Log.i("2", "71");
-
-								String staues = "00" + Port[1].substring(2, 3)
-										+ "0";
-								UpdateSQL1(db, Port[0],
-										c.getString(c.getColumnIndex("_Port")),
-										staues);
-								Log.i("1staues", ""+staues);
-
-
-							}
-
-						} else {
-							String staues = "0" + Port[1].substring(1, 2) + "00";
-							Log.i("插座或者开关", ""+c.getString(c.getColumnIndex("_Port")));
-							Log.i("staues", ""+staues);
-
-							UpdateSQL1(db, Port[0],
-									c.getString(c.getColumnIndex("_Port")), staues);
-						}
-					}										
-					c.close();
-					//
-
+						c.close();
+					}					
 				}
 
 				break;

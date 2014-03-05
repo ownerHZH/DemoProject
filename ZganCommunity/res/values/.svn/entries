@@ -1,7 +1,7 @@
 9
 
 dir
-187
+188
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/values
 https://192.168.1.88/svn/ZganCommunity
 
@@ -130,14 +130,14 @@ hzh
 
 strings.xml
 file
+189
 
 
 
-
-2014-03-03T03:38:54.476975Z
-7f16cd83058bb8e7c3516948f13a6d80
-2014-03-03T06:20:54.449170Z
-187
+2014-03-05T02:30:52.021319Z
+fac32e9369d399f9057b8a970efcc161
+2014-03-05T03:41:16.972163Z
+189
 hzh
 
 
@@ -160,7 +160,7 @@ hzh
 
 
 
-10379
+10460
 
 dimens.xml
 file

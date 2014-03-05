@@ -1,7 +1,7 @@
 9
 
 dir
-6
+15
 https://192.168.1.88/svn/ZganYCKZ/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android
 https://192.168.1.88/svn/ZganYCKZ
 
@@ -23,12 +23,12 @@ svn:special svn:externals svn:needs-lock
 
 
 
-
+incomplete
 cc352d3f-8073-6d4d-921b-f6c41652b215
 
 .classpath
 file
-
+6
 
 
 
@@ -60,12 +60,9 @@ hzh
 
 515
 
-程序代码
-dir
-
 project.properties
 file
-
+6
 
 
 
@@ -102,7 +99,7 @@ dir
 
 .project
 file
-
+6
 
 
 
@@ -136,7 +133,7 @@ hzh
 
 lint.xml
 file
-
+6
 
 
 
@@ -170,7 +167,7 @@ hzh
 
 proguard-project.txt
 file
-
+6
 
 
 
@@ -204,7 +201,7 @@ hzh
 
 AndroidManifest.xml
 file
-
+6
 
 
 
@@ -253,7 +250,7 @@ dir
 
 ic_launcher-web.png
 file
-
+6
 
 
 

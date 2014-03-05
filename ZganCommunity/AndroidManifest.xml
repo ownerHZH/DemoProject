@@ -165,6 +165,10 @@
             android:name="com.zgan.community.activity.RecruitDetailActivity"
             android:label="@string/title_activity_recruit_detail" >
         </activity>
+        <activity
+            android:name="com.zgan.community.activity.About_Detail_Activity"
+            android:label="@string/title_activity_about__detail_" >
+        </activity>
     </application>
 
 </manifest>

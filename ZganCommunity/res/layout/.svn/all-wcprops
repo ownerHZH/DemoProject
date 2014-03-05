@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout
+/svn/ZganCommunity/!svn/ver/188/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout
 END
 activity_community_service.xml
 K 25
@@ -91,7 +91,7 @@ activity_main.xml
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svn/ZganCommunity/!svn/ver/113/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_main.xml
+/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_main.xml
 END
 activity_policital__zheng_wu.xml
 K 25
@@ -284,6 +284,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 116
 /svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/user_login.xml
+END
+activity_about__detail_.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_about__detail_.xml
 END
 activity_community_pay.xml
 K 25

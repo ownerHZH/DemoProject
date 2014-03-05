@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 109
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi
+/svn/ZganCommunity/!svn/ver/188/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi
 END
 bg_up.png
 K 25
@@ -75,11 +75,29 @@ svn:wc:ra_dav:version-url
 V 116
 /svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/no.png
 END
+main2.9.png
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/main2.9.png
+END
+main4.9.png
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/main4.9.png
+END
 ban1.png
 K 25
 svn:wc:ra_dav:version-url
 V 118
 /svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/ban1.png
+END
+main6.9.png
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/main6.9.png
 END
 ban2.png
 K 25
@@ -92,6 +110,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 120
 /svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/expend.png
+END
+main8.9.png
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/main8.9.png
 END
 regin_logo.png
 K 25
@@ -188,12 +212,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 122
 /svn/ZganCommunity/!svn/ver/188/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/phoneico.png
-END
-main1.png
-K 25
-svn:wc:ra_dav:version-url
-V 119
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/main1.png
 END
 main2.png
 K 25
@@ -507,6 +525,24 @@ svn:wc:ra_dav:version-url
 V 122
 /svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/login_bg.jpg
 END
+main1.9.png
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/main1.9.png
+END
+main3.9.png
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/main3.9.png
+END
+main5.9.png
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/main5.9.png
+END
 password_bg.9.png
 K 25
 svn:wc:ra_dav:version-url
@@ -524,6 +560,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 116
 /svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/r1.png
+END
+main7.9.png
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/main7.9.png
 END
 r2.png
 K 25

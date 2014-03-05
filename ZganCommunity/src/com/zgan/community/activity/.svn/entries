@@ -1,7 +1,7 @@
 9
 
 dir
-187
+188
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity
 https://192.168.1.88/svn/ZganCommunity
 
@@ -402,14 +402,14 @@ hzh
 
 CommunitySetting.java
 file
+189
 
 
 
-
-2014-02-26T04:31:18.923915Z
-bcf3ca040e847e7c4bcf1b558a7defc1
-2014-03-03T01:23:28.127253Z
-186
+2014-03-05T02:39:25.784705Z
+5a70aa2ec4ee0fa8e4be6376fee5fc3b
+2014-03-05T03:41:16.972163Z
+189
 hzh
 
 
@@ -432,7 +432,7 @@ hzh
 
 
 
-5916
+6002
 
 CommunityServiceActivity.java
 file
@@ -536,40 +536,6 @@ hzh
 
 1859
 
-CommunityPayHistoryListActivity.java
-file
-
-
-
-
-2014-03-03T05:58:03.958538Z
-357304bb89cb5de59a23a0a86ac29e72
-2014-03-03T06:20:54.449170Z
-187
-hzh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3823
-
 AQWSAppActivity.java
 file
 
@@ -603,6 +569,40 @@ hzh
 
 
 3933
+
+CommunityPayHistoryListActivity.java
+file
+
+
+
+
+2014-03-03T05:58:03.958538Z
+357304bb89cb5de59a23a0a86ac29e72
+2014-03-03T06:20:54.449170Z
+187
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3823
 
 Life_Pepsi_son.java
 file
@@ -739,6 +739,40 @@ hzh
 
 
 2799
+
+About_Detail_Activity.java
+file
+189
+
+
+
+2014-03-05T02:41:55.172249Z
+9b2c490bac8096a0c462befff3a632e0
+2014-03-05T03:41:16.972163Z
+189
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1206
 
 GuideActivity.java
 file
@@ -944,40 +978,6 @@ hzh
 
 14992
 
-LoginActivity.java
-file
-
-
-
-
-2014-02-28T06:28:43.673870Z
-113aa17efd1691eec7b8e9f037c954c5
-2014-03-03T01:23:28.127253Z
-186
-hzh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5046
-
 CommunityPolicitalDetailActivity.java
 file
 
@@ -1011,6 +1011,40 @@ hzh
 
 
 6169
+
+LoginActivity.java
+file
+
+
+
+
+2014-02-28T06:28:43.673870Z
+113aa17efd1691eec7b8e9f037c954c5
+2014-03-03T01:23:28.127253Z
+186
+hzh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5046
 
 Policital_ZhengWU.java
 file
