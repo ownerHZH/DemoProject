@@ -168,11 +168,4 @@
                 </EditText>
    </LinearLayout>
    </ScrollView>
-   
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:background="@drawable/bottom_bar_bg" >
-        
-    </LinearLayout>
 </LinearLayout>

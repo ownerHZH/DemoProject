@@ -2,6 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3E7DE5"
     android:gravity="top"
     android:orientation="vertical"
     tools:context=".CommunitySetting" >
@@ -219,6 +220,7 @@
                     android:id="@+id/TextView05"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="xxxxxxxxx"
                     android:textColor="#fff" />
 
@@ -240,6 +242,7 @@
                     android:id="@+id/TextView04"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:hint="@string/activity_community_setting_hint"
                     android:text="@string/activity_community_setting_push_message"
                     android:textColor="#fff" />
@@ -262,7 +265,7 @@
 
                 <TextView
                     android:id="@+id/TextView02"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/activity_community_setting_hint"
@@ -273,7 +276,6 @@
                     android:id="@+id/imageView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:src="@drawable/right_btn" />
 
             </LinearLayout>
@@ -288,7 +290,7 @@
 
                 <TextView
                     android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/activity_community_setting_hint"
@@ -299,7 +301,6 @@
                     android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:src="@drawable/right_btn" />
 
             </LinearLayout>

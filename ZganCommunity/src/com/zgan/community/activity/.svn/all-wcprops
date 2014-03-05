@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity
+/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity
 END
 CommuntityUserInfoActivity.java
 K 25
@@ -93,17 +93,17 @@ svn:wc:ra_dav:version-url
 V 152
 /svn/ZganCommunity/!svn/ver/183/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunitySettingFeedBack.java
 END
-AQWSAppActivity.java
-K 25
-svn:wc:ra_dav:version-url
-V 143
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/AQWSAppActivity.java
-END
 CommunityPayHistoryListActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 159
 /svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityPayHistoryListActivity.java
+END
+AQWSAppActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/AQWSAppActivity.java
 END
 Life_Pepsi_son.java
 K 25
@@ -171,17 +171,17 @@ svn:wc:ra_dav:version-url
 V 160
 /svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityNewNotificationActivity.java
 END
-LoginActivity.java
-K 25
-svn:wc:ra_dav:version-url
-V 141
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/LoginActivity.java
-END
 CommunityPolicitalDetailActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 160
 /svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityPolicitalDetailActivity.java
+END
+LoginActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/LoginActivity.java
 END
 Policital_ZhengWU.java
 K 25

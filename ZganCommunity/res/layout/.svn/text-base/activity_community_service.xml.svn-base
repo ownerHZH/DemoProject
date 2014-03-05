@@ -26,71 +26,75 @@
             android:gravity="center"
             android:orientation="vertical" >
 
-            <LinearLayout
-                android:layout_width="match_parent"
+           <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:gravity="center" >
-
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
                 <Button
                     android:id="@+id/buttonPipe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/jdwx" />
 
                 <Button
                     android:id="@+id/buttonUnlock"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/sdwx" />
 
                 <Button
                     android:id="@+id/buttonPlumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/jzbj" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
+          <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:gravity="center" >
-
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
                 <Button
                     android:id="@+id/buttonPCrepair"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
+                   android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/bjgs" />
 
                 <Button
                     android:id="@+id/buttonRecycle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/ysbm" />
 
                 <Button
                     android:id="@+id/buttonPet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/eshh" />
             </LinearLayout>
 
@@ -105,26 +109,30 @@
                     android:id="@+id/buttonMove"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/ksfw" />
 
                 <Button
                     android:id="@+id/buttonMatron"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/gdst" />
 
                 <Button
                     android:id="@+id/buttonCleaning"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/xyfw" />
             </LinearLayout>
         </LinearLayout>

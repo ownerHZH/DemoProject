@@ -5,11 +5,12 @@
     android:background="@drawable/p_setting_bg"
     android:orientation="vertical"
     tools:context=".MainPageActivity" >
-    
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:background="#3E8DE5" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,115 +56,121 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:src="@drawable/gallery_pic" />
-
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/communityService"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" >
-
-                    <Button
-                        android:id="@+id/communityService"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:background="@drawable/main1" />
-
-                    <Button
-                        android:id="@+id/communityTrade"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/main4" />
-
-                    <Button
-                        android:id="@+id/communityNotification"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/main2" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:gravity="center"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" >
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/main1" />
 
-                    <Button
-                        android:id="@+id/communityPolicital"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:background="@drawable/main5" />
-
-                    <Button
-                        android:id="@+id/communityLivelihood"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/main7" />
-
-                    <Button
-                        android:id="@+id/communityRecruit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:background="@drawable/main6" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/communityTrade"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|center"
-                    android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" >
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/main4" />
 
-                    <Button
-                        android:id="@+id/communityPay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/main3" />
+                <Button
+                    android:id="@+id/communityNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/main2" />
+            </LinearLayout>
 
-                        <Button
-                            android:id="@+id/communitySettings"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:background="@drawable/main9" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
 
-                        <Button
-                            android:id="@+id/communityHouseShelter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/main8" />
+                <Button
+                    android:id="@+id/communityPolicital"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/main5" />
 
-                </LinearLayout>
+                <Button
+                    android:id="@+id/communityLivelihood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/main7" />
+
+                <Button
+                    android:id="@+id/communityRecruit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/main6" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/communityPay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/main3" />
+
+                <Button
+                    android:id="@+id/communitySettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/main9" />
+
+                <Button
+                    android:id="@+id/communityHouseShelter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/main8" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-    
 
 </LinearLayout>

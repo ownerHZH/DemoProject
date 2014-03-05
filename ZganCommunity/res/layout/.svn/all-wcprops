@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svn/ZganCommunity/!svn/ver/188/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout
+/svn/ZganCommunity/!svn/ver/192/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout
 END
 activity_community_service.xml
 K 25
 svn:wc:ra_dav:version-url
 V 132
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_service.xml
+/svn/ZganCommunity/!svn/ver/192/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_service.xml
 END
 line_recinfo_son_details.xml
 K 25
@@ -61,13 +61,13 @@ activity_main_page.xml
 K 25
 svn:wc:ra_dav:version-url
 V 124
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_main_page.xml
+/svn/ZganCommunity/!svn/ver/190/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_main_page.xml
 END
 activity_cheap.xml
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svn/ZganCommunity/!svn/ver/113/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_cheap.xml
+/svn/ZganCommunity/!svn/ver/192/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_cheap.xml
 END
 list_recinfo_item.xml
 K 25
@@ -103,13 +103,13 @@ top_title.xml
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/top_title.xml
+/svn/ZganCommunity/!svn/ver/192/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/top_title.xml
 END
 line_life_pepsi_son.xml
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/line_life_pepsi_son.xml
+/svn/ZganCommunity/!svn/ver/192/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/line_life_pepsi_son.xml
 END
 activity_community_notification.xml
 K 25
@@ -117,17 +117,17 @@ svn:wc:ra_dav:version-url
 V 137
 /svn/ZganCommunity/!svn/ver/176/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_notification.xml
 END
-line_recinfo_son.xml
-K 25
-svn:wc:ra_dav:version-url
-V 122
-/svn/ZganCommunity/!svn/ver/188/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/line_recinfo_son.xml
-END
 activity_recruit_detail.xml
 K 25
 svn:wc:ra_dav:version-url
 V 129
 /svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_recruit_detail.xml
+END
+line_recinfo_son.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/ZganCommunity/!svn/ver/188/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/line_recinfo_son.xml
 END
 down_notification.xml
 K 25
@@ -135,11 +135,11 @@ svn:wc:ra_dav:version-url
 V 123
 /svn/ZganCommunity/!svn/ver/152/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/down_notification.xml
 END
-activity_community_contact_property.xml
+activity_community_trade.xml
 K 25
 svn:wc:ra_dav:version-url
-V 141
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_contact_property.xml
+V 130
+/svn/ZganCommunity/!svn/ver/192/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_trade.xml
 END
 default_list.xml
 K 25
@@ -147,17 +147,17 @@ svn:wc:ra_dav:version-url
 V 118
 /svn/ZganCommunity/!svn/ver/140/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/default_list.xml
 END
-activity_community_trade.xml
+activity_community_contact_property.xml
 K 25
 svn:wc:ra_dav:version-url
-V 130
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_trade.xml
+V 141
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_contact_property.xml
 END
-activity_community_new_pay.xml
+activity_community_policital_detail.xml
 K 25
 svn:wc:ra_dav:version-url
-V 132
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_new_pay.xml
+V 141
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_policital_detail.xml
 END
 community_service_item.xml
 K 25
@@ -165,11 +165,11 @@ svn:wc:ra_dav:version-url
 V 128
 /svn/ZganCommunity/!svn/ver/141/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/community_service_item.xml
 END
-activity_community_policital_detail.xml
+activity_community_new_pay.xml
 K 25
 svn:wc:ra_dav:version-url
-V 141
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_policital_detail.xml
+V 132
+/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/activity_community_new_pay.xml
 END
 line_map.xml
 K 25
@@ -193,7 +193,7 @@ title_commit_layout.xml
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/title_commit_layout.xml
+/svn/ZganCommunity/!svn/ver/192/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/title_commit_layout.xml
 END
 activity_community_modify_sex.xml
 K 25
@@ -217,7 +217,7 @@ line_recinfo.xml
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/line_recinfo.xml
+/svn/ZganCommunity/!svn/ver/192/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/line_recinfo.xml
 END
 activity_community_policital_news.xml
 K 25
@@ -253,7 +253,7 @@ maintabs.xml
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/maintabs.xml
+/svn/ZganCommunity/!svn/ver/192/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/layout/maintabs.xml
 END
 activity_community_setting_feed_back.xml
 K 25
