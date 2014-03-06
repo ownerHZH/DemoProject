@@ -13,6 +13,7 @@ import com.zgan.community.data.News;
 import com.zgan.community.data.Pay;
 import com.zgan.community.data.Recinfo;
 import com.zgan.community.data.ServiceInfo;
+import com.zgan.community.data.User;
 
 public class AppConstants {
 	public static int REQUEST_TIMEOUT = 20;
@@ -41,5 +42,7 @@ public class AppConstants {
 	public static Type type_recinfoList = new TypeToken<List<Recinfo>>() {
 	}.getType();
 	public static Type type_payList = new TypeToken<List<Pay>>() {
+	}.getType();
+	public static Type type_userList = new TypeToken<List<User>>() {
 	}.getType();
 }

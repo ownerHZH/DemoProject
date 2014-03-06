@@ -125,7 +125,7 @@ public class CommunityModifyPasswordActivity extends MainAcitivity {
 				Log.i("new_password", "" + new_password);
 
 				HttpGet get = new HttpGet(
-						AppConstants.HttpHostAdress+"ZganSetPwd.aspx?did="
+						AppConstants.HttpHostAdress+"zgansetpwd.aspx?did="
 								+ ZganCommunityStaticData.User_Number + "&pwd="
 								+ old_password + "&Npwd=" + new_password);
 				// http://community1.zgantech.com/ZganSetPwd.aspx?did=15923258890&pwd=1234&Npwd=12345
