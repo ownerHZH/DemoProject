@@ -245,7 +245,7 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 		int count = tabWidget.getChildCount();// TabHost中有一个getTabWidget()的方法
 		for (int i = 0; i < count; i++) {
 			View view = tabWidget.getChildTabViewAt(i);
-			view.getLayoutParams().height = 78; // tabWidget.getChildAt(i)
+			//view.getLayoutParams().height = 60; // tabWidget.getChildAt(i)
 			// view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 			/*final TextView tv = (TextView) view
 					.findViewById(android.R.id.title);

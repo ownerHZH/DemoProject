@@ -38,9 +38,6 @@ public class CommunitySetting extends MainAcitivity {
 	private LinearLayout feedback;//意见反馈
 	//private Button messageSwitch;
 	private Button passwordChange;//密码修改
-	private RadioGroup sexRadioGroup;//性别sexRadioGroup
-	private EditText birthText;//生日显示框
-	private Button birthChange;//生日修改按钮
 	private EditText nicknameText;//昵称显示框
 	private Button nicknameChange;//昵称修改按钮
 	private TextView balcony;//楼座号
@@ -65,9 +62,6 @@ public class CommunitySetting extends MainAcitivity {
 		about=(LinearLayout) findViewById(R.id.about);//关于
 		feedback=(LinearLayout) findViewById(R.id.feedback);//意见反馈
 		passwordChange=(Button) findViewById(R.id.passwordChange);//密码修改
-		sexRadioGroup=(RadioGroup) findViewById(R.id.sexRadioGroup);//性别sexRadioGroup
-		birthText=(EditText) findViewById(R.id.birthText);//生日显示框
-		birthChange=(Button) findViewById(R.id.birthChange);//生日修改按钮
 		nicknameText=(EditText) findViewById(R.id.nicknameText);//昵称显示框
 		nicknameChange=(Button) findViewById(R.id.nicknameChange);//昵称修改按钮
 		balcony=(TextView) findViewById(R.id.balcony);//楼座号
@@ -79,7 +73,6 @@ public class CommunitySetting extends MainAcitivity {
 		feedback.setOnClickListener(l);
 		about.setOnClickListener(l);
 		nicknameChange.setOnClickListener(l);
-		birthChange.setOnClickListener(l);
 		
 		messageSwitch.SetOnChangedListener(new OnChangedListener() {
 			
@@ -121,10 +114,6 @@ public class CommunitySetting extends MainAcitivity {
 				buttonToggleAction(nicknameChange,nicknameText);
 				
 				break;
-			case R.id.birthChange:
-				//生日
-				showDialog(DATE_PICKER_ID);
-				break;
 
 			default:
 				break;
@@ -157,7 +146,7 @@ public class CommunitySetting extends MainAcitivity {
      * 内部匿名类，实现DatePickerDialog.OnDateSetListener接口，重写onDateSet()方法 
      * 当弹出DatePickerDialog并设置完Date以后，左下方有个“Set”按钮，表示确定设置。当这个 
      * 按钮被点击的时候，就执行这里的onDateSet()方法。 
-     */  
+     *//*  
     DatePickerDialog.OnDateSetListener onDateSetListener = new DatePickerDialog.OnDateSetListener() {  
         public void onDateSet(DatePicker view, int year, int monthOfYear,  
                 int dayOfMonth) {  
@@ -165,11 +154,11 @@ public class CommunitySetting extends MainAcitivity {
         }  
     };  
       
-    /** 
+    *//** 
      * 复写Activity的onCreateDialog()方法，当调用showDialog()方法的时候，就执行这里 
      * 显示DatePickerDialog。并且它的默认date有这里的参数指定，为2014-Fre-17. 
      * 月份的1表示二月，0表示一月。 
-     */  
+     *//*  
     protected Dialog onCreateDialog(int id) {  
     	Calendar calendar = Calendar.getInstance();  
         
@@ -184,7 +173,7 @@ public class CommunitySetting extends MainAcitivity {
         }  
           
         return dialog;  
-    } 
+    } */
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

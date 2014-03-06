@@ -3,15 +3,11 @@ package com.zgan.community.activity;
 import java.util.List;
 
 import com.zgan.community.R;
-import com.zgan.community.R.layout;
-import com.zgan.community.R.menu;
-import com.zgan.community.activity.CommunityNotificationActivity.ClickListener;
 import com.zgan.community.adapter.CommunityNewsAdapter;
 import com.zgan.community.data.News;
 import com.zgan.community.tools.MainAcitivity;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;

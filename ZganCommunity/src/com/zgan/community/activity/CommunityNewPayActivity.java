@@ -49,7 +49,7 @@ public class CommunityNewPayActivity extends MainAcitivity {
 	
 	private DatePicker datePicker;
 	private ListView listViewDetail;
-	private Button morePayButton;
+	//private Button morePayButton;
 	
 	private CommunityPayAdapter communityPayAdapter;
 	
@@ -82,13 +82,13 @@ public class CommunityNewPayActivity extends MainAcitivity {
 		listViewDetail=(ListView) findViewById(R.id.listViewDetail);
 		LayoutInflater inflater=LayoutInflater.from(con);
 		View datePickerLayout=inflater.inflate(R.layout.date_picker_signal_layout,null);
-		View morePayButtonLayout=inflater.inflate(R.layout.button_signal_layout,null);
+		//View morePayButtonLayout=inflater.inflate(R.layout.button_signal_layout,null);
 		datePicker=(DatePicker)datePickerLayout.findViewById(R.id.datePicker1);
-		morePayButton=(Button)morePayButtonLayout.findViewById(R.id.buttonMorePay);
+		//morePayButton=(Button)morePayButtonLayout.findViewById(R.id.buttonMorePay);
 		listViewDetail.addHeaderView(datePickerLayout);
-		listViewDetail.addFooterView(morePayButtonLayout);
+		//listViewDetail.addFooterView(morePayButtonLayout);
 		datePickerInit();//DatePicker¿Ø¼þ³õÊ¼»¯
-		morePayButton.setOnClickListener(new OnClickListener() {
+		/*morePayButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -96,7 +96,7 @@ public class CommunityNewPayActivity extends MainAcitivity {
 				Intent intent=new Intent(con,CommunityPayHistoryListActivity.class);
 				startActivity(intent);
 			}
-		});
+		});*/
 		
 		initData();
 
@@ -195,6 +195,7 @@ public class CommunityNewPayActivity extends MainAcitivity {
      */
     private void hideDayFromDatePicker(DatePicker dp)
     {
+    	((ViewGroup) dp.getChildAt(0)).getChildAt(2).setVisibility(View.GONE);
     	if (dp != null) {  
             Class c=dp.getClass();  
             Field f;  
@@ -209,7 +210,8 @@ public class CommunityNewPayActivity extends MainAcitivity {
                         f.setAccessible(true );    
                         LinearLayout l= (LinearLayout)f.get(dp);     
                         l.setVisibility(View.GONE);  
-                    }  
+                    }
+                                          
             } catch (SecurityException e) {  
                 // TODO Auto-generated catch block  
                 e.printStackTrace();  
