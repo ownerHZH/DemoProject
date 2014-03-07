@@ -15,7 +15,7 @@
         android:gravity="center_vertical|center" >
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/radio1Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/textView2"
+        android:layout_toRightOf="@+id/radio1Text"
         android:text="@string/app_var"
         android:textSize="20sp" />
 
