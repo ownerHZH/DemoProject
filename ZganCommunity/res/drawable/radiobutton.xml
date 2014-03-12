@@ -3,9 +3,9 @@
     <item 
           android:state_enabled="true"
           android:state_checked="true"
-          android:drawable="@drawable/u_selected" /> 
+          android:drawable="@drawable/sex_focus" /> 
     <item              
           android:state_enabled="true"    
           android:state_checked="false"
-          android:drawable="@drawable/u_unselected" /> 
+          android:drawable="@drawable/sex_nofocus" /> 
 </selector>

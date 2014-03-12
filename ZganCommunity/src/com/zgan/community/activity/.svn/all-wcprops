@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity
 END
 CommuntityUserInfoActivity.java
 K 25
@@ -13,7 +13,7 @@ Reinfo_son.java
 K 25
 svn:wc:ra_dav:version-url
 V 138
-/svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/Reinfo_son.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/Reinfo_son.java
 END
 MapActivitiy.java
 K 25
@@ -33,12 +33,6 @@ svn:wc:ra_dav:version-url
 V 146
 /svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/Reinfo_son_details.java
 END
-CommunityNotificationActivity.java
-K 25
-svn:wc:ra_dav:version-url
-V 157
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityNotificationActivity.java
-END
 Political_BanGong.java
 K 25
 svn:wc:ra_dav:version-url
@@ -49,13 +43,7 @@ RecruitDetailActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 149
-/svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/RecruitDetailActivity.java
-END
-CommunityServiceListActivity.java
-K 25
-svn:wc:ra_dav:version-url
-V 156
-/svn/ZganCommunity/!svn/ver/170/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityServiceListActivity.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/RecruitDetailActivity.java
 END
 Life_Pepsi.java
 K 25
@@ -73,7 +61,7 @@ CommunitySetting.java
 K 25
 svn:wc:ra_dav:version-url
 V 144
-/svn/ZganCommunity/!svn/ver/189/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunitySetting.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunitySetting.java
 END
 CommunityServiceActivity.java
 K 25
@@ -85,25 +73,25 @@ CommunityNewPayActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 151
-/svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityNewPayActivity.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityNewPayActivity.java
 END
 CommunitySettingFeedBack.java
 K 25
 svn:wc:ra_dav:version-url
 V 152
-/svn/ZganCommunity/!svn/ver/183/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunitySettingFeedBack.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunitySettingFeedBack.java
+END
+AQWSAppActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/ZganCommunity/!svn/ver/194/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/AQWSAppActivity.java
 END
 CommunityPayHistoryListActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 159
 /svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityPayHistoryListActivity.java
-END
-AQWSAppActivity.java
-K 25
-svn:wc:ra_dav:version-url
-V 143
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/AQWSAppActivity.java
 END
 Life_Pepsi_son.java
 K 25
@@ -121,13 +109,13 @@ CommunityPolicitalActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 154
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityPolicitalActivity.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityPolicitalActivity.java
 END
 CommunityContactProperty.java
 K 25
 svn:wc:ra_dav:version-url
 V 152
-/svn/ZganCommunity/!svn/ver/183/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityContactProperty.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityContactProperty.java
 END
 About_Detail_Activity.java
 K 25
@@ -139,7 +127,7 @@ GuideActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 141
-/svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/GuideActivity.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/GuideActivity.java
 END
 CommunityPayActivity.java
 K 25
@@ -163,25 +151,25 @@ CommunityMoreNewsActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 153
-/svn/ZganCommunity/!svn/ver/157/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityMoreNewsActivity.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityMoreNewsActivity.java
 END
 CommunityNewNotificationActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 160
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityNewNotificationActivity.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityNewNotificationActivity.java
+END
+LoginActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/LoginActivity.java
 END
 CommunityPolicitalDetailActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 160
 /svn/ZganCommunity/!svn/ver/187/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityPolicitalDetailActivity.java
-END
-LoginActivity.java
-K 25
-svn:wc:ra_dav:version-url
-V 141
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/LoginActivity.java
 END
 Policital_ZhengWU.java
 K 25
@@ -193,7 +181,7 @@ MainTabActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 143
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/MainTabActivity.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/MainTabActivity.java
 END
 Neighborhood_Circle.java
 K 25
@@ -211,11 +199,11 @@ CommunityModifyPasswordActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 159
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityModifyPasswordActivity.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/CommunityModifyPasswordActivity.java
 END
 MainPageActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 144
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/MainPageActivity.java
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/src/com/zgan/community/activity/MainPageActivity.java
 END

@@ -1,15 +1,15 @@
 9
 
 dir
-192
+193
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity
 https://192.168.1.88/svn/ZganCommunity
 
 
 
-2014-03-05T07:06:35.408841Z
-192
-fr
+2014-03-10T02:26:47.820334Z
+193
+hzh
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -171,10 +171,10 @@ file
 
 
 
-2014-03-05T02:39:36.115295Z
-39b487192b6d31cb4bffc1101e96e63c
-2014-03-05T03:41:16.972163Z
-189
+2014-03-07T04:50:25.442809Z
+f0373108a36b95bc83ba6f387d87d5a7
+2014-03-10T02:26:47.820334Z
+193
 hzh
 
 
@@ -197,7 +197,7 @@ hzh
 
 
 
-8847
+8930
 
 src
 dir

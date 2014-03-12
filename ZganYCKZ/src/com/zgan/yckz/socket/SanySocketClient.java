@@ -470,6 +470,12 @@ public class SanySocketClient implements Serializable {
 			//System.out.println("NewSocketInfo"+"   Message msg = new Message()");	
 			while(clientSocket != null && clientSocket.isConnected())
 			{
+				try {
+					Thread.sleep(50);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				long nowTime = System.currentTimeMillis(); 
 				if(nowTime - sendTime > timeOut && getServerID()>1){
 					if(!SendHeartInfo()) 

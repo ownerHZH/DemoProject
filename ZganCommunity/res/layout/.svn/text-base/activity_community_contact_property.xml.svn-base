@@ -51,7 +51,7 @@
                         android:textColor="#000" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/radio0Text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="报事报修" />
@@ -74,7 +74,7 @@
                         android:textColor="#000" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/radio1Text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="我需要物业上门，请与我联系" />
@@ -97,7 +97,7 @@
                         android:textColor="#000" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/radio2Text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="我需要室内管道维修" />
@@ -120,7 +120,7 @@
                         android:textColor="#000" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/radio3Text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="我家出现漏水漏电" />
@@ -143,7 +143,7 @@
                         android:textColor="#000" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/radio4Text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="以上没有可选项，我的问题如下：" />
@@ -159,6 +159,7 @@
                     android:layout_height="200dp"
                     android:background="@drawable/advice_edittext"
                     android:ems="10"
+                    android:enabled="false"
                     android:gravity="top|center_vertical"
                     android:hint="输入文本..."
                     android:inputType="textMultiLine"
@@ -168,11 +169,4 @@
                 </EditText>
    </LinearLayout>
    </ScrollView>
-   
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:background="@drawable/bottom_bar_bg" >
-        
-    </LinearLayout>
 </LinearLayout>

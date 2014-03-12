@@ -159,6 +159,7 @@
                     android:layout_height="200dp"
                     android:background="@drawable/advice_edittext"
                     android:ems="10"
+                    android:enabled="false"
                     android:gravity="top|center_vertical"
                     android:hint="输入文本..."
                     android:inputType="textMultiLine"

@@ -1,30 +1,35 @@
 package com.zgan.community.activity;
 
-import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.zgan.community.R;
-import com.zgan.community.R.layout;
-import com.zgan.community.R.menu;
-import com.zgan.community.activity.CommunityPolicitalActivity.ButtonClickListener;
+import com.zgan.community.data.News;
+import com.zgan.community.data.User;
+import com.zgan.community.jsontool.AppConstants;
+import com.zgan.community.jsontool.DialogUtil;
+import com.zgan.community.jsontool.GsonUtil;
+import com.zgan.community.jsontool.HttpAndroidTask;
+import com.zgan.community.jsontool.HttpClientService;
+import com.zgan.community.jsontool.HttpPreExecuteHandler;
+import com.zgan.community.jsontool.HttpResponseHandler;
+import com.zgan.community.jsontool.JsonEntity;
 import com.zgan.community.tools.MainAcitivity;
+import com.zgan.community.tools.MyProgressDialog;
 import com.zgan.community.tools.SlipButton;
+import com.zgan.community.tools.ZganCommunityStaticData;
 import com.zgan.community.tools.SlipButton.OnChangedListener;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.app.DatePickerDialog;
-import android.app.Dialog;
+import android.os.Handler;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,9 +43,6 @@ public class CommunitySetting extends MainAcitivity {
 	private LinearLayout feedback;//意见反馈
 	//private Button messageSwitch;
 	private Button passwordChange;//密码修改
-	private RadioGroup sexRadioGroup;//性别sexRadioGroup
-	private EditText birthText;//生日显示框
-	private Button birthChange;//生日修改按钮
 	private EditText nicknameText;//昵称显示框
 	private Button nicknameChange;//昵称修改按钮
 	private TextView balcony;//楼座号
@@ -51,6 +53,10 @@ public class CommunitySetting extends MainAcitivity {
 	
 	//创建一个常量，标识DatePickerDialog  
     private static final int DATE_PICKER_ID = 3;
+    private MyProgressDialog pdialog;
+    
+    private List<User> userInfo=new ArrayList<User>();
+    private Handler handler;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -65,21 +71,19 @@ public class CommunitySetting extends MainAcitivity {
 		about=(LinearLayout) findViewById(R.id.about);//关于
 		feedback=(LinearLayout) findViewById(R.id.feedback);//意见反馈
 		passwordChange=(Button) findViewById(R.id.passwordChange);//密码修改
-		sexRadioGroup=(RadioGroup) findViewById(R.id.sexRadioGroup);//性别sexRadioGroup
-		birthText=(EditText) findViewById(R.id.birthText);//生日显示框
-		birthChange=(Button) findViewById(R.id.birthChange);//生日修改按钮
 		nicknameText=(EditText) findViewById(R.id.nicknameText);//昵称显示框
 		nicknameChange=(Button) findViewById(R.id.nicknameChange);//昵称修改按钮
 		balcony=(TextView) findViewById(R.id.balcony);//楼座号
 		phone=(TextView) findViewById(R.id.phone);//手机号码
 		messageSwitch=(SlipButton) findViewById(R.id.slipbutton);
+		
+		handler=new Handler();
 				
 		back.setOnClickListener(l);
 		passwordChange.setOnClickListener(l);
 		feedback.setOnClickListener(l);
 		about.setOnClickListener(l);
 		nicknameChange.setOnClickListener(l);
-		birthChange.setOnClickListener(l);
 		
 		messageSwitch.SetOnChangedListener(new OnChangedListener() {
 			
@@ -88,7 +92,7 @@ public class CommunitySetting extends MainAcitivity {
 				Toast.makeText(con, ""+CheckState, Toast.LENGTH_SHORT).show();
 			}
 		});
-		
+		getUserInfo();//获取业主信息
 	}
 	
 	
@@ -121,10 +125,6 @@ public class CommunitySetting extends MainAcitivity {
 				buttonToggleAction(nicknameChange,nicknameText);
 				
 				break;
-			case R.id.birthChange:
-				//生日
-				showDialog(DATE_PICKER_ID);
-				break;
 
 			default:
 				break;
@@ -150,41 +150,121 @@ public class CommunitySetting extends MainAcitivity {
 		{
 			editText.setEnabled(false);
 			editText.clearFocus();
+			String name=editText.getText().toString().trim();
+			if(name!=null&&!name.equals(""))
+			{
+				//更新昵称
+				modifyNickName(editText.getText().toString());
+			}else
+			{
+				Toast.makeText(con, "昵称不能为空！", Toast.LENGTH_SHORT).show();
+			}
+			
 		}
 	}
 	
-	/** 
-     * 内部匿名类，实现DatePickerDialog.OnDateSetListener接口，重写onDateSet()方法 
-     * 当弹出DatePickerDialog并设置完Date以后，左下方有个“Set”按钮，表示确定设置。当这个 
-     * 按钮被点击的时候，就执行这里的onDateSet()方法。 
-     */  
-    DatePickerDialog.OnDateSetListener onDateSetListener = new DatePickerDialog.OnDateSetListener() {  
-        public void onDateSet(DatePicker view, int year, int monthOfYear,  
-                int dayOfMonth) {  
-            birthText.setText(year+"-"+(monthOfYear+1)+"-"+dayOfMonth);
-        }  
-    };  
-      
-    /** 
-     * 复写Activity的onCreateDialog()方法，当调用showDialog()方法的时候，就执行这里 
-     * 显示DatePickerDialog。并且它的默认date有这里的参数指定，为2014-Fre-17. 
-     * 月份的1表示二月，0表示一月。 
-     */  
-    protected Dialog onCreateDialog(int id) {  
-    	Calendar calendar = Calendar.getInstance();  
-        
-        Dialog dialog = null;
-        switch(id){  
-        case DATE_PICKER_ID:  
-        dialog = new DatePickerDialog(this, 
-        		onDateSetListener, 
-                calendar.get(Calendar.YEAR), 
-                calendar.get(Calendar.MONTH), 
-                calendar.get(Calendar.DAY_OF_MONTH));   
-        }  
-          
-        return dialog;  
-    } 
+	//修改业主昵称
+	private void modifyNickName(final String newName){
+		HttpClientService svr = new HttpClientService(
+				AppConstants.HttpHostAdress+"zganuserinfo.aspx");
+		//参数
+		svr.addParameter("did",ZganCommunityStaticData.User_Number);
+		svr.addParameter("method","nickname");
+		svr.addParameter("name",newName);
+				
+		HttpAndroidTask task = new HttpAndroidTask(con, svr,
+				new HttpResponseHandler() {
+					// 响应事件
+					@SuppressWarnings("unchecked")
+					public void onResponse(Object obj) {
+						pdialog.stop();
+						JsonEntity jsonEntity = GsonUtil.parseObj2JsonEntity(
+								obj,con,false);
+						if (jsonEntity.getStatus() == 1) {
+							Toast.makeText(con, "业主昵称更新失败！", Toast.LENGTH_SHORT).show();
+						} else if (jsonEntity.getStatus() == 0) {							
+							handler.post(updateUIRunnable(newName));																							
+						}														
+					}										
+				}, new HttpPreExecuteHandler() {
+					public void onPreExecute(Context context) {
+						pdialog = new MyProgressDialog(context);
+						DialogUtil.setAttr4progressDialog(pdialog);
+					}
+				});
+		task.execute(new String[] {});	
+	}
+	
+	// 获取业主信息
+	private void getUserInfo() {
+		HttpClientService svr = new HttpClientService(
+				AppConstants.HttpHostAdress+"zganuserinfo.aspx");
+		//参数
+		svr.addParameter("did",ZganCommunityStaticData.User_Number);
+				
+		HttpAndroidTask task = new HttpAndroidTask(con, svr,
+				new HttpResponseHandler() {
+					// 响应事件
+					@SuppressWarnings("unchecked")
+					public void onResponse(Object obj) {
+						pdialog.stop();
+						JsonEntity jsonEntity = GsonUtil.parseObj2JsonEntity(
+								obj,con,false);
+						if (jsonEntity.getStatus() == 1) {
+							Toast.makeText(con, "业主信息获取失败！", Toast.LENGTH_SHORT).show();
+						} else if (jsonEntity.getStatus() == 0) {
+							userInfo=(List<User>) GsonUtil.getData(
+										jsonEntity,AppConstants.type_userList);	
+							handler.post(updateUIRunnable(userInfo.get(0)));																							
+						}														
+					}					
+				}, new HttpPreExecuteHandler() {
+					public void onPreExecute(Context context) {
+						pdialog = new MyProgressDialog(context);
+						DialogUtil.setAttr4progressDialog(pdialog);
+					}
+				});
+		task.execute(new String[] {});	
+	}
+	
+	/**
+	 * 更改业主昵称后更新UI Runnable
+	 * @param newName
+	 * @return
+	 */
+	private Runnable updateUIRunnable(final String newName) {
+        Runnable r=new Runnable() {
+			
+			@Override
+			public void run() {
+				nicknameText.setText(newName);
+				Toast.makeText(con, "更新成功！", Toast.LENGTH_SHORT).show();
+			}
+		};
+		
+		return r;
+	}
+	
+	/**
+	 * 获取业主信息后更新UI Runnable
+	 * @param user
+	 * @return
+	 */
+	private Runnable updateUIRunnable(final User user) {
+		Runnable r=new Runnable() {
+			
+			@Override
+			public void run() {
+					if(!user.equals(null))
+					{
+						phone.setText(user.getUserName());
+						nicknameText.setText(user.getNickname());
+						balcony.setText(user.getLocation());
+					}				
+			}
+		};
+		return r;
+	}
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

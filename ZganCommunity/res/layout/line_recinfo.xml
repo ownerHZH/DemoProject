@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/recinfo_bg"
     android:orientation="vertical" >
 
     <include
@@ -13,7 +12,7 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/twolevel_bg_trade" >
+        android:background="@drawable/login_bg" >
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -25,7 +24,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:orientation="horizontal" >
+                android:orientation="horizontal" >               
 
                 <Button
                     android:id="@+id/waiter"
@@ -37,6 +36,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/btn_waiter" />
 
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/gamble"
                     android:layout_width="wrap_content"
@@ -46,6 +51,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/btn_gamble" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/driver"
@@ -57,6 +68,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/btn_driver" />
             </LinearLayout>
+            
+            <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/h" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -74,6 +91,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/btn_cook" />
 
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/courier"
                     android:layout_width="wrap_content"
@@ -83,6 +106,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/btn_courier" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/sales"
@@ -94,6 +123,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/btn_sales" />
             </LinearLayout>
+            
+            <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/h" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -111,6 +146,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/btn_mechanic" />
 
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/customer_service"
                     android:layout_width="wrap_content"
@@ -120,6 +161,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/btn_customer_service" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/assistant"
@@ -131,6 +178,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/btn_assistant" />
             </LinearLayout>
+            
+            <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/h" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -148,6 +201,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/btn_accounting" />
 
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/secretary"
                     android:layout_width="wrap_content"
@@ -157,6 +216,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/btn_secretary" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/other"

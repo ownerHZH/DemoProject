@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3E7DE5"
+    android:background="@drawable/login_bg"
     android:gravity="top"
     android:orientation="vertical"
     tools:context=".CommunitySetting" >
@@ -12,8 +12,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:background="@drawable/p_setting_bg" >
+        android:layout_weight="1" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -139,30 +138,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center_vertical|center|start" >
-
-                <TextView
-                    android:id="@+id/TextView04"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/activity_community_setting_hint"
-                    android:text="@string/activity_community_setting_push_message"
-                    android:textColor="#fff" />
-                
-                <com.zgan.community.tools.SlipButton
-                    android:id="@+id/slipbutton"
-                    android:layout_width="100dip"
-                    android:layout_height="40dip"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp" />
-                
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/feedback"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -212,12 +187,5 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-    
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="25dp"
-        android:background="@drawable/p_setting_bg_bottom" >
-
-    </LinearLayout>
 
 </LinearLayout>

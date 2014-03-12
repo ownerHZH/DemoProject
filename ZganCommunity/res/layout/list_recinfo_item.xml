@@ -23,7 +23,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/right"
+        android:src="@drawable/right_btn"
         android:visibility="gone" />
 
 </LinearLayout>

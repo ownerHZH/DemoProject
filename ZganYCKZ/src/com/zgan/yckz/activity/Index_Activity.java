@@ -434,7 +434,7 @@ public class Index_Activity extends FragmentActivity {
 				break;
 
 			case R.id.more:
-				intent = new Intent(Index_Activity.this, More_Acitivity.class);
+				intent = new Intent(Index_Activity.this, AppActivtiy.class);
 				startActivity(intent);
 				break;
 
@@ -456,7 +456,7 @@ public class Index_Activity extends FragmentActivity {
 
 				break;
 			case R.id.switch_detalis:
-				intent = new Intent(Index_Activity.this, More_Acitivity.class);
+				intent = new Intent(Index_Activity.this, AppActivtiy.class);
 				startActivity(intent);
 				break;
 			}

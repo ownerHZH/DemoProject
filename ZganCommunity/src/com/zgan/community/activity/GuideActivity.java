@@ -27,6 +27,7 @@ import com.zgan.community.jsontool.HttpPreExecuteHandler;
 import com.zgan.community.jsontool.HttpResponseHandler;
 import com.zgan.community.jsontool.JsonEntity;
 import com.zgan.community.tools.MainAcitivity;
+import com.zgan.community.tools.MyProgressDialog;
 import com.zgan.community.tools.ZganCommunityStaticData;
 
 public class GuideActivity extends MainAcitivity {
@@ -36,7 +37,7 @@ public class GuideActivity extends MainAcitivity {
 	ListView listview;
 	Recinfo recinfo;
 	List<Recinfo> list;
-	ProgressDialog dialog;
+	MyProgressDialog dialog;
 	Handler handler;
 	
 	private Context context=GuideActivity.this;
@@ -79,10 +80,8 @@ public class GuideActivity extends MainAcitivity {
 			String button_key = getIntent().getExtras().getString("button_key");
 			top_title.setText(button_key);
 
-			dialog = new ProgressDialog(this);
-			dialog.setTitle("提示");
-			dialog.setMessage("加载中，请稍后");
-			dialog.show();
+			dialog = new MyProgressDialog(this);
+			dialog.start("加载中，请稍后");
 
 			list = new ArrayList<Recinfo>();
 			if (button_key.equals("户籍")) {
@@ -110,7 +109,7 @@ public class GuideActivity extends MainAcitivity {
 			} else if (button_key.equals("兵役")) {
 				getData(13);
 			} else {
-				dialog.dismiss();
+				dialog.stop();
 				Toast.makeText(getApplicationContext(), "暂无招聘信息",
 						Toast.LENGTH_SHORT).show();
 			}
@@ -184,7 +183,7 @@ public class GuideActivity extends MainAcitivity {
 			ReinfoAdapter adapter = new ReinfoAdapter(GuideActivity.this, list);
 
 			listview.setAdapter(adapter);
-			dialog.dismiss();
+			dialog.stop();
 		}
 	};
 

@@ -15,9 +15,12 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.zgan.community.R;
 import com.zgan.community.downtools.DownloadFileService;
+import com.zgan.community.jsontool.AppConstants;
 import com.zgan.community.tools.MainAcitivity;
 
 import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -44,7 +47,9 @@ public class AQWSAppActivity extends MainAcitivity {
 	TextView top_title;
 	//TextView app_name;
 
-	Button app_dow;
+	Button app_dow,yckz_dow;
+	
+	public  Context con=AQWSAppActivity.this;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +59,14 @@ public class AQWSAppActivity extends MainAcitivity {
 
 		back = (Button) findViewById(R.id.back);
 		app_dow = (Button) findViewById(R.id.app_dowland);
+		yckz_dow=(Button) findViewById(R.id.yckz_down);
 
 		top_title = (TextView) findViewById(R.id.title);
 
 		top_title.setText("ฯ๊ว้");
 
 		app_dow.setOnClickListener(listener);
+		yckz_dow.setOnClickListener(listener);
 		back.setOnClickListener(listener);
 	}
 
@@ -74,9 +81,34 @@ public class AQWSAppActivity extends MainAcitivity {
 				break;
 
 			case R.id.app_dowland:
-				startService(new Intent(getApplicationContext(), DownloadFileService.class));
-				app_dow.setEnabled(false);
+				//startService(new Intent(getApplicationContext(), DownloadFileService.class));
+				//app_dow.setEnabled(false);
+				if (isAppInstalled("com.hiibox.houseshelter")) {
+                    Intent remoteIntent = new Intent(Intent.ACTION_MAIN);
+                    remoteIntent.setComponent(new ComponentName("com.hiibox.houseshelter", "com.hiibox.houseshelter.activity.SplashActivity"));
+                    startActivity(remoteIntent);
+                }else
+                {
+                	Intent intent1 = new Intent(Intent.ACTION_VIEW);
+                    intent1.setData(Uri.parse(AppConstants.AppDownLoadAddress1));//AppConstants.AppDownLoadAddress+"APK/ZganCommunity.apk"
+                    startActivity(intent1);
+                }
 			//	checkPrograme("com.hiibox.houseshelter", "");
+				break;
+			case R.id.yckz_down:
+				//startService(new Intent(getApplicationContext(), DownloadFileService.class));
+				//yckz_dow.setEnabled(false);
+				if (isAppInstalled("com.zgan.yckz")) {
+                    Intent remoteIntent = new Intent(Intent.ACTION_MAIN);
+                    remoteIntent.setComponent(new ComponentName("com.zgan.yckz", "com.zgan.yckz.Welcome"));
+                    startActivity(remoteIntent);
+                }else
+                {
+                	Intent intent1 = new Intent(Intent.ACTION_VIEW);
+                    intent1.setData(Uri.parse(AppConstants.AppDownLoadAddress2));//AppConstants.AppDownLoadAddress+"APK/ZganCommunity.apk"
+                    startActivity(intent1);
+                }
+				
 				break;
 			}
 		}
@@ -121,6 +153,25 @@ public class AQWSAppActivity extends MainAcitivity {
 		}
 		return flag;
 	}
+	
+	private boolean isAppInstalled(String packageName) {
+        PackageManager packageManager = getPackageManager();
+                                  
+        List<PackageInfo> mPackageInfo = packageManager.getInstalledPackages(0);
+        boolean flag = false;
+        if (mPackageInfo != null) {
+            String tempName = null;
+            for (int i = 0; i < mPackageInfo.size(); i++) {
+                tempName = mPackageInfo.get(i).packageName;
+                if (tempName != null && tempName.equals(packageName)) {
+                    Log.i("SmartAppActivity", "Package[" + packageName + "]:is installed.");
+                    flag = true;
+                    break;
+                }
+            }
+        }
+        return flag;
+    }
 
 	protected void installApk(String filename) {
 		// TODO Auto-generated method stub

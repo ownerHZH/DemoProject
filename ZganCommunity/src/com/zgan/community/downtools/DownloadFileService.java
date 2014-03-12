@@ -6,9 +6,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import com.zgan.community.R;
+import com.zgan.community.activity.AQWSAppActivity;
+import com.zgan.community.jsontool.AppConstants;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -43,7 +46,7 @@ public class DownloadFileService extends Service {
 	private final String TAG = "DownloadFileService";
 	private Timer timer;//定时器，用于更新下载进度
 	private TimerTask task;//定时器执行的任务
-	private String file_name="http://img2.zgantech.com/APK/HouseShelter_v7.7.apk";
+	private String file_name=AppConstants.AppDownLoadAddress+"APK/ZganCommunity.apk";
 	@Override
 	public IBinder onBind(Intent intent) {
 		
@@ -79,7 +82,8 @@ public class DownloadFileService extends Service {
 			
 			@Override
 			public void run() {
-				downloadFileUtils = new DownloadFileUtils("http://img2.zgantech.com/APK/HouseShelter_v7.7.apk", filePath, "HouseShelter_v7.7.apk", 3,callback);
+				//http://img2.zgantech.com/http://download.zgantech.com/APK/ZganCommunity.apk
+				downloadFileUtils = new DownloadFileUtils(AppConstants.AppDownLoadAddress+"APK/ZganCommunity.apk", filePath, "ZganCommunity.apk", 3,callback);
 				downloadFileUtils.downloadFile();
 			}
 		}).start();
@@ -110,13 +114,27 @@ public class DownloadFileService extends Service {
 					String progress = format.format(size);
 					remoteViews.setTextViewText(R.id.progressTv, "已下载" + progress+ "%");
 					remoteViews.setProgressBar(R.id.progressBar, 100, (int) size,false);
+								
+					 PendingIntent contentIntent = PendingIntent.getActivity(DownloadFileService.this, 0,
+					            new Intent(DownloadFileService.this,AQWSAppActivity.class), 0);
+					 notification.contentIntent=contentIntent;
+					  notification.setLatestEventInfo(DownloadFileService.this, "正在下载",
+					    		"已下载" + progress+ "%", contentIntent);
+					  
 					notification.contentView = remoteViews;
 					notificationManager.notify(notificationID, notification);
 				}
 			} else if (msg.what == downloadSuccess) {//下载完成
 				remoteViews.setTextViewText(R.id.progressTv, "下载完成");
 				remoteViews.setProgressBar(R.id.progressBar, 100, 100, false);
-				notification.contentView = remoteViews;
+				
+				PendingIntent contentIntent = PendingIntent.getActivity(DownloadFileService.this, 0,
+						new Intent(DownloadFileService.this,AQWSAppActivity.class), 0);
+				notification.contentIntent=contentIntent;
+			  notification.setLatestEventInfo(DownloadFileService.this, "下载",
+					  "下载完成", contentIntent);
+			  
+			  notification.contentView = remoteViews;
 				notificationManager.notify(notificationID, notification);
 				if(timer != null && task != null){
 					timer.cancel();
@@ -126,7 +144,7 @@ public class DownloadFileService extends Service {
 				}
 				stopService(new Intent(getApplicationContext(),DownloadFileService.class));
 				//stop service
-				installApk(filePath+"/HouseShelter_v7.7.apk");
+				installApk(filePath+"/ZganCommunity.apk");
 			} else if (msg.what == downloadError) {//下载失败
 				if(timer != null && task != null){
 					timer.cancel();

@@ -111,7 +111,8 @@ public class MainPageActivity extends MainAcitivity {
 				break;
 			case R.id.communityPay:
 				// 充值缴费点击响应事件
-				intent = new Intent(con, CommunityNewPayActivity.class);
+				intent = new Intent(con, MainTabActivity.class);
+				intent.putExtra("TAG", R.id.radio_button6);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
@@ -150,28 +151,16 @@ public class MainPageActivity extends MainAcitivity {
 				break;
 			case R.id.communityHouseShelter:
 				// 家庭卫士点击响应事件
-				intent = new Intent(con, AQWSAppActivity.class);
+				intent = new Intent(con, MainTabActivity.class);
+				intent.putExtra("TAG", R.id.radio_button8);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				break;
-			/*case R.id.communitySmartHousing:
-				// 智能家居点击响应事件
-				intent = new Intent(con, AQWSAppActivity.class);
-				startActivity(intent);
-				// Acticity切换动画
-				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
-				break;*/
-			/*case R.id.communityNeighbour:
-				// 邻里圈点击响应事件
-				Toast.makeText(MainPageActivity.this, "对不起该功能已屏蔽",
-						Toast.LENGTH_LONG);
-				// Acticity切换动画
-				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
-				break;*/
 			case R.id.communitySettings:
 				// 我的设置点击响应事件
-				intent = new Intent(con, CommunityContactProperty.class);
+				intent = new Intent(con, MainTabActivity.class);
+				intent.putExtra("TAG", R.id.radio_button7);
 				startActivity(intent);
 				// Acticity切换动画
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);

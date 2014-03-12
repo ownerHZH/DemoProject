@@ -195,7 +195,11 @@ public class CommunityNewPayActivity extends MainAcitivity {
      */
     private void hideDayFromDatePicker(DatePicker dp)
     {
-    	((ViewGroup) dp.getChildAt(0)).getChildAt(2).setVisibility(View.GONE);
+    	try {
+			((ViewGroup) dp.getChildAt(0)).getChildAt(2).setVisibility(View.GONE);
+		} catch (NullPointerException e1) {
+			e1.printStackTrace();
+		}
     	if (dp != null) {  
             Class c=dp.getClass();  
             Field f;  

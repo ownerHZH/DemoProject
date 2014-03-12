@@ -23,9 +23,8 @@
                 android:id="@android:id/tabs"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:orientation="horizontal" >
 
             </TabWidget>
@@ -49,7 +48,7 @@
                     android:cacheColorHint="#00000000"
                     android:listSelector="#00000000" >
 
-                </ListView>
+                </ListView>                              
                 
                 <LinearLayout
                     android:id="@+id/linearLayoutPolitical2"
@@ -72,6 +71,12 @@
 
                     </ListView>
                     
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:src="@drawable/nobar">
+                     </ImageView>
+                    
 				    <LinearLayout
 				        android:id="@+id/category"
 				        android:layout_width="match_parent"
@@ -87,12 +92,24 @@
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content"
 				        android:background="@drawable/ssbm" />
+
+				    <ImageView
+				        android:id="@+id/imageView1"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:src="@drawable/zl" />
 				
 				    <Button
 				        android:id="@+id/buttonCounty"
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content"
 				        android:background="@drawable/qxzf" />
+
+				    <ImageView
+				        android:id="@+id/imageView2"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:src="@drawable/zl" />
 				
 				    <Button
 				        android:id="@+id/buttonCommonService"

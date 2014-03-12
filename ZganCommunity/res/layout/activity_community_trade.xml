@@ -11,7 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/twolevel_bg" >
+        android:background="@drawable/login_bg" >
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -24,7 +24,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:orientation="horizontal" >
+                android:orientation="horizontal" >               
 
                 <Button
                     android:id="@+id/buttonSupermarket"
@@ -36,6 +36,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/cyms" />
 
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/buttonSnack"
                     android:layout_width="wrap_content"
@@ -45,6 +51,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/qpyl" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/buttonPasta"
@@ -56,6 +68,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/blcs" />
             </LinearLayout>
+            
+            <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/h" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -73,6 +91,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/cwmr" />
 
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/buttonHairdressing"
                     android:layout_width="wrap_content"
@@ -82,6 +106,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/yfzs" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/buttonDryclean"
@@ -93,6 +123,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/qcmr" />
             </LinearLayout>
+            
+            <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/h" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -110,6 +146,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/myyp" />
 
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/buttonFondue"
                     android:layout_width="wrap_content"
@@ -119,6 +161,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/xhyz" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/buttonChinesemeal"

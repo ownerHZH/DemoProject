@@ -12,7 +12,7 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/twolevel_bg_trade" >
+        android:background="@drawable/login_bg" >
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -25,6 +25,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal" >
+               
 
                 <Button
                     android:id="@+id/entry_exit"
@@ -36,6 +37,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/entry_exit" />
 
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/other_kid"
                     android:layout_width="wrap_content"
@@ -45,6 +52,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/other_kid" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/military_service"
@@ -56,6 +69,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/military_service" />
             </LinearLayout>
+            
+            <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/h" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -73,6 +92,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/house_magament" />
 
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/social_security"
                     android:layout_width="wrap_content"
@@ -82,6 +107,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/social_security" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/labour_employment"
@@ -93,6 +124,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/labour_employment" />
             </LinearLayout>
+            
+            <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/h" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -110,6 +147,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/traffic_management" />
 
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/consumer_protection"
                     android:layout_width="wrap_content"
@@ -119,6 +162,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/consumer_protection" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/marriage_registration"
@@ -130,6 +179,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/marriage_registration" />
             </LinearLayout>
+            
+            <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/h" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -147,6 +202,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/family_plann" />
 
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/labor_arbitration"
                     android:layout_width="wrap_content"
@@ -156,6 +217,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/labor_arbitration" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/housing"

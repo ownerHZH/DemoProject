@@ -3,22 +3,10 @@ package com.zgan.community.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.StatusLine;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Html;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -29,13 +17,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 
 import com.zgan.community.R;
-import com.zgan.community.adapter.CommunityServiceAdapter;
 import com.zgan.community.adapter.ReinfoAdapter;
-import com.zgan.community.data.BgddDetail;
-import com.zgan.community.data.CommunityService;
 import com.zgan.community.data.Recinfo;
 import com.zgan.community.jsontool.AppConstants;
-import com.zgan.community.jsontool.DialogUtil;
 import com.zgan.community.jsontool.GsonUtil;
 import com.zgan.community.jsontool.HttpAndroidTask;
 import com.zgan.community.jsontool.HttpClientService;
@@ -43,7 +27,6 @@ import com.zgan.community.jsontool.HttpPreExecuteHandler;
 import com.zgan.community.jsontool.HttpResponseHandler;
 import com.zgan.community.jsontool.JsonEntity;
 import com.zgan.community.tools.MainAcitivity;
-import com.zgan.community.tools.MyProgressDialog;
 import com.zgan.community.tools.ZganCommunityStaticData;
 
 public class GuideActivity extends MainAcitivity {

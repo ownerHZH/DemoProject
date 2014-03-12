@@ -1,7 +1,7 @@
 9
 
 dir
-192
+193
 https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xxhdpi
 https://192.168.1.88/svn/ZganCommunity
 
@@ -59,6 +59,52 @@ has-props
 
 
 24777
+
+wu1.png
+file
+
+
+
+add
+
+cfc834841bf61d61d57f555e6ccf6bc7
+
+
+
+has-props
+
+
+
+
+
+
+
+copied
+https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/wu1.png
+193
+
+zheng1.png
+file
+
+
+
+add
+
+f2ef41bc75bd63ac376172d327db3bd8
+
+
+
+has-props
+
+
+
+
+
+
+
+copied
+https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/zheng1.png
+193
 
 right.png
 file
@@ -127,6 +173,52 @@ has-props
 
 
 374
+
+she1.png
+file
+
+
+
+add
+
+a4535f5053e7a954f2733470c6ff5e67
+
+
+
+has-props
+
+
+
+
+
+
+
+copied
+https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/she1.png
+193
+
+ban1.png
+file
+
+
+
+add
+
+e61063fcab40b3439460eb7e5a483697
+
+
+
+has-props
+
+
+
+
+
+
+
+copied
+https://192.168.1.88/svn/ZganCommunity/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-xhdpi/ban1.png
+193
 
 setting_bg.png
 file

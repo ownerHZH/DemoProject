@@ -16,7 +16,7 @@
         android:layout_height="fill_parent"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:background="@drawable/twolevel_bg" >
+        android:background="@drawable/login_bg" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +30,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:orientation="horizontal" >
+                android:orientation="horizontal" >           
+
                 <Button
                     android:id="@+id/buttonPipe"
                     android:layout_width="wrap_content"
@@ -40,6 +41,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/jdwx" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/buttonUnlock"
@@ -51,6 +58,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/sdwx" />
 
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/buttonPlumber"
                     android:layout_width="wrap_content"
@@ -61,6 +74,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/jzbj" />
             </LinearLayout>
+            
+           <ImageView
+                   android:id="@+id/imageView1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/h" />
 
           <LinearLayout
                 android:layout_width="fill_parent"
@@ -77,6 +96,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/bjgs" />
 
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/buttonRecycle"
                     android:layout_width="wrap_content"
@@ -86,6 +111,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/ysbm" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/buttonPet"
@@ -97,12 +128,17 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/eshh" />
             </LinearLayout>
+            
+          <ImageView
+                   android:id="@+id/imageView1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/h" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
                 android:gravity="center" >
 
                 <Button
@@ -115,6 +151,12 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/ksfw" />
 
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
+
                 <Button
                     android:id="@+id/buttonMatron"
                     android:layout_width="wrap_content"
@@ -124,6 +166,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/gdst" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/s" />
 
                 <Button
                     android:id="@+id/buttonCleaning"

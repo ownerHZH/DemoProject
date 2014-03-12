@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svn/ZganCommunity/!svn/ver/191/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi
 END
 recinfo_bg.png
 K 25
@@ -139,7 +139,7 @@ gallery_pic.png
 K 25
 svn:wc:ra_dav:version-url
 V 124
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/gallery_pic.png
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/gallery_pic.png
 END
 zaojiao.png
 K 25
@@ -236,6 +236,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 124
 /svn/ZganCommunity/!svn/ver/113/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/ic_launcher.png
+END
+title_bartt.png
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/ZganCommunity/!svn/ver/193/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/title_bartt.png
 END
 right.png
 K 25
@@ -350,12 +356,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 125
 /svn/ZganCommunity/!svn/ver/164/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/u_middlecage.png
-END
-title_bar.png
-K 25
-svn:wc:ra_dav:version-url
-V 122
-/svn/ZganCommunity/!svn/ver/186/%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81/Android/ZganCommunity/res/drawable-hdpi/title_bar.png
 END
 index_background.png
 K 25

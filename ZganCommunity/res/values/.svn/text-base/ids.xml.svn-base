@@ -8,5 +8,8 @@
     <item type="id" name="radio_button3">false</item>
     <item type="id" name="radio_button4">false</item>
     <item type="id" name="radio_button5">false</item>
+    <item type="id" name="radio_button6">false</item>
+    <item type="id" name="radio_button7">false</item>
+    <item type="id" name="radio_button8">false</item>
 
 </resources>

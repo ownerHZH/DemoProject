@@ -12,6 +12,7 @@ import org.json.JSONObject;
 import com.zgan.community.R;
 import com.zgan.community.jsontool.AppConstants;
 import com.zgan.community.tools.MainAcitivity;
+import com.zgan.community.tools.MyProgressDialog;
 import com.zgan.community.tools.ZganCommunityStaticData;
 
 import android.app.ProgressDialog;
@@ -43,7 +44,7 @@ public class LoginActivity extends MainAcitivity {
 	ImageView go;
 	//ImageView reg;
 	Handler handler = new Handler();
-	ProgressDialog dialog;
+	MyProgressDialog dialog;
 	String szIme;
 	SharedPreferences preferences;
 	SharedPreferences.Editor editor;
@@ -79,10 +80,8 @@ public class LoginActivity extends MainAcitivity {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.go:
-				dialog = new ProgressDialog(LoginActivity.this);
-				dialog.setTitle("提示");
-				dialog.setMessage("登陆中，请稍后");
-				dialog.show();
+				dialog = new MyProgressDialog(LoginActivity.this);
+				dialog.start("登陆中，请稍后");
 				GetData(go_tel.getText().toString(), go_pas.getText()
 						.toString(), szIme);
 
@@ -135,7 +134,7 @@ public class LoginActivity extends MainAcitivity {
 
 							Looper.prepare();
 
-							dialog.dismiss();
+							dialog.stop();
 
 							Toast.makeText(getApplicationContext(),
 									"请输入正确的账号和密码", Toast.LENGTH_SHORT).show();
@@ -144,7 +143,7 @@ public class LoginActivity extends MainAcitivity {
 					}else
 					{
 						Looper.prepare();
-						dialog.dismiss();
+						dialog.stop();
 						Toast.makeText(getApplicationContext(),
 								"账号不存在", Toast.LENGTH_SHORT).show();
 						Looper.loop();
@@ -166,7 +165,7 @@ public class LoginActivity extends MainAcitivity {
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
-			dialog.dismiss();
+			dialog.stop();
 			editor.putString("number", go_tel.getText().toString());
 			editor.putString("password", go_pas.getText().toString());
 			editor.commit();

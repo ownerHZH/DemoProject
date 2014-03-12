@@ -32,8 +32,8 @@ public class MainPageActivity extends MainAcitivity {
 */
 	private Context con;
 
-	int im[] = new int[] { R.drawable.galler_one, R.drawable.galler_two,R.drawable.galler_three
-	};
+	/*int im[] = new int[] { R.drawable.galler_one, R.drawable.galler_two,R.drawable.galler_three
+	};*/
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

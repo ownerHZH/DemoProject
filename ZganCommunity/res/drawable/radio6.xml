@@ -3,9 +3,9 @@
     <item 
           android:state_enabled="true"
           android:state_checked="true"
-          android:drawable="@drawable/r6" /> 
+          android:drawable="@drawable/r66" /> 
     <item              
           android:state_enabled="true"    
           android:state_checked="false"
-          android:drawable="@drawable/r66" /> 
+          android:drawable="@drawable/r6" /> 
 </selector>

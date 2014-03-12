@@ -21,6 +21,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.0"
             android:visibility="gone" />
+        
+        <HorizontalScrollView 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:id="@+id/horizontalScrollView">
 
         <RadioGroup
             android:id="@id/main_radio"
@@ -29,7 +35,8 @@
             android:layout_gravity="bottom"
             android:background="@null"
             android:gravity="center_vertical"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:scrollbars="horizontal" >
 
             <RadioButton
                 android:id="@id/radio_button0"
@@ -60,7 +67,23 @@
                 android:id="@id/radio_button5"
                 style="@style/main_tab_bottom"
                 android:background="@drawable/radio5" />
+            
+            <RadioButton
+                android:id="@id/radio_button6"
+                style="@style/main_tab_bottom"
+                android:background="@drawable/radio6" />
+
+            <RadioButton
+                android:id="@id/radio_button7"
+                style="@style/main_tab_bottom"
+                android:background="@drawable/radio7" />
+
+            <RadioButton
+                android:id="@id/radio_button8"
+                style="@style/main_tab_bottom"
+                android:background="@drawable/radio8" />
         </RadioGroup>
-    </LinearLayout>
+      </HorizontalScrollView>
+   </LinearLayout>
 
 </TabHost>

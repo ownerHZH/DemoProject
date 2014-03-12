@@ -1,10 +1,7 @@
 package com.zgan.community.activity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
@@ -16,18 +13,13 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.zgan.community.R;
-import com.zgan.community.adapter.CommunityPayAdapter;
 import com.zgan.community.adapter.ReinfoAdapter;
 import com.zgan.community.data.Recinfo;
-import com.zgan.community.data.ServiceInfo;
-import com.zgan.community.adapter.CommunityServiceAdapter;
-import com.zgan.community.data.CommunityService;
 import com.zgan.community.jsontool.AppConstants;
 import com.zgan.community.tools.MainAcitivity;
 import com.zgan.community.tools.ZganCommunityStaticData;
 
 import android.app.ProgressDialog;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -35,11 +27,9 @@ import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 
 public class Reinfo_son extends MainAcitivity {
@@ -51,8 +41,6 @@ public class Reinfo_son extends MainAcitivity {
 	List<Recinfo> list = new ArrayList<Recinfo>();
 	ProgressDialog dialog;
 	Handler handler;
-
-	private CommunityServiceAdapter communityServiceAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

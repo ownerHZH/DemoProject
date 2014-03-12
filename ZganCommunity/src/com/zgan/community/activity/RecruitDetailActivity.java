@@ -5,6 +5,7 @@ import com.zgan.community.R.layout;
 import com.zgan.community.R.menu;
 import com.zgan.community.tools.MainAcitivity;
 
+import android.net.ParseException;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.KeyEvent;
@@ -36,14 +37,19 @@ public class RecruitDetailActivity extends MainAcitivity {
 		String title=getIntent().getExtras().getString("button_key");
         top_title.setText(title);
         
-        
-        webView.setWebViewClient( new  WebViewClient() {                       
-            public   boolean   shouldOverrideUrlLoading(WebView view, String url){
-                // 使用当前的WebView加载页面
-               view.loadUrl(url);
-                return   true ;
-          }              
-         });
+        webView.getSettings().setJavaScriptEnabled(true);
+        try {
+			webView.setWebViewClient(new WebViewClient(){       
+			    public boolean shouldOverrideUrlLoading(WebView view, String url) {       
+						view.loadUrl(url);       
+						return true;				      
+			    }       
+			 });
+		}catch(android.net.ParseException ee){
+			ee.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
         
         showData(title);
         

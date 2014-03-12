@@ -232,13 +232,13 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 		if (tabHost.getCurrentTab() == 0) {
 			//v.setBackgroundColor(Color.WHITE);
 			// 在这里最好自己设置一个图片作为背景更好				
-		    v0.setBackgroundDrawable(getResources().getDrawable(R.drawable.zheng2));
+		    v0.setBackgroundDrawable(getResources().getDrawable(R.drawable.zheng1));
 		    v1.setBackgroundDrawable(getResources().getDrawable(R.drawable.ban1));
 			
 		} else {
 			//v.setBackgroundColor(Color.GRAY);
 		    v0.setBackgroundDrawable(getResources().getDrawable(R.drawable.zheng1));
-		    v1.setBackgroundDrawable(getResources().getDrawable(R.drawable.ban2));
+		    v1.setBackgroundDrawable(getResources().getDrawable(R.drawable.ban1));
 		}
 	}
 
@@ -273,7 +273,7 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 		int count = tabWidget.getChildCount();// TabHost中有一个getTabWidget()的方法
 		for (int i = 0; i < count; i++) {
 			View view = tabWidget.getChildTabViewAt(i);
-			//view.getLayoutParams().height = 60; // tabWidget.getChildAt(i)
+			view.getLayoutParams().height = 35; // tabWidget.getChildAt(i)
 			// view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 			/*final TextView tv = (TextView) view
 					.findViewById(android.R.id.title);
@@ -292,8 +292,8 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 	                  if(!mBottomRightStrip.isAccessible()){
 	                    mBottomRightStrip.setAccessible(true);
 	                  }
-	                mBottomLeftStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
-	                mBottomRightStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
+	                //mBottomLeftStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
+	                //mBottomRightStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
 	                 
 	               } catch (Exception e) {
 	                 e.printStackTrace();
@@ -317,8 +317,8 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 	                 if(!mBottomRightStrip.isAccessible()){
 	                   mBottomRightStrip.setAccessible(true);
 	                 }
-	               mBottomLeftStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
-	               mBottomRightStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
+	               //mBottomLeftStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
+	               //mBottomRightStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
 	                
 	              } catch (Exception e) {
 	                e.printStackTrace();

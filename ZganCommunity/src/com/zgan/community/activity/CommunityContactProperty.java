@@ -176,6 +176,8 @@ public class CommunityContactProperty extends MainAcitivity {
 			radio2.setChecked(false);
 			radio3.setChecked(false);
 			radio4.setChecked(false);
+			editText.setText("");
+			editText.setEnabled(false);
 			commitString=radio0Text.getText().toString().trim();
 			break;
 		case R.id.radio1:
@@ -183,6 +185,8 @@ public class CommunityContactProperty extends MainAcitivity {
 			radio2.setChecked(false);
 			radio3.setChecked(false);
 			radio4.setChecked(false);
+			editText.setText("");
+			editText.setEnabled(false);
 			commitString=radio1Text.getText().toString().trim();
 			break;
 		case R.id.radio2:
@@ -190,6 +194,8 @@ public class CommunityContactProperty extends MainAcitivity {
 			radio1.setChecked(false);
 			radio3.setChecked(false);
 			radio4.setChecked(false);
+			editText.setText("");
+			editText.setEnabled(false);
 			commitString=radio2Text.getText().toString().trim();
 			break;
 		case R.id.radio3:
@@ -197,6 +203,8 @@ public class CommunityContactProperty extends MainAcitivity {
 			radio2.setChecked(false);
 			radio1.setChecked(false);
 			radio4.setChecked(false);
+			editText.setText("");
+			editText.setEnabled(false);
 			commitString=radio3Text.getText().toString().trim();
 			break;
 		case R.id.radio4:
@@ -204,6 +212,7 @@ public class CommunityContactProperty extends MainAcitivity {
 			radio2.setChecked(false);
 			radio3.setChecked(false);
 			radio1.setChecked(false);
+			editText.setEnabled(true);
 			commitString=editText.getText().toString().trim();
 			break;
 

@@ -10,6 +10,7 @@ import com.zgan.yckz.R;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -62,6 +63,9 @@ public class DownloadFileService extends Service {
 		notification = new Notification();
 		notification.icon = R.drawable.ic_launcher;//设置通知消息的图标
 		notification.tickerText = "正在下载。。。";//设置通知消息的标题
+		notification.when=System.currentTimeMillis();
+		PendingIntent p=PendingIntent.getActivity(DownloadFileService.this, 0, new Intent(), 0);
+		notification.contentIntent=p;
 		remoteViews = new RemoteViews(getPackageName(), R.layout.down_notification);
 		remoteViews.setImageViewResource(R.id.IconIV, R.drawable.ic_launcher);
 		timer = new Timer();

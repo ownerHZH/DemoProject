@@ -8,6 +8,7 @@ import com.zgan.community.tools.MainAcitivity;
 import com.zgan.community.tools.ZganCommunityStaticData;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -29,6 +30,8 @@ public class Advertising extends MainAcitivity {
 	 * ”√ªß√‹¬Î
 	 */
 	String user_pas;
+	
+	private Handler handler;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +45,18 @@ public class Advertising extends MainAcitivity {
 		user_pas = preferences.getString("password", null);
 		LinearLayout layout = (LinearLayout) findViewById(R.id.line_welcome);
 		layout.setOnClickListener(listener);
-
+		
+		handler=new Handler();	
+		handler.postDelayed(r, 2000);
 	}
+	
+	Runnable r=new Runnable() {
+		
+		@Override
+		public void run() {
+			jump();
+		}
+	};
 
 	private void ShowView() {
 		// TODO Auto-generated method stub
@@ -60,22 +73,24 @@ public class Advertising extends MainAcitivity {
 
 		@Override
 		public void onClick(View v) {
-			// TODO Auto-generated method stub
-
-			if (ZganCommunityStaticData.User_Number != null
-					&& !ZganCommunityStaticData.User_Number.equals("")) {
-				Intent intent = new Intent(Advertising.this,
-						MainPageActivity.class);
-				startActivity(intent);
-				finish();
-			} else {
-				Intent intent = new Intent(Advertising.this,
-						LoginActivity.class);
-				startActivity(intent);
-				finish();
-			}
-		}
+			jump();
+		}		
 	};
+	
+	private void jump() {
+		if (ZganCommunityStaticData.User_Number != null
+				&& !ZganCommunityStaticData.User_Number.equals("")) {
+			Intent intent = new Intent(Advertising.this,
+					MainPageActivity.class);
+			startActivity(intent);
+			finish();
+		} else {
+			Intent intent = new Intent(Advertising.this,
+					LoginActivity.class);
+			startActivity(intent);
+			finish();
+		}
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

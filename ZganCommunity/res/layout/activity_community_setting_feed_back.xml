@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/p_setting_bg"
+    android:background="@drawable/login_bg"
     android:orientation="vertical"
     tools:context=".CommunitySettingFeedBack" >
 

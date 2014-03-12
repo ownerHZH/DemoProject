@@ -7,6 +7,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:background="@drawable/login_bg"
         android:orientation="vertical" >
 
         <FrameLayout
@@ -22,11 +23,12 @@
             android:layout_weight="0.0"
             android:visibility="gone" />
         
-        <HorizontalScrollView 
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:id="@+id/horizontalScrollView">
+            android:background="@drawable/tab_bg"
+            android:scrollbars="none" >
 
         <RadioGroup
             android:id="@id/main_radio"

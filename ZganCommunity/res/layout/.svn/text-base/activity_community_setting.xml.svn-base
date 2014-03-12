@@ -2,6 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3E7DE5"
     android:gravity="top"
     android:orientation="vertical"
     tools:context=".CommunitySetting" >
@@ -38,6 +39,7 @@
                     android:id="@+id/phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:ems="10"
                     android:text="13xxxxxxxxx"
                     android:textColor="#fff" />
 
@@ -61,6 +63,7 @@
                     android:id="@+id/balcony"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:ems="10"
                     android:text="11-5-2"
                     android:textColor="#fff" />
 
@@ -111,103 +114,6 @@
                 android:gravity="center|start" >
 
                 <TextView
-                    android:id="@+id/TextView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/activity_community_setting_hint"
-                    android:text="@string/activity_community_setting_birth"
-                    android:textColor="#fff" />
-
-                <EditText
-                    android:id="@+id/birthText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:editable="false"
-                    android:ems="10"
-                    android:enabled="false"
-                    android:singleLine="true"
-                    android:text="1987-12-24"
-                    android:background="@null"
-                    android:textColor="#fff" />
-
-                <Button
-                    android:id="@+id/birthChange"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/change_btn" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center|start" >
-
-                <TextView
-                    android:id="@+id/TextView08"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/activity_community_setting_hint"
-                    android:text="@string/activity_community_setting_sex"
-                    android:textColor="#fff" />
-
-                <RadioGroup
-                    android:id="@+id/sexRadioGroup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="fill_horizontal"
-                    android:orientation="horizontal" >
-
-                    <RadioButton
-                        android:id="@+id/radio0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:background="@drawable/sexradiobutton"
-                        android:button="@null"
-                        android:checked="true"
-                        android:gravity="right|start"
-                        android:textColor="#fff"
-                        android:width="20dp" />
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:text="@string/activity_community_setting_sex_male"
-                        android:textColor="#fff" />
-
-                    <RadioButton
-                        android:id="@+id/radio1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:background="@drawable/sexradiobutton"
-                        android:button="@null"
-                        android:gravity="right|start"
-                        android:textColor="#fff"
-                        android:width="20dp" />
-
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/activity_community_setting_sex_female"
-                        android:textColor="#fff" />
-
-                </RadioGroup>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center|start" >
-
-                <TextView
                     android:id="@+id/TextView06"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -219,8 +125,10 @@
                     android:id="@+id/TextView05"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="xxxxxxxxx"
-                    android:textColor="#fff" />
+                    android:textColor="#fff"
+                    android:visibility="invisible" />
 
                 <Button
                     android:id="@+id/passwordChange"
@@ -240,6 +148,7 @@
                     android:id="@+id/TextView04"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:hint="@string/activity_community_setting_hint"
                     android:text="@string/activity_community_setting_push_message"
                     android:textColor="#fff" />
@@ -262,7 +171,7 @@
 
                 <TextView
                     android:id="@+id/TextView02"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/activity_community_setting_hint"
@@ -273,7 +182,6 @@
                     android:id="@+id/imageView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:src="@drawable/right_btn" />
 
             </LinearLayout>
@@ -288,7 +196,7 @@
 
                 <TextView
                     android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/activity_community_setting_hint"
@@ -299,7 +207,6 @@
                     android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:src="@drawable/right_btn" />
 
             </LinearLayout>

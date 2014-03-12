@@ -47,7 +47,7 @@ public class CommunitySetting extends MainAcitivity {
 	private Button nicknameChange;//昵称修改按钮
 	private TextView balcony;//楼座号
 	private TextView phone;//手机号码
-	private SlipButton messageSwitch;//消息推送开关
+	//private SlipButton messageSwitch;//消息推送开关
 	
 	private boolean clicked=false;
 	
@@ -75,7 +75,7 @@ public class CommunitySetting extends MainAcitivity {
 		nicknameChange=(Button) findViewById(R.id.nicknameChange);//昵称修改按钮
 		balcony=(TextView) findViewById(R.id.balcony);//楼座号
 		phone=(TextView) findViewById(R.id.phone);//手机号码
-		messageSwitch=(SlipButton) findViewById(R.id.slipbutton);
+		//messageSwitch=(SlipButton) findViewById(R.id.slipbutton);
 		
 		handler=new Handler();
 				
@@ -85,13 +85,13 @@ public class CommunitySetting extends MainAcitivity {
 		about.setOnClickListener(l);
 		nicknameChange.setOnClickListener(l);
 		
-		messageSwitch.SetOnChangedListener(new OnChangedListener() {
+		/*messageSwitch.SetOnChangedListener(new OnChangedListener() {
 			
 			@Override
 			public void OnChanged(boolean CheckState) {
 				Toast.makeText(con, ""+CheckState, Toast.LENGTH_SHORT).show();
 			}
-		});
+		});*/
 		getUserInfo();//获取业主信息
 	}
 	
