@@ -28,10 +28,13 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class CommunitySetting extends MainAcitivity {
 
@@ -44,7 +47,7 @@ public class CommunitySetting extends MainAcitivity {
 	//private Button messageSwitch;
 	private Button passwordChange;//密码修改
 	private EditText nicknameText;//昵称显示框
-	private Button nicknameChange;//昵称修改按钮
+	private ToggleButton nicknameChange;//昵称修改按钮
 	private TextView balcony;//楼座号
 	private TextView phone;//手机号码
 	//private SlipButton messageSwitch;//消息推送开关
@@ -72,7 +75,7 @@ public class CommunitySetting extends MainAcitivity {
 		feedback=(LinearLayout) findViewById(R.id.feedback);//意见反馈
 		passwordChange=(Button) findViewById(R.id.passwordChange);//密码修改
 		nicknameText=(EditText) findViewById(R.id.nicknameText);//昵称显示框
-		nicknameChange=(Button) findViewById(R.id.nicknameChange);//昵称修改按钮
+		nicknameChange=(ToggleButton) findViewById(R.id.nicknameChange);//昵称修改按钮
 		balcony=(TextView) findViewById(R.id.balcony);//楼座号
 		phone=(TextView) findViewById(R.id.phone);//手机号码
 		//messageSwitch=(SlipButton) findViewById(R.id.slipbutton);
@@ -83,8 +86,8 @@ public class CommunitySetting extends MainAcitivity {
 		passwordChange.setOnClickListener(l);
 		feedback.setOnClickListener(l);
 		about.setOnClickListener(l);
-		nicknameChange.setOnClickListener(l);
-		
+		//nicknameChange.setOnClickListener(l);		
+		nicknameChange.setOnCheckedChangeListener(listener);
 		/*messageSwitch.SetOnChangedListener(new OnChangedListener() {
 			
 			@Override
@@ -94,6 +97,33 @@ public class CommunitySetting extends MainAcitivity {
 		});*/
 		getUserInfo();//获取业主信息
 	}
+	
+	OnCheckedChangeListener listener=new OnCheckedChangeListener() {
+		
+		@Override
+		public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+			if(isChecked)
+			{
+				nicknameText.setEnabled(true);
+				nicknameText.requestFocus();
+				buttonView.setBackgroundResource(R.drawable.make_sure);
+			}else
+			{
+				nicknameText.setEnabled(false);
+				nicknameText.clearFocus();
+				String name=nicknameText.getText().toString().trim();
+				if(name!=null&&!name.equals(""))
+				{
+					//更新昵称
+					modifyNickName(nicknameText.getText().toString());
+					buttonView.setBackgroundResource(R.drawable.change_btn);
+				}else
+				{
+					Toast.makeText(con, "昵称不能为空！", Toast.LENGTH_SHORT).show();
+				}
+			}
+		}
+	};
 	
 	
 	private OnClickListener l=new OnClickListener() {
@@ -119,11 +149,6 @@ public class CommunitySetting extends MainAcitivity {
 				//关于
 				Intent aboutI=new Intent(con,About_Detail_Activity.class);
 				startActivity(aboutI);
-				break;
-			case R.id.nicknameChange:
-				//修改昵称
-				buttonToggleAction(nicknameChange,nicknameText);
-				
 				break;
 
 			default:

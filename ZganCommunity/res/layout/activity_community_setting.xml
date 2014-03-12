@@ -32,7 +32,8 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_community_setting_hint"
                     android:text="@string/activity_community_setting_phone"
-                    android:textColor="#fff" />
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/phone"
@@ -40,7 +41,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:text="13xxxxxxxxx"
-                    android:textColor="#fff" />
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -56,7 +58,8 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_community_setting_hint"
                     android:text="@string/activity_community_setting_local"
-                    android:textColor="#fff" />
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/balcony"
@@ -64,7 +67,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:text="11-5-2"
-                    android:textColor="#fff" />
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -80,7 +84,8 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_community_setting_hint"
                     android:text="@string/activity_community_setting_nickname"
-                    android:textColor="#fff" />
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/nicknameText"
@@ -88,21 +93,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@null"
                     android:ems="10"
                     android:enabled="false"
                     android:singleLine="true"
                     android:text="XXX"
-                    android:background="@null"
-                    android:textColor="#fff" >
+                    android:textColor="#fff"
+                    android:textSize="20sp" >
 
                     <requestFocus />
                 </EditText>
 
-                <Button
+                <ToggleButton
                     android:id="@+id/nicknameChange"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/change_btn" />
+                    android:background="@drawable/change_btn" 
+                    android:textOn=""
+                    android:textOff=""/>
 
             </LinearLayout>
 
@@ -118,7 +126,8 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/activity_community_setting_hint"
                     android:text="@string/activity_community_setting_password"
-                    android:textColor="#fff" />
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/TextView05"
@@ -151,7 +160,8 @@
                     android:layout_weight="1"
                     android:hint="@string/activity_community_setting_hint"
                     android:text="@string/activity_community_setting_advice"
-                    android:textColor="#fff" />
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
 
                 <ImageView
                     android:id="@+id/imageView1"
@@ -176,7 +186,8 @@
                     android:layout_weight="1"
                     android:hint="@string/activity_community_setting_hint"
                     android:text="@string/activity_community_setting_about"
-                    android:textColor="#fff" />
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
 
                 <ImageView
                     android:id="@+id/imageView2"

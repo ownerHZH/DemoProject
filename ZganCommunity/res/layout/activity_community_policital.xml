@@ -23,9 +23,33 @@
                 android:id="@android:id/tabs"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+            </TabWidget>
+
+            <RadioGroup
+                android:id="@+id/group"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="center_horizontal"
                 android:orientation="horizontal" >
 
-            </TabWidget>
+                <RadioButton
+                    android:id="@+id/zhengwuyaowen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/zheng1"
+                    android:button="@null" />
+
+                <RadioButton
+                    android:id="@+id/bangongdidian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/zheng1"
+                    android:button="@null" />
+
+            </RadioGroup>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"

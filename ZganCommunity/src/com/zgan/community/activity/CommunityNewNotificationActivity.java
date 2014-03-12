@@ -31,6 +31,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabWidget;
@@ -60,6 +62,9 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 	private List<News> newsList_s=new ArrayList<News>();
 	private MyProgressDialog pdialog;
 	private CommunityNewsAdapter communityNewsAdapter;
+	
+	private RadioGroup group;
+	
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -70,109 +75,29 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 		back = (Button) findViewById(R.id.back);
 		title = (TextView) findViewById(R.id.title);
 		title.setText(R.string.community_notification_title);
-
+		
+		group=(RadioGroup) findViewById(R.id.group);
 		con = CommunityNewNotificationActivity.this;
 		list = (ListView) findViewById(R.id.listViewPolitical);
 		list2 = (ListView) findViewById(R.id.listViewPolitical2);
 		ButtonClickListener l = new ButtonClickListener();
 		back.setOnClickListener(l);
+		group.setOnCheckedChangeListener(listener);
 
 		handler = new Handler();
-		/*
-		 * dialog = new ProgressDialog(this); dialog.setTitle(null);
-		 * dialog.setMessage("加载中，请稍后"); dialog.show();
-		 */
 		dialog = new MyProgressDialog(this);
 		dialog.start("加载中，请稍后...");
 
 		initTabHost(); // 初始化TabHost
-		// setTabViewParas();//设置Tab显示属性
-		// tabHost.setCurrentTab(1);
-		tabHost.setOnTabChangedListener(new TabChangeListener());
-		// tabHost.setCurrentTab(0);
-		// 手势内部类初始化
-		detector = new GestureDetector(new MySimpleGestureDetector());
 		getData();// 获取网络数据   物业通知
-		//getData_s(); //社区公告数据
 	}
-
-	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-		return detector.onTouchEvent(event); // 关联
-	}
-
-	/**
-	 * 识别手势的内部类
-	 * 
-	 * @author Hzh
-	 * 
-	 */
-	public class MySimpleGestureDetector extends
-			GestureDetector.SimpleOnGestureListener {
-
-		private static final int MIN_DISTANCE = 100; // 最小距离
-		private static final int MIN_VELOCITY = 100; // 最小滑动速率
-
+	
+	private OnCheckedChangeListener listener=new OnCheckedChangeListener() {
+		
 		@Override
-		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-				float velocityY) {
-			if (Math.abs(velocityX) > MIN_VELOCITY) {
-				if ((e2.getX() - e1.getX()) > MIN_DISTANCE) { // 向右滑动
-					flingRight();
-				} else if ((e1.getX() - e2.getX()) > MIN_DISTANCE) { // 向左滑动
-					flingLeft();
-				}
-			}
-			return super.onFling(e1, e2, velocityX, velocityY);
-		}
-
-		public void flingLeft() {
-			int currentTab = tabHost.getCurrentTab();
-			int count = tabHost.getTabWidget().getChildCount();
-			if (currentTab != 0) {
-				currentTab--;
-				switchTab(currentTab);
-			} else if (currentTab == 0) {
-				switchTab(count - 1);
-			}
-		}
-
-		public void flingRight() {
-			int currentTab = tabHost.getCurrentTab();
-			int count = tabHost.getTabWidget().getChildCount();
-			if (currentTab != count - 1) {
-				currentTab++;
-				switchTab(currentTab);
-			} else if (currentTab == count - 1) {
-				switchTab(0);
-			}
-		}
-
-		private void switchTab(final int toTab) {
-			new Thread(new Runnable() {
-				@Override
-				public void run() {
-					tabHost.post(new Runnable() {
-						@Override
-						public void run() {
-							tabHost.setCurrentTab(toTab);
-						}
-					});
-				}
-			}).start();
-		}
-	}
-
-	/**
-	 * Tab切换监听器
-	 * 
-	 * @return
-	 */
-	public class TabChangeListener implements OnTabChangeListener {
-
-		public void onTabChanged(String str) {
-			setTabBackground();
-			if (str.equals("tab1")) {
+		public void onCheckedChanged(RadioGroup group, int checkedId) {
+			switch (checkedId) {
+			case R.id.wuyetongzhi:
 				if(newsList.size()>0)
 				{
 					showData(1);
@@ -180,39 +105,25 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 				{
 					getData();
 				}
+				tabHost.setCurrentTabByTag("tab1");
+				break;
 				
-			} else if (str.equals("tab2")) {
-				if(newsList_s.size()>0)
+            case R.id.shequgonggao:
+            	if(newsList_s.size()>0)
 				{
 					showData(2);
 				}else
 				{
 					getData_s();
-				}				
+				}
+            	tabHost.setCurrentTabByTag("tab2");
+				break; 
+
+			default:
+				break;
 			}
 		}
-	}
-
-	/**
-	 * 设置Tab切换背景
-	 */
-	public void setTabBackground() {
-		// 设置Tab背景
-		View v0=tabWidget.getChildTabViewAt(0);
-		View v1=tabWidget.getChildTabViewAt(1);
-		//int count = tabWidget.getChildCount();
-		if (tabHost.getCurrentTab() == 0) {
-			//v.setBackgroundColor(Color.WHITE);
-			// 在这里最好自己设置一个图片作为背景更好				
-		    v0.setBackgroundDrawable(getResources().getDrawable(R.drawable.wu1));
-		    v1.setBackgroundDrawable(getResources().getDrawable(R.drawable.she1));
-			
-		} else {
-			//v.setBackgroundColor(Color.GRAY);
-		    v0.setBackgroundDrawable(getResources().getDrawable(R.drawable.wu1));
-		    v1.setBackgroundDrawable(getResources().getDrawable(R.drawable.she1));
-		}
-	}
+	};
 
 	/**
 	 * 初始化TabHost
@@ -232,71 +143,7 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 				.newTabSpec("tab2")
 				.setIndicator(null, null)
 				.setContent(R.id.listViewPolitical2));
-		setTabViewParas();// 设置Tab显示属性
-		setTabBackground();// 第一次设置显示背景色
-		// showData(1);//显示第一页的数据
 
-	}
-
-	/**
-	 * 设置TabView的字体大小、高度
-	 */
-	public void setTabViewParas() {
-		int count = tabWidget.getChildCount();// TabHost中有一个getTabWidget()的方法
-		for (int i = 0; i < count; i++) {
-			View view = tabWidget.getChildTabViewAt(i);
-			view.getLayoutParams().height = 35; // tabWidget.getChildAt(i)
-			// view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-			/*final TextView tv = (TextView) view
-					.findViewById(android.R.id.title);
-			tv.setTextSize(20);
-			tv.setTextColor(this.getResources().getColorStateList(
-					android.R.color.black));*/
-			Field mBottomLeftStrip;
-	        Field mBottomRightStrip;
-			 if (Float.valueOf(Build.VERSION.RELEASE.substring(0, 3)) <= 2.1) {
-	               try {
-	                  mBottomLeftStrip = tabWidget.getClass().getDeclaredField ("mBottomLeftStrip");
-	                  mBottomRightStrip = tabWidget.getClass().getDeclaredField ("mBottomRightStrip");
-	                  if(!mBottomLeftStrip.isAccessible()) {
-	                    mBottomLeftStrip.setAccessible(true);
-	                  }
-	                  if(!mBottomRightStrip.isAccessible()){
-	                    mBottomRightStrip.setAccessible(true);
-	                  }
-	                //mBottomLeftStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
-	                //mBottomRightStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
-	                 
-	               } catch (Exception e) {
-	                 e.printStackTrace();
-	               }
-	        } else {
-	         
-	         //如果是2.2,2.3版本开发,可以使用一下方法tabWidget.setStripEnabled(false)
-	         //tabWidget.setStripEnabled(false);
-	         
-	         //但是很可能你开发的android应用是2.1版本，
-	         //tabWidget.setStripEnabled(false)编译器是无法识别而报错的,这时仍然可以使用上面的
-	         //反射实现，但是代码的改改
-	         
-	          try {
-	           //2.2,2.3接口是mLeftStrip，mRightStrip两个变量，当然代码与上面部分重复了
-	                 mBottomLeftStrip = tabWidget.getClass().getDeclaredField ("mLeftStrip");
-	                 mBottomRightStrip = tabWidget.getClass().getDeclaredField ("mRightStrip");
-	                 if(!mBottomLeftStrip.isAccessible()) {
-	                   mBottomLeftStrip.setAccessible(true);
-	                 }
-	                 if(!mBottomRightStrip.isAccessible()){
-	                   mBottomRightStrip.setAccessible(true);
-	                 }
-	               //mBottomLeftStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
-	               //mBottomRightStrip.set(tabWidget, getResources().getDrawable (R.drawable.no));
-	                
-	              } catch (Exception e) {
-	                e.printStackTrace();
-	              }
-	        }
-		}
 	}
 
 	public class ButtonClickListener implements View.OnClickListener {
