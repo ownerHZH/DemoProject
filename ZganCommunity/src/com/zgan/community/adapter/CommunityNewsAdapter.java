@@ -63,8 +63,8 @@ public class CommunityNewsAdapter extends BaseAdapter {
 			holder = new ViewHolder();
 
 			/**得到各个控件的对象*/                    
-			holder.title = (TextView) convertView.findViewById(R.id.itemTitle);
-			//holder.date = (TextView) convertView.findViewById(R.id.itemDate);
+			holder.title = (TextView) convertView.findViewById(R.id.itemTitle);			
+			holder.time = (TextView) convertView.findViewById(R.id.timeTextView);
 
 			convertView.setTag(holder);//绑定ViewHolder对象                   
 		}
@@ -76,6 +76,7 @@ public class CommunityNewsAdapter extends BaseAdapter {
 		/**设置TextView显示的内容 和Title点击事件*/ 
 			final News news=dataList.get(position);
 			holder.title.setText(news.getTitle());
+			holder.time.setText(news.getTime());
 			holder.title.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -111,7 +112,8 @@ public class CommunityNewsAdapter extends BaseAdapter {
 	 * 存放控件
 	 * */
 	public final class ViewHolder{
-		public TextView title;   
+		public TextView title;  
+		public TextView time;
 	}
 }
 

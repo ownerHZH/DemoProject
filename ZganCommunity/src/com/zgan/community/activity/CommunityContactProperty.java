@@ -60,7 +60,8 @@ public class CommunityContactProperty extends MainAcitivity {
 		
 		back = (Button) findViewById(R.id.back);
 		title = (TextView) findViewById(R.id.title);
-		title.setText(R.string.community_contact_property);
+		title.setBackgroundResource(R.drawable.title_lianxiwuye);
+		//title.setText(R.string.community_contact_property);
 		commit=(Button) findViewById(R.id.buttonCommit);
 		//radioGroup=(RadioGroup) findViewById(R.id.radioGroup1);
 		editText=(EditText) findViewById(R.id.adviceInput);

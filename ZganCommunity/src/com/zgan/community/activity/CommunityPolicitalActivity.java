@@ -28,6 +28,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
@@ -68,12 +69,15 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 
 		back = (Button) findViewById(R.id.back);
 		title = (TextView) findViewById(R.id.title);
-		title.setText(R.string.community_policital);
+		//title.setText(R.string.community_policital);
+		title.setBackgroundResource(R.drawable.title_mingshengzhengwu);
 		
 		group=(RadioGroup) findViewById(R.id.group);
 		con = CommunityPolicitalActivity.this;
 		list = (ListView) findViewById(R.id.listViewPolitical);
 		list2 = (ListView) findViewById(R.id.listViewPolitical2);
+		list.setDividerHeight(0);
+		list2.setDividerHeight(0);
 		
 		//category=(LinearLayout) findViewById(R.id.category);
 		buttonCity=(Button) findViewById(R.id.buttonCity);
@@ -146,14 +150,23 @@ public class CommunityPolicitalActivity extends MainAcitivity {
 				break;
 			case R.id.buttonCity:
 				//市政府部门点击事件
+				 buttonCity.setBackgroundResource(R.drawable.ssbm1);
+				 buttonCounty.setBackgroundResource(R.drawable.qxzf);
+				 buttonCommonService.setBackgroundResource(R.drawable.ggfwdw);
                  getData_b(0);
 				break;
 			case R.id.buttonCounty:
 				//区县政府点击事件
+				buttonCity.setBackgroundResource(R.drawable.ssbm);
+				buttonCounty.setBackgroundResource(R.drawable.qxzf1);
+				buttonCommonService.setBackgroundResource(R.drawable.ggfwdw);
 				getData_b(1);
 				break;
 			case R.id.buttonCommonService:
 				//公共服务单位点击事件
+				buttonCity.setBackgroundResource(R.drawable.ssbm);
+				buttonCounty.setBackgroundResource(R.drawable.qxzf);
+				buttonCommonService.setBackgroundResource(R.drawable.ggfwdw1);
 				getData_b(2);
 				break;
 			default:

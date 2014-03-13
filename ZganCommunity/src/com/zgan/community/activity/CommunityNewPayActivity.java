@@ -62,7 +62,8 @@ public class CommunityNewPayActivity extends MainAcitivity {
 		
 		back=(Button) findViewById(R.id.back);
 		title=(TextView) findViewById(R.id.title);
-		title.setText(R.string.community_pay);
+		//title.setText(R.string.community_pay);
+		title.setBackgroundResource(R.drawable.title_chaxunzhangdan);
 		con=CommunityNewPayActivity.this;
 		initView();//³õÊ¼»¯¿Ø¼þ
 								

@@ -42,7 +42,8 @@ public class CommunityTradeActivity extends MainAcitivity {
 		
 		back=(Button) findViewById(R.id.back);
 		title=(TextView) findViewById(R.id.title);
-		title.setText(R.string.community_trade);
+		//title.setText(R.string.community_trade);
+		title.setBackgroundResource(R.drawable.title_shequshangquan);
 		
 		supermarket=(Button) findViewById(R.id.buttonSupermarket);
 		snack=(Button) findViewById(R.id.buttonSnack);

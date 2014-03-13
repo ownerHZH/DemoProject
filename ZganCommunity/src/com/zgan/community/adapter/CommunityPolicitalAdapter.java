@@ -75,7 +75,7 @@ public class CommunityPolicitalAdapter extends BaseAdapter {
 
 			/**得到各个控件的对象*/                    
 			holder.title = (TextView) convertView.findViewById(R.id.itemTitle);
-			//holder.date = (TextView) convertView.findViewById(R.id.itemDate);
+			holder.time = (TextView) convertView.findViewById(R.id.timeTextView);
 
 			convertView.setTag(holder);//绑定ViewHolder对象                   
 		}
@@ -89,6 +89,7 @@ public class CommunityPolicitalAdapter extends BaseAdapter {
 		{
 			final ContentData contentData=((List<ContentData>)dataList).get(position);
 			holder.title.setText(contentData.getTitle());
+			holder.time.setText(contentData.getReleasetime());
 			holder.title.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -119,6 +120,7 @@ public class CommunityPolicitalAdapter extends BaseAdapter {
 		{
 			final MSZW_BGDD mszwBgdd=((List<MSZW_BGDD>)dataList).get(position);
 			holder.title.setText(mszwBgdd.getName());
+			holder.time.setVisibility(View.GONE);
 			holder.title.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -157,7 +159,7 @@ public class CommunityPolicitalAdapter extends BaseAdapter {
 	 * */
 	public final class ViewHolder{
 		public TextView title;   //显示装载的时间
-		//public TextView date;    //日期
+		public TextView time;    //日期
 	}
 }
 

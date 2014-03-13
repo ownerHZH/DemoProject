@@ -12,9 +12,10 @@
         android:id="@+id/tabhost"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg" >
+        android:background="@drawable/bg1" >
 
         <LinearLayout
+            style="@drawable/bg1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:orientation="vertical" >
@@ -42,8 +43,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/wu1"
+                    android:background="@drawable/wu"
                     android:button="@null"
+                    android:checked="true"
                     android:ellipsize="marquee" />
 
                 <RadioButton
@@ -51,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/she1"
+                    android:background="@drawable/she"
                     android:button="@null"
                     android:ellipsize="marquee" />
                 
@@ -63,19 +65,16 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/bg_up" >
+                android:layout_marginTop="10dp" >
 
                 <ListView
                     android:id="@+id/listViewPolitical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="20dp"
                     android:cacheColorHint="#00000000"
-                    android:listSelector="#00000000" >
+                    android:listSelector="#00000000" 
+                    android:divider="#00000000">
 
                 </ListView>
                 
@@ -84,12 +83,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="20dp"
                     android:cacheColorHint="#00000000"
-                    android:listSelector="#00000000" >
+                    android:listSelector="#00000000" 
+                    android:divider="#00000000">
 
                 </ListView>
             </FrameLayout>

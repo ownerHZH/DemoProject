@@ -68,7 +68,8 @@ public class CommunitySetting extends MainAcitivity {
 		
 		back = (Button) findViewById(R.id.back);
 		title = (TextView) findViewById(R.id.title);
-		title.setText(R.string.personal_settings);
+		title.setBackgroundResource(R.drawable.title_shezhi);
+		//title.setText(R.string.personal_settings);
 		con = CommunitySetting.this;
 		
 		about=(LinearLayout) findViewById(R.id.about);//¹ØÓÚ

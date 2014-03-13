@@ -48,6 +48,7 @@ public class LoginActivity extends MainAcitivity {
 	String szIme;
 	SharedPreferences preferences;
 	SharedPreferences.Editor editor;
+	private ImageView findPass;  //’“ªÿ√‹¬Î
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +63,11 @@ public class LoginActivity extends MainAcitivity {
 
 		go_tel = (EditText) findViewById(R.id.go_tel);
 		go_pas = (EditText) findViewById(R.id.go_pas);
-
+		findPass=(ImageView) findViewById(R.id.callke);
+		findPass.setOnClickListener(listener);
 		go_tel.setText(preferences.getString("number", null));
 		go_pas.setText(preferences.getString("password", null));
-
+        
 		go.setOnClickListener(listener);
 		//reg.setOnClickListener(listener);
 		TelephonyManager TelephonyMgr = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
@@ -87,12 +89,9 @@ public class LoginActivity extends MainAcitivity {
 
 				break;
 
-			/*case R.id.reg:
+			case R.id.callke:
 
-				Intent intent = new Intent(LoginActivity.this,
-						RegisterActivity.class);
-				startActivity(intent);
-				break;*/
+				break;
 			}
 
 		}

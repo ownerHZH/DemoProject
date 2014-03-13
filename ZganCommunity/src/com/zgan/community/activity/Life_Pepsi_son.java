@@ -53,7 +53,8 @@ public class Life_Pepsi_son extends MainAcitivity {
 
 
 		top_title = (TextView) findViewById(R.id.title);
-		top_title.setText("办事指南");
+		//top_title.setText("办事指南");
+		top_title.setBackgroundResource(R.drawable.title_banshizhinan);
 		back.setOnClickListener(l);
 
 		house_magament.setOnClickListener(l);

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/bg1"
     android:orientation="vertical" >
 
     <include
@@ -17,10 +17,8 @@
         android:layout_margin="5dp"
         android:layout_weight="1"
         android:cacheColorHint="#00000000"
-        android:paddingBottom="20dp"
         android:paddingLeft="5dp"
-        android:paddingRight="10dp"
-        android:paddingTop="10dp" >
+        android:paddingRight="10dp" >
 
     </ListView>
 

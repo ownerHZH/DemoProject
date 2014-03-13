@@ -17,6 +17,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:background="@drawable/bg1"
             android:orientation="vertical" >
 
             <TabWidget
@@ -39,14 +40,15 @@
                     android:id="@+id/zhengwuyaowen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/zheng1"
-                    android:button="@null" />
+                    android:background="@drawable/zheng"
+                    android:button="@null"
+                    android:checked="true" />
 
-                <RadioButton
+                <RadioButton
                     android:id="@+id/bangongdidian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/zheng1"
+                    android:background="@drawable/ban"
                     android:button="@null" />
 
             </RadioGroup>
@@ -57,19 +59,16 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/bg_up" >
+                android:layout_marginTop="10dp" >
 
                 <ListView
                     android:id="@+id/listViewPolitical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
                     android:cacheColorHint="#00000000"
-                    android:listSelector="#00000000" >
-
+                    android:listSelector="#00000000" 
+                    android:divider="#00000000">                   
                 </ListView>                              
                 
                 <LinearLayout
@@ -77,9 +76,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="bottom|center"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
                     android:orientation="vertical" >
 				    
                     <ListView
@@ -89,14 +85,17 @@
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:cacheColorHint="#00000000"
-                        android:listSelector="#00000000" >
+                        android:listSelector="#00000000" 
+                        android:divider="#00000000">
 
                     </ListView>
                     
                     <ImageView
-                        android:layout_width="match_parent"
+                        android:layout_width="fill_parent"
                         android:layout_height="5dp"
-                        android:src="@drawable/h">
+                        android:background="@drawable/h"
+                        android:src="@drawable/h" >
+
                      </ImageView>
                     
 				    <LinearLayout
@@ -111,8 +110,9 @@
 				        
 				    <Button
 				        android:id="@+id/buttonCity"
-				        android:layout_width="wrap_content"
+				        android:layout_width="0dp"
 				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
 				        android:background="@drawable/ssbm" />
 
 				    <ImageView
@@ -123,8 +123,9 @@
 				
 				    <Button
 				        android:id="@+id/buttonCounty"
-				        android:layout_width="wrap_content"
+				        android:layout_width="0dp"
 				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
 				        android:background="@drawable/qxzf" />
 
 				    <ImageView
@@ -135,8 +136,9 @@
 				
 				    <Button
 				        android:id="@+id/buttonCommonService"
-				        android:layout_width="wrap_content"
+				        android:layout_width="0dp"
 				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
 				        android:background="@drawable/ggfwdw" />
 				    
 				    </LinearLayout>

@@ -16,6 +16,7 @@ import com.zgan.community.R.menu;
 import com.zgan.community.data.Recinfo;
 import com.zgan.community.jsontool.AppConstants;
 import com.zgan.community.tools.MainAcitivity;
+import com.zgan.community.tools.MyProgressDialog;
 import com.zgan.community.tools.ZganCommunityStaticData;
 
 import android.os.Bundle;
@@ -43,6 +44,7 @@ public class CommunityModifyPasswordActivity extends MainAcitivity {
 	private Button save;
 	SharedPreferences preferences;
 	SharedPreferences.Editor editor;
+	private MyProgressDialog dialog;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,7 @@ public class CommunityModifyPasswordActivity extends MainAcitivity {
 		back = (Button) findViewById(R.id.back);
 		title = (TextView) findViewById(R.id.title);
 		title.setText("密码修改");
-
+		dialog=new MyProgressDialog(CommunityModifyPasswordActivity.this);
 		oldpass = (EditText) findViewById(R.id.oldPassword);
 		newpass = (EditText) findViewById(R.id.newPassword);
 		renewpass = (EditText) findViewById(R.id.renewPassword);
@@ -76,7 +78,7 @@ public class CommunityModifyPasswordActivity extends MainAcitivity {
 
 			case R.id.buttonCommit:
 				UpPassWord(); // 密码确认操作
-				finish();
+				dialog.start("信息提交中...");
 				break;
 
 			default:
@@ -125,9 +127,9 @@ public class CommunityModifyPasswordActivity extends MainAcitivity {
 				Log.i("new_password", "" + new_password);
 
 				HttpGet get = new HttpGet(
-						AppConstants.HttpHostAdress+"zgansetpwd.aspx?did="
+						AppConstants.HttpHostAdress+"zganrevisepassword.aspx?did="
 								+ ZganCommunityStaticData.User_Number + "&pwd="
-								+ old_password + "&Npwd=" + new_password);
+								+ old_password + "&npwd=" + new_password);
 				// http://community1.zgantech.com/ZganSetPwd.aspx?did=15923258890&pwd=1234&Npwd=12345
 				HttpClient client = new DefaultHttpClient();
 				HttpResponse httpResponse;
@@ -147,6 +149,7 @@ public class CommunityModifyPasswordActivity extends MainAcitivity {
 						if ("0".equals(status)) {
 							String msg = jsonObject.getString("msg");
 							Log.i("msg", "" + Html.fromHtml(msg).toString());
+							dialog.stop();
 							Looper.prepare();
 							// dialog.dismiss();
 							Toast.makeText(getApplicationContext(), "修改密码成功！",
@@ -155,13 +158,15 @@ public class CommunityModifyPasswordActivity extends MainAcitivity {
 							editor.commit();
 							ZganCommunityStaticData.User_PassWord = preferences
 									.getString("password", null);
-							Looper.loop();
-
+							CommunityModifyPasswordActivity.this.finish();
+							Looper.loop();							
+							
 						} else {
 							Looper.prepare();
 							// dialog.dismiss();
 							String msg = jsonObject.getString("msg");
 							Log.i("msg", "" + Html.fromHtml(msg).toString());
+							dialog.stop();
 							Toast.makeText(getApplicationContext(), "" + msg,
 									Toast.LENGTH_SHORT).show();
 							Looper.loop();

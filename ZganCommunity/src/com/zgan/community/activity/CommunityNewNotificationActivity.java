@@ -30,6 +30,7 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -74,12 +75,15 @@ public class CommunityNewNotificationActivity extends MainAcitivity {
 
 		back = (Button) findViewById(R.id.back);
 		title = (TextView) findViewById(R.id.title);
-		title.setText(R.string.community_notification_title);
+		//title.setText(R.string.community_notification_title);
+		title.setBackgroundResource(R.drawable.title_tongzhigonggao);
 		
 		group=(RadioGroup) findViewById(R.id.group);
 		con = CommunityNewNotificationActivity.this;
 		list = (ListView) findViewById(R.id.listViewPolitical);
 		list2 = (ListView) findViewById(R.id.listViewPolitical2);
+		list.setDividerHeight(0);
+		list2.setDividerHeight(0);
 		ButtonClickListener l = new ButtonClickListener();
 		back.setOnClickListener(l);
 		group.setOnCheckedChangeListener(listener);

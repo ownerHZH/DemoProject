@@ -63,7 +63,8 @@ public class AQWSAppActivity extends MainAcitivity {
 
 		top_title = (TextView) findViewById(R.id.title);
 
-		top_title.setText("ÏêÇé");
+		top_title.setBackgroundResource(R.drawable.title_huiyingyong);
+		//top_title.setText("ÏêÇé");
 
 		app_dow.setOnClickListener(listener);
 		yckz_dow.setOnClickListener(listener);

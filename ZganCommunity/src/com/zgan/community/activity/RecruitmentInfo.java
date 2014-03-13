@@ -74,7 +74,8 @@ public class RecruitmentInfo extends MainAcitivity {
 
 		top_title = (TextView) findViewById(R.id.title);
 
-		top_title.setText("招工信息");
+		//top_title.setText("招工信息");
+		top_title.setBackgroundResource(R.drawable.title_zhaogongxinxi);
 		back.setOnClickListener(listener);
 		waiter.setOnClickListener(listener);
 		gamble.setOnClickListener(listener);

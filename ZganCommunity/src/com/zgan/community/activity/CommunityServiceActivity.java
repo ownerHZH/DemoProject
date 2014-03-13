@@ -42,7 +42,8 @@ public class CommunityServiceActivity extends MainAcitivity {
 		
 		back=(Button) findViewById(R.id.back);
 		title=(TextView) findViewById(R.id.title);
-		title.setText(R.string.community_service);    //标题 社区服务
+		//title.setText(R.string.community_service);    //标题 社区服务
+		title.setBackgroundResource(R.drawable.title_shequfuwu);
 		
 		move=(Button) findViewById(R.id.buttonMove);
 		unlock=(Button) findViewById(R.id.buttonUnlock);
