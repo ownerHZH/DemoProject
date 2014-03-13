@@ -114,8 +114,8 @@ public final class R {
     }
     public static final class id {
         public static final int IconIV=0x7f070011;
-        public static final int about=0x7f07004f;
-        public static final int action_settings=0x7f070053;
+        public static final int about=0x7f070051;
+        public static final int action_settings=0x7f070055;
         public static final int alarm_count=0x7f070035;
         public static final int alarm_data_listview=0x7f070010;
         public static final int alarm_detalis=0x7f07001b;
@@ -128,6 +128,7 @@ public final class R {
          */
         public static final int auto_focus=0x7f070000;
         public static final int back=0x7f07003b;
+        public static final int balcony=0x7f07004d;
         public static final int baojing_time=0x7f07000f;
         public static final int callke=0x7f070040;
         public static final int cancel=0x7f070049;
@@ -153,14 +154,14 @@ public final class R {
         public static final int img=0x7f070028;
         public static final int include1=0x7f07000c;
         public static final int info=0x7f07002b;
-        public static final int jieshou=0x7f07004c;
         public static final int keting_btn=0x7f070030;
         public static final int launch_product_query=0x7f070006;
         public static final int line_1=0x7f07000e;
-        public static final int line_welcome=0x7f070052;
+        public static final int line_welcome=0x7f070054;
         public static final int listview=0x7f07003a;
-        public static final int logout_btn=0x7f070050;
+        public static final int logout_btn=0x7f070052;
         public static final int more=0x7f070019;
+        public static final int nicknameText=0x7f07004f;
         public static final int phone=0x7f070038;
         public static final int preview_view=0x7f07002c;
         public static final int progressBar=0x7f070012;
@@ -174,7 +175,7 @@ public final class R {
         public static final int search_book_contents_failed=0x7f07000a;
         public static final int search_book_contents_succeeded=0x7f07000b;
         public static final int sel=0x7f070027;
-        public static final int shebei=0x7f07004e;
+        public static final int shebei=0x7f070050;
         public static final int shebei_id=0x7f070025;
         public static final int shebei_name=0x7f070024;
         public static final int shebei_set=0x7f07001e;
@@ -183,15 +184,16 @@ public final class R {
         public static final int sub_name=0x7f070018;
         public static final int subname=0x7f070039;
         public static final int switch_detalis=0x7f07001c;
+        public static final int textView1=0x7f07004b;
+        public static final int textView3=0x7f07004c;
+        public static final int textView5=0x7f07004e;
         public static final int title=0x7f070029;
-        public static final int tongzhiwuye=0x7f07004b;
         public static final int txtResult=0x7f07002e;
         public static final int user_add=0x7f070045;
         public static final int user_info=0x7f07001d;
         public static final int user_name=0x7f070044;
-        public static final int user_numb=0x7f070051;
+        public static final int user_numb=0x7f070053;
         public static final int user_pasword=0x7f070042;
-        public static final int user_set=0x7f07004d;
         public static final int user_shebei=0x7f070046;
         public static final int user_tel=0x7f070041;
         public static final int view_pager=0x7f07001a;

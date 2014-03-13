@@ -1,6 +1,16 @@
 package com.zgan.yckz.activity;
 
+import java.util.List;
+
 import com.zgan.yckz.R;
+import com.zgan.yckz.jsontool.AppConstants;
+import com.zgan.yckz.jsontool.GsonUtil;
+import com.zgan.yckz.jsontool.HttpAndroidTask;
+import com.zgan.yckz.jsontool.HttpClientService;
+import com.zgan.yckz.jsontool.HttpPreExecuteHandler;
+import com.zgan.yckz.jsontool.HttpResponseHandler;
+import com.zgan.yckz.jsontool.JsonEntity;
+import com.zgan.yckz.jsontool.User;
 import com.zgan.yckz.socket.Constant;
 import com.zgan.yckz.tcp.Frame;
 import com.zgan.yckz.tools.YCKZ_SQLHelper;
@@ -26,6 +36,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class UserInfo_Activity extends Activity {
 	
@@ -41,6 +55,14 @@ public class UserInfo_Activity extends Activity {
 
 	SharedPreferences preferences;
 	SharedPreferences.Editor editor;
+	
+	private TextView nicknameText;//昵称显示框
+	private TextView balcony;//楼座号
+	private TextView phone;//手机号码
+	
+	private Handler handler;
+	private Context con;
+	
 	Handler SubDatahandler = new Handler() {
 		@SuppressLint("NewApi")
 		@Override
@@ -134,13 +156,20 @@ public class UserInfo_Activity extends Activity {
 		db = yckz_SQLHelper.getReadableDatabase();
 
 		setContentView(R.layout.userinfo_line);
+		con=UserInfo_Activity.this;
 
 		back = (Button) findViewById(R.id.back);
 		logout_btn = (Button) findViewById(R.id.logout_btn);
+		
+		nicknameText=(TextView) findViewById(R.id.nicknameText);//昵称显示框
+		balcony=(TextView) findViewById(R.id.balcony);//楼座号
+		phone=(TextView) findViewById(R.id.phone);//手机号码
+		handler=new Handler();
 
 		back.setOnClickListener(listener);
 		logout_btn.setOnClickListener(listener);
-
+         
+		getUserInfo();
 	}
 
 	OnClickListener listener = new OnClickListener() {
@@ -192,5 +221,55 @@ public class UserInfo_Activity extends Activity {
 			}
 		}
 	};
+	
+	// 获取业主信息
+	private void getUserInfo() {
+		HttpClientService svr = new HttpClientService(
+				AppConstants.HttpHostAdress+"zganuserinfo.aspx");
+		//参数
+		svr.addParameter("did",YCKZ_Static.Phone_number);
+				
+		HttpAndroidTask task = new HttpAndroidTask(con, svr,
+				new HttpResponseHandler() {
+					// 响应事件
+					@SuppressWarnings("unchecked")
+					public void onResponse(Object obj) {
+						JsonEntity jsonEntity = GsonUtil.parseObj2JsonEntity(
+								obj,con,false);
+						if (jsonEntity.getStatus() == 1) {
+							Toast.makeText(con, "业主信息获取失败！", Toast.LENGTH_SHORT).show();
+						} else if (jsonEntity.getStatus() == 0) {
+							List<User> userInfo=(List<User>) GsonUtil.getData(
+										jsonEntity,AppConstants.type_userList);	
+							handler.post(updateUIRunnable(userInfo.get(0)));																							
+						}														
+					}					
+				}, new HttpPreExecuteHandler() {
+					public void onPreExecute(Context context) {
+					}
+				});
+		task.execute(new String[] {});	
+	}
+	
+	/**
+	 * 获取业主信息后更新UI Runnable
+	 * @param user
+	 * @return
+	 */
+	private Runnable updateUIRunnable(final User user) {
+		Runnable r=new Runnable() {
+			
+			@Override
+			public void run() {
+					if(!user.equals(null))
+					{
+						phone.setText(user.getUserName());
+						nicknameText.setText(user.getNickname());
+						balcony.setText(user.getLocation());
+					}				
+			}
+		};
+		return r;
+	}
 
 }
