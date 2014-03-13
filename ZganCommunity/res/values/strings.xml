@@ -174,5 +174,6 @@
     <string name="app_var">v1.0.022401</string>
     <string name="title_activity_recruit_detail">RecruitDetailActivity</string>
     <string name="title_activity_about__detail_">About_Detail_Activity</string>
+    <string name="title_activity_main_fragement">MainFragementActivity</string>
 
 </resources>

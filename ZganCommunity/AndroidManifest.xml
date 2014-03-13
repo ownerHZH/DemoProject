@@ -152,9 +152,9 @@
             android:label="@string/title_activity_community_setting_feed_back"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" >
         </activity>
-        <activity android:name="com.zgan.community.activity.MainTabActivity"
+        <activity
+            android:name="com.zgan.community.activity.MainTabActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
-        
         <activity
             android:name="com.zgan.community.activity.Policital_ZhengWU"
             android:label="@string/title_activity_policital__zheng_wu" >
@@ -170,6 +170,11 @@
         <activity
             android:name="com.zgan.community.activity.About_Detail_Activity"
             android:label="@string/title_activity_about__detail_" >
+        </activity>
+        <activity
+            android:name="com.zgan.community.activity.MainFragmentActivity"
+            android:label="@string/title_activity_main_fragement" >
+            
         </activity>
     </application>
 

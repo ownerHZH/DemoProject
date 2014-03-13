@@ -144,7 +144,7 @@ public class MainPageActivity extends MainAcitivity {
 			switch (v.getId()) {
 			case R.id.communityService:
 				// 社区服务点击响应事件
-				intent = new Intent(con, MainTabActivity.class);
+				intent = new Intent(con, MainFragmentActivity.class);
 				intent.putExtra("TAG", R.id.radio_button0);
 				startActivity(intent);
 				// Acticity切换动画
